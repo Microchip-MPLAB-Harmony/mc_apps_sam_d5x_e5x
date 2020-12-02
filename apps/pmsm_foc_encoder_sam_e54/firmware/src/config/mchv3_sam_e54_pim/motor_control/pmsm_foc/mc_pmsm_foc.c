@@ -71,6 +71,7 @@ static void PMSM_FOC_ButtonPolling( void );
 
 static tMCCTRL_TASK_STATE_E PMSM_FOC_IsSpeedLoopActive( void );
 static tMCCTRL_TASK_STATE_E PMSM_FOC_IsPositionLoopActive( void );
+void MCINF_PositionLoopTasks( void );
 static void PMSM_FOC_StartAdcInterrupt( void );
 
 /******************************************************************************/
@@ -188,6 +189,7 @@ void PMSM_FOC_MotorStart(void)
     {
         gMCCTRL_CtrlParam.mcStateLast = gMCCTRL_CtrlParam.mcState;
         /* Switch the motor control state to MCAPP_FIELD_ALIGNMENT after reset */
+
         gMCCTRL_CtrlParam.mcState = MCAPP_FIELD_ALIGNMENT;
         gMCCTRL_CtrlParam.firstStart = false;
     }
@@ -217,7 +219,7 @@ void PMSM_FOC_MotorStop(void)
     /* Disable PWM output */
     MCPWM_PWMOutputDisable();
     gMCCTRL_CtrlParam.mcStateLast = gMCCTRL_CtrlParam.mcState;
-    /* Switch the motor control state to MCAPP_FIELD_ALIGNMENT */
+    /* Switch the motor control state to MCAPP_IDLE */
     gMCCTRL_CtrlParam.mcState = MCAPP_IDLE;
 
     /* Reset global variables for next run */
@@ -241,9 +243,10 @@ void PMSM_FOC_Tasks()
     if( MCCTRL_LOOP_ACTIVE == PMSM_FOC_IsSpeedLoopActive())
     {
         PMSM_FOC_ButtonPolling();
+       /* Speed Loop Control tasks  */
+        PMSM_FOC_SpeedLoopTasks();
     }
-    /* Speed Loop Control tasks  */
-    PMSM_FOC_SpeedLoopTasks();
+
  }
 
 

@@ -510,4 +510,4 @@ children:
         children:
         - {type: Value, value: pmsmfoc_PWM}
 - type: ElementPosition
-  attributes: {x: '170', y: '160', id: tcc0}
+  attributes: {x: '210', y: '237', id: tcc0}

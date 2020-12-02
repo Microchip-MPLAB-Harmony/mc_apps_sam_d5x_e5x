@@ -557,6 +557,13 @@ children:
       - type: Dynamic
         attributes: {id: adc0, value: 'true'}
   - type: Boolean
+    attributes: {id: USER_ADC0_SYNC_READY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: adc0, value: 'false'}
+  - type: Boolean
     attributes: {id: USER_PDEC_EVU_0_READY}
     children:
     - type: Values

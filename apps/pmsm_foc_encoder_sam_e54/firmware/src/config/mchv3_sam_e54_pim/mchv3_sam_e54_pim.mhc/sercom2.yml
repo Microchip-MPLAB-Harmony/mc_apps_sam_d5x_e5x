@@ -202,4 +202,4 @@ children:
         children:
         - {type: Value, value: x2cScopeUartDependency}
 - type: ElementPosition
-  attributes: {x: '86', y: '315', id: sercom2}
+  attributes: {x: '19', y: '399', id: sercom2}

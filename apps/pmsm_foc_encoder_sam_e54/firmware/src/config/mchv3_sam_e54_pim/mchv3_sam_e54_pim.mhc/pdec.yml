@@ -166,8 +166,17 @@ children:
     children:
     - type: Values
       children:
+      - type: Dynamic
+        attributes: {id: pmsm_foc, value: '0'}
       - type: User
         attributes: {value: '0'}
+  - type: Integer
+    attributes: {id: PDEC_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: pdec, value: '60000000'}
   - type: File
     attributes: {id: PDEC_HALL_HEADER}
     children:
@@ -259,4 +268,4 @@ children:
         children:
         - {type: Value, value: pmsmfoc_QDEC}
 - type: ElementPosition
-  attributes: {x: '30', y: '239', id: pdec}
+  attributes: {x: '210', y: '315', id: pdec}
