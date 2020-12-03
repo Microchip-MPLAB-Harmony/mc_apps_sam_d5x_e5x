@@ -494,24 +494,6 @@ children:
       children:
       - type: Dynamic
         attributes: {id: evsys, value: 'false'}
-  - type: Menu
-    attributes: {id: EVSYS_MENU_0}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'true'}
-  - type: Menu
-    attributes: {id: EVSYS_MENU_1}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'true'}
   - type: KeyValueSet
     attributes: {id: EVSYS_USER_0}
     children:

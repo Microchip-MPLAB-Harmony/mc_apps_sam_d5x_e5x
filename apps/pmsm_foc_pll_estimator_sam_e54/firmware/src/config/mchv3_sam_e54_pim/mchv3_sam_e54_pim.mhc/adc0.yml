@@ -200,4 +200,4 @@ children:
         children:
         - {type: Value, value: pmsmfoc_ADC}
 - type: ElementPosition
-  attributes: {x: '170', y: '80', id: adc0}
+  attributes: {x: '246', y: '152', id: adc0}
