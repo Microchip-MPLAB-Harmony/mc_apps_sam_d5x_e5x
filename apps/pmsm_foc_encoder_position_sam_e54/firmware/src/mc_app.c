@@ -319,7 +319,7 @@ void mcApp_ADCISRTasks(ADC_STATUS status, uintptr_t context)
         while(ADC0_REGS->ADC_INTFLAG != ADC_INTFLAG_RESRDY_Msk);
                        
         /* Read the ADC result value */
-        mcApp_focParam.DCBusVoltage = ((float)ADC1_ConversionResultGet())* VOLTAGE_ADC_TO_PHY_RATIO; // Reads and translates to actual bus voltage
+        mcApp_focParam.DCBusVoltage = (float)(ADC1_ConversionResultGet()* VOLTAGE_ADC_TO_PHY_RATIO); // Reads and translates to actual bus voltage
 		potReading = ADC0_ConversionResultGet();
         potReading-=2047;
         
@@ -476,7 +476,7 @@ void mcApp_motorStartToggle()
 
 
 
-void OC_FAULT_ISR(uintptr_t context)
+void __NO_RETURN OC_FAULT_ISR(uintptr_t context)
 {
     mcApp_motorStop();
     mcApp_motorState.motorStart = 0;
