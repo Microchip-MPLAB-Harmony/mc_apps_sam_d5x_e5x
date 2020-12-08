@@ -1648,4 +1648,4 @@ children:
       - type: Dynamic
         attributes: {id: tcc0, value: 'true'}
 - type: ElementPosition
-  attributes: {x: '500', y: '20', id: core}
+  attributes: {x: '140', y: '68', id: core}

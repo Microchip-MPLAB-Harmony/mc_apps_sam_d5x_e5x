@@ -39,6 +39,24 @@ children:
       children:
       - type: Dynamic
         attributes: {id: pmsm_foc, value: '2000.0'}
+  - type: Integer
+    attributes: {id: MCPMSMFOC_DCBUSV_CH}
+    children:
+    - type: Attributes
+      children:
+      - type: Integer
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '15'}
+  - type: Integer
+    attributes: {id: MCPMSMFOC_DCBUSV_MODULE}
+    children:
+    - type: Attributes
+      children:
+      - type: Integer
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '1'}
   - type: KeyValueSet
     attributes: {id: MCPMSMFOC_DIRECTION_BUTTON}
     children:
@@ -61,12 +79,19 @@ children:
       - type: Dynamic
         attributes: {id: pmsm_foc, value: '56'}
   - type: Float
+    attributes: {id: MCPMSMFOC_FLYING_START_CL_BANDWIDTH}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: pmsm_foc, value: '2000.0'}
+  - type: Float
     attributes: {id: MCPMSMFOC_ID_KI}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: pmsm_foc, value: '9.9E-5'}
+        attributes: {id: pmsm_foc, value: '2.0E-4'}
   - type: Float
     attributes: {id: MCPMSMFOC_ID_KP}
     children:
@@ -80,7 +105,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: pmsm_foc, value: '9.9E-5'}
+        attributes: {id: pmsm_foc, value: '2.0E-4'}
   - type: Float
     attributes: {id: MCPMSMFOC_IQ_KP}
     children:
@@ -95,6 +120,60 @@ children:
       children:
       - type: Dynamic
         attributes: {id: pmsm_foc, value: '0'}
+  - type: Integer
+    attributes: {id: MCPMSMFOC_PHASEU_CH}
+    children:
+    - type: Attributes
+      children:
+      - type: Integer
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '15'}
+  - type: Integer
+    attributes: {id: MCPMSMFOC_PHASEU_MODULE}
+    children:
+    - type: Attributes
+      children:
+      - type: Integer
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '1'}
+  - type: Integer
+    attributes: {id: MCPMSMFOC_PHASEV_CH}
+    children:
+    - type: Attributes
+      children:
+      - type: Integer
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '15'}
+  - type: Integer
+    attributes: {id: MCPMSMFOC_PHASEV_MODULE}
+    children:
+    - type: Attributes
+      children:
+      - type: Integer
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '1'}
+  - type: Integer
+    attributes: {id: MCPMSMFOC_POT_CH}
+    children:
+    - type: Attributes
+      children:
+      - type: Integer
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '15'}
+  - type: Integer
+    attributes: {id: MCPMSMFOC_POT_MODULE}
+    children:
+    - type: Attributes
+      children:
+      - type: Integer
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '1'}
   - type: String
     attributes: {id: MCPMSMFOC_PWMPLIB}
     children:
@@ -109,6 +188,33 @@ children:
       children:
       - type: Dynamic
         attributes: {id: pmsm_foc, value: '2'}
+  - type: Integer
+    attributes: {id: MCPMSMFOC_PWM_PH_U}
+    children:
+    - type: Attributes
+      children:
+      - type: Integer
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '3'}
+  - type: Integer
+    attributes: {id: MCPMSMFOC_PWM_PH_V}
+    children:
+    - type: Attributes
+      children:
+      - type: Integer
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '3'}
+  - type: Integer
+    attributes: {id: MCPMSMFOC_PWM_PH_W}
+    children:
+    - type: Attributes
+      children:
+      - type: Integer
+        attributes: {id: max}
+        children:
+        - {type: Value, value: '3'}
   - type: KeyValueSet
     attributes: {id: MCPMSMFOC_START_BUTTON}
     children:
@@ -131,9 +237,9 @@ children:
     - type: TargetAttachments
       children:
       - type: TargetAttachment
-        attributes: {targetComponentID: adc0, targetAttachmentID: ADC0_ADC}
-      - type: TargetAttachment
         attributes: {targetComponentID: adc1, targetAttachmentID: ADC1_ADC}
+      - type: TargetAttachment
+        attributes: {targetComponentID: adc0, targetAttachmentID: ADC0_ADC}
   - type: DirectDependency
     attributes: {id: pmsmfoc_PWM}
     children:
@@ -161,4 +267,4 @@ children:
         children:
         - {type: Value, value: x2cScope_Scope}
 - type: ElementPosition
-  attributes: {x: '395', y: '118', id: pmsm_foc}
+  attributes: {x: '340', y: '247', id: pmsm_foc}

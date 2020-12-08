@@ -54,4 +54,4 @@ children:
         children:
         - {type: Value, value: pmsmfoc_X2CSCOPE}
 - type: ElementPosition
-  attributes: {x: '187', y: '316', id: X2CScope}
+  attributes: {x: '173', y: '355', id: X2CScope}

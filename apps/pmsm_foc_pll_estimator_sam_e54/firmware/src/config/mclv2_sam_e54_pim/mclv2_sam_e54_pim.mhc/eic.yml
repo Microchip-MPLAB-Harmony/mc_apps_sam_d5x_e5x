@@ -4,6 +4,15 @@ attributes: {id: eic}
 children:
 - type: Symbols
   children:
+  - type: Menu
+    attributes: {id: DEBOUNCE_MENU}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
   - type: Hex
     attributes: {id: EIC_ASYNCH}
     children:
@@ -18,6 +27,15 @@ children:
       children:
       - type: Dynamic
         attributes: {id: pmsm_foc, value: 'true'}
+  - type: Boolean
+    attributes: {id: EIC_CONFIG_FILTEN_2}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
   - type: KeyValueSet
     attributes: {id: EIC_CONFIG_SENSE_2}
     children:
@@ -35,6 +53,12 @@ children:
   - type: Boolean
     attributes: {id: EIC_DEBOUNCEN_2}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
@@ -60,5 +84,14 @@ children:
       children:
       - type: Dynamic
         attributes: {id: eic, value: '0'}
+  - type: Menu
+    attributes: {id: EIC_MENU2}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
 - type: ElementPosition
-  attributes: {x: '430', y: '60', id: eic}
+  attributes: {x: '252', y: '19', id: eic}

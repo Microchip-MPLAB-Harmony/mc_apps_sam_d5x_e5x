@@ -494,6 +494,24 @@ children:
       children:
       - type: Dynamic
         attributes: {id: evsys, value: 'false'}
+  - type: Menu
+    attributes: {id: EVSYS_MENU_0}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Menu
+    attributes: {id: EVSYS_MENU_1}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
   - type: KeyValueSet
     attributes: {id: EVSYS_USER_0}
     children:
@@ -553,4 +571,4 @@ children:
       - type: Dynamic
         attributes: {id: tcc0, value: 'true'}
 - type: ElementPosition
-  attributes: {x: '160', y: '19', id: evsys}
+  attributes: {x: '134', y: '21', id: evsys}
