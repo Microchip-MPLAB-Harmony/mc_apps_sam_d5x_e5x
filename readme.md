@@ -43,7 +43,7 @@ These applications are generated using PMSM_FOC component and are fully configur
 
 These applications contain static algorithm code and peripherals are configured using MHC. Configurations can be changed in userparam.h file. 
 
-### SAME7x/S7x/V7x Family
+### SAMD5x/E5x Family
 | Name | Description|
 |:---------|:-----------|
 | [PMSM FOC Position Control using Quadrature Encoder](apps/pmsm_foc_encoder_position_sam_e54/readme.md) | Sensor Position Control PMSM using Quadrature Encoder |
