@@ -58,7 +58,7 @@ children:
       - type: Boolean
         attributes: {id: visible}
         children:
-        - {type: Value, value: 'true'}
+        - {type: Value, value: 'false'}
   - type: Integer
     attributes: {id: PDEC_CC0_REVOLUTION}
     children:
@@ -166,8 +166,17 @@ children:
     children:
     - type: Values
       children:
+      - type: Dynamic
+        attributes: {id: pmsm_foc, value: '0'}
       - type: User
         attributes: {value: '0'}
+  - type: Integer
+    attributes: {id: PDEC_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: pdec, value: '60000000'}
   - type: File
     attributes: {id: PDEC_HALL_HEADER}
     children:
@@ -259,4 +268,4 @@ children:
         children:
         - {type: Value, value: pmsmfoc_QDEC}
 - type: ElementPosition
-  attributes: {x: '29', y: '160', id: pdec}
+  attributes: {x: '220', y: '339', id: pdec}
