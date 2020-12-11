@@ -1,9 +1,8 @@
 ---
-parent: Harmony 3 motor control application examples
+parent: Motor Control Application Examples for SAM D5x/E5x family
 title: FOC Based Position Control of PMSM using Quadrature Encoder
 has_children: false
 has_toc: false
-nav_order: 1
 ---
 
 [![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
@@ -125,12 +124,10 @@ Path of the application within the repository is **apps/pmsm_foc_encoder_positio
 
 To build the application, refer to the following table and open the project using its IDE.
 
-| Project Name      | Description                                    |
-| ----------------- | ---------------------------------------------- |
-| mclv2_sam_e54_pim.X | MPLABX project for MCLV2 board with ATSAME54 PIM |
-|||
-
-[Hardware Setup and Running The Application on MCLV2 with ATSAME54 PIM](../docs/mclv2_atsame54_pim_position.md)
+| Project Name      | Description                                    | Demo User Guide |
+| ----------------- | ---------------------------------------------- | --------------- |
+| mclv2_sam_e54_pim.X | MPLABX project for MCLV2 board with ATSAME54 PIM | [Hardware Setup and Running The Application on MCLV2 with ATSAME54 PIM](../docs/mclv2_atsame54_pim_position.md) |
+||||
 
 
 ### MCHV3 with ATSAME54 PIM
@@ -143,9 +140,9 @@ Path of the application within the repository is **apps/pmsm_foc_encoder_positio
 
 To build the application, refer to the following table and open the project using its IDE.
 
-| Project Name      | Description                                    |
-| ----------------- | ---------------------------------------------- |
-| mchv3_sam_e54_pim.X | MPLABX project for MCHV3 board with ATSAME54 PIM |
-|||
+| Project Name      | Description                                    | Demo User Guide |
+| ----------------- | ---------------------------------------------- | ------------------- |
+| mchv3_sam_e54_pim.X | MPLABX project for MCHV3 board with ATSAME54 PIM | [Hardware Setup and Running The Application on MCHV3 with ATSAME54 PIM](../docs/mchv3_atsame54_pim_position.md)|
+||||
 
-[Hardware Setup and Running The Application on MCHV3 with ATSAME54 PIM](../docs/mchv3_atsame54_pim_position.md)
+

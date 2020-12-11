@@ -1,3 +1,9 @@
+---
+parent: Hardware Setup
+title: MCHV3 Development Board Setup for Quadrature Encoder
+has_children: false
+has_toc: false
+---
 # MCHV3 Development Board
 ## Setting up the hardware
 

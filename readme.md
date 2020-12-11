@@ -1,4 +1,11 @@
-﻿# Microchip MPLAB® Harmony 3 Motor Control Application Examples for SAM D5x/E5x family
+﻿---
+title: Motor Control Application Examples for SAM D5x/E5x family
+nav_order: 1
+has_children: true
+has_toc: false
+---
+
+# Microchip MPLAB® Harmony 3 Motor Control Application Examples for SAM D5x/E5x family
 
 MPLAB Harmony 3 is an extension of the MPLAB® ecosystem for creating
 embedded firmware solutions for Microchip 32-bit SAM and PIC32 microcontroller
@@ -17,13 +24,12 @@ notes and licensing information.
  - [Release Notes](./release_notes.md)
  - [MPLAB Harmony License](mplab_harmony_license.md)
 
-# Contents Summary
+## Contents Summary
 
 | Folder     | Description                                               |
 |------------|-----------------------------------------------------------|
 | apps       | Demonstration applications for Motor Control              |
-| doc        | Demonstration user guide in .chm format                   |
-| docs       | Demonstration user guide in HTML format                   |
+| docs       | Contains documentation in html format for offline viewing (to be used only after cloning this repository onto a local machine). Use [github pages](https://microchip-mplab-harmony.github.io/mc_apps_sam_d5x_e5x/) of this repository for viewing it online.                   |
 |||
 
 
@@ -32,7 +38,7 @@ notes and licensing information.
 The following applications are provided to demonstrate the typical or interesting usage models of motor control algorithms.
 These applications are generated using PMSM_FOC component and are fully configurable. 
 
-### SAMD5x/E5x Family
+
 | Name | Description|
 |:---------|:-----------|
 | [PMSM FOC using PLL Estimator](apps/pmsm_foc_pll_estimator_sam_e54/readme.md) | Sensorless Field Oriented Control of PMSM using PLL Estimator |
@@ -43,7 +49,7 @@ These applications are generated using PMSM_FOC component and are fully configur
 
 These applications contain static algorithm code and peripherals are configured using MHC. Configurations can be changed in userparam.h file. 
 
-### SAMD5x/E5x Family
+
 | Name | Description|
 |:---------|:-----------|
 | [PMSM FOC Position Control using Quadrature Encoder](apps/pmsm_foc_encoder_position_sam_e54/readme.md) | Sensor Position Control PMSM using Quadrature Encoder |
