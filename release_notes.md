@@ -30,6 +30,9 @@ Applications migrated from motor_control repository to this application reposito
 
 ### Known Issues
 
+* ATSAME54 Motor Control Plugin Module based demos may see noise coupling on the ADC channels resulting in motor instability/stall.
+  * This issue can be resolved by ensuring that R1 (0 ohm) resistor is populated.
+  
 * Isolated EDBG Card 
   * This board is not supported in MPLABX v5.40. We recommend using [MPLABX v5.45 or above](https://www.microchip.com/mplab/mplab-x-ide) for programming/debugging any SAM E/V/S7x applications dsPICDEM™ MCHV-3 High Voltage Development Board
 
