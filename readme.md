@@ -39,11 +39,12 @@ The following applications are provided to demonstrate the typical or interestin
 These applications are generated using PMSM_FOC component and are fully configurable. 
 
 
-| Name | Description|
-|:---------|:-----------|
-| [PMSM FOC using PLL Estimator](apps/pmsm_foc_pll_estimator_sam_e54/readme.md) | Sensorless Field Oriented Control of PMSM using PLL Estimator |
-| [PMSM FOC using Quadrature Encoder](apps/pmsm_foc_encoder_sam_e54/readme.md) | Sensor Field Oriented Control of PMSM using Quadrature Encoder |
-|||
+| Name | Description|Control Board|Inverter Board|
+|:-----|:-----------|:------------|:-------------|
+| [PMSM FOC using PLL Estimator](apps/pmsm_foc_pll_estimator_sam_e54/readme.md) | Sensorless Field Oriented Control of PMSM using PLL Estimator | [ATSAME54 Motor Control Plugin Module](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/MA320207) | [dsPICDEM™ MCLV-2 Support](https://www.microchip.com/DevelopmentTools/ProductDetails/DM330021-2) <br  />[dsPICDEM™ MCHV-3 Support](https://www.microchip.com/developmenttools/ProductDetails/dm330023-3) |
+| [PMSM FOC using Quadrature Encoder](apps/pmsm_foc_encoder_sam_e54/readme.md) | Sensor Field Oriented Control of PMSM using Quadrature Encoder | [ATSAME54 Motor Control Plugin Module](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/MA320207) | [dsPICDEM™ MCLV-2 Support](https://www.microchip.com/DevelopmentTools/ProductDetails/DM330021-2) <br  />[dsPICDEM™ MCHV-3 Support](https://www.microchip.com/developmenttools/ProductDetails/dm330023-3) |
+|||||
+
 
 ## Static Motor Control Examples
 
