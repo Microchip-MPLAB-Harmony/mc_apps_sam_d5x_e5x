@@ -4,6 +4,13 @@ attributes: {id: adc1}
 children:
 - type: Symbols
   children:
+  - type: Integer
+    attributes: {id: ADC_ADJRES}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: adc1, value: '0'}
   - type: String
     attributes: {id: ADC_CALLBACK_API}
     children:
@@ -147,6 +154,13 @@ children:
         attributes: {id: text}
         children:
         - {type: Value, value: '**** Conversion Time is 2.13333333333 uS ****'}
+  - type: Integer
+    attributes: {id: ADC_SAMPLENUM}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: adc1, value: '0'}
   - type: String
     attributes: {id: ADC_START_API}
     children:
