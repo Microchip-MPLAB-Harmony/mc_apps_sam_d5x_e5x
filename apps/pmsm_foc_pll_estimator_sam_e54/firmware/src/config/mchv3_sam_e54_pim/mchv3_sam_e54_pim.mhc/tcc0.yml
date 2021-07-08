@@ -105,10 +105,34 @@ children:
   - type: KeyValueSet
     attributes: {id: TCC_0_DRVCTRL_NRE_NRV}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: tcc0, value: '1'}
+  - type: KeyValueSet
+    attributes: {id: TCC_0_WAVE_POL}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: TCC_0_WAVE_POL_NPWM}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
   - type: Boolean
     attributes: {id: TCC_0_WEXCTRL_DTIEN}
     children:
@@ -126,10 +150,34 @@ children:
   - type: KeyValueSet
     attributes: {id: TCC_1_DRVCTRL_NRE_NRV}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: tcc0, value: '1'}
+  - type: KeyValueSet
+    attributes: {id: TCC_1_WAVE_POL}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: TCC_1_WAVE_POL_NPWM}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
   - type: Boolean
     attributes: {id: TCC_1_WEXCTRL_DTIEN}
     children:
@@ -147,10 +195,34 @@ children:
   - type: KeyValueSet
     attributes: {id: TCC_2_DRVCTRL_NRE_NRV}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: tcc0, value: '1'}
+  - type: KeyValueSet
+    attributes: {id: TCC_2_WAVE_POL}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: TCC_2_WAVE_POL_NPWM}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
   - type: Boolean
     attributes: {id: TCC_2_WEXCTRL_DTIEN}
     children:
@@ -161,27 +233,105 @@ children:
   - type: KeyValueSet
     attributes: {id: TCC_3_DRVCTRL_NRE_NRV}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: tcc0, value: '1'}
+  - type: KeyValueSet
+    attributes: {id: TCC_3_WAVE_POL}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: TCC_3_WAVE_POL_NPWM}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
   - type: KeyValueSet
     attributes: {id: TCC_4_DRVCTRL_NRE_NRV}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: tcc0, value: '1'}
+  - type: KeyValueSet
+    attributes: {id: TCC_4_WAVE_POL}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: TCC_4_WAVE_POL_NPWM}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
   - type: KeyValueSet
     attributes: {id: TCC_5_DRVCTRL_NRE_NRV}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: tcc0, value: '1'}
   - type: KeyValueSet
+    attributes: {id: TCC_5_WAVE_POL}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: KeyValueSet
+    attributes: {id: TCC_5_WAVE_POL_NPWM}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: KeyValueSet
     attributes: {id: TCC_6_DRVCTRL_NRE_NRV}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
@@ -189,10 +339,52 @@ children:
   - type: KeyValueSet
     attributes: {id: TCC_7_DRVCTRL_NRE_NRV}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: tcc0, value: '1'}
+  - type: Comment
+    attributes: {id: TCC_COMPARE_PERIOD_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Boolean
+    attributes: {id: TCC_CTRLBSET_DIR}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Integer
+    attributes: {id: TCC_DRVCTRL_FILTERVAL}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Integer
+    attributes: {id: TCC_DRVCTRL_FILTERVAL1}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
   - type: Comment
     attributes: {id: TCC_DTHS_COMMENT}
     children:
@@ -201,7 +393,7 @@ children:
       - type: String
         attributes: {id: text}
         children:
-        - {type: Value, value: '**** High side dead time is 1.0 uS ****'}
+        - {type: Value, value: '**** High side dead time is 2.0 uS ****'}
   - type: Comment
     attributes: {id: TCC_DTLS_COMMENT}
     children:
@@ -210,7 +402,7 @@ children:
       - type: String
         attributes: {id: text}
         children:
-        - {type: Value, value: '**** Low side dead time is 1.0 uS ****'}
+        - {type: Value, value: '**** Low side dead time is 2.0 uS ****'}
   - type: KeyValueSet
     attributes: {id: TCC_EVCTRL_EVACT1}
     children:
@@ -225,6 +417,24 @@ children:
       children:
       - type: Dynamic
         attributes: {id: tcc0, value: 'true'}
+  - type: Boolean
+    attributes: {id: TCC_EVCTRL_TCINV1}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Comment
+    attributes: {id: TCC_FAULT_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
   - type: Comment
     attributes: {id: TCC_FREQUENCY}
     children:
@@ -235,12 +445,34 @@ children:
         children:
         - {type: Value, value: '**** PWM Frequency is 20000 Hz ****'}
   - type: Boolean
+    attributes: {id: TCC_INTENSET_FAULT0}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Boolean
     attributes: {id: TCC_INTENSET_FAULT1}
     children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
         attributes: {id: tcc0, value: 'true'}
+  - type: Integer
+    attributes: {id: TCC_MODULE_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tcc0, value: '60000000'}
   - type: Integer
     attributes: {id: TCC_PER_PER}
     children:
@@ -248,6 +480,20 @@ children:
       children:
       - type: Dynamic
         attributes: {id: tcc0, value: '1500'}
+  - type: Boolean
+    attributes: {id: TCC_PWM_INTERRUPT_MODE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tcc0, value: 'true'}
+  - type: Long
+    attributes: {id: TCC_TIMER_PERIOD}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tcc0, value: '60000'}
   - type: KeyValueSet
     attributes: {id: TCC_WAVE_WAVEGEN}
     children:
@@ -261,14 +507,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: tcc0, value: '60'}
+        attributes: {id: tcc0, value: '120'}
   - type: Integer
     attributes: {id: TCC_WEXCTRL_DTLS}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: tcc0, value: '60'}
+        attributes: {id: tcc0, value: '120'}
 - type: Attachments
   children:
   - type: DirectCapability
