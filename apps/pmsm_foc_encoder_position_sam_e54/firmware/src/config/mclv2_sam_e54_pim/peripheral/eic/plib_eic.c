@@ -54,6 +54,7 @@
 */
 
 #include "plib_eic.h"
+#include "interrupts.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -62,14 +63,14 @@
 // *****************************************************************************
 
 /* EIC Channel Callback object */
-EIC_CALLBACK_OBJ    eicCallbackObject[EXTINT_COUNT];
+static EIC_CALLBACK_OBJ    eicCallbackObject[EXTINT_COUNT];
 
 
 void EIC_Initialize (void)
 {
     /* Reset all registers in the EIC module to their initial state and
 	   EIC will be disabled. */
-    EIC_REGS->EIC_CTRLA |= EIC_CTRLA_SWRST_Msk;
+    EIC_REGS->EIC_CTRLA |= (uint8_t)EIC_CTRLA_SWRST_Msk;
 
     while((EIC_REGS->EIC_SYNCBUSY & EIC_SYNCBUSY_SWRST_Msk) == EIC_SYNCBUSY_SWRST_Msk)
     {
@@ -88,30 +89,31 @@ void EIC_Initialize (void)
                               EIC_CONFIG_SENSE4_NONE  |
                               EIC_CONFIG_SENSE5_NONE  |
                               EIC_CONFIG_SENSE6_NONE  |
-                              EIC_CONFIG_SENSE7_NONE ;
+                              EIC_CONFIG_SENSE7_NONE  ;
 
     /* Interrupt sense type and filter control for EXTINT channels 8 to 15 */
-    EIC_REGS->EIC_CONFIG[1] =  EIC_CONFIG_SENSE0_NONE  |
-                              EIC_CONFIG_SENSE1_NONE  |
-                              EIC_CONFIG_SENSE2_NONE  |
-                              EIC_CONFIG_SENSE3_NONE  |
-                              EIC_CONFIG_SENSE4_NONE  |
-                              EIC_CONFIG_SENSE5_NONE  |
-                              EIC_CONFIG_SENSE6_NONE  |
-                              EIC_CONFIG_SENSE7_NONE ;
+    EIC_REGS->EIC_CONFIG[1] =  EIC_CONFIG_SENSE0_NONE 
+         |  EIC_CONFIG_SENSE1_NONE  
+         |  EIC_CONFIG_SENSE2_NONE  
+         |  EIC_CONFIG_SENSE3_NONE  
+         |  EIC_CONFIG_SENSE4_NONE  
+         |  EIC_CONFIG_SENSE5_NONE  
+         |  EIC_CONFIG_SENSE6_NONE  
+         |  EIC_CONFIG_SENSE7_NONE   ;
+    
 
 
     /* Debouncer enable */
-    EIC_REGS->EIC_DEBOUNCEN = 0x4;
+    EIC_REGS->EIC_DEBOUNCEN = 0x4U;
 
     /* Event Control Output enable */
-    EIC_REGS->EIC_EVCTRL = 0x4;
+    EIC_REGS->EIC_EVCTRL = 0x4U;
 
     /* Debouncer Setting */
-    EIC_REGS->EIC_DPRESCALER = EIC_DPRESCALER_PRESCALER0(0) | EIC_DPRESCALER_PRESCALER1(0) ;
+    EIC_REGS->EIC_DPRESCALER = EIC_DPRESCALER_PRESCALER0(0UL) | EIC_DPRESCALER_PRESCALER1(0UL) ;
 
     /* External Interrupt enable*/
-    EIC_REGS->EIC_INTENSET = 0x4;
+    EIC_REGS->EIC_INTENSET = 0x4U;
 
     /* Callbacks for enabled interrupts */
     eicCallbackObject[0].eicPinNo = EIC_PIN_MAX;
@@ -131,7 +133,7 @@ void EIC_Initialize (void)
     eicCallbackObject[14].eicPinNo = EIC_PIN_MAX;
     eicCallbackObject[15].eicPinNo = EIC_PIN_MAX;
     /* Enable the EIC */
-    EIC_REGS->EIC_CTRLA |= EIC_CTRLA_ENABLE_Msk;
+    EIC_REGS->EIC_CTRLA |= (uint8_t)EIC_CTRLA_ENABLE_Msk;
 
     while((EIC_REGS->EIC_SYNCBUSY & EIC_SYNCBUSY_ENABLE_Msk) == EIC_SYNCBUSY_ENABLE_Msk)
     {
