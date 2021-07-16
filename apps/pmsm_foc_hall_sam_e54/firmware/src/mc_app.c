@@ -816,7 +816,7 @@ void mcApp_ADCISRTasks(ADC_STATUS status, uintptr_t context)
         while(ADC0_REGS->ADC_INTFLAG != ADC_INTFLAG_RESRDY_Msk);
                        
         /* Read the ADC result value */
-        mcApp_focParam.DCBusVoltage = ((float)ADC1_ConversionResultGet())* VOLTAGE_ADC_TO_PHY_RATIO; // Reads and translates to actual bus voltage
+        mcApp_focParam.DCBusVoltage = (float)(ADC1_ConversionResultGet()* VOLTAGE_ADC_TO_PHY_RATIO); // Reads and translates to actual bus voltage
 		potReading = ADC0_ConversionResultGet();
   
         /* select the next ADC channel for conversion */
@@ -882,7 +882,7 @@ void mcApp_InitControlParameters(void)
 	return;
 }
 
-void mcApp_motorStart()
+void mcApp_motorStart(void)
 {
     mcApp_InitControlParameters();
 
@@ -904,7 +904,7 @@ void mcApp_motorStart()
     PWM_Output_Enable();   
 }
 
-void mcApp_motorStop()
+void mcApp_motorStop(void)
 {
     mcApp_motorState.focStart = 0;
     mcApp_IRef_DQParam.d= 0;
@@ -916,7 +916,7 @@ void mcApp_motorStop()
     TC2_CaptureStop();
 }
 
-void mcApp_motorStartToggle()
+void mcApp_motorStartToggle(void)
 {
     mcApp_motorState.motorStart = !mcApp_motorState.motorStart;
     if(mcApp_motorState.motorStart == 1)
@@ -929,7 +929,7 @@ void mcApp_motorStartToggle()
     }
 }
 
-void mcApp_motorDirectionToggle()
+void mcApp_motorDirectionToggle(void)
 {
     if(mcApp_motorState.motorStart == 0)
     {
@@ -945,7 +945,7 @@ void mcApp_motorDirectionToggle()
 
 
 
-void OC_FAULT_ISR(uintptr_t context)
+void __NO_RETURN OC_FAULT_ISR(uintptr_t context)
 {
     mcApp_motorStop();
     mcApp_motorState.motorStart = 0;

@@ -78,22 +78,22 @@ extern mcParam_SVPWM        mcApp_SVGenParam;
 
 
 
-extern void mcApp_motorStartToggle();
-extern void mcApp_motorDirectionToggle();
+extern void mcApp_motorStartToggle(void);
+extern void mcApp_motorDirectionToggle(void);
 
 extern void ADC_ISR (ADC_STATUS status, uintptr_t context);
 extern void OC_FAULT_ISR (uintptr_t context);
 
-extern void mcApp_SpeedRamp();
+extern void mcApp_SpeedRamp(void);
 extern void mcApp_InitControlParameters(void);
 extern void mcApp_InitEstimParm(void);
 extern void HALL_jump_ISR (PDEC_HALL_STATUS status, uintptr_t context);
 extern void mcApp_ADCISRTasks(ADC_STATUS status, uintptr_t context);
 extern void ADC_CALIB_ISR(ADC_STATUS status, uintptr_t context);
-extern void PWM_Output_Enable();
-extern void PWM_Output_Disable();
-extern void mcApp_motorStart();
-extern void mcApp_motorStop();
+extern void PWM_Output_Enable(void);
+extern void PWM_Output_Disable(void);
+extern void mcApp_motorStart(void);
+extern void mcApp_motorStop(void);
 
 #endif /* _EXAMPLE_FILE_NAME_H */
 

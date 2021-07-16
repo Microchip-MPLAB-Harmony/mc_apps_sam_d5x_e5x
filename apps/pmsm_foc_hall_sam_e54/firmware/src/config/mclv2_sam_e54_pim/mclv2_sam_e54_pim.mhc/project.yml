@@ -83,13 +83,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 040D825799C9B530B1895AFB768A339A
-- generatedChecksum: 903E0413B53BA9E8980C740E65F59966
+- generatedChecksum: 57E1F9EA5E404569BFC1A3629AEC05F2
   logicalPath: config/mclv2_sam_e54_pim/peripheral/nvmctrl
   name: plib_nvmctrl.c
   physicalPath: peripheral/nvmctrl
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 903E0413B53BA9E8980C740E65F59966
+  userChecksum: 57E1F9EA5E404569BFC1A3629AEC05F2
 - generatedChecksum: 81B242E57B5D600C7571E1880CD8E4E1
   logicalPath: config/mclv2_sam_e54_pim/peripheral/pdec
   name: plib_pdec.c
@@ -650,13 +650,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 55ECCC7FA71BD15B46EF80DC0515ED7A
-- generatedChecksum: 265847151EACC813B7C7825442C21A32
+- generatedChecksum: FD895019D50FEFCD49D89FCE2B0D9BBB
   logicalPath: config/mclv2_sam_e54_pim/peripheral/nvmctrl
   name: plib_nvmctrl.h
   physicalPath: peripheral/nvmctrl
   security: NON_SECURE
   type: HEADER
-  userChecksum: 265847151EACC813B7C7825442C21A32
+  userChecksum: FD895019D50FEFCD49D89FCE2B0D9BBB
 - generatedChecksum: 8DEED6AC64E94E0BBFEC36B7C5D6DFA6
   logicalPath: config/mclv2_sam_e54_pim/peripheral/pdec
   name: plib_pdec.h
