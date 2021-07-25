@@ -54,6 +54,7 @@ These applications contain static algorithm code and peripherals are configured 
 | Name | Description|Control Board|Inverter Board|
 |:-----|:-----------|:------------|:-------------|
 | [PMSM FOC Position Control using Quadrature Encoder](apps/pmsm_foc_encoder_position_sam_e54/readme.md) | Sensor Position Control PMSM using Quadrature Encoder |[ATSAME54 Motor Control Plugin Module](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/MA320207) | [dsPICDEM™ MCLV-2 Support](https://www.microchip.com/DevelopmentTools/ProductDetails/DM330021-2) <br  />[dsPICDEM™ MCHV-3 Support](https://www.microchip.com/developmenttools/ProductDetails/dm330023-3) |
+| [PMSM FOC Control using Hall Sensor](apps/pmsm_foc_hall_sam_e54/readme.md) | Sensor field oriented control of PMSM using Hall Sensor |[ATSAME54 Motor Control Plugin Module](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/MA320207) | [dsPICDEM™ MCLV-2 Support](https://www.microchip.com/DevelopmentTools/ProductDetails/DM330021-2) |
 |||||
 
 

@@ -23,5 +23,6 @@ has_toc: false
 | [MCLV2 Setup for Sensorless Mode](mclv2_atsame54_pim_sensorless.md) | Hardware setup of MCLV2 development board for sensorless mode |
 | [MCLV2 Setup for Quadrature Encoder Mode](mclv2_atsame54_pim_encoder.md) | Hardware setup of MCLV2 development board for encoder mode |
 | [MCLV2 Setup for Position control](mclv2_atsame54_pim_position.md) | Hardware setup of MCLV2 development board for position control with encoder |
+| [MCLV2 Setup for Hall Sensor](mclv2_atsame54_pim_hall.md) | Hardware setup of MCLV2 development board for Hall Sensor |
 |||
  
