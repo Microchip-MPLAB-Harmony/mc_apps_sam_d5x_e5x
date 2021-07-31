@@ -1,5 +1,5 @@
 ---
-parent: Motor Control Application Examples for SAM D5x/E5x family
+parent: Microchip MPLAB® Harmony 3 Motor Control Application Examples for SAM D5x/E5x family
 title: FOC Based Position Control of PMSM using Quadrature Encoder
 has_children: false
 has_toc: false
