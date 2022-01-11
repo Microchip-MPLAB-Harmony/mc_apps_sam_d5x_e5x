@@ -208,7 +208,7 @@ void TCC0_PWMCallbackRegister(TCC_CALLBACK callback, uintptr_t context)
 }
 
 /* Interrupt Handler */
-void TCC0_InterruptHandler(void)
+void TCC0_OTHER_InterruptHandler(void)
 {
     uint32_t status;
     status = (TCC0_REGS->TCC_INTFLAG & 0xFFFFU);
