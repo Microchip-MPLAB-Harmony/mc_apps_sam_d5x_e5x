@@ -101,14 +101,8 @@ void EIC_Initialize (void)
     
 
 
-    /* Debouncer enable */
-    EIC_REGS->EIC_DEBOUNCEN = 0x4U;
 
-    /* Event Control Output enable */
-    EIC_REGS->EIC_EVCTRL = 0x4U;
 
-    /* Debouncer Setting */
-    EIC_REGS->EIC_DPRESCALER = EIC_DPRESCALER_PRESCALER0(0UL) | EIC_DPRESCALER_PRESCALER1(0UL) ;
 
     /* Enable the EIC */
     EIC_REGS->EIC_CTRLA |= (uint8_t)EIC_CTRLA_ENABLE_Msk;

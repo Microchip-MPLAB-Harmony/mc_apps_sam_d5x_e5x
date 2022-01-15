@@ -60,8 +60,6 @@
 #include "peripheral/cmcc/plib_cmcc.h"
 #include "peripheral/adc/plib_adc1.h"
 #include "peripheral/eic/plib_eic.h"
-#include "motor_control/pmsm_foc/mc_userparams.h"
-#include "motor_control/pmsm_foc/mc_pmsm_foc.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility

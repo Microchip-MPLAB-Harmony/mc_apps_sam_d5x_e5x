@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2021-04-16T09:25:23Z */
+/* file generated from device description version 2020-11-23T12:28:26Z */
 #ifndef _SAME54_NVMCTRL_INSTANCE_
 #define _SAME54_NVMCTRL_INSTANCE_
 
@@ -38,6 +38,6 @@
 #define NVMCTRL_PSM_1_FRMFW_FWS_1_MAX_FREQ       _UL_(12000000) 
 #define NVMCTRL_PSM_1_FRMLP_FWS_0_MAX_FREQ       _UL_(8000000) 
 #define NVMCTRL_PSM_1_FRMLP_FWS_1_MAX_FREQ       _UL_(12000000) 
-#define NVMCTRL_INSTANCE_ID                      _UL_(34)   /* Instance index for NVMCTRL */
+#define NVMCTRL_INSTANCE_ID                      _UL_(34)   
 
 #endif /* _SAME54_NVMCTRL_INSTANCE_ */

@@ -135,20 +135,18 @@ void SYS_Initialize ( void* data )
 
     EVSYS_Initialize();
 
-    EIC_Initialize();
-
-    PDEC_QDECInitialize();
-
     TCC0_PWMInitialize();
 
     ADC0_Initialize();
     ADC1_Initialize();
+    EIC_Initialize();
+
+    PDEC_QDECInitialize();
+
 
 
 
     X2CScope_Init();
-    PMSM_FOC_Initialize();
-
 
     NVIC_Initialize();
 

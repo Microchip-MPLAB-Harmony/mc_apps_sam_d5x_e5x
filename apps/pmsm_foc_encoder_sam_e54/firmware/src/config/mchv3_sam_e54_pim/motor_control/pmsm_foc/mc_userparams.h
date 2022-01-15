@@ -58,6 +58,7 @@
 #define POSITION_FEEDBACK                (SENSORED_ENCODER)
 
 #define CONTROL_LOOP                     (SPEED_LOOP)
+
 #define FIELD_WEAKENING                  (DISABLED)  /* If enabled - Field weakening */
 #define ALIGNMENT_METHOD                 (Q_AXIS)  /* alignment method  */
 

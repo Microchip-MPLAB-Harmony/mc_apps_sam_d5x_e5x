@@ -243,7 +243,7 @@ void PMSM_FOC_MotorStop(void)
 /* Function return: None                                                      */
 /* Description: Motor start stop and direction switch polling                 */
 /******************************************************************************/
-void PMSM_FOC_Tasks(void)
+void PMSM_FOC_Tasks()
 {
     /* Speed Loop control tasks */
     if( MCCTRL_LOOP_ACTIVE == PMSM_FOC_IsSpeedLoopActive())
@@ -268,7 +268,7 @@ void PMSM_FOC_Tasks(void)
 /* Function return: None                                                      */
 /* Description: Speed loop Tasks                                              */
 /******************************************************************************/
-void PMSM_FOC_SpeedLoopTasks(void)
+void PMSM_FOC_SpeedLoopTasks()
 {
     if( MCCTRL_LOOP_ACTIVE == PMSM_FOC_IsSpeedLoopActive())
     {
@@ -293,7 +293,7 @@ void PMSM_FOC_SpeedLoopTasks(void)
 /* Function return: None                                                     */
 /* Description: Position loop tasks                                          */
 /*****************************************************************************/
-void MCINF_PositionLoopTasks(void)
+void MCINF_PositionLoopTasks()
 {
     if( MCCTRL_LOOP_ACTIVE == PMSM_FOC_IsPositionLoopActive())
     {
@@ -311,7 +311,7 @@ void MCINF_PositionLoopTasks(void)
 /* Function return: None                                                       */
 /* Description: Button Polling                                                 */
 /*******************************************************************************/
-void PMSM_FOC_ButtonPolling(void)
+void PMSM_FOC_ButtonPolling()
 {
     /* Check whether S2 push button is pressed */
     if( MCAPP_IDLE == gMCCTRL_CtrlParam.mcState )

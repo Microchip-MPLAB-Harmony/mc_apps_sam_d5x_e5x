@@ -295,7 +295,7 @@
           <itemPath>../src/config/mclv2_sam_e54_pim/libc_syscalls.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <itemPath>../src/main.c</itemPath>
+      <itemPath>../src/main_sam_e54_mclv2.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -336,14 +336,14 @@
         <targetDevice>ATSAME54P20A</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>pk4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>3.01</languageToolchainVersion>
+        <languageToolchainVersion>4.00</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAME54_DFP" vendor="Microchip" version="3.5.87"/>
+        <pack name="SAME54_DFP" vendor="Microchip" version="3.6.95"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -451,10 +451,6 @@
         <property key="preprocessor-macros" value=""/>
         <property key="warning-level" value=""/>
       </C32-AS>
-      <C32-CO>
-        <property key="coverage-enable" value=""/>
-        <property key="stack-guidance" value="false"/>
-      </C32-CO>
       <C32-LD>
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>

@@ -98,9 +98,6 @@
 
 typedef enum
 {
-    /* External Interrupt Controller Pin 2 */
-    EIC_PIN_2 = 2,
-
     EIC_PIN_MAX = 16
 
 } EIC_PIN;

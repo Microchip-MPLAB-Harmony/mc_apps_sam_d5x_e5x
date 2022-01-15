@@ -322,7 +322,7 @@
           <itemPath>../src/config/mchv3_sam_e54_pim/libc_syscalls.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <itemPath>../src/main.c</itemPath>
+      <itemPath>../src/main_sam_e54_mchv3.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -342,8 +342,8 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
         <pack name="SAME54_DFP" vendor="Microchip" version="3.6.95"/>
+        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>

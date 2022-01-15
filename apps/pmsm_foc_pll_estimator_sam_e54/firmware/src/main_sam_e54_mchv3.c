@@ -26,6 +26,7 @@
 #include <stdbool.h>                    // Defines true
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "definitions.h"                // SYS function prototypes
+#include "config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_pmsm_foc.h"
 
 
 // *****************************************************************************
@@ -38,6 +39,9 @@ int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
+    
+    /* Initialize motor control modules */
+    PMSM_FOC_Initialize();
 
     while ( true )
     {
@@ -49,7 +53,6 @@ int main ( void )
     }
 
     /* Execution should not come here during normal operation */
-
     return ( EXIT_FAILURE );
 }
 

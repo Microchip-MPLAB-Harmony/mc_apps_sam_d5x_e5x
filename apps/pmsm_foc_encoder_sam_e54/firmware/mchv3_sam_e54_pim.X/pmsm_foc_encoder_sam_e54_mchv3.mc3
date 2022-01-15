@@ -42,10 +42,6 @@
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
       <entry>
-         <string>pmsm_foc</string>
-         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
-      </entry>
-      <entry>
          <string>sercom2</string>
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
@@ -73,16 +69,6 @@
           &lt;/String&gt;
         &lt;/Attributes&gt;
       &lt;/DirectDependency&gt;
-      &lt;DirectCapability dnOrder=&quot;1&quot; id=&quot;x2cScope_Scope&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;pmsm_foc&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;pmsmfoc_X2CSCOPE&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
     &lt;/Attachments&gt;
   &lt;/X2CScope&gt;
 &lt;/X2CScope&gt;
@@ -128,20 +114,7 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="adc0" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;adc0&gt;
-  &lt;adc0 dnOrder=&quot;0&quot;&gt;
-    &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;ADC0_ADC&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;pmsm_foc&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;pmsmfoc_ADC&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-    &lt;/Attachments&gt;
-  &lt;/adc0&gt;
+  &lt;adc0 dnOrder=&quot;0&quot;/&gt;
 &lt;/adc0&gt;
 </value>
       </entry>
@@ -209,7 +182,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;adc0&gt;
   &lt;adc0 dnOrder=&quot;0&quot; id=&quot;ADC_CH_POT&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;adc0&quot; value=&quot;ADC_POSINPUT_AIN6&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;adc0&quot; value=&quot;ADC_POSINPUT_AIN0&quot;/&gt;
     &lt;/Values&gt;
   &lt;/adc0&gt;
 &lt;/adc0&gt;
@@ -231,7 +204,19 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;adc0&gt;
   &lt;adc0 dnOrder=&quot;0&quot; id=&quot;ADC_CONV_TRIGGER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;adc0&quot; value=&quot;HW Event Trigger&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;adc0&quot; value=&quot;Free Run&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;HW Event Trigger&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/adc0&gt;
+&lt;/adc0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="adc0" name="ADC_CTRLA_PRESCALER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;adc0&gt;
+  &lt;adc0 dnOrder=&quot;0&quot; id=&quot;ADC_CTRLA_PRESCALER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;2&quot;/&gt;
     &lt;/Values&gt;
   &lt;/adc0&gt;
 &lt;/adc0&gt;
@@ -243,6 +228,7 @@
   &lt;adc0 dnOrder=&quot;0&quot; id=&quot;ADC_CTRLB_RESSEL&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;adc0&quot; value=&quot;0&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;0&quot;/&gt;
     &lt;/Values&gt;
   &lt;/adc0&gt;
 &lt;/adc0&gt;
@@ -272,6 +258,7 @@
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;adc0&quot; value=&quot;1&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/adc0&gt;
 &lt;/adc0&gt;
@@ -305,6 +292,7 @@
   &lt;adc0 dnOrder=&quot;0&quot; id=&quot;ADC_INPUTCTRL_MUXPOS&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;adc0&quot; value=&quot;0&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;0&quot;/&gt;
     &lt;/Values&gt;
   &lt;/adc0&gt;
 &lt;/adc0&gt;
@@ -315,7 +303,8 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;adc0&gt;
   &lt;adc0 dnOrder=&quot;0&quot; id=&quot;ADC_INTENSET_RESRDY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;adc0&quot; value=&quot;true&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;adc0&quot; value=&quot;false&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/adc0&gt;
 &lt;/adc0&gt;
@@ -449,20 +438,7 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="adc1" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;adc1&gt;
-  &lt;adc1 dnOrder=&quot;0&quot;&gt;
-    &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;ADC1_ADC&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;pmsm_foc&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;pmsmfoc_ADC&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-    &lt;/Attachments&gt;
-  &lt;/adc1&gt;
+  &lt;adc1 dnOrder=&quot;0&quot;/&gt;
 &lt;/adc1&gt;
 </value>
       </entry>
@@ -581,7 +557,8 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;adc1&gt;
   &lt;adc1 dnOrder=&quot;0&quot; id=&quot;ADC_CTRLA_SLAVEEN&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;adc1&quot; value=&quot;true&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;adc1&quot; value=&quot;false&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/adc1&gt;
 &lt;/adc1&gt;
@@ -626,6 +603,7 @@
   &lt;adc1 dnOrder=&quot;0&quot; id=&quot;ADC_INPUTCTRL_MUXPOS&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;adc1&quot; value=&quot;0&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;0&quot;/&gt;
     &lt;/Values&gt;
   &lt;/adc1&gt;
 &lt;/adc1&gt;
@@ -637,6 +615,7 @@
   &lt;adc1 dnOrder=&quot;0&quot; id=&quot;ADC_INTENSET_RESRDY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;adc1&quot; value=&quot;false&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/adc1&gt;
 &lt;/adc1&gt;
@@ -762,24 +741,23 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;569&quot; canvasWidth=&quot;331&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;X2CScope&quot; x=&quot;210&quot; y=&quot;399&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;adc0&quot; x=&quot;208&quot; y=&quot;94&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;adc1&quot; x=&quot;210&quot; y=&quot;165&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;cmsis&quot; x=&quot;310&quot; y=&quot;60&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;core&quot; x=&quot;500&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;dfp&quot; x=&quot;300&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;eic&quot; x=&quot;37&quot; y=&quot;108&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;evsys&quot; x=&quot;160&quot; y=&quot;19&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;nvmctrl&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;pdec&quot; x=&quot;210&quot; y=&quot;315&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;pmsm_foc&quot; x=&quot;457&quot; y=&quot;173&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;sercom2&quot; x=&quot;19&quot; y=&quot;399&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;tcc0&quot; x=&quot;210&quot; y=&quot;237&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;X2CScope&quot; x=&quot;192&quot; y=&quot;433&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;adc0&quot; x=&quot;28&quot; y=&quot;224&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;adc1&quot; x=&quot;169&quot; y=&quot;223&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;cmsis&quot; x=&quot;161&quot; y=&quot;100&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;core&quot; x=&quot;159&quot; y=&quot;135&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;dfp&quot; x=&quot;294&quot; y=&quot;45&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;eic&quot; x=&quot;30&quot; y=&quot;123&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;evsys&quot; x=&quot;160&quot; y=&quot;43&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;nvmctrl&quot; x=&quot;28&quot; y=&quot;43&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;pdec&quot; x=&quot;28&quot; y=&quot;301&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;sercom2&quot; x=&quot;28&quot; y=&quot;436&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;tcc0&quot; x=&quot;310&quot; y=&quot;221&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;413&quot; canvasWidth=&quot;585&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -1008,6 +986,17 @@
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="CoreMainFileName"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;CoreMainFileName&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;main_sam_e54_mchv3&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
 </value>
@@ -1762,7 +1751,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_85_0_HANDLER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;TCC0_InterruptHandler&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;TCC0_OTHER_InterruptHandler&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1795,7 +1784,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_86_0_HANDLER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;TCC0_Handler&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;TCC0_MC0_Handler&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1828,7 +1817,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_87_0_HANDLER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;TCC0_Handler&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;TCC0_MC1_Handler&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1861,7 +1850,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_88_0_HANDLER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;TCC0_Handler&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;TCC0_MC2_Handler&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1894,7 +1883,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_89_0_HANDLER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;TCC0_Handler&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;TCC0_MC3_Handler&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1927,7 +1916,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_90_0_HANDLER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;TCC0_Handler&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;TCC0_MC4_Handler&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -1960,7 +1949,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;NVIC_91_0_HANDLER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;TCC0_Handler&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;TCC0_MC5_Handler&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3533,7 +3522,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;TCC0_MC0_INTERRUPT_HANDLER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;TCC0_Handler&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;TCC0_MC0_Handler&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3577,7 +3566,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;TCC0_MC1_INTERRUPT_HANDLER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;TCC0_Handler&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;TCC0_MC1_Handler&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3621,7 +3610,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;TCC0_MC2_INTERRUPT_HANDLER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;TCC0_Handler&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;TCC0_MC2_Handler&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3665,7 +3654,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;TCC0_MC3_INTERRUPT_HANDLER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;TCC0_Handler&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;TCC0_MC3_Handler&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3709,7 +3698,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;TCC0_MC4_INTERRUPT_HANDLER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;TCC0_Handler&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;TCC0_MC4_Handler&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3753,7 +3742,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;TCC0_MC5_INTERRUPT_HANDLER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;TCC0_Handler&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;TCC0_MC5_Handler&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3797,7 +3786,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;TCC0_OTHER_INTERRUPT_HANDLER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;TCC0_InterruptHandler&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;TCC0_OTHER_InterruptHandler&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3851,7 +3840,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;eic&gt;
   &lt;eic dnOrder=&quot;0&quot; id=&quot;EIC_CHAN_2&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;true&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/eic&gt;
 &lt;/eic&gt;
@@ -3866,6 +3855,9 @@
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/eic&gt;
 &lt;/eic&gt;
 </value>
@@ -3875,7 +3867,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;eic&gt;
   &lt;eic dnOrder=&quot;0&quot; id=&quot;EIC_CONFIG_SENSE_2&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;2&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;2&quot;/&gt;
     &lt;/Values&gt;
   &lt;/eic&gt;
 &lt;/eic&gt;
@@ -3902,7 +3894,7 @@
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;true&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/eic&gt;
 &lt;/eic&gt;
@@ -3913,7 +3905,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;eic&gt;
   &lt;eic dnOrder=&quot;0&quot; id=&quot;EIC_EXTINTEO&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;eic&quot; value=&quot;4&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;eic&quot; value=&quot;0&quot;/&gt;
     &lt;/Values&gt;
   &lt;/eic&gt;
 &lt;/eic&gt;
@@ -3963,7 +3955,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
   &lt;evsys dnOrder=&quot;0&quot; id=&quot;EVSYS_CHANNEL_0&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;true&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/evsys&gt;
 &lt;/evsys&gt;
@@ -3974,7 +3966,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
   &lt;evsys dnOrder=&quot;0&quot; id=&quot;EVSYS_CHANNEL_0_EDGE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;1&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/evsys&gt;
 &lt;/evsys&gt;
@@ -3985,7 +3977,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
   &lt;evsys dnOrder=&quot;0&quot; id=&quot;EVSYS_CHANNEL_0_GENERATOR&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;91&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;91&quot;/&gt;
     &lt;/Values&gt;
   &lt;/evsys&gt;
 &lt;/evsys&gt;
@@ -4018,7 +4010,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
   &lt;evsys dnOrder=&quot;0&quot; id=&quot;EVSYS_CHANNEL_1&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;true&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/evsys&gt;
 &lt;/evsys&gt;
@@ -4249,7 +4241,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
   &lt;evsys dnOrder=&quot;0&quot; id=&quot;EVSYS_CHANNEL_1_EDGE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;1&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/evsys&gt;
 &lt;/evsys&gt;
@@ -4260,7 +4252,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
   &lt;evsys dnOrder=&quot;0&quot; id=&quot;EVSYS_CHANNEL_1_GENERATOR&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;27&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;27&quot;/&gt;
     &lt;/Values&gt;
   &lt;/evsys&gt;
 &lt;/evsys&gt;
@@ -4271,7 +4263,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
   &lt;evsys dnOrder=&quot;0&quot; id=&quot;EVSYS_CHANNEL_1_GENERATOR_ACTIVE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;evsys&quot; value=&quot;true&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;evsys&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/evsys&gt;
 &lt;/evsys&gt;
@@ -4771,7 +4763,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
   &lt;evsys dnOrder=&quot;0&quot; id=&quot;EVSYS_USER_18&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;2&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;2&quot;/&gt;
     &lt;/Values&gt;
   &lt;/evsys&gt;
 &lt;/evsys&gt;
@@ -4782,7 +4774,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
   &lt;evsys dnOrder=&quot;0&quot; id=&quot;EVSYS_USER_55&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;1&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/evsys&gt;
 &lt;/evsys&gt;
@@ -4793,7 +4785,73 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
   &lt;evsys dnOrder=&quot;0&quot; id=&quot;GENERATOR_EIC_EXTINT_2_ACTIVE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;eic&quot; value=&quot;true&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;eic&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/evsys&gt;
+&lt;/evsys&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="evsys" name="GENERATOR_TCC0_MC_0_ACTIVE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
+  &lt;evsys dnOrder=&quot;0&quot; id=&quot;GENERATOR_TCC0_MC_0_ACTIVE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/evsys&gt;
+&lt;/evsys&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="evsys" name="GENERATOR_TCC0_MC_1_ACTIVE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
+  &lt;evsys dnOrder=&quot;0&quot; id=&quot;GENERATOR_TCC0_MC_1_ACTIVE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/evsys&gt;
+&lt;/evsys&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="evsys" name="GENERATOR_TCC0_MC_2_ACTIVE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
+  &lt;evsys dnOrder=&quot;0&quot; id=&quot;GENERATOR_TCC0_MC_2_ACTIVE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/evsys&gt;
+&lt;/evsys&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="evsys" name="GENERATOR_TCC0_MC_3_ACTIVE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
+  &lt;evsys dnOrder=&quot;0&quot; id=&quot;GENERATOR_TCC0_MC_3_ACTIVE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/evsys&gt;
+&lt;/evsys&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="evsys" name="GENERATOR_TCC0_MC_4_ACTIVE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
+  &lt;evsys dnOrder=&quot;0&quot; id=&quot;GENERATOR_TCC0_MC_4_ACTIVE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/evsys&gt;
+&lt;/evsys&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="evsys" name="GENERATOR_TCC0_MC_5_ACTIVE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
+  &lt;evsys dnOrder=&quot;0&quot; id=&quot;GENERATOR_TCC0_MC_5_ACTIVE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/evsys&gt;
 &lt;/evsys&gt;
@@ -4866,11 +4924,88 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="evsys" name="USER_TCC0_EV_0_READY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
+  &lt;evsys dnOrder=&quot;0&quot; id=&quot;USER_TCC0_EV_0_READY&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/evsys&gt;
+&lt;/evsys&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="evsys" name="USER_TCC0_EV_1_READY"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
   &lt;evsys dnOrder=&quot;0&quot; id=&quot;USER_TCC0_EV_1_READY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/evsys&gt;
+&lt;/evsys&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="evsys" name="USER_TCC0_MC_0_READY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
+  &lt;evsys dnOrder=&quot;0&quot; id=&quot;USER_TCC0_MC_0_READY&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/evsys&gt;
+&lt;/evsys&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="evsys" name="USER_TCC0_MC_1_READY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
+  &lt;evsys dnOrder=&quot;0&quot; id=&quot;USER_TCC0_MC_1_READY&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/evsys&gt;
+&lt;/evsys&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="evsys" name="USER_TCC0_MC_2_READY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
+  &lt;evsys dnOrder=&quot;0&quot; id=&quot;USER_TCC0_MC_2_READY&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/evsys&gt;
+&lt;/evsys&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="evsys" name="USER_TCC0_MC_3_READY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
+  &lt;evsys dnOrder=&quot;0&quot; id=&quot;USER_TCC0_MC_3_READY&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/evsys&gt;
+&lt;/evsys&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="evsys" name="USER_TCC0_MC_4_READY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
+  &lt;evsys dnOrder=&quot;0&quot; id=&quot;USER_TCC0_MC_4_READY&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/evsys&gt;
+&lt;/evsys&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="evsys" name="USER_TCC0_MC_5_READY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;evsys&gt;
+  &lt;evsys dnOrder=&quot;0&quot; id=&quot;USER_TCC0_MC_5_READY&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/evsys&gt;
 &lt;/evsys&gt;
@@ -4899,18 +5034,8 @@
       &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;PDEC_HALL&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
           &lt;/Boolean&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-      &lt;DirectCapability dnOrder=&quot;1&quot; id=&quot;PDEC_QDEC&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;pmsm_foc&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;pmsmfoc_QDEC&lt;/Value&gt;
-          &lt;/String&gt;
         &lt;/Attributes&gt;
       &lt;/DirectCapability&gt;
     &lt;/Attachments&gt;
@@ -5000,6 +5125,9 @@
         &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1023&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/pdec&gt;
 &lt;/pdec&gt;
 </value>
@@ -5080,7 +5208,8 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pdec&gt;
   &lt;pdec dnOrder=&quot;0&quot; id=&quot;PDEC_CTRLA_ANGULAR&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pdec&quot; value=&quot;16&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pdec&quot; value=&quot;10&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;16&quot;/&gt;
     &lt;/Values&gt;
   &lt;/pdec&gt;
 &lt;/pdec&gt;
@@ -5103,6 +5232,7 @@
   &lt;pdec dnOrder=&quot;0&quot; id=&quot;PDEC_CTRLA_MODE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pdec&quot; value=&quot;0&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;0&quot;/&gt;
     &lt;/Values&gt;
   &lt;/pdec&gt;
 &lt;/pdec&gt;
@@ -5207,6 +5337,7 @@
   &lt;pdec dnOrder=&quot;0&quot; id=&quot;PDEC_INDEX&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pdec&quot; value=&quot;Disabled&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;Disabled&quot;/&gt;
     &lt;/Values&gt;
   &lt;/pdec&gt;
 &lt;/pdec&gt;
@@ -5271,991 +5402,6 @@
     &lt;/Attributes&gt;
   &lt;/pdec&gt;
 &lt;/pdec&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="!@#harmonyAttachmentState"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot;&gt;
-    &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;MultiCapability dnOrder=&quot;0&quot; id=&quot;pmsmfoc_ADC&quot;&gt;
-        &lt;TargetAttachments dnOrder=&quot;0&quot;&gt;
-          &lt;TargetAttachment dnOrder=&quot;0&quot; targetAttachmentID=&quot;ADC0_ADC&quot; targetComponentID=&quot;adc0&quot;/&gt;
-          &lt;TargetAttachment dnOrder=&quot;1&quot; targetAttachmentID=&quot;ADC1_ADC&quot; targetComponentID=&quot;adc1&quot;/&gt;
-        &lt;/TargetAttachments&gt;
-      &lt;/MultiCapability&gt;
-      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;pmsmfoc_PWM&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;tcc0&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;TCC0_PWM&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectDependency&gt;
-      &lt;DirectDependency dnOrder=&quot;2&quot; id=&quot;pmsmfoc_QDEC&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;pdec&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;PDEC_QDEC&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;Boolean dnOrder=&quot;2&quot; id=&quot;enabled&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-          &lt;/Boolean&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectDependency&gt;
-      &lt;DirectDependency dnOrder=&quot;3&quot; id=&quot;pmsmfoc_X2CSCOPE&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;X2CScope&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;x2cScope_Scope&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectDependency&gt;
-    &lt;/Attachments&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="#&amp;__MCC_Group_Parrent_id"/>
-         <value>__ROOTVIEW</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_ADCPLIB"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_ADCPLIB&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;adc0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_ADCPLIB1"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_ADCPLIB1&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;adc1&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_ADC_BOARD_DEP"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_ADC_BOARD_DEP&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;false&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_ADC_DEP"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_ADC_DEP&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;1&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_ADC_MAX"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_ADC_MAX&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;4095&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_ALIGNMENT"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_ALIGNMENT&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_BEMF_CONST"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_BEMF_CONST&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;44.38&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_BOARD_SEL"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_BOARD_SEL&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;2&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_CL_BANDWIDTH"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_CL_BANDWIDTH&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;2000.0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_DCBUSV_CH"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_DCBUSV_CH&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Integer dnOrder=&quot;0&quot; id=&quot;max&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;15&lt;/Value&gt;
-      &lt;/Integer&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;14&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_DCBUSV_MODULE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_DCBUSV_MODULE&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Integer dnOrder=&quot;0&quot; id=&quot;max&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;1&lt;/Value&gt;
-      &lt;/Integer&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;1&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_DC_BUS_RATIO"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_DC_BUS_RATIO&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0.0076601673&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_DC_BUS_RBOTTOM"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_DC_BUS_RBOTTOM&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;2.2&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_DC_BUS_RTOP"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_DC_BUS_RTOP&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;285.0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_DC_BUS_VOLT"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_DC_BUS_VOLT&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;400.0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_DIRECTION_BUTTON"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_DIRECTION_BUTTON&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;94&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_DIRECTION_LED"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_DIRECTION_LED&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;55&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_ENCODERPLIB"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_ENCODERPLIB&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;pdec&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_ENCODER_COMMENT"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_ENCODER_COMMENT&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_FAULT_LED"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_FAULT_LED&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;56&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_FLYING_START"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_FLYING_START&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;false&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_FLYING_START_CL_BANDWIDTH"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_FLYING_START_CL_BANDWIDTH&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;2000.0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_FLYING_START_COMMENT"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_FLYING_START_COMMENT&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_FLYING_START_ID_KI"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_FLYING_START_ID_KI&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0.0099&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_FLYING_START_ID_KP"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_FLYING_START_ID_KP&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0.2&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_FLYING_START_IQ_KI"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_FLYING_START_IQ_KI&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0.0099&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_FLYING_START_IQ_KP"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_FLYING_START_IQ_KP&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0.2&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_ID_KI"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_ID_KI&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;9.9E-5&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_ID_KP"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_ID_KP&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0.02&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_INTERM_FLYING_START"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_INTERM_FLYING_START&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;false&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_IQ_KI"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_IQ_KI&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;9.9E-5&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_IQ_KP"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_IQ_KP&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0.02&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_IU_OPAMP_GAIN"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_IU_OPAMP_GAIN&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;10.06&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_IU_OPAMP_OFFSET"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_IU_OPAMP_OFFSET&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;1.65&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_IU_OPAMP_SHUNT_R"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_IU_OPAMP_SHUNT_R&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0.01&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_IV_OPAMP_GAIN"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_IV_OPAMP_GAIN&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;10.06&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_IV_OPAMP_OFFSET"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_IV_OPAMP_OFFSET&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;1.65&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_IV_OPAMP_SHUNT_R"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_IV_OPAMP_SHUNT_R&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0.01&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_LD"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_LD&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0.00253&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_LQ"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_LQ&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0.00253&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_MAX_CURRENT"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_MAX_CURRENT&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;16.40159&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_MAX_MOTOR_CURRENT"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_MAX_MOTOR_CURRENT&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;4.0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_MAX_SPEED"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_MAX_SPEED&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;5000.0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_MOTOR_CONNECTION"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_MOTOR_CONNECTION&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_MOTOR_SEL"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_MOTOR_SEL&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;3&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_OL_END_SPEED"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_OL_END_SPEED&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_OL_RAMP_TIME"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_OL_RAMP_TIME&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_PHASEU_CH"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_PHASEU_CH&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Integer dnOrder=&quot;0&quot; id=&quot;max&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;15&lt;/Value&gt;
-      &lt;/Integer&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_PHASEU_MODULE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_PHASEU_MODULE&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Integer dnOrder=&quot;0&quot; id=&quot;max&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;1&lt;/Value&gt;
-      &lt;/Integer&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_PHASEV_CH"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_PHASEV_CH&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Integer dnOrder=&quot;0&quot; id=&quot;max&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;15&lt;/Value&gt;
-      &lt;/Integer&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_PHASEV_MODULE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_PHASEV_MODULE&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Integer dnOrder=&quot;0&quot; id=&quot;max&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;1&lt;/Value&gt;
-      &lt;/Integer&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;1&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_PLL"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_PLL&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_PLL_ED_FILTER"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_PLL_ED_FILTER&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0.122&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_PLL_EQ_FILTER"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_PLL_EQ_FILTER&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0.122&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_PLL_SPEED_FILTER"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_PLL_SPEED_FILTER&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0.122&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_POLE_PAIRS"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_POLE_PAIRS&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;5.0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_POSITION_FB"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_POSITION_FB&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_POS_PLL_HEADER"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_POS_PLL_HEADER&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_POS_PLL_SOURCE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_POS_PLL_SOURCE&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;enabled&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_POT_CH"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_POT_CH&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Integer dnOrder=&quot;0&quot; id=&quot;max&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;15&lt;/Value&gt;
-      &lt;/Integer&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;6&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_POT_MODULE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_POT_MODULE&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Integer dnOrder=&quot;0&quot; id=&quot;max&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;1&lt;/Value&gt;
-      &lt;/Integer&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_PWMPLIB"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_PWMPLIB&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;tcc0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_PWM_BOARD_DEP"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_PWM_BOARD_DEP&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;false&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_PWM_DEAD_TIME"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_PWM_DEAD_TIME&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;2.0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_PWM_FAULT"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_PWM_FAULT&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;2&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_PWM_FREQ"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_PWM_FREQ&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;20000&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_PWM_PH_U"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_PWM_PH_U&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Integer dnOrder=&quot;0&quot; id=&quot;max&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;3&lt;/Value&gt;
-      &lt;/Integer&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_PWM_PH_V"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_PWM_PH_V&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Integer dnOrder=&quot;0&quot; id=&quot;max&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;3&lt;/Value&gt;
-      &lt;/Integer&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;1&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_PWM_PH_W"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_PWM_PH_W&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Integer dnOrder=&quot;0&quot; id=&quot;max&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;3&lt;/Value&gt;
-      &lt;/Integer&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;2&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_QE_PULSES_PER_REV"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_QE_PULSES_PER_REV&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
-      &lt;/Boolean&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;2500&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_R"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_R&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;1.39&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_RATED_SPEED"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_RATED_SPEED&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;3000.0&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_SPEED_KI"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_SPEED_KI&quot;&gt;
-    &lt;Attributes dnOrder=&quot;0&quot;&gt;
-      &lt;String dnOrder=&quot;0&quot; id=&quot;label&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;Ki&amp;amp;#160;(*&amp;amp;#160;0.01)&amp;amp;#160;&lt;/Value&gt;
-      &lt;/String&gt;
-    &lt;/Attributes&gt;
-    &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;2.0E-6&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_SPEED_KP"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_SPEED_KP&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0.005&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_START_BUTTON"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_START_BUTTON&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;92&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_X2CScope"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_X2CScope&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;X2CScope&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
 </value>
       </entry>
       <entry>
@@ -6578,20 +5724,7 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcc0" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcc0&gt;
-  &lt;tcc0 dnOrder=&quot;0&quot;&gt;
-    &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;TCC0_PWM&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;pmsm_foc&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;pmsmfoc_PWM&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-    &lt;/Attachments&gt;
-  &lt;/tcc0&gt;
+  &lt;tcc0 dnOrder=&quot;0&quot;/&gt;
 &lt;/tcc0&gt;
 </value>
       </entry>
@@ -6801,6 +5934,7 @@
   &lt;tcc0 dnOrder=&quot;0&quot; id=&quot;TCC_0_WEXCTRL_DTIEN&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;true&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcc0&gt;
 &lt;/tcc0&gt;
@@ -6865,6 +5999,7 @@
   &lt;tcc0 dnOrder=&quot;0&quot; id=&quot;TCC_1_WEXCTRL_DTIEN&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;true&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcc0&gt;
 &lt;/tcc0&gt;
@@ -6929,6 +6064,7 @@
   &lt;tcc0 dnOrder=&quot;0&quot; id=&quot;TCC_2_WEXCTRL_DTIEN&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;true&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcc0&gt;
 &lt;/tcc0&gt;
@@ -6972,6 +6108,17 @@
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
+  &lt;/tcc0&gt;
+&lt;/tcc0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcc0" name="TCC_3_WEXCTRL_DTIEN"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcc0&gt;
+  &lt;tcc0 dnOrder=&quot;0&quot; id=&quot;TCC_3_WEXCTRL_DTIEN&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/tcc0&gt;
 &lt;/tcc0&gt;
 </value>
@@ -7093,6 +6240,28 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcc0" name="TCC_CAPTURE_INTERRUPT_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcc0&gt;
+  &lt;tcc0 dnOrder=&quot;0&quot; id=&quot;TCC_CAPTURE_INTERRUPT_MODE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/tcc0&gt;
+&lt;/tcc0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcc0" name="TCC_COMPARE_INTERRUPT_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcc0&gt;
+  &lt;tcc0 dnOrder=&quot;0&quot; id=&quot;TCC_COMPARE_INTERRUPT_MODE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/tcc0&gt;
+&lt;/tcc0&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcc0" name="TCC_COMPARE_PERIOD_COMMENT"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcc0&gt;
   &lt;tcc0 dnOrder=&quot;0&quot; id=&quot;TCC_COMPARE_PERIOD_COMMENT&quot;&gt;
@@ -7175,7 +6344,8 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcc0&gt;
   &lt;tcc0 dnOrder=&quot;0&quot; id=&quot;TCC_EVCTRL_EVACT1&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;5&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;0&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;5&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcc0&gt;
 &lt;/tcc0&gt;
@@ -7187,6 +6357,7 @@
   &lt;tcc0 dnOrder=&quot;0&quot; id=&quot;TCC_EVCTRL_OVFEO&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;true&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcc0&gt;
 &lt;/tcc0&gt;
@@ -7254,7 +6425,8 @@
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;true&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;false&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcc0&gt;
 &lt;/tcc0&gt;
@@ -7272,11 +6444,23 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcc0" name="TCC_OPERATION_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcc0&gt;
+  &lt;tcc0 dnOrder=&quot;0&quot; id=&quot;TCC_OPERATION_MODE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;PWM&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/tcc0&gt;
+&lt;/tcc0&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcc0" name="TCC_PER_PER"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcc0&gt;
   &lt;tcc0 dnOrder=&quot;0&quot; id=&quot;TCC_PER_PER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;1500&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;1500&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcc0&gt;
 &lt;/tcc0&gt;
@@ -7286,6 +6470,17 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcc0" name="TCC_PWM_INTERRUPT_MODE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcc0&gt;
   &lt;tcc0 dnOrder=&quot;0&quot; id=&quot;TCC_PWM_INTERRUPT_MODE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/tcc0&gt;
+&lt;/tcc0&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="tcc0" name="TCC_TIMER_INTERRUPT_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcc0&gt;
+  &lt;tcc0 dnOrder=&quot;0&quot; id=&quot;TCC_TIMER_INTERRUPT_MODE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
@@ -7310,6 +6505,7 @@
   &lt;tcc0 dnOrder=&quot;0&quot; id=&quot;TCC_WAVE_WAVEGEN&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;1&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcc0&gt;
 &lt;/tcc0&gt;
@@ -7320,7 +6516,8 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcc0&gt;
   &lt;tcc0 dnOrder=&quot;0&quot; id=&quot;TCC_WEXCTRL_DTHS&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;120&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;60&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;60&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcc0&gt;
 &lt;/tcc0&gt;
@@ -7331,7 +6528,8 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;tcc0&gt;
   &lt;tcc0 dnOrder=&quot;0&quot; id=&quot;TCC_WEXCTRL_DTLS&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;120&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;tcc0&quot; value=&quot;60&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;60&quot;/&gt;
     &lt;/Values&gt;
   &lt;/tcc0&gt;
 &lt;/tcc0&gt;
@@ -7361,7 +6559,7 @@
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\peripheral\eic\plib_eic.c</file>
-         <hash>0a5b54e14647cc8ae7c26e84202512a936454d3673ec267834d844dcd8e13e8c</hash>
+         <hash>7e4e94113b177fc7a07ce1342a13b735ebcee9aeb4b16356bb5db8008194d697</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc3.h</file>
@@ -7388,6 +6586,10 @@
          <hash>b992e6e8f1fd8c94e1a763aa9e00d6db6e72b0fe1bbf27286d68f6135b5f4f33</hash>
       </entry>
       <entry>
+         <file>..\src\main_sam_e54_mchv3.c</file>
+         <hash>d3c233d419e6304bfacbafc18cc68c0f5c26e365f23b20ea40ccfac458f664c5</hash>
+      </entry>
+      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pac.h</file>
          <hash>76fca352c9c26cc746ae966726daf347c3e069dd4ff934c5d30cc87cb8928f4a</hash>
       </entry>
@@ -7404,16 +6606,16 @@
          <hash>c615bbfba0692f4d2b02c465687b8960be2f70d73758f8130a4f384d81fee5f2</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\peripheral\eic\plib_eic.h</file>
-         <hash>6657ff42b27f30a76a76d6c30dcf47356378ea8de466efd132677f732c0da7dc</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\gclk.h</file>
          <hash>7ada448634d8700b4b5eef65bc319bff354229531c00e8aa10c7b534f10ba31e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\trng.h</file>
          <hash>0c8092501d5c3954460ebd9056e12cbfb8c64528bf6b81fd7c7cacd3a96f3832</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\peripheral\eic\plib_eic.h</file>
+         <hash>6657ff42b27f30a76a76d6c30dcf47356378ea8de466efd132677f732c0da7dc</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\cmcc.h</file>
@@ -7432,16 +6634,12 @@
          <hash>7c1bd6780a1fbcc40c75067995025ce73a93ec7eed4231ee16afd4e99d8d0b9a</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_control_loop.h</file>
-         <hash>c82344b483b9fb3f1d6e69f6e0d760812e77f5e79a965d280eaae05d0c17eb1c</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\eic.h</file>
          <hash>12d558e9e19b34fcb458b11d50b2a9084143ed416d668b856c0c70a8e71a739d</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\definitions.h</file>
-         <hash>e9fc9e8be6afaf55bff70d3c0531b5b8b522286a24c9869081cd8389d603f127</hash>
+         <hash>a2fea76ef39d0a4ecb131865675b9c78fcec740c8f447120834d35ebc297cd54</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc4.h</file>
@@ -7472,24 +6670,12 @@
          <hash>81e813a093101d546799e00723cbf7245e2d18471fa51c8d130c5809cecca03e</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_control_loop.c</file>
-         <hash>79e8494eb9e2ba27ef3c3b45847277ff4fcbdc9e51b7afee36b444785a5687c1</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\usb.h</file>
          <hash>93915ec37587d35362eeeb0fc3fa2322fb456b3c0d1d11e611df182aaea4cb9e</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_currmeasurement.h</file>
-         <hash>f69c2c2c0b582f453971cccd64fe5091e6709b561cf72b7dd39c713c799a3110</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\osc32kctrl.h</file>
          <hash>883fc09543652fd863e9111e16084e31cb7dbad35cbff5af72270e33fbe07130</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_voltagemeasurement.c</file>
-         <hash>984ee17a6e7f4d80b0eb5bf24b674fc58a083e08badc3a87e648a3a845222b65</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\osc32kctrl.h</file>
@@ -7508,20 +6694,8 @@
          <hash>fe75e66581ef99bdb520569387d5abf77fc8b3b2acc944bd034e6909a86fad8d</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_pwm.c</file>
-         <hash>567747c8ae6133602c2ff5212350120fc4cab81d0b69122348b99d24239378db</hash>
-      </entry>
-      <entry>
          <file>..\src\config\mchv3_sam_e54_pim\peripheral\nvic\plib_nvic.c</file>
          <hash>e8a748e5c5e4da260ff08ba740d9abe11fee66a02cb123224531e46546e17421</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_pwm.h</file>
-         <hash>7c7a3f00e246e5eb7b558e2ca3ef1b91fc4e67aeced4f10d6bb55d292e62e89c</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_voltagemeasurement.h</file>
-         <hash>5bad01e25bd6cfdce4c966895c4899b5fc4e4fbbc42225a4228c1d3dcfdf2f40</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom1.h</file>
@@ -7532,20 +6706,12 @@
          <hash>bdc3f316abc20688399b3f3c7a7413c04071657809c3b17d046fd10b8f4ad4b6</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_speed.c</file>
-         <hash>42ac8fc0f21f60e935b6e3002afa3fba335cf8dd47bca3e2e6ea227bd9fe292d</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_hal.h</file>
-         <hash>b508c70c38d2a77ff8ec616bfa6a91ea6cf0a24525b158b56950d1f99151281f</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\rtc.h</file>
          <hash>cca9ecde250e7156cd0de6016e6e5a21522d75467b3df0760ecc06d4b166ed0c</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\initialization.c</file>
-         <hash>d8b9fb64cdd713347ad5ddbca66216378ecd207d6d79ddc42818729865368914</hash>
+         <hash>ad1d01a74d634ff61c58b16786996c008b6d9a207e92dbcc00014904fcb1e7fa</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\fuses.h</file>
@@ -7556,16 +6722,16 @@
          <hash>c0a843a7ac6464f0f1231134ea9afd9f4d03e294e0462c57dab2f4dfb1ca0bcb</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\peripheral\pdec\plib_pdec_common.h</file>
-         <hash>bc0c1227170daadc5927cb1c3054503ce29ff12c2b728eaf12c7c83390c63e13</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\port.h</file>
          <hash>de1105304d3693578b62a9112a9bfdc085f80428f994a93bf7c01d8ef4a57d96</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\mpu_armv7.h</file>
          <hash>de1b5eb9ed566527b66dc06f4ecb6a43ab6800f7dac47e87c9cb42984dca41bb</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\peripheral\pdec\plib_pdec_common.h</file>
+         <hash>bc0c1227170daadc5927cb1c3054503ce29ff12c2b728eaf12c7c83390c63e13</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc4.h</file>
@@ -7580,20 +6746,12 @@
          <hash>d42f9a50c6d89fcc1d966962245819fe93d77dda89e847691d1b93f2a3b1d30a</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_rotorposition.h</file>
-         <hash>6c122dbfe3965d39b0c1826ace0e721968ef4882443a1761e788658df7a4d2af</hash>
-      </entry>
-      <entry>
          <file>..\src\config\mchv3_sam_e54_pim\device.h</file>
          <hash>68bb28accb617ce48b644e0b41a8f8a1aab2e1025456ba49a5a4bd72bf8e9fe8</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pm.h</file>
          <hash>ab73313f3760d63aa12a03b580c76d62922cde31c863ca0affb859777e3c2036</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_rotorposition.c</file>
-         <hash>e7d35400151c7b555d30306b1c05d47494eb55a4756ba4b485955d1e444940fb</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc1.h</file>
@@ -7685,7 +6843,7 @@
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\peripheral\port\plib_port.c</file>
-         <hash>3e32058ec4432758402cdc6f305cf1a73c788dc64ca78911e02df9f8b4abda8d</hash>
+         <hash>9748f3d89f243539e374f2aa829001fcbb7da0d4f1c7549143371b339513173e</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\device_vectors.h</file>
@@ -7696,10 +6854,6 @@
          <hash>1a7aa79094b5f7c9860b6fd8c8304e38e643204137c880ffb078d724c06e1bf1</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_errorhandler.c</file>
-         <hash>dec142db22d68ea9fdd4f295249a9b49bc2dee45204b867870eeb87c87b4bd0c</hash>
-      </entry>
-      <entry>
          <file>..\src\config\mchv3_sam_e54_pim\peripheral\clock\plib_clock.c</file>
          <hash>63a33add8731c520236147b06b88816c6f946de6240566c45229efa31bdc2bfd</hash>
       </entry>
@@ -7708,20 +6862,12 @@
          <hash>3ec013593edf39000df359408205a1f012fba3df3b88ce90f09c5115522d81cb</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_errorhandler.h</file>
-         <hash>a2b1a0584983aa578fb0d2cfc9b3e39902969fe7938305d4da78464c2d64e69f</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\oscctrl.h</file>
          <hash>bb99b225ef227789e33b3fafc06400f6c55af0a47ba888c6fbab88b7587efbc2</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\X2CCode\X2CScope\src\X2CScope.c</file>
          <hash>8dcc8745b5a12a4c35c2893d601be3df1cfb4d522d7cb0d37627a2c3b629e7e0</hash>
-      </entry>
-      <entry>
-         <file>..\src\main.c</file>
-         <hash>d3c233d419e6304bfacbafc18cc68c0f5c26e365f23b20ea40ccfac458f664c5</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\evsys.h</file>
@@ -7774,10 +6920,6 @@
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\libc_syscalls.c</file>
          <hash>ff03e955db4f7bb775c7989bc2254553698f3d921e9885caac347ccd118e55d7</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_userparams.h</file>
-         <hash>d84f33eeb50d9d7fad8779cd9e6ba3580ad877bcba0b51b4f11201d326215ebb</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\i2s.h</file>
@@ -7844,24 +6986,16 @@
          <hash>258d690f9c39cb3ce866201571022ed27e6bcb9e8ccdb046f880349686df0fed</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_pmsm_foc.h</file>
-         <hash>00807c0b2d708568271fcba0d862f5751a5d8f6ba87fa0deee75471dd37f1162</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\pio\same54p20a.h</file>
          <hash>6e9dd9a6a3222ff90b84a6ca73a5d23002c2b26a550dc95abcfeb5be2c96fe7e</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_pmsm_foc.c</file>
-         <hash>952eeb2e7c9fb191047f1f09e151e3f91383539f2f59353ac4d9c1de7f930c58</hash>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\ccl.h</file>
+         <hash>b944c3303a4dac6e5bfe46317a0d77ef5f4c9466621cef69f8d68f54ba6f0e03</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\peripheral\pdec\plib_pdec.h</file>
          <hash>105beeebfd529c03ae1c95728149fdd37a66efeaa09847efcd7525c55096bb32</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\ccl.h</file>
-         <hash>b944c3303a4dac6e5bfe46317a0d77ef5f4c9466621cef69f8d68f54ba6f0e03</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\hmatrixb.h</file>
@@ -7896,10 +7030,6 @@
          <hash>8621969ea669a1b230ff2125a760ef66d575c48cb45e9e457f768909abcbda46</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_speed.h</file>
-         <hash>36066361508d628577b2cdc931e7c8e591cb64172e601901dd6e9967056e0e82</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\trng.h</file>
          <hash>99d8a0263ac9bd0236f812dfcfc18ad472b0df57345b87f118eec985f7ae743e</hash>
       </entry>
@@ -7920,16 +7050,8 @@
          <hash>e327b5f371a5ecd1f186c1bdb2b97a39c94fde52c79605f4bc408617bf5fd75e</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_picontrol.c</file>
-         <hash>02b692c347a5428928c8154ba2de573134e5931ecc5ea9d112b150cd0306223b</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc2.h</file>
          <hash>65a61bfd363b21c064a4b9bb4adc2326e945a5e4dc39b1711ed29ba78b0ee65d</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_picontrol.h</file>
-         <hash>02096a11bc80427df679937896a59a3a0b5a8b408ad78b67b3659cad22d18f25</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\peripheral\tcc\plib_tcc0.h</file>
@@ -7940,28 +7062,16 @@
          <hash>a7bed179ef6e03d2c4fff50b3f2e91e17b024f92aeb59644fd89971a77d2e0d8</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_currmeasurement.c</file>
-         <hash>816bb49c5022910945943e0c526a219ebe9eb045f314b2f52634847a2c841d0d</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\pac.h</file>
          <hash>a417d1ca2087049de2388583f770684bdf1ac35fa127fe4979df319d900acfca</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\peripheral\tcc\plib_tcc0.c</file>
-         <hash>39bbde55e7e3a514cd83632db6e180d641e4b7c638d454d265e5ba7109b1d908</hash>
+         <hash>c65dcfef7aa123ed5ef8bd3bd76329f6c04e43d999bdd9bfc3bda687783184ae</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\ATSAME54P20A.ld</file>
          <hash>50fef922a36e934b5480ec39fe162016797fa6dab586b4b4ed6cefb304dce5c9</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_generic_lib.c</file>
-         <hash>9ef29af4e6d7173ea6ce9d1f88eac99a79a91be14b2ab6915ad334ffe0bf2299</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_generic_lib.h</file>
-         <hash>6d96aebdd7385833390b5cd16c012ca9c8139e30f4bd6bcb158df5038061d347</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\eic.h</file>
@@ -7992,16 +7102,8 @@
          <hash>90a3a4dac9e13fd4097b343706db578fbdbfa834a022ddeb61ea4f632296e744</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_derivedparams.h</file>
-         <hash>dda4478de08addda231ca978eb55c0313cc5ce928f529fa7ebf78d2907ae9bef</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom2.h</file>
          <hash>8151496324941b4cc732e0f47d468dd043ee49d7e3a1db7f8312f83f27939d6d</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_pmsm_foc_common.h</file>
-         <hash>6b89bf0bc2647b7940e14410c57660f3b5338b23b201347a5ce13a6180126e9a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\gclk.h</file>
@@ -8064,16 +7166,8 @@
          <hash>fa32ece008c81f305665e311fb1822114a8360a450de79ac6d1d6a8a8f954d82</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_lib.h</file>
-         <hash>c2d440ae5a0227eb9845d342ef6ffd0b20343939cab0552c21940b857da6271f</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\mclk.h</file>
          <hash>6eacfac3e8c11d64b3423d372be0a4102969853c1ab2b44540eec0e800782f49</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_lib.c</file>
-         <hash>7fa61f56d6f9a02c6b664e9eae96a993bb5a4aa08018d8ea98ce597555a94222</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\freqm.h</file>

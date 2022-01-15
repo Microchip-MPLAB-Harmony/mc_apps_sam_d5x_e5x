@@ -20,12 +20,12 @@
  *
  */
 
-/* file generated from device description version 2021-04-16T09:25:23Z */
+/* file generated from device description version 2020-11-23T12:28:26Z */
 #ifndef _SAME54_TRNG_INSTANCE_
 #define _SAME54_TRNG_INSTANCE_
 
 
 /* ========== Instance Parameter definitions for TRNG peripheral ========== */
-#define TRNG_INSTANCE_ID                         _UL_(74)   /* Instance index for TRNG */
+#define TRNG_INSTANCE_ID                         _UL_(74)   
 
 #endif /* _SAME54_TRNG_INSTANCE_ */
