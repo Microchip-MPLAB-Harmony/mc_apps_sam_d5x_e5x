@@ -1,0 +1,14 @@
+configName: mclv2_sam_e54_pim
+folderName: mclv2_sam_e54_pim
+format_version: v1.0
+frameworkPath: D:\Release
+processor: ATSAME54P20A
+projectName: mclv2_sam_e54_pim
+settings:
+  PackageFilter: bsp;csp;Devices;dev_packs;harmony-services;mc_apps_pic32cm_mc;mc_apps_pic32mk;mc_apps_sam_c2x;mc_apps_sam_d5x_e5x;mc_apps_sam_e7x_s7x_v7x;mc_apps_sam_rh71;motor_control;quick_docs;x2c
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAME54_DFP\3.6.95\atdf\ATSAME54P20A.atdf
