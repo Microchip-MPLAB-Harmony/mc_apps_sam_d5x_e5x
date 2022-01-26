@@ -1,0 +1,3 @@
+{"summary": "MisraExternalIdentifiers", "data": [{"name": "_mon_getc", "file": "../src/config/mclv2_sam_e54_pim/stdio/xc32_monitor.c", "line": 48, "column": 5, "decl": false}, {"name": "_mon_putc", "file": "../src/config/mclv2_sam_e54_pim/stdio/xc32_monitor.c", "line": 54, "column": 6, "decl": false}]}
+{"summary": "MisraInternalIdentifiers", "data": []}
+{"summary": "MisraLocalIdentifiers", "data": [{"name": "canblock", "file": "../src/config/mclv2_sam_e54_pim/stdio/xc32_monitor.c", "line": 48, "column": 19}, {"name": "c", "file": "../src/config/mclv2_sam_e54_pim/stdio/xc32_monitor.c", "line": 54, "column": 21}]}

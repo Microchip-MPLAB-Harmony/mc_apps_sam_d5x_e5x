@@ -1,0 +1,5 @@
+{"summary": "MisraTypedefInfo", "data": [{"name": "ADC_CALLBACK", "file": "../src/config/mclv2_sam_e54_pim/peripheral/adc/plib_adc_common.h", "line": 142, "column": 16, "used": true}, {"name": "ADC_CALLBACK_OBJ", "file": "../src/config/mclv2_sam_e54_pim/peripheral/adc/plib_adc_common.h", "line": 151, "column": 3, "used": false}]}
+{"summary": "MisraMacro", "data": [{"name": "PLIB_ADC_COMMON_H", "used": false, "file": "../src/config/mclv2_sam_e54_pim/peripheral/adc/plib_adc_common.h", "line": 46, "column": 0}]}
+{"summary": "MisraExternalIdentifiers", "data": []}
+{"summary": "MisraInternalIdentifiers", "data": []}
+{"summary": "MisraLocalIdentifiers", "data": []}

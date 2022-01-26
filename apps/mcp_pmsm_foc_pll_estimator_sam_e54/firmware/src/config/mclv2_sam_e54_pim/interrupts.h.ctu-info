@@ -1,0 +1,4 @@
+{"summary": "MisraMacro", "data": [{"name": "INTERRUPTS_H", "used": false, "file": "../src/config/mclv2_sam_e54_pim/interrupts.h", "line": 43, "column": 0}]}
+{"summary": "MisraExternalIdentifiers", "data": [{"name": "Reset_Handler", "file": "../src/config/mclv2_sam_e54_pim/interrupts.h", "line": 60, "column": 6, "decl": true}, {"name": "NonMaskableInt_Handler", "file": "../src/config/mclv2_sam_e54_pim/interrupts.h", "line": 61, "column": 6, "decl": true}, {"name": "HardFault_Handler", "file": "../src/config/mclv2_sam_e54_pim/interrupts.h", "line": 62, "column": 6, "decl": true}, {"name": "TCC0_OTHER_InterruptHandler", "file": "../src/config/mclv2_sam_e54_pim/interrupts.h", "line": 63, "column": 6, "decl": true}, {"name": "ADC0_RESRDY_InterruptHandler", "file": "../src/config/mclv2_sam_e54_pim/interrupts.h", "line": 64, "column": 6, "decl": true}]}
+{"summary": "MisraInternalIdentifiers", "data": []}
+{"summary": "MisraLocalIdentifiers", "data": []}

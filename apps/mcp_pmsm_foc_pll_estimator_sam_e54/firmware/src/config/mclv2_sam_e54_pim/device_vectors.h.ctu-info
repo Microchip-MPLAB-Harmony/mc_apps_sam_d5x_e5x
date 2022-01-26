@@ -1,0 +1,5 @@
+{"summary": "MisraTypedefInfo", "data": [{"name": "pfn_handler_t", "file": "../src/config/mclv2_sam_e54_pim/device_vectors.h", "line": 59, "column": 16, "used": true}, {"name": "H3DeviceVectors", "file": "../src/config/mclv2_sam_e54_pim/device_vectors.h", "line": 222, "column": 2, "used": false}]}
+{"summary": "MisraMacro", "data": [{"name": "DEVICE_VECTORS_H", "used": false, "file": "../src/config/mclv2_sam_e54_pim/device_vectors.h", "line": 43, "column": 0}]}
+{"summary": "MisraExternalIdentifiers", "data": []}
+{"summary": "MisraInternalIdentifiers", "data": []}
+{"summary": "MisraLocalIdentifiers", "data": []}

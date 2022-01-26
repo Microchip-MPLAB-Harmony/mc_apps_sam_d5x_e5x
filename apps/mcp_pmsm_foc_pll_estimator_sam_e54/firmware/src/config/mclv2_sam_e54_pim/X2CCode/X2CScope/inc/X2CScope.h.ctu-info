@@ -1,0 +1,4 @@
+{"summary": "MisraMacro", "data": [{"name": "X2CSCOPE_H", "used": false, "file": "../src/config/mclv2_sam_e54_pim/X2CCode/X2CScope/inc/X2CScope.h", "line": 34, "column": 0}]}
+{"summary": "MisraExternalIdentifiers", "data": [{"name": "X2CScope_Init", "file": "../src/config/mclv2_sam_e54_pim/X2CCode/X2CScope/inc/X2CScope.h", "line": 42, "column": 6, "decl": true}, {"name": "X2CScope_Communicate", "file": "../src/config/mclv2_sam_e54_pim/X2CCode/X2CScope/inc/X2CScope.h", "line": 43, "column": 6, "decl": true}, {"name": "X2CScope_Update", "file": "../src/config/mclv2_sam_e54_pim/X2CCode/X2CScope/inc/X2CScope.h", "line": 44, "column": 6, "decl": true}]}
+{"summary": "MisraInternalIdentifiers", "data": []}
+{"summary": "MisraLocalIdentifiers", "data": []}

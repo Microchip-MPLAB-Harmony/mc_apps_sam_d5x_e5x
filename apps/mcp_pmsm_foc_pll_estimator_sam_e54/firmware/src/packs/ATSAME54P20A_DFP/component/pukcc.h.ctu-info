@@ -1,0 +1,5 @@
+{"summary": "MisraTypedefInfo", "data": [{"name": "Pukcc", "file": "../src/packs/ATSAME54P20A_DFP/component/pukcc.h", "line": 35, "column": 14, "used": false}]}
+{"summary": "MisraMacro", "data": [{"name": "_SAME54_PUKCC_COMPONENT_H_", "used": false, "file": "../src/packs/ATSAME54P20A_DFP/component/pukcc.h", "line": 25, "column": 0}]}
+{"summary": "MisraExternalIdentifiers", "data": []}
+{"summary": "MisraInternalIdentifiers", "data": []}
+{"summary": "MisraLocalIdentifiers", "data": []}

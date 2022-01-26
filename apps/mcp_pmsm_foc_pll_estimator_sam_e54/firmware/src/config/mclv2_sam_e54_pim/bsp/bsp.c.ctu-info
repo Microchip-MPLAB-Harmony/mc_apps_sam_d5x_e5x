@@ -1,0 +1,4 @@
+{"summary": "MisraMacro", "data": [{"name": "_BSP_H", "used": false, "file": "../src/config/mclv2_sam_e54_pim/bsp/bsp.h", "line": 44, "column": 0}]}
+{"summary": "MisraExternalIdentifiers", "data": [{"name": "BSP_Initialize", "file": "../src/config/mclv2_sam_e54_pim/bsp/bsp.h", "line": 108, "column": 6, "decl": false}]}
+{"summary": "MisraInternalIdentifiers", "data": []}
+{"summary": "MisraLocalIdentifiers", "data": []}

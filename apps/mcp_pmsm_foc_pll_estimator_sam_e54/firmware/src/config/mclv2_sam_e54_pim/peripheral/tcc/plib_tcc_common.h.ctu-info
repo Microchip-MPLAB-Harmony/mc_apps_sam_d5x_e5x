@@ -1,0 +1,5 @@
+{"summary": "MisraTypedefInfo", "data": [{"name": "TCC_CALLBACK", "file": "../src/config/mclv2_sam_e54_pim/peripheral/tcc/plib_tcc_common.h", "line": 78, "column": 16, "used": true}, {"name": "TCC_CALLBACK_OBJECT", "file": "../src/config/mclv2_sam_e54_pim/peripheral/tcc/plib_tcc_common.h", "line": 85, "column": 2, "used": false}]}
+{"summary": "MisraMacro", "data": [{"name": "PLIB_TCC_COMMON_H", "used": false, "file": "../src/config/mclv2_sam_e54_pim/peripheral/tcc/plib_tcc_common.h", "line": 47, "column": 0}]}
+{"summary": "MisraExternalIdentifiers", "data": []}
+{"summary": "MisraInternalIdentifiers", "data": []}
+{"summary": "MisraLocalIdentifiers", "data": []}

@@ -1,0 +1,6 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: BSP_SAM_E54_PIM_MC_Board, bsp: 'true'}
+children:
+- type: ElementPosition
+  attributes: {x: '97', y: '471', id: BSP_SAM_E54_PIM_MC_Board}
