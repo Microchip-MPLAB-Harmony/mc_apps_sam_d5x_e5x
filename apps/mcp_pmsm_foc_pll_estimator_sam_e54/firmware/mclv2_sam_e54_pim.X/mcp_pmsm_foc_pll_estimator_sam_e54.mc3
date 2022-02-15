@@ -51,7 +51,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.9-d"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.9"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -842,9 +842,10 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;541&quot; canvasWidth=&quot;477&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_E54_PIM_MC_Board&quot; x=&quot;97&quot; y=&quot;471&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_E54_PIM_MC_Board&quot; x=&quot;0&quot; y=&quot;489&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;X2CScope&quot; x=&quot;133&quot; y=&quot;372&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;adc0&quot; x=&quot;134&quot; y=&quot;148&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;adc1&quot; x=&quot;133&quot; y=&quot;221&quot;/&gt;
@@ -858,7 +859,6 @@
         &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;tcc0&quot; x=&quot;131&quot; y=&quot;297&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;541&quot; canvasWidth=&quot;477&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -4833,8 +4833,8 @@
     &lt;Attachments dnOrder=&quot;0&quot;&gt;
       &lt;MultiCapability dnOrder=&quot;0&quot; id=&quot;pmsmfoc_ADC&quot;&gt;
         &lt;TargetAttachments dnOrder=&quot;0&quot;&gt;
-          &lt;TargetAttachment dnOrder=&quot;0&quot; targetAttachmentID=&quot;ADC1_ADC&quot; targetComponentID=&quot;adc1&quot;/&gt;
-          &lt;TargetAttachment dnOrder=&quot;1&quot; targetAttachmentID=&quot;ADC0_ADC&quot; targetComponentID=&quot;adc0&quot;/&gt;
+          &lt;TargetAttachment dnOrder=&quot;0&quot; targetAttachmentID=&quot;ADC0_ADC&quot; targetComponentID=&quot;adc0&quot;/&gt;
+          &lt;TargetAttachment dnOrder=&quot;1&quot; targetAttachmentID=&quot;ADC1_ADC&quot; targetComponentID=&quot;adc1&quot;/&gt;
         &lt;/TargetAttachments&gt;
       &lt;/MultiCapability&gt;
       &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;pmsmfoc_PWM&quot;&gt;
@@ -6501,11 +6501,11 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\motor_control\pmsm_foc\mc_rotor_position.c</file>
-         <hash>e4f4efa58b622fc5652af6c3d05cf255168aaba45bc818e42a26236031181b64</hash>
+         <hash>a1fd9139362b09641c28af8a311960ef096ab08ba4b37427700f10e48d4406ef</hash>
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\motor_control\pmsm_foc\mc_rotor_position.h</file>
-         <hash>032fde558bf2b94e27f85888b64bacde3cb887d16313f1ecc73a5c439e977ea6</hash>
+         <hash>7a398851de4cb1a568d78e70575a50087ac29ff942cc4f5619439cb41acf7bbd</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_gcc.h</file>
@@ -6585,7 +6585,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\initialization.c</file>
-         <hash>4b84e803cd06abf7c6c1b1074c810f20ddfa336cd2104b26ae6ef13bc6e89606</hash>
+         <hash>7568c572070f9a8b807417ebc63ac43d4d7712c523386609199047c79c6e8bce</hash>
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\motor_control\pmsm_foc\mc_error_handler.c</file>
@@ -6677,7 +6677,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\peripheral\sercom\usart\plib_sercom2_usart.c</file>
-         <hash>48200de30d39f014d53d32ee721a3b78cd31a683f272da054b556e4945f80edd</hash>
+         <hash>befcf27a6830be3962f04dce3de1a0f595f6431a64b6c7ed2d815995435fe997</hash>
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\motor_control\pmsm_foc\mc_userparams.h</file>
@@ -6821,7 +6821,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\motor_control\pmsm_foc\mc_speed_control.h</file>
-         <hash>fedea3cca2c99f4a8793f45d91ae00af6cdae98a4788e9df2756e2df5c864f06</hash>
+         <hash>453a9b851c6b2fb6bd799d23dceab0c1d89f7da8b2b454e0a1446fba67871e06</hash>
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\peripheral\clock\plib_clock.h</file>
@@ -6837,7 +6837,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\peripheral\clock\plib_clock.c</file>
-         <hash>f93b0e7a89a984cd40938ab870599921012c2526196153abf9ee508a77bec4be</hash>
+         <hash>85c2293ac3f3cdc4992ad702d181648af98c33287108cb22f2d33c77f8cfc47e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\gmac.h</file>
@@ -6925,7 +6925,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\motor_control\pmsm_foc\mc_current_control.c</file>
-         <hash>9ff32b6be09ca03b1ef2a2135ac0f8fdb3f845796b5b5e72cd2176661a870b0f</hash>
+         <hash>d483e32af2e90cfa0834cd910df832cef947efdd076bbd044fa85e772936fd1d</hash>
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\motor_control\pmsm_foc\mc_current_control.h</file>
@@ -6933,7 +6933,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\motor_control\pmsm_foc\mc_generic_library.c</file>
-         <hash>a5f7933ec79269f11955c3dd469259761ab9675e3ad013ba6961615197f00c82</hash>
+         <hash>57a81c07ad967ba42fd0bd180e5abb3bb0f31291e9c69f1a90c9f33c660277f3</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\osc32kctrl.h</file>
@@ -6945,7 +6945,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\motor_control\pmsm_foc\mc_generic_library.h</file>
-         <hash>4fecf3813fd569702ae64621af5e09963a6cac5bf6c24779c3fc44c23c270e40</hash>
+         <hash>b4c2f25d8d0869178c19e7441c7a56eee3f1530e8e21998dffe77e767d8d6d54</hash>
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\device.h</file>
@@ -7037,7 +7037,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
-         <hash>1d9f6a9be5f12371756731060bc391bec35cf01f5a2a3017ea81a5e9cb480828</hash>
+         <hash>3ec013593edf39000df359408205a1f012fba3df3b88ce90f09c5115522d81cb</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\dmac.h</file>
@@ -7109,7 +7109,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\motor_control\pmsm_foc\mc_voltage_measurement.c</file>
-         <hash>c1bb77375f7545640615b79002755ad5931e27273cbb8546609d1c9b33163e88</hash>
+         <hash>0b18e49ab643d1d587d6ce12cf013626efd6e9dfbf92ce1c1a8d7cb10c3f1807</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom7.h</file>
@@ -7141,7 +7141,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\motor_control\pmsm_foc\mc_motor_control.c</file>
-         <hash>8043d196b25233ca8bd5e88dcf354c69c9565c1788df357bc1d883fc815831f1</hash>
+         <hash>4ac3b16fdd1b154ec9a4a25100edd47b8871d4af3e79bb9b368ac92ba9811e70</hash>
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\motor_control\pmsm_foc\mc_ramp_profiler.h</file>
@@ -7165,7 +7165,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\motor_control\pmsm_foc\mc_flux_control.c</file>
-         <hash>5bd244e0980734832bd63fbd0abb45395eae4c3520e75f1e34d0ec916a255e32</hash>
+         <hash>7a06809ae0cb3a233d5dcb05f4df0a719860faa0e30f57c53a0ea43ab9f58d26</hash>
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\bsp\bsp.h</file>
@@ -7177,7 +7177,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\motor_control\pmsm_foc\mc_flux_control.h</file>
-         <hash>3e66be556b94425a198ca9f224c21f6f201130deec30d5f9b16d1e9e91e58081</hash>
+         <hash>e65177eff05193eb8c3482b675deb1162b7f6b2bf9a48a87faba046f73f22049</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\aes.h</file>
@@ -7213,7 +7213,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\definitions.h</file>
-         <hash>53bc05c3ec7e9075b50816324ccc03d297f8ba82ff7ad2953b159c073ee4d02c</hash>
+         <hash>6bfa6d4db60454e611e05f4ec2e294a2cce033e122dc411c06e78dc33d961283</hash>
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\motor_control\pmsm_foc\mc_position_control.c</file>
@@ -7233,11 +7233,11 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\motor_control\pmsm_foc\mc_interface_handling.c</file>
-         <hash>97b9aadd37ee1501fad16b3d6b5700d32658ecd2bd1204ebd45ec25c76d1c4f8</hash>
+         <hash>ee2afdbfeeab14a2042157c48cf245d46459b8d6dfb553719f085eb8e042c527</hash>
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\motor_control\pmsm_foc\mc_interface_handling.h</file>
-         <hash>8cca2d34520c777c441fac34c8f90dc28d46311a3e632f47e0072996bc915e0d</hash>
+         <hash>569f7751e0f8a8beca91ce240639f0e55e964721f1e3a6f1dc8c0256808e40f1</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\hmatrix.h</file>

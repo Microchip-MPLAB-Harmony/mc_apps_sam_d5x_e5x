@@ -279,7 +279,7 @@ typedef void (*SERCOM_USART_CALLBACK)( uintptr_t context );
 
 typedef struct
 {
-    void *                   txBuffer;
+    uint8_t *                   txBuffer;
 
     size_t                               txSize;
 
@@ -291,7 +291,7 @@ typedef struct
 
     volatile bool                        txBusyStatus;
 
-    void *                   rxBuffer;
+    uint8_t *                   rxBuffer;
 
     size_t                               rxSize;
 
