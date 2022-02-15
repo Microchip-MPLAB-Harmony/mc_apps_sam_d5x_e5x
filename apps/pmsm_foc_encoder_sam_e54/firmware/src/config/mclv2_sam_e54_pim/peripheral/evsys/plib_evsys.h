@@ -59,7 +59,6 @@
 
 typedef enum
 {
-   EVSYS_CHANNEL_0 = 0,
 
    EVSYS_CHANNEL_1 = 1,
 
