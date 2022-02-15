@@ -1,4 +1,4 @@
-<config configName="mclv2_sam_e54_pim" projectName="pmsm_foc_hall_sam_e54_mclv2" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.0">
+<config configName="mclv2_sam_e54_pim" projectName="pmsm_foc_hall_sam_e54_mclv2" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.1">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -55,7 +55,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.9"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -606,24 +606,24 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;426&quot; canvasWidth=&quot;541&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;adc0&quot; x=&quot;31&quot; y=&quot;257&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;adc1&quot; x=&quot;167&quot; y=&quot;256&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;cmsis&quot; x=&quot;433&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;core&quot; x=&quot;333&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;dfp&quot; x=&quot;148&quot; y=&quot;17&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;eic&quot; x=&quot;419&quot; y=&quot;158&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;evsys&quot; x=&quot;295&quot; y=&quot;161&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;nvmctrl&quot; x=&quot;24&quot; y=&quot;13&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;pdec&quot; x=&quot;30&quot; y=&quot;160&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;sercom2&quot; x=&quot;28&quot; y=&quot;396&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;tc2&quot; x=&quot;298&quot; y=&quot;216&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;tc3&quot; x=&quot;425&quot; y=&quot;217&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;tcc0&quot; x=&quot;162&quot; y=&quot;161&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;adc0&quot; x=&quot;126&quot; y=&quot;163&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;adc1&quot; x=&quot;249&quot; y=&quot;163&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;cmsis&quot; x=&quot;385&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;core&quot; x=&quot;309&quot; y=&quot;22&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;dfp&quot; x=&quot;126&quot; y=&quot;23&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;eic&quot; x=&quot;123&quot; y=&quot;48&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;evsys&quot; x=&quot;245&quot; y=&quot;48&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;nvmctrl&quot; x=&quot;0&quot; y=&quot;25&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;pdec&quot; x=&quot;0&quot; y=&quot;165&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;sercom2&quot; x=&quot;0&quot; y=&quot;375&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;tc2&quot; x=&quot;0&quot; y=&quot;260&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;tc3&quot; x=&quot;126&quot; y=&quot;235&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;tcc0&quot; x=&quot;255&quot; y=&quot;233&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;426&quot; canvasWidth=&quot;541&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -888,6 +888,17 @@
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="CoreMainFile"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;CoreMainFile&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
 </value>
@@ -8117,7 +8128,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\peripheral\nvmctrl\plib_nvmctrl.c</file>
-         <hash>0098e8e01f3a17f3b7a4a5e236c4250ca1865aeb05a12faf9845e201cd112eff</hash>
+         <hash>03ff23191dabf3871d70216d69851b5339c42cc2f719e0f1d4bf9b74055fd225</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\eic.h</file>
@@ -8277,7 +8288,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\startup_xc32.c</file>
-         <hash>4925c57b172987921a52aa8b0c1ce442b8743e2376df3e7d356d45d2a11c18f9</hash>
+         <hash>0ce43e39c5752474cfa7c61b1a269565c9c7d75f2c5d6d70a0ae2eca6e40ee93</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc5.h</file>
@@ -8500,10 +8511,6 @@
          <hash>7cca0111b5938de7baf9463ff6092e407e399e6e1271c194ac000de0d6f389a4</hash>
       </entry>
       <entry>
-         <file>..\src\main_mclv2_sam_e54_pim.c</file>
-         <hash>d3c233d419e6304bfacbafc18cc68c0f5c26e365f23b20ea40ccfac458f664c5</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\pm.h</file>
          <hash>d8f305eb1364d35d0f87c1d86b89a1561cd1766338dd288978ab5674950985dd</hash>
       </entry>
@@ -8533,7 +8540,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\peripheral\port\plib_port.c</file>
-         <hash>fa3ec34ae474bd7add63497d12fffaf76f6857540545b5cd8b5d48ab07e40c36</hash>
+         <hash>5179bb67361adc3785a999dca049a5f1557c6b65cd44dae39c6afd2fb89a17bf</hash>
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\exceptions.c</file>
@@ -8549,7 +8556,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\definitions.h</file>
-         <hash>f334956f1be0bacf254a731e6db3c2f313790652bcb68577f99f76a94bd82a37</hash>
+         <hash>e509be848c8d30577d28d277772101c96377f64a34a45af17ef0325080ddd7e0</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\can0.h</file>
