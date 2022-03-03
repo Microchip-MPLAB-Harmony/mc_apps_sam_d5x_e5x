@@ -1,19 +1,20 @@
 ---
 parent: Microchip MPLAB® Harmony 3 Motor Control Application Examples for SAM D5x/E5x family
-title: PMSM FOC using Quadrature Encoder
+title: PMSM FOC using PLL Estimator
 has_children: false
 has_toc: false
 ---
 
 [![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
 
-# PMSM FOC using Quadrature Encoder
+# PMSM FOC using PLL Estimator
 
-This example application shows how to control the Permanent Magnet Synchronous Motor (PMSM) with Quadrature Encoder based Field Oriented Control (FOC) on a SAME54 Micro-controller. 
+This example application shows how to control the Permanent Magnet Synchronous Motor (PMSM) with PLL Estimator based Field Oriented Control (FOC) on a SAME54 Micro-controller. 
 
 ## Description
 
-Permanent Magnet Synchronous Motor (PMSM) is controlled using Field Oriented Control (FOC). Rotor position and speed is determined using quadrature encoder sensor. Motor start/stop operation is controlled by the switch and motor speed can be changed by the on-board potentiometer. Waveforms and variables can be monitored runtime using X2CScope. 
+Permanent Magnet Synchronous Motor (PMSM) is controlled using Field Oriented Control (FOC). Rotor position and speed is determined using PLL estimator technique. Motor start/stop operation is controlled by the switch and motor speed can be changed by the on-board potentiometer. Waveforms and variables can be monitored runtime using X2CScope. 
+
 
 Key features enabled in this project are:
 
@@ -24,12 +25,13 @@ Key features enabled in this project are:
 
 ## MHC Project Configurations
 
-![MHC Project Graph](images/Encoder_SAME54.jpg)
+![MHC Project Graph](images/project_graph.jpg)
+
 
 
 - **PMSM_FOC**: 
-
-    This component configures FOC algorithm parameters, motor parameters and motor control board parameters. It connects to underlying peripheral libraries ADC,TCC and PDEC. This component auto configures ADC channels,PWM channels and PDEC peripheral as per PMSM_FOC component configurations. 
+    This component configures FOC algorithm parameters, motor parameters and motor control board parameters. It connects to underlying peripheral libraries ADC and TCC. This component auto configures ADC channels and PWM channels as per PMSM_FOC component configurations. 
+	
 - **ADC0-ADC1**: 
 
    ADC0 and ADC1 are setup to operate in Master - Slave mode with ADC0 acting as a Master
@@ -67,7 +69,8 @@ Key features enabled in this project are:
     The UART is used for X2CScope communication to observe graphs and variable values in run time 
 
 ## Project Details
-For details refer [Motor Control Plant](..\..\..\motor_control\algorithms\pmsm_foc\mc_plant_docs\introduction.md)
+For details refer [Motor Control Plant](../../../motor_control/algorithms/pmsm_foc/mc_plant_docs/introduction.md)
+
 
 ## Development Kits
 
@@ -77,11 +80,12 @@ For details refer [Motor Control Plant](..\..\..\motor_control\algorithms\pmsm_f
 To clone or download this application from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/mc_apps_sam_d5x_e5x) and then click **Clone** button to clone this repository or download as zip file.
 This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
 
-Path of the application within the repository is **apps/pmsm_foc_encoder_sam_e54** .
+Path of the application within the repository is **apps/pmsm_foc_pll_estimator_sam_e54** .
+
 
 To build the application, refer to the following table and open the project using its IDE.
 
 | Project Name      | Description                                    | Demo User Guide |
-| ----------------- | ---------------------------------------------- | ---------------- |
-| mclv2_sam_e54_pim.X | MPLABX project for MCLV2 board with ATSAME54 PIM | [Hardware Setup and Running The Application on MCLV2 with ATSAME54 PIM](../docs/mclv2_atsame54_pim_encoder.md) |
+| ----------------- | ---------------------------------------------- | -------------- |
+| mclv2_sam_e54_pim.X | MPLABX project for MCLV2 board with ATSAME54 PIM | [Hardware Setup and Running The Application on MCLV2 with ATSAME54 PIM](../docs/mclv2_atsame54_pim_sensorless.md) |
 ||||
