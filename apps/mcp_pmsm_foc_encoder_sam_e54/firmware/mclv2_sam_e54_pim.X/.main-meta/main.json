@@ -3,11 +3,11 @@
 	"category": "com.microchip.ide.project",
 	"content": {
 		"metaDataVersion": "1.1.0",
-		"name": "com.microchip.mcu32.mplabx.project.mc_apps_sam_d5x_e5x_pmsm_foc_hall_sam_e54_mclv2_sam_e54_pim",
+		"name": "com.microchip.mcu32.mplabx.project.mc_apps_sam_d5x_e5x_pmsm_foc_encoder_position_sam_e54_mclv2_sam_e54_pim",
 		"version": "3.1.0",
-		"displayName": "PMSM FOC using Hall Sensor Example for SAM D5x/E5x Family",
-		"projectName": "pmsm_foc_hall_sam_e54_mclv2",
-		"shortDescription": "This example application shows how to control the Permanent Magnet Synchronous Motor (PMSM) with Hall Sensor based Field Oriented Control (FOC) on a SAME54 Micro-controller. ",
+		"displayName": "FOC Based Position Control of PMSM Using Quadrature Encoder Example for SAM D5x/E5x Family",
+		"projectName": "mcp_pmsm_foc_encoder_position_sam_e54",
+		"shortDescription": "This motor control example project shows how to control the position of Permanent Magnet Synchronous Motor (PMSM) using an Encoder based Field Oriented Control (FOC) on SAME54 Micro-controller.",
 		"ide": {
 			"name": "MPLABX",
 			"semverRange": ">=6.00.0"
@@ -61,8 +61,7 @@
 			"MCPWM",
 			"PWM",
 			"Motor Control",
-			"Timer",
-			"Hall"
+			"Timer"
 		],
 		"additionalData": {
 			"longDescription": {

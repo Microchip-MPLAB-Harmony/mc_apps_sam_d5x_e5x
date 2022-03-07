@@ -10,21 +10,21 @@
 		"shortDescription": "This motor control example project shows how to control the position of Permanent Magnet Synchronous Motor (PMSM) using an Encoder based Field Oriented Control (FOC) on SAME54 Micro-controller.",
 		"ide": {
 			"name": "MPLABX",
-			"semverRange": ">=5.50.0"
+			"semverRange": ">=6.00.0"
 		},
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=3.1.0"
+				"semverRange": ">=4.00.0"
 			}
 		],
 		"dfp": {
 			"name": "SAME54_DFP",
-			"semverRange": "^3.5.87"
+			"semverRange": "^3.6.95"
 		},
 		"configurator": {
-			"name": "MHC",
-			"semverRange": ">=3.6.4"
+			"name": "MCC",
+			"semverRange": ">=1.0.9"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
