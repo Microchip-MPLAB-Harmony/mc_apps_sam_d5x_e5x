@@ -7,6 +7,43 @@ nav_order: 99
 ![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 
 # Microchip MPLAB® Harmony 3 Release Notes
+
+
+## Microchip MPLAB® Harmony 3 Motor Control Application Examples for SAM D5x/E5x family v3.2.0
+
+
+### Applications
+
+| Development Board | Number of Applications | 
+| --- | --- | 
+|[dsPICDEM™ MCLV-2 Low Voltage Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/DM330021-2) | 6 |
+| [dsPICDEM™ MCHV-3 High Voltage Development Board](https://www.microchip.com/developmenttools/ProductDetails/dm330023-3) | 3 |
+
+### New Features
+* Added **Motor Control Plant** generated code for motor control firmware for PLL based sensorless FOC on MCLV2
+* Added **Motor Control Plant** generated code for motor control firmware for Encoder based sensored FOC on MCLV2
+* Migrated MHC generated motor control firmware to MCC generated motor control firmware
+
+### Known Issues
+
+* same as v3.1.0
+
+### Required MPLAB Harmony v3 Modules
+* csp v3.11.0
+* x2c v1.2.0
+* bsp v3.11.0
+* motor_control v3.8.0
+* dev_packs v3.11.0
+* mcc v1.0.9
+
+### Development Tools
+
+* [MPLAB X IDE v6.00](https://www.microchip.com/mplab/mplab-x-ide)
+* [MPLAB XC32 C/C++ Compiler v4.00](https://www.microchip.com/mplab/compilers)
+* MPLAB X IDE plug-ins:
+  * MPLAB Harmony Configurator (MCC) v5.1.1
+  * X2CScope v1.3.0.
+
 ## Microchip MPLAB® Harmony 3 Motor Control Application Examples for SAM D5x/E5x family v3.1.0
 
 
