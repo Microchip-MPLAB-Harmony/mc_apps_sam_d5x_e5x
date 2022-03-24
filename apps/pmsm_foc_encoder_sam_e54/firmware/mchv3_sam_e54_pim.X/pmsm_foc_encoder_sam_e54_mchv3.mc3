@@ -1,4 +1,4 @@
-<config configName="mchv3_sam_e54_pim" projectName="pmsm_foc_encoder_sam_e54_mchv3" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.1">
+<config configName="mchv3_sam_e54_pim" projectName="pmsm_foc_encoder_sam_e54_mchv3" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -730,7 +730,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;569&quot; canvasWidth=&quot;331&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;X2CScope&quot; x=&quot;192&quot; y=&quot;433&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;adc0&quot; x=&quot;28&quot; y=&quot;224&quot;/&gt;
@@ -746,7 +747,6 @@
         &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;tcc0&quot; x=&quot;310&quot; y=&quot;221&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;569&quot; canvasWidth=&quot;331&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -6635,7 +6635,7 @@
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\definitions.h</file>
-         <hash>13243ba07b016557b3e77ec9b7522a5518d51e6fa551467d711158288b2a8e8e</hash>
+         <hash>fb4e5326d8f53a64e5c785edfe4e5c5bbd355f712f19bc40e2330af8aadb330c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc4.h</file>
@@ -6707,7 +6707,7 @@
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\initialization.c</file>
-         <hash>ad1d01a74d634ff61c58b16786996c008b6d9a207e92dbcc00014904fcb1e7fa</hash>
+         <hash>2141facc0fd4d8b1e1efb91cd253c0757363ab9de5c1be8d331f5e0ece8c7f70</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\fuses.h</file>
@@ -6839,7 +6839,7 @@
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\peripheral\port\plib_port.c</file>
-         <hash>9748f3d89f243539e374f2aa829001fcbb7da0d4f1c7549143371b339513173e</hash>
+         <hash>3e32058ec4432758402cdc6f305cf1a73c788dc64ca78911e02df9f8b4abda8d</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\device_vectors.h</file>
