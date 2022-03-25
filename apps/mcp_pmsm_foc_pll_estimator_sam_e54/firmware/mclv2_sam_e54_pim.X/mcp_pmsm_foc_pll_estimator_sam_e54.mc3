@@ -1,4 +1,4 @@
-<config configName="mclv2_sam_e54_pim" projectName="mcp_pmsm_foc_pll_estimator_sam_e54" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.1">
+<config configName="mclv2_sam_e54_pim" projectName="mcp_pmsm_foc_pll_estimator_sam_e54" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -7265,7 +7265,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\peripheral\tcc\plib_tcc0.c</file>
-         <hash>14c8077bdbb1383e8b41563184a8e47c42c3b5858ef670e76a19e1b85334e8d5</hash>
+         <hash>5f4a6faebba6d7d8d9c352e685f970d108b8d5f9e52c04a37a90bdab82bfa3fc</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>
