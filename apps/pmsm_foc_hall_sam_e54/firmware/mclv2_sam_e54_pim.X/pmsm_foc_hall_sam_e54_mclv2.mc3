@@ -1,4 +1,4 @@
-<config configName="mclv2_sam_e54_pim" projectName="pmsm_foc_hall_sam_e54_mclv2" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.1">
+<config configName="mclv2_sam_e54_pim" projectName="pmsm_foc_hall_sam_e54_mclv2" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.2">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -606,8 +606,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;426&quot; canvasWidth=&quot;541&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;adc0&quot; x=&quot;126&quot; y=&quot;163&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;adc1&quot; x=&quot;249&quot; y=&quot;163&quot;/&gt;
@@ -624,6 +623,7 @@
         &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;tcc0&quot; x=&quot;255&quot; y=&quot;233&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;426&quot; canvasWidth=&quot;541&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -8540,7 +8540,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\peripheral\port\plib_port.c</file>
-         <hash>5179bb67361adc3785a999dca049a5f1557c6b65cd44dae39c6afd2fb89a17bf</hash>
+         <hash>fa3ec34ae474bd7add63497d12fffaf76f6857540545b5cd8b5d48ab07e40c36</hash>
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\exceptions.c</file>
@@ -8556,7 +8556,7 @@
       </entry>
       <entry>
          <file>..\src\config\mclv2_sam_e54_pim\definitions.h</file>
-         <hash>e509be848c8d30577d28d277772101c96377f64a34a45af17ef0325080ddd7e0</hash>
+         <hash>f334956f1be0bacf254a731e6db3c2f313790652bcb68577f99f76a94bd82a37</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\can0.h</file>
