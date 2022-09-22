@@ -5,15 +5,15 @@
 4,PC01,,Available,,,,,,NORMAL
 7,PC02,,Available,,,,,,NORMAL
 8,PC03,,Available,,,,,,NORMAL
-9,PA02,IA,Available,,,,,,NORMAL
+9,PA02,IA,ADC0_AIN0,Analog,High Impedance,n/a,,,NORMAL
 10,PA03,,Available,,,,,,NORMAL
 11,PB04,,Available,,,,,,NORMAL
 12,PB05,,Available,,,,,,NORMAL
-13,PD00,VDC,Available,,,,,,NORMAL
+13,PD00,VDC,ADC1_AIN14,Analog,High Impedance,n/a,,,NORMAL
 16,PD01,,Available,,,,,,NORMAL
 17,PB06,,Available,,,,,,NORMAL
 18,PB07,,Available,,,,,,NORMAL
-19,PB08,IB,Available,,,,,,NORMAL
+19,PB08,IB,ADC1_AIN0,Analog,High Impedance,n/a,,,NORMAL
 20,PB09,,Available,,,,,,NORMAL
 21,PA04,,Available,,,,,,NORMAL
 22,PA05,,Available,,,,,,NORMAL
@@ -34,8 +34,8 @@
 43,PB14,,Available,,,,,,NORMAL
 44,PB15,,Available,,,,,,NORMAL
 47,PD08,BUTTON_01,GPIO,Digital,In,n/a,No,No,NORMAL
-48,PD09,,Available,,In,,,,NORMAL
-49,PD10,,Available,,In,,,,NORMAL
+48,PD09,,Available,,,,,,NORMAL
+49,PD10,,Available,,,,,,NORMAL
 50,PD11,,Available,,,,,,NORMAL
 51,PD12,,Available,,,,,,NORMAL
 52,PC10,,Available,,,,,,NORMAL

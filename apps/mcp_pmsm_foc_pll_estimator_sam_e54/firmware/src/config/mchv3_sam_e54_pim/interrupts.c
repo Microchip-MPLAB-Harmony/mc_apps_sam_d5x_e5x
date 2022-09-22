@@ -78,7 +78,7 @@ void __attribute__((optimize("-O1"),section(".text.Dummy_Handler"),long_call, no
 }
 
 /* MISRAC 2012 deviation block start */
-/* MISRA C-2012 Rule 8.6 deviated 135 times.  Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
+/* MISRA C-2012 Rule 8.6 deviated 134 times.  Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
 /* Device vectors list dummy definition*/
 extern void SVCall_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void PendSV_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -197,8 +197,7 @@ extern void TC7_Handler                ( void ) __attribute__((weak, alias("Dumm
 extern void PDEC_OTHER_Handler         ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void PDEC_MC0_Handler           ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void PDEC_MC1_Handler           ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void ADC0_OTHER_Handler         ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void ADC1_OTHER_Handler         ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void ADC0_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void ADC1_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void AC_Handler                 ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void DAC_OTHER_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -354,9 +353,9 @@ const H3DeviceVectors exception_table=
     .pfnPDEC_OTHER_Handler         = PDEC_OTHER_Handler,
     .pfnPDEC_MC0_Handler           = PDEC_MC0_Handler,
     .pfnPDEC_MC1_Handler           = PDEC_MC1_Handler,
-    .pfnADC0_OTHER_Handler         = ADC0_OTHER_Handler,
+    .pfnADC0_OTHER_Handler         = ADC0_Handler,
     .pfnADC0_RESRDY_Handler        = ADC0_RESRDY_InterruptHandler,
-    .pfnADC1_OTHER_Handler         = ADC1_OTHER_Handler,
+    .pfnADC1_OTHER_Handler         = ADC1_Handler,
     .pfnADC1_RESRDY_Handler        = ADC1_Handler,
     .pfnAC_Handler                 = AC_Handler,
     .pfnDAC_OTHER_Handler          = DAC_OTHER_Handler,
