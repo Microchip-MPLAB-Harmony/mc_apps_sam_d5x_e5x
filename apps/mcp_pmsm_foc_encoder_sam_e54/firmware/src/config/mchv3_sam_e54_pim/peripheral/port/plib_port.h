@@ -65,6 +65,18 @@
 // *****************************************************************************
 // *****************************************************************************
 
+/*** Macros for IA pin ***/
+#define IA_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 2U)) & 0x01U)
+#define IA_PIN                  PORT_PIN_PA02
+
+/*** Macros for VDC pin ***/
+#define VDC_Get()               (((PORT_REGS->GROUP[3].PORT_IN >> 0U)) & 0x01U)
+#define VDC_PIN                  PORT_PIN_PD00
+
+/*** Macros for IB pin ***/
+#define IB_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 8U)) & 0x01U)
+#define IB_PIN                  PORT_PIN_PB08
+
 /*** Macros for VPOT pin ***/
 #define VPOT_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 6U)) & 0x01U)
 #define VPOT_PIN                  PORT_PIN_PA06
