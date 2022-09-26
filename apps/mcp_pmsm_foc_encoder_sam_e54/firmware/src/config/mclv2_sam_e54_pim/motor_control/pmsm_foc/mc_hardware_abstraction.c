@@ -514,7 +514,7 @@ void mcHalI_Group02SignalSoftwareTrigger( uint16_t Id  )
     /* Select channels for Group 02 signals */
     ADC0_ChannelSelect( ADC_POSINPUT_AIN6, ADC_NEGINPUT_GND);
     ADC1_ChannelSelect( ADC_POSINPUT_AIN14, ADC_NEGINPUT_GND);
-    
+
     /* Enable software  trigger */
     ADC0_InterruptsClear(ADC_STATUS_MASK);
     ADC0_InterruptsDisable( ADC_STATUS_RESRDY );

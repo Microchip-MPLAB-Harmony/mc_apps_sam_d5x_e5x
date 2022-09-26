@@ -61,8 +61,6 @@
 // Section: Global Data
 // *****************************************************************************
 // *****************************************************************************
-/* Object to hold callback function and context */
-PDEC_QDEC_CALLBACK_OBJ PDEC_QDEC_CallbackObj;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -84,14 +82,14 @@ void PDEC_QDECInitialize( void )
 
     /* Configure quadrature control settings */
     PDEC_REGS->PDEC_CTRLA = PDEC_CTRLA_MODE_QDEC | PDEC_CTRLA_CONF_X4
-                                | PDEC_CTRLA_PINEN(0x3) | PDEC_CTRLA_PINVEN(0x0)
-                                 | PDEC_CTRLA_ANGULAR(7)
-                                 | PDEC_CTRLA_MAXCMP(4); 
+                                | PDEC_CTRLA_PINEN(0x3U) | PDEC_CTRLA_PINVEN(0x0U)
+                                 | PDEC_CTRLA_ANGULAR(7U)
+                                 | PDEC_CTRLA_MAXCMP(4U); 
     PDEC_REGS->PDEC_PRESC = PDEC_PRESC_PRESC_DIV1;
-    PDEC_REGS->PDEC_FILTER = PDEC_FILTER_FILTER(2);
+    PDEC_REGS->PDEC_FILTER = PDEC_FILTER_FILTER(2U);
 
     /* Configure angular and revolution period */
-    PDEC_REGS->PDEC_CC[0U] = 1023U | (0U << PDEC_ANGULAR_COUNTER_BITS);
+    PDEC_REGS->PDEC_CC[0U] = 1023U | (0UL << PDEC_ANGULAR_COUNTER_BITS);
 
     /* Clear all interrupt flags */
     PDEC_REGS->PDEC_INTFLAG = PDEC_INTFLAG_Msk;
@@ -99,7 +97,7 @@ void PDEC_QDECInitialize( void )
 
     PDEC_REGS->PDEC_EVCTRL = 0x0;
 
-    while((PDEC_REGS->PDEC_SYNCBUSY))
+    while((PDEC_REGS->PDEC_SYNCBUSY)!= 0U)
     {
         /* Wait for Write Synchronization */
     }
@@ -110,7 +108,7 @@ void PDEC_QDECStart( void )
 {
     PDEC_REGS->PDEC_CTRLA |= PDEC_CTRLA_ENABLE_Msk;
     PDEC_REGS->PDEC_CTRLBSET = PDEC_CTRLBSET_CMD_START;
-    while((PDEC_REGS->PDEC_SYNCBUSY))
+    while((PDEC_REGS->PDEC_SYNCBUSY)!= 0U)
     {
         /* Wait for Write Synchronization */
     }
@@ -121,7 +119,7 @@ void PDEC_QDECStop( void )
 {
     PDEC_REGS->PDEC_CTRLBSET = PDEC_CTRLBSET_CMD_STOP;
     PDEC_REGS->PDEC_CTRLA &= ~PDEC_CTRLA_ENABLE_Msk;
-    while((PDEC_REGS->PDEC_SYNCBUSY))
+    while((PDEC_REGS->PDEC_SYNCBUSY)!= 0U)
     {
         /* Wait for Write Synchronization */
     }
@@ -131,7 +129,7 @@ void PDEC_QDECStop( void )
 uint16_t PDEC_QDECPositionGet( void )
 {
     PDEC_REGS->PDEC_CTRLBSET = PDEC_CTRLBSET_CMD_READSYNC;
-    while(PDEC_REGS->PDEC_SYNCBUSY)
+    while((PDEC_REGS->PDEC_SYNCBUSY)!= 0U)
     {
         /* Wait for read Synchronization */
     }
@@ -146,7 +144,7 @@ uint16_t PDEC_QDECPositionGet( void )
 uint16_t PDEC_QDECRevolutionsGet( void )
 {
     PDEC_REGS->PDEC_CTRLBSET = PDEC_CTRLBSET_CMD_READSYNC;
-    while(PDEC_REGS->PDEC_SYNCBUSY)
+    while((PDEC_REGS->PDEC_SYNCBUSY)!= 0U)
     {
         /* Wait for read Synchronization */
     }
@@ -154,14 +152,14 @@ uint16_t PDEC_QDECRevolutionsGet( void )
     {
         /* Wait for CMD to become zero */
     }
-    return (uint16_t)(PDEC_REGS->PDEC_COUNT & 0x0);
+    return (uint16_t)(PDEC_REGS->PDEC_COUNT & 0x0U);
 }
 
 /* Read the angular position */
 uint16_t PDEC_QDECAngleGet( void )
 {
     PDEC_REGS->PDEC_CTRLBSET = PDEC_CTRLBSET_CMD_READSYNC;
-    while(PDEC_REGS->PDEC_SYNCBUSY)
+    while((PDEC_REGS->PDEC_SYNCBUSY)!= 0U)
     {
         /* Wait for read Synchronization */
     }
@@ -169,7 +167,7 @@ uint16_t PDEC_QDECAngleGet( void )
     {
         /* Wait for CMD to become zero */
     }    
-    return (uint16_t)(PDEC_REGS->PDEC_COUNT & 0xffff);
+    return (uint16_t)(PDEC_REGS->PDEC_COUNT & 0xffffU);
 }
 
 PDEC_QDEC_STATUS PDEC_QDECStatusGet( void )

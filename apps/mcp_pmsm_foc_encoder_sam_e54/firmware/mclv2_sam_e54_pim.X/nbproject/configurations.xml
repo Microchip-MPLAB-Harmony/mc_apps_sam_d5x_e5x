@@ -29,7 +29,6 @@
               <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_flux_control.h</itemPath>
               <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_interface_handling.h</itemPath>
               <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_voltage_measurement.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_position_control.h</itemPath>
               <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_flying_start.h</itemPath>
               <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_hardware_abstraction.h</itemPath>
               <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_rotor_position.h</itemPath>
@@ -260,7 +259,6 @@
               <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_pwm.c</itemPath>
               <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_flux_control.c</itemPath>
               <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_voltage_measurement.c</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_position_control.c</itemPath>
               <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_flying_start.c</itemPath>
               <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_current_control.c</itemPath>
               <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_hardware_abstraction.c</itemPath>
@@ -319,6 +317,7 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
+      <itemPath>../src/config/mclv2_sam_e54_pim/pin_configurations.csv</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
