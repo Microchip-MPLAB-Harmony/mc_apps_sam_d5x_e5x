@@ -81,10 +81,6 @@
 #define VPOT_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 6U)) & 0x01U)
 #define VPOT_PIN                  PORT_PIN_PA06
 
-/*** Macros for IDC pin ***/
-#define IDC_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 7U)) & 0x01U)
-#define IDC_PIN                  PORT_PIN_PA07
-
 /*** Macros for PWM_AH pin ***/
 #define PWM_AH_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 8U)) & 0x01U)
 #define PWM_AH_PIN                  PORT_PIN_PA08
@@ -190,7 +186,7 @@
 #define GET_PORT_GROUP(pin)  ((PORT_GROUP)(PORT_BASE_ADDRESS + (0x80U * (((uint32_t)pin) >> 5U))))
 #define GET_PIN_MASK(pin)   (((uint32_t)(0x1U)) << (((uint32_t)pin) & 0x1FU))
 
-/* Named type for port group */ 
+/* Named type for port group */
 typedef uint32_t PORT_GROUP;
 
 
@@ -543,7 +539,6 @@ typedef enum
 // Section: Generated API based on pin configurations done in Pin Manager
 // *****************************************************************************
 // *****************************************************************************
-
 // *****************************************************************************
 /* Function:
     void PORT_Initialize(void)
