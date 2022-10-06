@@ -57,7 +57,6 @@
 #include "peripheral/cmcc/plib_cmcc.h"
 #include "peripheral/eic/plib_eic.h"
 #include "peripheral/tc/plib_tc2.h"
-#include "peripheral/tc/plib_tc0.h"
 #include "peripheral/pdec/plib_pdec.h"
 #include "peripheral/tcc/plib_tcc0.h"
 #include "peripheral/adc/plib_adc0.h"
