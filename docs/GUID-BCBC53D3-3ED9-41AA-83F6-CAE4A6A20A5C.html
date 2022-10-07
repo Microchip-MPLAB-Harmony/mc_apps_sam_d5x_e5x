@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" /><meta name="copyright" content="(C) Copyright 2022" />
+<meta name="DC.rights.owner" content="(C) Copyright 2022" />
+<meta name="DC.type" content="topic" />
+<meta name="DC.title" content="FOC Based Position Control of PMSM Using Quadrature Encoder" />
+<meta name="DC.relation" scheme="URI" content="GUID-5B658248-6B24-4D48-AC42-3CBA0265AC10.html" />
+<meta name="DC.format" content="XHTML" />
+<meta name="DC.identifier" content="foc-based-position-control-of-pmsm-using-quadrature-encoder" />
+<link rel="stylesheet" type="text/css" href="stylesheets/atmel.css" />
+<title>FOC Based Position Control of PMSM Using Quadrature Encoder</title>
+<meta name="Microsoft.Help.Id" content="GUID-3DD240F8-2288-4D4E-8E90-E85E08AF9890-foc-based-position-control-of-pmsm-using-quadrature-encoder" />
+<meta name="Microsoft.Help.TocParent" content="GUID-3DD240F8-2288-4D4E-8E90-E85E08AF9890" />
+<meta name="Microsoft.Help.TocOrder" content="0" />
+<meta name="Microsoft.Help.Locale" content="en-US" />
+<meta name="Microsoft.Help.TopicLocale" content="en-US" />
+<meta name="Microsoft.Help.DisplayVersion" content="MPLAB® Harmony 3 Motor Control Applications for SAM D5x/E5x family Please select a publication type A 08/2022" />
+<script language="javascript">
+       
+       if (window.parent.location.protocol != 'file:') {
+				document.addEventListener('click', function(e) {
+				    if (e.target) {
+               if (e.target.nodeName == "A" ) {
+                    if (!e.target.target) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                              
+                      var origUrl = window.parent.location.href.substr(0, window.parent.location.href.indexOf("?"));
+                      if (origUrl.length === 0) {
+                          origUrl = window.parent.location.href;
+                      }
+                      var href= e.target.getAttribute("href");
+                      var parts = href.split("#");
+          
+                      var url = "";
+                      if (parts.length == 2 ) {
+                        if (!parts[0].length) {
+                            url = window.parent.location.search.replace('?','')
+                        } else {
+                            url = parts[0].replace('.html','');
+                        }
+                      } else {
+                        url = parts[0].replace('.html','');
+                      }
+
+                      if (parts.length == 2) {
+                          url += "#" + parts[1];
+                      }
+    
+                      window.parent.location.href = origUrl + "?" + url;
+
+                      return false;
+                    }
+               }
+            }
+				});
+			}
+
+		</script><script language="javascript">
+         
+         function copyContent(content, button) {
+         
+            var textArea = document.createElement("textarea");
+            
+            // Place in the top-left corner of screen regardless of scroll position.
+            textArea.style.position = 'fixed';
+            textArea.style.top = 0;
+            textArea.style.left = 0;
+            
+            // Ensure it has a small width and height. Setting to 1px / 1em
+            // doesn't work as this gives a negative w/h on some browsers.
+            textArea.style.width = '2em';
+            textArea.style.height = '2em';
+            
+            // We don't need padding, reducing the size if it does flash render.
+            textArea.style.padding = 0;
+            
+            // Clean up any borders.
+            textArea.style.border = 'none';
+            textArea.style.outline = 'none';
+            textArea.style.boxShadow = 'none';
+            
+            // Avoid flash of the white box if rendered for any reason.
+            textArea.style.background = 'transparent';
+            
+            textArea.value = content;
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+               var successful = document.execCommand('copy');
+               var msg = successful ? 'successful' : 'unsuccessful';
+               if (!button.classList.contains("copied")){
+                  button.textContent = "Copied";
+                  button.classList.add("copied");
+                  setTimeout(function(){
+                     button.textContent = "Copy";
+                     button.classList.remove("copied");
+                  },1000);
+               }
+            } catch (err) {
+               console.log('Oops, unable to copy');
+            }
+            
+            document.body.removeChild(textArea);
+         }
+         
+         function cpy(id, button) {
+            var element = document.getElementById(id);
+            var content = element.getAttribute("content");
+            
+            copyContent(content, button);
+         }
+         
+         document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.style.position = "relative";
+               var copy = document.createElement("button");
+               copy.textContent = "Copy";
+               copy.setAttribute("class", "copy-code");
+               
+               var content = elem.textContent;
+               
+               copy.addEventListener("click", function(){
+                  copyContent(content, copy);
+               });
+               
+               elem.addEventListener("mouseenter", function(evt){
+                  elem.prepend(copy);
+               });
+            });
+            
+            document.querySelectorAll(".codeblock").forEach(function(elem) {
+               elem.addEventListener("mouseleave", function(evt){
+                  document.querySelector(".copy-code").remove();
+               });
+            });
+         });
+         
+      </script><script language="javascript">
+          
+          // Add the MathML namespace to html
+          var html = document.getElementsByTagName("html")[0],
+          head = document.getElementsByTagName("head")[0];
+          
+          var mathJax = document.createElement("script");
+          mathJax.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML";
+          head.appendChild(mathJax);
+          
+          html.setAttribute("xmlns:m","http://www.w3.org/1998/Math/MathML");
+          
+          function inIframe() { try { return window.self !== window.top; } catch (e) { return true; } }
+          
+          if (!inIframe()) { 
+          
+          var Default = "index.html?GUID-BCBC53D3-3ED9-41AA-83F6-CAE4A6A20A5C"; 
+          
+          var displaylocation = "value" + window.location.href;
+          
+          var GUIDS = displaylocation.split('GUID');          
+          
+          if (displaylocation.indexOf('#GUID') != -1) {            
+          var First = GUIDS[1].split('.html');  
+          if (GUIDS[3]){First = GUIDS[2].split('.html');}
+          if (GUIDS[4]){First = GUIDS[3].split('.html');}
+          if (GUIDS[5]){First = GUIDS[4].split('.html');}
+          
+          var Second = GUIDS[2].split('#');   
+          if (GUIDS[3]){Second = GUIDS[3].split('#');}
+          if (GUIDS[4]){Second = GUIDS[4].split('#');}
+          if (GUIDS[5]){Second = GUIDS[5].split('#');}
+          
+          Default = "index.html?" + "GUID" + First[0] + "GUID" + Second[0];     
+          }                    
+          window.top.location = Default;
+          }       
+          
+        </script><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /><style xml:space="">
+        
+          button.copy-code{
+            display:none;
+            padding:0.7em 1.4em;
+            margin:0 0.3em 0.3em 0;
+            border-radius:0.15em;
+            box-sizing: border-box;
+            text-decoration:none;
+            font-family:'Roboto',sans-serif;
+            text-transform:uppercase;
+            font-weight:400;
+            color:#FFFFFF;
+            background-color:#9c9c9c;
+            box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+            text-align:center;
+            position:relative;
+            border: 0;
+            float: right;
+            border-radius: .5em;
+            cursor: pointer;
+          }
+          button.copy-code:active{
+            top:0.1em;
+          }
+          
+          pre:hover button.copy-code{
+            display: inline-block !important;
+          }
+          button.copy-code.copied {
+            cursor: default !important;
+          }
+          
+          
+          @media all and (max-width:30em){
+            button.copy-code{
+              display:block;
+              margin:0.4em auto;
+            }
+          }
+        
+        
+      </style><link rel="stylesheet" type="text/css" href="syntax-highlight.css" /></head>
+<body id="foc-based-position-control-of-pmsm-using-quadrature-encoder">
+<h1 class="title topictitle1" id="ariaid-title1">FOC Based Position Control of PMSM Using Quadrature Encoder</h1><div class="body"><p class="p">This motor control example project shows how to control the position of Permanent Magnet Synchronous Motor (PMSM) using an Encoder based Field Oriented Control (FOC) on SAME54 Micro-controller.</p>
+<p class="p"><strong class="ph b">Description</strong>
+The permanent magnet synchronous motors ( PMSM ) is widely used in various industries due to its high power density, smaller size and high efficiency. The Field oriented control is one of the most popular control mechanisms for the PMSM motor for applications which requires high dynamic performance.</p>
+<p class="p">This example shows how to configure motor control peripherals ADC, PDEC and TCC for the control operation. The control strategy is the sensored FOC, in which rotor position is determined by the Quadrature Encoder. Position is obtained using quadrature encoder and speed is calculated from the position.</p>
+<p class="p">Waveforms and variables can be monitored at runtime using X2CScope.</p>
+<p class="p">Key features enabled in this project are:</p>
+<ul class="ul"><li class="li"><p class="p">Dual shunt current measurement</p>
+</li>
+<li class="li"><p class="p">Speed control loop</p>
+</li>
+<li class="li"><p class="p">Position control loop</p>
+</li>
+</ul>
+<p class="p"><strong class="ph b">MHC Project Configurations</strong></p>
+<br /><img class="image" src="GUID-D590202A-5CA8-44E5-A0AF-54991E10131F-low.jpg" alt="MHC Project Graph" /><br /><ul class="ul"><li class="li"><p class="p"><strong class="ph b">ADC0-ADC1</strong>:</p>
+<p class="p">ADC0 and ADC1 are setup to operate in Master - Slave mode with ADC0 acting as a Master</p>
+<p class="p">Both ADCs convert single ended inputs. Phase U current is sampled and converted by ADC0 and Phase V current is sampled and converted by ADC1</p>
+<p class="p">Both ADCs are hardware triggered simultaneously by an event generated from TCC0 at the end of each PWM cycle</p>
+<p class="p">Conversion Ready interrupt is generated by ADC0. Since both ADCs are triggered simultaneously and have the same resolution and sampling time, both ADCs complete conversion at the same time</p>
+</li>
+<li class="li"><p class="p"><strong class="ph b">TCC0</strong>:</p>
+<p class="p">This peripheral is used to generated three phase synchronous PWM waveforms. Fault functionality is also enabled to switch off the output waveforms asynchronously.</p>
+</li>
+<li class="li"><p class="p"><strong class="ph b">PDEC Peripheral</strong>:</p>
+<p class="p">It is used to decode the rotor position and speed from quadrature encoder signals.</p>
+</li>
+<li class="li"><p class="p"><strong class="ph b">EIC</strong>:</p>
+<p class="p">External Interrupt Controller detects a hardware over-current fault input and generates a non-recoverable fault event for TCC0, thereby shutting down the PWM in the event of an over-current fault</p>
+</li>
+<li class="li"><p class="p"><strong class="ph b">EVSYS</strong>:</p>
+<p class="p">Event System acts as an intermediary between event generator and event users</p>
+<p class="p">Event generated by the TCC0 when the counter reaches TOP, is used by the ADC0 as a hardware trigger source via the Event System</p>
+<p class="p">Event generated by the EIC upon over-current fault, is used by the TCC0 as a non-recoverable fault event via Event System</p>
+</li>
+<li class="li"><p class="p"><strong class="ph b">SERCOM2</strong>:</p>
+<p class="p">SERCOM2 is configured in USART mode and is set to operate at 115200 bps</p>
+<p class="p">This USART channel is used by the X2CScope plugin to plot or watch global variables in run-time. Refer to X2C Scope Plugin section for more details on how to install and use the X2CScope</p>
+</li>
+</ul>
+<p class="p"><strong class="ph b">Control Algorithm</strong></p>
+<p class="p">This section briefly explains the FOC control algorithm, software design and implementation.</p>
+<p class="p">Field Oriented Control is the technique used to achieve the decoupled control of torque and flux. This is done by transforming the stator current quantities (phase currents) from stationary reference frame to torque and flux producing currents components in rotating reference frame using mathematical transformations. The Field Oriented Control is done as follows:</p>
+<ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Measure the motor phase currents.</p>
+</li>
+<li class="li"><span class="indent-level-default">2.</span><p class="p">Transform them into the two phase system (a, b) using the Clarke transformation.</p>
+</li>
+<li class="li"><span class="indent-level-default">3.</span><p class="p">Calculate the rotor position angle.</p>
+</li>
+<li class="li"><span class="indent-level-default">4.</span><p class="p">Transform stator currents into the d,q-coordinate system using the Park transformation.</p>
+</li>
+<li class="li"><span class="indent-level-default">5.</span><p class="p">Position and speed are controlled by position and speed PI controllers respectively.</p>
+</li>
+<li class="li"><span class="indent-level-default">6.</span><p class="p">The stator current torque (iq) and flux (id) producing components are controlled separately by the corresponding PI controllers.</p>
+</li>
+<li class="li"><span class="indent-level-default">7.</span><p class="p">The output stator voltage space vector is transformed back from the d,q-coordinate system into the two phase system fixed with the stator by the Inverse Park transformation.</p>
+</li>
+<li class="li"><span class="indent-level-default">8.</span><p class="p">Using the space vector modulation, the three-phase output voltage is generated.</p>
+</li>
+</ol>
+<p class="p"><strong class="ph b">Quadrature Encoder based Position and Speed Measurement</strong> :</p>
+<p class="p">Rotor position and speed are determined using quadrature encoder sensor. PDEC counts
+the decoded quadrature pulses which is the position of the rotor. In this example, counter is a free running counter and software logic is implemented to get the exact angular position from the count. Speed is calculated by measuring the number of quadrature pulses in a fixed time interval.</p>
+<p class="p">Rotor is first aligned to a known position by exiciting either d-axis or q-axis. Motor's position is controlled in a closed loop there after.</p>
+<p class="p">The following block diagram shows the software realization of the FOC algorithm.</p>
+<br /><img class="image" src="GUID-28490AAF-3FA3-4BE1-91FA-1F1125D85CFC-low.jpg" alt="block_diagram" /><br /><p class="p"><strong class="ph b">Software Design</strong></p>
+<p class="p">The following figure shows the various state machines of the the motor control software.</p>
+<br /><img class="image" src="GUID-25189E69-38CA-4FE8-AC2A-13961ACACCA2-low.jpg" alt="state_machine" /><br /><p class="p">In the software, the PMSM position control task is realized by a state machine as shown in the previous figure. The following sections briefly describe the various states in the PMSM position control:</p>
+<p class="p"><strong class="ph b">INITIALIZE</strong>
+In this state, following tasks are performed:</p>
+<ol class="ol"><li class="li"><span class="indent-level-default">1.</span><p class="p">Initialization and configuration of motor control peripherals for generation of periodic ADC triggers and ADC conversion interrupt</p>
+</li>
+<li class="li"><span class="indent-level-default">2.</span><p class="p">Current Offset measurement and calibration</p>
+</li>
+<li class="li"><span class="indent-level-default">3.</span><p class="p">Initialize PI controller parameters for speed and current control loops</p>
+</li>
+</ol>
+<p class="p"><strong class="ph b">START</strong>
+In this state, the motor control state variables are reset and the periodic ADC conversion interrupt is enabled. Control waits for the switch press.</p>
+<p class="p"><strong class="ph b">Run</strong>
+In this state, the motor starts spinning. The below flow chart and the timing diagram shows the tasks performed in run state:
+<img class="image" src="GUID-DDF45BFF-57DD-4B7E-9A0A-9965FFDDC848-low.jpg" alt="timing_diagram" /><br /></p>
+<p class="p">The position control is carried out in the ADC interrupt task</p>
+<p class="p"><strong class="ph b">Development Kits</strong></p>
+<p class="p"><strong class="ph b">MCLV2 with ATSAME54 PIM</strong>
+<strong class="ph b">Downloading and building the application</strong></p>
+<p class="p">To clone or download this application from Github, go to the <a class="xref" href="https://github.com/Microchip-MPLAB-Harmony/mc_apps_sam_d5x_e5x" target="_blank">main page of this repository</a> and then click <strong class="ph b">Clone</strong> button to clone this repository or download as zip file.
+This content can also be downloaded using content manager by following these <a class="xref" href="https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki" target="_blank">instructions</a>.</p>
+<p class="p">Path of the application within the repository is <strong class="ph b">apps/pmsm_foc_encoder_position_sam_e54</strong> .</p>
+<p class="p">To build the application, refer to the following table and open the project using its IDE.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d768e213"><span>Project Name</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d768e215"><span>Description</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d768e217"><span>Demo User Guide</span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d768e213 "><span>mclv2_sam_e54_pim.X</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d768e215 "><span>MPLABX project for MCLV2 board with ATSAME54 PIM</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d768e217 "><span><a class="xref" href="GUID-ADA749A6-70E8-4A1F-8019-5EC170A1250C.html">Hardware Setup and Running The Application on MCLV2 with ATSAME54 PIM</a></span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" colspan="3" style="vertical-align:middle;" headers="d768e213 d768e215 d768e217 "><span> </span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="p"><strong class="ph b">MCHV3 with ATSAME54 PIM</strong>
+<strong class="ph b">Downloading and building the application</strong></p>
+<p class="p">To clone or download this application from Github, go to the <a class="xref" href="https://github.com/Microchip-MPLAB-Harmony/mc_apps_sam_d5x_e5x" target="_blank">main page of this repository</a> and then click <strong class="ph b">Clone</strong> button to clone this repository or download as zip file.
+This content can also be downloaded using content manager by following these <a class="xref" href="https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki" target="_blank">instructions</a>.</p>
+<p class="p">Path of the application within the repository is <strong class="ph b">apps/pmsm_foc_encoder_position_sam_e54</strong> .</p>
+<p class="p">To build the application, refer to the following table and open the project using its IDE.</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><col style="width:" /><col style="width:" /><col style="width:" /><thead class="thead" style="text-align:left;"><tr class="row"><th class="entry cellrowborder" style="vertical-align:middle;" id="d768e265"><span>Project Name</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d768e267"><span>Description</span></th>
+<th class="entry cellrowborder" style="vertical-align:middle;" id="d768e269"><span>Demo User Guide</span></th>
+</tr>
+</thead>
+<tbody class="tbody"><tr class="row"><td class="entry cellrowborder" style="vertical-align:middle;" headers="d768e265 "><span>mchv3_sam_e54_pim.X</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d768e267 "><span>MPLABX project for MCHV3 board with ATSAME54 PIM</span></td>
+<td class="entry cellrowborder" style="vertical-align:middle;" headers="d768e269 "><span><a class="xref" href="GUID-38AE3206-A3BE-4C3F-BEE1-FF3D4CD29663.html">Hardware Setup and Running The Application on MCHV3 with ATSAME54 PIM</a></span></td>
+</tr>
+<tr class="row"><td class="entry cellrowborder" colspan="3" style="vertical-align:middle;" headers="d768e265 d768e267 d768e269 "><span> </span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-5B658248-6B24-4D48-AC42-3CBA0265AC10.html">Motor Control Applications</a></div>
+</div>
+</div></body>
+</html>
