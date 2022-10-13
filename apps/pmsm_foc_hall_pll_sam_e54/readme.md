@@ -7,7 +7,7 @@ has_toc: false
 
 [![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
 
-# PMSM FOC Using Hall Sensor
+# PMSM FOC Using PLL Estimator with Hall Sensor Startup
 
 This motor control example project shows how to control the Permanent Magnet Synchronous Motor (PMSM) using hall sensor  based Field Oriented Control (FOC) on SAME54 Micro-controller.
 
