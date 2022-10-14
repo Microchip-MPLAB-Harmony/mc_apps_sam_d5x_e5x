@@ -99,7 +99,6 @@
               <itemPath>../src/config/mclv2_sam_e54_pim/peripheral/tcc/plib_tcc_common.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <itemPath>../src/config/mclv2_sam_e54_pim/userparams.h</itemPath>
           <itemPath>../src/config/mclv2_sam_e54_pim/device_cache.h</itemPath>
           <itemPath>../src/config/mclv2_sam_e54_pim/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/mclv2_sam_e54_pim/definitions.h</itemPath>
