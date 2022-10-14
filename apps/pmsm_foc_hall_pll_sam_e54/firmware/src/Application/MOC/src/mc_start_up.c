@@ -114,6 +114,8 @@ static tStd_ReturnType_e  mcSup_AssertionFailedReaction( const char * message )
 
 #define ASSERT(expression, message) { if(!expression) mcSup_AssertionFailedReaction( message);}
 
+
+extern void mcLib_WrapAngleTo2Pi( float * const angle );
 /*******************************************************************************
  Interface Functions 
  *******************************************************************************/

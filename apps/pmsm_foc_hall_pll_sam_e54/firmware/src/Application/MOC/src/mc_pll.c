@@ -80,6 +80,7 @@ Headers inclusions
  */
 #define  CONSTANT_mechRpmToElecRadPerSec  (float)( CONSTANT_2Pi * NOPOLESPAIRS / 30.0f ) 
 
+extern void mcLib_WrapAngleTo2Pi( float * const angle );
 /*******************************************************************************
  Private data-types 
  *******************************************************************************/
