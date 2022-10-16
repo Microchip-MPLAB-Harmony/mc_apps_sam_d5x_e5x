@@ -33,9 +33,9 @@ notes and licensing information.
 |||
 
 
-## Configurable Motor Control Examples (Motor Control Plant code-genaration)
+## Configurable Motor Control Examples (MCC with Harmony QSpin Motor Control )
 
-The following applications are provided to demonstrate the usage of Motor Control Plant to generate motor control application with Microchip's 32-bit MCUs.
+The following applications are provided to demonstrate the usage of Harmony QSpin to generate motor control application with Microchip's 32-bit MCUs.
 
 
 | Name | Description|Control Board|Inverter Board|
