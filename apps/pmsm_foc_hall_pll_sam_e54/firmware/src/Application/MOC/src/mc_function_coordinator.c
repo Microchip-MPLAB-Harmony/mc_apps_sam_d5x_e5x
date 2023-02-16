@@ -58,7 +58,7 @@ Headers inclusions
 /*******************************************************************************
  Private variables 
  *******************************************************************************/
-
+static uintptr_t dummyforMisra;
 /*******************************************************************************
  Interface variables 
  *******************************************************************************/
@@ -125,7 +125,7 @@ void mcFcoI_SoftwareModuleInit( void)
     mcHallI_HallSignalProcessInit(&mcHallI_ModuleData_gds);
         
      /* Initialize sensor-less position estimation   */
-    mcRpoI_RotorPositionCalculationInit(&mcRpoI_ModuleData_gds);
+    mcRpoI_PosCalInit(&mcRpoI_ModuleData_gds);
     
      /* Voltage measurement module initialization */
      mcVolI_VoltageMeasurementInit(&mcVolI_ModuleData_gds);
@@ -151,7 +151,7 @@ void mcFcoI_AdcCalibrationTasks (ADC_STATUS status, uintptr_t context)
     if( returnType_Passed == mcCurI_OffsetCalibarationRun() )
     {
         ADC0_Disable();
-        ADC0_CallbackRegister((ADC_CALLBACK) mcFcoI_AdcInterruptTasks, (uintptr_t)NULL);
+        ADC0_CallbackRegister((ADC_CALLBACK) mcFcoI_AdcInterruptTasks, (uintptr_t)dummyforMisra);
         ADC0_Enable();
     }
 }
@@ -179,7 +179,7 @@ void mcFcoI_AdcInterruptTasks(ADC_STATUS status, uintptr_t context)
     *pOutput->tcHallToAdcIsr = TC2_Timer32bitCounterGet() - ( *pOutput->tcHallIsr );
        
     /* Rotor position measurement */
-    mcRpoI_RotorPositionCalculationRun(&mcRpoI_ModuleData_gds); 
+    mcRpoI_PosCalRun(&mcRpoI_ModuleData_gds); 
 
     /* Enable HALL ISR */
     NVIC_EnableIRQ(PDEC_OTHER_IRQn);
@@ -205,8 +205,10 @@ void mcFcoI_AdcInterruptTasks(ADC_STATUS status, uintptr_t context)
       
     mcMocI_MotorControlRun(&mcMocI_MotorControl_gds);
     
-    mcBseI_WaitAdcConversion();
-                       
+    while(ADC0_REGS->ADC_INTFLAG != ADC_INTFLAG_RESRDY_Msk)
+    {
+        /*Wait for ADC conversion complete*/
+    }           
     /* Read the ADC result value */
     mcBseI_UdcAdcInput_gds16 = mcBseI_UdcAdcInputGet();
     mcBseI_UpotAdcInput_gds16 = mcBseI_UpotAdcInputGet( );
@@ -238,7 +240,7 @@ void mcFcoI_HallEventISR ( PDEC_HALL_STATUS status, uintptr_t context )
        /* Determine time elapsed between two HALL events */
        capture_val_last = *pOutput->tcHallIsr;
       *pOutput->tcHallIsr = TC2_Capture32bitChannel0Get();
-       if(0xFFFFFFFFlu == *pOutput->tcHallIsr)
+       if(0xFFFFFFFFLU == *pOutput->tcHallIsr)
        {
           *pOutput->tcHallIsr = TC2_Capture32bitChannel0Get();
        }

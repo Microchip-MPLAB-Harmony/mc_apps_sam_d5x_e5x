@@ -54,7 +54,7 @@ Headers inclusions
 /*******************************************************************************
  Private data-types 
  *******************************************************************************/
-typedef struct _tmcCur_StateVariables_s
+typedef struct
 {
     uint16_t sampleCount;
     uint16_t iaAdcOffset;
@@ -120,15 +120,15 @@ tStd_ReturnType_e mcCurI_OffsetCalibarationRun( void)
     tStd_ReturnType_e status = returnType_Running;
     
     mcCur_StateVariables_mds.sampleCount++;
-    if(mcCur_StateVariables_mds.sampleCount <= 4096)
+    if(mcCur_StateVariables_mds.sampleCount <= 4096U)
     {
-        mcCur_StateVariables_mds.iaAdcSum += mcBseI_IaAdcInput_gds16;    
-        mcCur_StateVariables_mds.ibAdcSum += mcBseI_IbAdcInput_gds16;
+        mcCur_StateVariables_mds.iaAdcSum += (uint32_t)mcBseI_IaAdcInput_gds16;    
+        mcCur_StateVariables_mds.ibAdcSum += (uint32_t)mcBseI_IbAdcInput_gds16;
     }
     else
     {
-        mcCur_StateVariables_mds.iaAdcOffset = mcCur_StateVariables_mds.iaAdcSum >>12;
-        mcCur_StateVariables_mds.ibAdcOffset = mcCur_StateVariables_mds.iaAdcSum >>12;     
+        mcCur_StateVariables_mds.iaAdcOffset = (uint16_t)(mcCur_StateVariables_mds.iaAdcSum >>12U);
+        mcCur_StateVariables_mds.ibAdcOffset = (uint16_t)(mcCur_StateVariables_mds.iaAdcSum >>12U);     
         status = returnType_Passed; 
     }
     return status;
@@ -149,11 +149,11 @@ void mcCurI_CurrentMeasurementRun(tmcCur_ModuleData_s * const module)
     float temp;
     
     /* Phase A current calculation */
-    temp =  (float)((int16_t)mcCur_StateVariables_mds.iaAdcOffset - (int16_t)mcBseI_IaAdcInput_gds16) ;
+    temp =  (float)((float)mcCur_StateVariables_mds.iaAdcOffset - (float)mcBseI_IaAdcInput_gds16) ;
     *module->dOutputPorts.iA =  temp * ADC_CURRENT_SCALE ;
     
     /* Phase B current calculation */
-    temp = (float)((int16_t)mcCur_StateVariables_mds.ibAdcOffset - (int16_t)mcBseI_IbAdcInput_gds16) ;
+    temp = (float)((float)mcCur_StateVariables_mds.ibAdcOffset - (float)mcBseI_IbAdcInput_gds16) ;
     *module->dOutputPorts.iB =  temp * ADC_CURRENT_SCALE ;
 }
 
@@ -173,9 +173,9 @@ void mcCurI_CurrentMeasurementReset(tmcCur_ModuleData_s * const module )
     
     pState = &mcCur_StateVariables_mds;
     
-    pState->sampleCount  = 0;
-    pState->iaAdcOffset = 0;
-    pState->ibAdcOffset = 0;
-    pState->iaAdcSum      = 0;
-    pState->ibAdcOffset  = 0;
+    pState->sampleCount  = 0U;
+    pState->iaAdcOffset = 0U;
+    pState->ibAdcOffset = 0U;
+    pState->iaAdcSum      = 0U;
+    pState->ibAdcOffset  = 0U;
 }

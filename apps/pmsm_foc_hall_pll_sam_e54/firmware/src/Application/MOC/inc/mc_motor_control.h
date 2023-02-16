@@ -56,7 +56,7 @@
 /*******************************************************************************
  User defined data-types
  *******************************************************************************/
-typedef struct _tmcMocI_InputPorts_s
+typedef struct
 {
     float * iA;
     float * iB;
@@ -69,7 +69,7 @@ typedef struct _tmcMocI_InputPorts_s
     float * cmdSpeed;
 }tmcMocI_InputPorts_s;
 
-typedef struct _tmcMocI_OutputPorts_s
+typedef struct
 {
     float * uA;
     float * uB;
@@ -224,6 +224,7 @@ void mcMocI_MotorStartToggle(tmcMocI_MotorControl_s * const pState);
  * @return:
  */
 void mcMocI_MotorDirectionToggle(tmcMocI_MotorControl_s * const pState);
+
 
 #endif /* MCMOC_H */
 

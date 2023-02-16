@@ -40,8 +40,8 @@
 *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef MCVOLH_    // Guards against multiple inclusion
-#define MCVOL_H_
+#ifndef MCVOL_H   // Guards against multiple inclusion
+#define MCVOL_H
 
 /*******************************************************************************
  Header files inclusions
@@ -59,25 +59,25 @@
 /*******************************************************************************
  User defined data-types
  *******************************************************************************/
-typedef struct _tmcVol_InputPorts_s
+typedef struct 
 {
     int16_t * udcAdcInput;
 }tmcVol_InputPorts_s;
 
-typedef struct _tmcVol_UserParameters_s
+typedef struct
 {
     float udcFiltParam;
     float adcUnitsToVolts;
 }tmcVol_UserParameters_s;
 
-typedef struct _tmcVol_OutputPorts_s
+typedef struct
 {
     float * udc;
     float * udcFilt;
     float * uacPeak;
 }tmcVol_OutputPorts_s;
 
-typedef struct _tmcVol_ModuleData_s
+typedef struct
 {
     uint8_t                                    index;
     tmcVol_InputPorts_s             dInputPorts;
@@ -137,7 +137,7 @@ __STATIC_INLINE void mcVolI_OutputPortsSet( tmcVol_OutputPorts_s * const pPorts 
  */
 __STATIC_INLINE void mcVolI_UserParametersSet( tmcVol_UserParameters_s * const pPorts )
 {
-    pPorts->udcFiltParam = 0.05;
+    pPorts->udcFiltParam = 0.05f;
     pPorts->adcUnitsToVolts = VOLTAGE_ADC_TO_PHY_RATIO;
 }
 

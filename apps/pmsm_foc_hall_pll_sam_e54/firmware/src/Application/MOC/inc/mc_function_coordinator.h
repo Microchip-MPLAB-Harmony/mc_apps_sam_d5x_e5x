@@ -71,24 +71,24 @@
 /*******************************************************************************
  User defined data-types
  *******************************************************************************/
-typedef struct _tmcFco_InputPorts_s
+typedef struct
 {
     
 }tmcFco_InputPorts_s;
 
-typedef struct _tmcFco_OutputPorts_s 
+typedef struct
 {
     uint32_t * tcHallToAdcIsr;
     uint32_t * tcHallIsr;
     uint32_t * tcHallToHallIsr;
 }tmcFco_OutputPorts_s;
 
-typedef struct _tmcFco_UserParameters_s
+typedef struct
 {
 
 }tmcFco_UserParameters_s;
 
-typedef struct _tmcFco_ModuleData_s
+typedef struct
 {
     uint8_t index;
     tmcFco_InputPorts_s           dInput;
@@ -200,6 +200,18 @@ void mcFcoI_AdcInterruptTasks(ADC_STATUS status, uintptr_t context);
  * @return:
  */
 void mcFcoI_HallEventISR ( PDEC_HALL_STATUS status, uintptr_t context );
+
+/*! \brief Function Coordinator initialization 
+ * 
+ * Details.
+ * Function Coordinator initialization
+ * 
+ * @param[in]: 
+ * @param[in/out]:
+ * @param[out]:
+ * @return:
+ */
+void mcFcoI_FunctionCoordinatorInit(tmcFco_ModuleData_s * const module);
 
 #endif //MCBSE_H_
 

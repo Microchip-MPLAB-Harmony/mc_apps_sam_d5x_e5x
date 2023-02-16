@@ -154,6 +154,10 @@ void CLOCK_Initialize (void)
 {
     /* MISRAC 2012 deviation block start */
     /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID - H3_MISRAC_2012_R_2_2_DR_2 */
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Wunknown-pragmas"
+    #pragma coverity compliance block deviate "MISRA C-2012 Rule 2.2" "H3_MISRAC_2012_R_2_2_DR_2"
+
 
     /* Function to Initialize the Oscillators */
     OSCCTRL_Initialize();
@@ -168,6 +172,9 @@ void CLOCK_Initialize (void)
     GCLK0_Initialize();
     GCLK3_Initialize();
 
+
+    #pragma coverity compliance end_block "MISRA C-2012 Rule 2.2"
+    #pragma GCC diagnostic pop
     /* MISRAC 2012 deviation block end */
 
     /* Selection of the Generator and write Lock for EIC */

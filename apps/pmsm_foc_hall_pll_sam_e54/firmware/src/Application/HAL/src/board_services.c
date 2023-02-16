@@ -79,8 +79,8 @@ tmcBse_DelayGeneration_s mcBse_DelayState_mds;
 /*******************************************************************************
  Interface variables 
  *******************************************************************************/
-tmcBse_ButtonState_s    button_S2_data;
-tmcBse_ButtonState_s    button_S3_data;
+static tmcBse_ButtonState_s    button_S2_data;
+static tmcBse_ButtonState_s    button_S3_data;
 
 /*******************************************************************************
  Private Functions 
@@ -101,15 +101,21 @@ tmcBse_ButtonState_s    button_S3_data;
  */
 void mcBseI_InverterDisable( void )
 {
-    TCC0_PWM24bitDutySet(TCC0_CHANNEL0,(uint32_t)PWM_PERIOD_COUNT>>1);
-    TCC0_PWM24bitDutySet(TCC0_CHANNEL1,(uint32_t)PWM_PERIOD_COUNT>>1);
-    TCC0_PWM24bitDutySet(TCC0_CHANNEL2,(uint32_t)PWM_PERIOD_COUNT>>1);
+    uint8_t status=1U;
+    bool pwm_flag;
+
+    status |=(uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL0,(uint32_t)PWM_PERIOD_COUNT>>1u));
+    status |=(uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL1,(uint32_t)PWM_PERIOD_COUNT>>1u));
+    status |=(uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL2,(uint32_t)PWM_PERIOD_COUNT>>1u));
     
     /*Override all PWM outputs to low*/
-    TCC0_PWMPatternSet((TCC_PATT_PGE0_Msk|TCC_PATT_PGE1_Msk|TCC_PATT_PGE2_Msk
+    status |=(uint8_t)(pwm_flag = TCC0_PWMPatternSet((TCC_PATT_PGE0_Msk|TCC_PATT_PGE1_Msk|TCC_PATT_PGE2_Msk
             |TCC_PATT_PGE4_Msk|TCC_PATT_PGE5_Msk|TCC_PATT_PGE6_Msk),
             (TCC_PATT_PGE0(0)|TCC_PATT_PGE1(0)|TCC_PATT_PGE2(0)|TCC_PATT_PGE4(0)
-            |TCC_PATT_PGE5(0)|TCC_PATT_PGE6(0)));
+            |TCC_PATT_PGE5(0)|TCC_PATT_PGE6(0))));
+    if (status!=1U){
+        /* Error log*/
+    }
 }
 
 /*! \brief Enable inverter
@@ -124,8 +130,13 @@ void mcBseI_InverterDisable( void )
  */
 void mcBseI_InverterEnable( void )
 {
+    uint8_t status=1U;
+    bool pwm_flag;
     /*Disable PWM override*/
-    TCC0_PWMPatternSet(0x00,0x00);
+    status |=(uint8_t)(pwm_flag = TCC0_PWMPatternSet(0x00,0x00));
+    if (status!=1U){
+        /* Error log*/
+    }
 }
 
 /*! \brief Board services initialization 
@@ -145,7 +156,7 @@ void mcBseI_BoardServicesInit( void )
 //    EIC_CallbackRegister ((EIC_PIN)EIC_PIN_2, (EIC_CALLBACK) OC_FAULT_ISR,(uintptr_t)NULL);
 //    PDEC_HALLCallbackRegister((PDEC_HALL_CALLBACK)HALL_jump_ISR, (uintptr_t)NULL);
 //    
-//    PDEC_HALLStart();  /* Start PDEC in HALL or QDEC mode. */
+//    PDEC_HALLStart(); 
 //    TCC0_PWMStart(); 
 //    ADC0_Enable();
 //    X2CScope_Init();
@@ -231,9 +242,14 @@ void mcBseI_ButtonScan(void)
 
 void mcBseI_InverterDutySet( tmcMocI_SVPWM_s *duty)
 {
-   TCC0_PWM24bitDutySet(TCC0_CHANNEL0,(uint32_t) duty->dPWM_A );
-   TCC0_PWM24bitDutySet(TCC0_CHANNEL1,(uint32_t) duty->dPWM_B );
-   TCC0_PWM24bitDutySet(TCC0_CHANNEL2,(uint32_t) duty->dPWM_C );
+   uint8_t status=1U;
+   bool pwm_flag;
+   status |=(uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL0,(uint32_t) duty->dPWM_A ));
+   status |=(uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL1,(uint32_t) duty->dPWM_B ));
+   status |=(uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL2,(uint32_t) duty->dPWM_C ));
+   if (status!=1U){
+        /* Error log*/
+   }
 }
 
 /*! \brief Set phase A current channel
@@ -382,9 +398,13 @@ void mcBseI_TriggerAdcConversion( void )
  * @param[out]:
  * @return:
  */
-void mcBseI_WaitAdcConversion( void )
+void mcBseI_WaitAdcConversion(void)
 {
-    while(ADC0_REGS->ADC_INTFLAG != ADC_INTFLAG_RESRDY_Msk);
+    while(ADC0_REGS->ADC_INTFLAG != ADC_INTFLAG_RESRDY_Msk)
+    {
+        /*ADC conversion complete*/
+    }
+    
 }
 
 /*! \brief Disable ADC interrupt 

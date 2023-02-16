@@ -48,31 +48,29 @@
 /*******************************************************************************
  Constants
  *******************************************************************************/
-#define CONSTANT_3PiBy2 (float)(1.5 * M_PI)
-#define CONSTANT_2Pi  (float)(2.0 * M_PI)
 
 #define CONFIG_AlignmentTime   (float)(0.5f)
-#define CONSTANT_AlignmentCounts  (float)( CONFIG_AlignmentTime * PWM_FREQ )
+#define CONSTANT_AlignmentCounts  (float)( CONFIG_AlignmentTime * (float)PWM_FREQ )
 
 #define CONFIG_RampTime   (float)(5.0f)
-#define CONSTANT_RampCounts  (float)( CONFIG_RampTime * PWM_FREQ )
+#define CONSTANT_RampCounts  (float)( CONFIG_RampTime *  (float)PWM_FREQ )
 
 #define CONFIG_OpenLoopStabSpeedInRpm    (float)(500.0f)
 #define CONSTANT_RpmToRadPerSec   (float)( CONSTANT_2Pi  * NOPOLESPAIRS / 60.0f )
-#define CONFIG_OpenLoopStabSpeedInRadPerLoop   (float)(CONSTANT_RpmToRadPerSec * CONFIG_OpenLoopStabSpeedInRpm/ PWM_FREQ )
+#define CONFIG_OpenLoopStabSpeedInRadPerLoop   (float)(CONSTANT_RpmToRadPerSec * CONFIG_OpenLoopStabSpeedInRpm/ (float)PWM_FREQ )
 
 #define CONSTANT_OpenLoopAccelRate  (float)(CONFIG_OpenLoopStabSpeedInRadPerLoop / CONSTANT_RampCounts )
 
 #define CONFIG_OpenLoopCurrent  (float)(0.4f)
 
-#define CONFIG_HoldTimeCount  (uint32_t)( 2.0f * PWM_FREQ )
+#define CONFIG_HoldTimeCount  (uint32_t)( 2U * (uint32_t)PWM_FREQ )
 
 
 #define CONFIG_AngleStepSize  (float)( 10.0f )
 #define CONSTANT_AngleStepSize  (float)( CONSTANT_Pi * CONFIG_AngleStepSize / 180.0f  )
-#define CONSTANT_NumberOfSamples  (uint8_t)( ( CONSTANT_2Pi/ CONSTANT_AngleStepSize ) + 0.5 )
+#define CONSTANT_NumberOfSamples  (float)( ( CONSTANT_2Pi/ CONSTANT_AngleStepSize ) + 0.5f )
 
-#define CONSTANT_PulsePeriodInLoopCount   (uint32_t)(0.5f * PWM_FREQ )
+#define CONSTANT_PulsePeriodInLoopCount   (uint32_t)((uint32_t)PWM_FREQ/(uint32_t)2U )
 #define CONSTANT_PulseDutyInLoopCount   (uint32_t)(CONSTANT_PulsePeriodInLoopCount >> 1u  )
 #define CONSTANT_PulseMaximumPeak    (float)( 0.4f)
 #define CONSTANT_PulseMinimumPeak    (float)( 0.2f)
@@ -89,40 +87,40 @@
 #define CONSTANT_SensorlessFocEnableSpeed  (float)( CONFIG_SensorlessFocEnableSpeed  * CONSTANT_RpmToRadPerSec )
 
 
-const uint16_t TABLE_ClockwisePattern[8u] = {
-    0x0077, /*Invalid Hall Code - Disable all PWM*/
-    0x1073, /*1: 120 degree */
-    0x2076, /*2: 240 degree */
-    0x2073, /*3: 180 degree */
-    0x4075, /*4: 0 degree   */
-    0x1075, /*5: 60 degree  */
-    0x4076, /*6: 300 degree */
-    0x0077  /*7: Invalid Hall Code - Disable all PWM*/            
+static const uint16_t TABLE_ClockwisePattern[8u] = {
+    0x0077u, /*Invalid Hall Code - Disable all PWM*/
+    0x1073u, /*1: 120 degree */
+    0x2076u, /*2: 240 degree */
+    0x2073u, /*3: 180 degree */
+    0x4075u, /*4: 0 degree   */
+    0x1075u, /*5: 60 degree  */
+    0x4076u, /*6: 300 degree */
+    0x0077u  /*7: Invalid Hall Code - Disable all PWM*/            
 };
 
-const uint16_t TABLE_CounterClockwisePattern[8u] = {
-    0x0077, /*Invalid Hall Code - Disable all PWM*/
-    0x4076, /*1: 120 degree */
-    0x1075, /*2: 240 degree */
-    0x4075, /*3: 180 degree */
-    0x2073, /*4: 0 degree   */
-    0x2076, /*5: 60 degree  */
-    0x1073, /*6: 300 degree */
-    0x0077  /*7: Invalid Hall Code - Disable all PWM*/            
+static const uint16_t TABLE_CounterClockwisePattern[8u] = {
+    0x0077u, /*Invalid Hall Code - Disable all PWM*/
+    0x4076u, /*1: 120 degree */
+    0x1075u, /*2: 240 degree */
+    0x4075u, /*3: 180 degree */
+    0x2073u, /*4: 0 degree   */
+    0x2076u, /*5: 60 degree  */
+    0x1073u, /*6: 300 degree */
+    0x0077u  /*7: Invalid Hall Code - Disable all PWM*/            
 };
 
 
 /*******************************************************************************
  User defined data-types 
  *******************************************************************************/
-typedef enum _tmcMocI_OpenLoopStates_e
+typedef enum 
 {
     openLoopState_Align,
     openLoopState_Ramp,
     openLoopState_Stab
 }tmcMocI_OpenLoopStates_e;
 
-typedef struct _tmcMocI_OpenLoopControl_s
+typedef struct 
 {
     tmcMocI_OpenLoopStates_e state;
     float rampRate;
@@ -131,19 +129,19 @@ typedef struct _tmcMocI_OpenLoopControl_s
 }tmcMocI_OpenLoopControl_s;
 
 
-typedef struct _tmcMocI_AnglePatternPair_s
+typedef struct
 {
     float setAngle;
     uint8_t pattern;
 }tmcMocI_AnglePatternPair_s;
 
-typedef struct _tmcMocI_HallSensorTuning_s
+typedef struct
 {
     uint32_t track;
     tmcMocI_AnglePatternPair_s pairs[50u];
 }tmcMocI_HallSensorTuning_s;
 
-typedef struct _tmcMoc_CurrentLoopTuning_s
+typedef struct
 {
     uint32_t zTrack;
     
@@ -153,10 +151,10 @@ typedef struct _tmcMoc_CurrentLoopTuning_s
  Interface variables 
  *******************************************************************************/
 tmcMocI_MotorControl_s     mcMocI_MotorControl_gds;
-tmcMocI_InputPorts_s      mcMocI_InputPorts_gds;
-tmcMocI_OpenLoopControl_s mcMocI_OpenLoopControlData_gds;
-tmcMocI_HallSensorTuning_s mcMocI_HallSensorTuning_gds;
-tmcMoc_CurrentLoopTuning_s mcMoc_CurrentLoopTuning_mds;
+static tmcMocI_InputPorts_s      mcMocI_InputPorts_gds;
+static tmcMocI_OpenLoopControl_s mcMocI_OpenLoopControlData_gds;
+static tmcMocI_HallSensorTuning_s mcMocI_HallSensorTuning_gds;
+static tmcMoc_CurrentLoopTuning_s mcMoc_CurrentLoopTuning_mds;
 
 /*******************************************************************************
  Private Functions 
@@ -195,12 +193,7 @@ __STATIC_INLINE void mcMoc_MotorControlInputsRead( tmcMocI_MotorControl_s * cons
 }
 
 
-void mcMocI_OpenLoopControlReset( tmcMocI_MotorControl_s * const pControl  )
-{
-    
-}
-
-void mcMocI_OpenLoopControlOverride( tmcMocI_MotorControl_s * const pControl  )
+static void mcMocI_OpenLoopControlOverride( tmcMocI_MotorControl_s * const pControl  )
 {
     tmcMocI_OpenLoopControl_s * pState;
     
@@ -212,7 +205,7 @@ void mcMocI_OpenLoopControlOverride( tmcMocI_MotorControl_s * const pControl  )
     {
         case openLoopState_Align:
         {
-            if(  pState->track < CONSTANT_AlignmentCounts )
+            if(  pState->track < (uint32_t)((float)CONSTANT_AlignmentCounts))
             {
                 pState->openLoopAngle = CONSTANT_3PiBy2;
                 pControl->nQPI.Yout = CONFIG_OpenLoopCurrent;
@@ -227,7 +220,7 @@ void mcMocI_OpenLoopControlOverride( tmcMocI_MotorControl_s * const pControl  )
         
         case openLoopState_Ramp:
         {
-            if(  pState->track < CONSTANT_RampCounts )
+            if(  pState->track < (uint32_t)((float)CONSTANT_RampCounts) )
             {
                pState->rampRate += CONSTANT_OpenLoopAccelRate;
                pState->openLoopAngle += pState->rampRate;
@@ -248,6 +241,9 @@ void mcMocI_OpenLoopControlOverride( tmcMocI_MotorControl_s * const pControl  )
              pControl->nQPI.Yout = CONFIG_OpenLoopCurrent;
         }
         break;
+        default:
+            /* Undefined state: Should never come here */
+            break;
     }    
     
     if(  pState->openLoopAngle > CONSTANT_2Pi )
@@ -258,10 +254,14 @@ void mcMocI_OpenLoopControlOverride( tmcMocI_MotorControl_s * const pControl  )
     {
          pState->openLoopAngle += CONSTANT_2Pi;
     }
+    else
+    {
+         /* Dummy branch for MISRAC compliance*/
+    }
     pControl->tPHASOR.angle = pState->openLoopAngle;
 }
 
-void mcMocI_HallSensorTuning( tmcMocI_MotorControl_s * const pControl )
+static void mcMocI_HallSensorTuning( tmcMocI_MotorControl_s * const pControl )
 {  
     static uint8_t zCounter;
     tmcMocI_HallSensorTuning_s * pState;
@@ -269,12 +269,12 @@ void mcMocI_HallSensorTuning( tmcMocI_MotorControl_s * const pControl )
     pState = &mcMocI_HallSensorTuning_gds;   
     pState->track++;
     
-    if( zCounter < CONSTANT_NumberOfSamples )
+    if( zCounter < (uint8_t)((float)CONSTANT_NumberOfSamples ))
     {
         if( pState->track < CONFIG_HoldTimeCount )
         {
              pControl->iDPI.reference  = CONFIG_OpenLoopCurrent;
-             pControl->tPHASOR.angle= zCounter * CONSTANT_AngleStepSize;
+             pControl->tPHASOR.angle= (float)zCounter * CONSTANT_AngleStepSize;
              pState->pairs[zCounter].setAngle = pControl->tPHASOR.angle;
              pState->pairs[zCounter].pattern = mcHallI_HallPatternGet();
         }
@@ -286,12 +286,12 @@ void mcMocI_HallSensorTuning( tmcMocI_MotorControl_s * const pControl )
     }
     else
     {
-        zCounter = CONSTANT_NumberOfSamples;
+        zCounter = (uint8_t)((float)CONSTANT_NumberOfSamples);
     }
             
 }
 
-void mcMocI_CurrentLoopTuning( tmcMocI_MotorControl_s * const pControl )
+static void mcMocI_CurrentLoopTuning( tmcMocI_MotorControl_s * const pControl )
 {  
     tmcMoc_CurrentLoopTuning_s * pState;
     
@@ -332,13 +332,13 @@ void mcMocI_MotorControlInit(tmcMocI_MotorControl_s * const pControl )
     mcMocI_InputPortsSet(&mcMocI_InputPorts_gds);
     
     /* Set motor control state to IDLE */
-    mcMocI_MotorControl_gds.stateMachine = ControlState_Idle;
+    mcMocI_MotorControl_gds.stateMachine = (uint8_t)ControlState_Idle;
         
     /* Initialize D-axis controller */      
     pControl->iDPI.Kp = CONFIG_IdControllerKp;       
     pControl->iDPI.Ki = CONFIG_IdControllerKi;              
     pControl->iDPI.Kc = CONFIG_IdControllerKc;
-    pControl->iDPI.Yi = 0;
+    pControl->iDPI.Yi = 0.0f;
     pControl->iDPI.Ymax = CONFIG_IdControllerYmax;
     pControl->iDPI.Ymin = -mcMocI_MotorControl_gds.iDPI.Ymax;
 
@@ -348,7 +348,7 @@ void mcMocI_MotorControlInit(tmcMocI_MotorControl_s * const pControl )
     pControl->iQPI.Kp = CONFIG_IqControllerKp;    
     pControl->iQPI.Ki = CONFIG_IqControllerKi;
     pControl->iQPI.Kc = CONFIG_IqControllerKc;
-    pControl->iQPI.Yi = 0;
+    pControl->iQPI.Yi = 0.0f;
     pControl->iQPI.Ymax = CONFIG_IqControllerYmax;
     pControl->iQPI.Ymin = -mcMocI_MotorControl_gds.iQPI.Ymax;
     mcLib_InitPI(&mcMocI_MotorControl_gds.iQPI);
@@ -357,20 +357,20 @@ void mcMocI_MotorControlInit(tmcMocI_MotorControl_s * const pControl )
     pControl->nQPI.Kp = CONFIG_SpeedControllerKp;       
     pControl->nQPI.Ki = CONFIG_SpeedControllerKi;       
     pControl->nQPI.Kc = CONFIG_SpeedControllerKc;  
-    pControl->nQPI.Yi = 0;
+    pControl->nQPI.Yi = 0.0f;
     pControl->nQPI.Ymax = CONFIG_SpeedControllerYmax;   
     pControl->nQPI.Ymin = -mcMocI_MotorControl_gds.nQPI.Ymax;
 
     mcLib_InitPI(&mcMocI_MotorControl_gds.nQPI);
     	   
     /* Initialize phase angle  */
-    pControl->tPHASOR.angle = 0;
+    pControl->tPHASOR.angle = 0.0f;
     
     /* Initialize space vector modulator */
     mcPwmI_SpaceVectorModulationInit( &pControl->ySVPWM);
         
     /* Rotor position calculation module initialization */
-     mcPllI_RotorPositionCalculationInit(&mcPllI_ModuleData_gds);
+     mcPllI_PosCalInit(&mcPllI_ModuleData_gds);
     
     /* Initialize default control Flags */
     pControl->Flags.direction = 1.0f;
@@ -389,7 +389,7 @@ void mcMocI_MotorControlInit(tmcMocI_MotorControl_s * const pControl )
  * @param[out]:
  * @return:
  */
-void mcMocI_SixStepCommutation( tmcMocI_MotorControl_s * const pState )
+static void mcMocI_SixStepCommutation( tmcMocI_MotorControl_s * const pState )
 {
     uint8_t pattern;
     tmcMocI_SVPWM_s duty;
@@ -401,7 +401,7 @@ void mcMocI_SixStepCommutation( tmcMocI_MotorControl_s * const pState )
     pattern = mcHallI_HallPatternGet();
              
     /* Determine modulation index */
-    if( pState->Flags.direction == 1u )
+    if( pState->Flags.direction == 1.0f )
     {
         TCC0_REGS->TCC_PATTBUF =(uint16_t)(TABLE_ClockwisePattern[pattern]);
     }
@@ -427,7 +427,7 @@ void mcMocI_SixStepCommutation( tmcMocI_MotorControl_s * const pState )
      mcLib_SinCosGen(&pState->tPHASOR);
      mcLib_InvParkTransform(&pState->uDQ, &pState->tPHASOR, &pState->uAB);
           
-     duty.dPWM_A = duty.dPWM_B = duty.dPWM_C =  (uint32_t)( pState->ySVPWM.ts *  pState->Flags.direction * nQPI->Yout );   
+     duty.dPWM_A = duty.dPWM_B = duty.dPWM_C =  ( pState->ySVPWM.ts *  pState->Flags.direction * nQPI->Yout );   
 
      /* Set inverter duty cycles */
      mcBseI_InverterDutySet(&duty);
@@ -444,7 +444,7 @@ void mcMocI_SixStepCommutation( tmcMocI_MotorControl_s * const pState )
  * @param[out]:
  * @return:
  */
-void mcMocI_FieldOrientedControl( tmcMocI_MotorControl_s * const pState )
+static void mcMocI_FieldOrientedControl( tmcMocI_MotorControl_s * const pState )
 {
     float temp;
     
@@ -469,7 +469,13 @@ void mcMocI_FieldOrientedControl( tmcMocI_MotorControl_s * const pState )
 
     /* Q-axis controller */
     temp = MAX_NORM_SQ - (iDPI->Yout * iDPI->Yout);
+    if(temp>=0.0f)
+    {
     iQPI->Ymax = sqrtf(temp);
+    }else
+    {
+      iQPI->Ymax = sqrtf(-temp);  
+    }
     iQPI->Ymin = -iQPI->Ymax;  
     iQPI->reference = pState->nQPI.Yout;
     iQPI->feedback = pState->iDQ.q;         
@@ -500,7 +506,7 @@ void mcMocI_FieldOrientedControl( tmcMocI_MotorControl_s * const pState )
  */
 void mcMocI_MotorControlRun( tmcMocI_MotorControl_s * const pState )
 {
-    if( pState->runStatus)
+    if( pState->runStatus==1u)
     {
         /* Read motor control inputs  */
         mcMoc_MotorControlInputsRead(pState, &mcMocI_InputPorts_gds);
@@ -512,14 +518,14 @@ void mcMocI_MotorControlRun( tmcMocI_MotorControl_s * const pState )
         mcLib_ParkTransform(&pState->iAB, &pState->tPHASOR, &pState->iDQ);
         
         /* Sensor-less rotor position estimation */
-        mcPllI_RotorPositionCalculationRun(&mcPllI_ModuleData_gds); 
+        mcPllI_PosCalRun(&mcPllI_ModuleData_gds); 
 
         /* Motor control state machines */
-        switch (pState->stateMachine)
+        switch ((tmcMoc_ControlStates_s)pState->stateMachine)
         {
             case ControlState_Idle:
             {
-
+                /* Idle state*/
             }
             break;
 
@@ -552,14 +558,14 @@ void mcMocI_MotorControlRun( tmcMocI_MotorControl_s * const pState )
 
                 if( pState->sensedSpeed > CONSTANT_SixStepUpperThreshold )
                 {
-                    pState->stateMachine = ControlState_SensoredFoc;
+                    pState->stateMachine = (uint8_t)ControlState_SensoredFoc;
                 }
             }
             break;
             
             case ControlState_SensoredFoc:
             {              
-                TCC0_REGS->TCC_PATTBUF = 0x0000; 
+                TCC0_REGS->TCC_PATTBUF = 0x0000u; 
                 pState->tPHASOR.angle = pState->sensedAngle;
                 pState->nQPI.feedback = pState->sensedSpeed;
                
@@ -567,11 +573,11 @@ void mcMocI_MotorControlRun( tmcMocI_MotorControl_s * const pState )
                 
                 if( pState->sensedSpeed > CONSTANT_SensorlessFocEnableSpeed )
                 {
-                    pState->stateMachine = ControlState_SensorlessFoc;
+                    pState->stateMachine = (uint8_t)ControlState_SensorlessFoc;
                 }
                 else if ( pState->sensedSpeed < CONSTANT_SixStepEnableSpeed )
                 {
-                    pState->stateMachine = ControlState_SixStep;
+                    pState->stateMachine = (uint8_t)ControlState_SixStep;
                 }
                 else
                 {
@@ -582,14 +588,14 @@ void mcMocI_MotorControlRun( tmcMocI_MotorControl_s * const pState )
                        
             case ControlState_SensorlessFoc:
             {
-                TCC0_REGS->TCC_PATTBUF = 0x0000; 
+                TCC0_REGS->TCC_PATTBUF = 0x0000u; 
                 pState->tPHASOR.angle = pState->sensorlessAngle;
                 pState->nQPI.feedback = pState->sensorlessSpeed;
                 mcMocI_FieldOrientedControl(pState);
                 
                 if( pState->sensorlessSpeed < CONSTANT_SensorlessFocDisableSpeed )
                 {
-                    pState->stateMachine = ControlState_SensoredFoc;
+                    pState->stateMachine = (uint8_t)ControlState_SensoredFoc;
                 }
                 else
                 {
@@ -600,7 +606,7 @@ void mcMocI_MotorControlRun( tmcMocI_MotorControl_s * const pState )
             
             default:
             {
-
+              /* Undefined state: Should never come here */
             }
             break;
         }
@@ -629,7 +635,7 @@ void mcMocI_MotorControlRun( tmcMocI_MotorControl_s * const pState )
 void mcMocI_MotorControlReset( tmcMocI_MotorControl_s * const pState )
 {
      /* Set control state to IDLE*/
-        pState->stateMachine = ControlState_Idle;
+        pState->stateMachine = (uint8_t)ControlState_Idle;
 
         /* Reset Q axis current controller */
         mcLib_InitPI(&mcMocI_MotorControl_gds.iQPI);
@@ -644,7 +650,7 @@ void mcMocI_MotorControlReset( tmcMocI_MotorControl_s * const pState )
         mcPwmI_SpaceVectorModulationReset( &mcMocI_MotorControl_gds.ySVPWM);
         
         /*  Reset PLL based sensor-less estimation  */
-        mcPllI_RotorPositionCalculationReset(&mcPllI_ModuleData_gds); 
+        mcPllI_PosCalReset(&mcPllI_ModuleData_gds); 
 
         /* Disable inverter  */
         mcBseI_InverterDisable(); 
@@ -677,15 +683,15 @@ void mcMocI_MotorStart(tmcMocI_MotorControl_s * const pState)
         if( pState->Flags.openLoop == 0u )
         {
             /* Set motor control state to CLOSE LOOP */
-            pState->stateMachine = ControlState_SixStep;
+            pState->stateMachine = (uint8_t)ControlState_SixStep;
         }
         else 
         {
             /* Set motor control state to OPEN LOOP*/
-            pState->stateMachine = ControlState_OpenLoop;
+            pState->stateMachine = (uint8_t)ControlState_OpenLoop;
         }
         /* Hall sensor initialize */
-        mcRpoI_RotorPositionCalculationTrigger(&mcRpoI_ModuleData_gds);
+        mcRpoI_PosCalTrigger(&mcRpoI_ModuleData_gds);
 
         /* Start TC2 capture */
         TC2_CaptureStart();
@@ -723,8 +729,8 @@ void mcMocI_MotorStop(tmcMocI_MotorControl_s * const pState)
  */
 void mcMocI_MotorStartToggle(tmcMocI_MotorControl_s * const pState)
 {
-    pState->Flags.start = !pState->Flags.start;
-    if( pState->Flags.start)
+    pState->Flags.start = (uint8_t)(!(bool)pState->Flags.start);
+    if( pState->Flags.start==1u)
     {
         mcMocI_MotorStart(pState);
     }
@@ -746,7 +752,7 @@ void mcMocI_MotorStartToggle(tmcMocI_MotorControl_s * const pState)
  */
 void mcMocI_MotorDirectionToggle(tmcMocI_MotorControl_s * const pState)
 {
-    if(pState->Flags.start == 0)
+    if(pState->Flags.start == 0U)
     {
         /*Change Motor Direction Only when Motor is Stationary*/
         pState->Flags.direction = -pState->Flags.direction;

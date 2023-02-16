@@ -64,7 +64,7 @@
 #include "mc_function_coordinator.h"
 #include "mc_hall.h"
 
-
+static uintptr_t dummyforMisra;
 // *****************************************************************************
 // *****************************************************************************
 // Section: Main Entry Point
@@ -76,10 +76,10 @@ int main ( void )
     /* Initialize all modules */
     SYS_Initialize ( NULL );
     
-    mcBse_DelayState_mds.period = DELAY_10MS_COUNT;
-    ADC0_CallbackRegister((ADC_CALLBACK) mcFcoI_AdcCalibrationTasks, (uintptr_t)NULL);
-    EIC_CallbackRegister ((EIC_PIN)EIC_PIN_2, (EIC_CALLBACK) OC_FAULT_ISR,(uintptr_t)NULL);
-    PDEC_HALLCallbackRegister((PDEC_HALL_CALLBACK)mcFcoI_HallEventISR, (uintptr_t)NULL);
+    mcBse_DelayState_mds.period = (uint16_t)((float)DELAY_10MS_COUNT);
+    ADC0_CallbackRegister((ADC_CALLBACK) mcFcoI_AdcCalibrationTasks, (uintptr_t)dummyforMisra);
+    EIC_CallbackRegister ((EIC_PIN)EIC_PIN_2, (EIC_CALLBACK) OC_FAULT_ISR,(uintptr_t)dummyforMisra);
+    PDEC_HALLCallbackRegister((PDEC_HALL_CALLBACK)mcFcoI_HallEventISR, (uintptr_t)dummyforMisra);
     
     PDEC_HALLStart();  /* Start PDEC in HALL or QDEC mode. */
     TCC0_PWMStart(); 

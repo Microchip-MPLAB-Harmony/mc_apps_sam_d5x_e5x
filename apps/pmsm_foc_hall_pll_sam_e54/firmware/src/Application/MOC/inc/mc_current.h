@@ -61,26 +61,26 @@
 /*******************************************************************************
  User defined data-types
  *******************************************************************************/
-typedef struct _tmcCur_InputPorts_s
+typedef struct
 {
     int16_t * iaAdcInput;
     int16_t * ibAdcInput;
 }tmcCur_InputPorts_s;
 
-typedef struct _tmcCur_UserParameters_s
+typedef struct
 {
     float iOffsetMax;
     float iOffsetMin;
 }tmcCur_UserParameters_s;
 
-typedef struct _tmcCur_OutputPorts_s
+typedef struct
 {
     float * iA;
     float * iB;
     float * iC;
 }tmcCur_OutputPorts_s;
 
-typedef struct _tmcCur_ModuleData_s
+typedef struct
 {
     uint8_t                                    index;
     tmcCur_InputPorts_s             dInputPorts;
@@ -141,8 +141,8 @@ __STATIC_INLINE void mcCurI_OutputPortsSet( tmcCur_OutputPorts_s * const pPorts 
  */
 __STATIC_INLINE void mcCurI_UserParametersSet( tmcCur_UserParameters_s * const pPorts )
 {
-    pPorts->iOffsetMax = 1900;
-    pPorts->iOffsetMax = 2200;
+    //pPorts->iOffsetMax = 1900.0f;
+    pPorts->iOffsetMax = 2200.0f;
 }
 
 

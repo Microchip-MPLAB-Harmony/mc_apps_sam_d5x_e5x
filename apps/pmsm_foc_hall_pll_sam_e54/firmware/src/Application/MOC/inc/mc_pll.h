@@ -73,7 +73,7 @@
 /*
  * Fast loop time in seconds 
  */
-#define CONFIG_AlgorithmCycleTimeInSec   (float)(1/(float)PWM_FREQ ) 
+#define CONFIG_AlgorithmCycleTimeInSec   (float)(1.0f/(float)PWM_FREQ ) 
  
 
 /*
@@ -101,7 +101,7 @@
  User defined data-types
  *******************************************************************************/
 
-typedef struct _tmcPll_InputPorts_s 
+typedef struct
 {
     volatile float * ialpha;
     volatile float * ibeta;
@@ -110,14 +110,14 @@ typedef struct _tmcPll_InputPorts_s
     volatile float * umax;
 }tmcPll_InputPorts_s;
 
-typedef struct _tmcPll_OutputPorts_s
+typedef struct
 {
     float  * elecAngle;
     float  * elecSpeed;
     float  * backEMF;
 }tmcPll_OutputPorts_s;
 
-typedef struct _tmcPll_UserParameters_s
+typedef struct
 {
     float  Rs;
     float  Ls;
@@ -128,7 +128,7 @@ typedef struct _tmcPll_UserParameters_s
     float WrFilterBandwidth;
 }tmcPll_UserParameters_s;
 
-typedef struct _tmcPll_ModuleData_s
+typedef struct
 {
     /* Instance identifier */
     uint8_t Id;
@@ -192,19 +192,8 @@ __STATIC_INLINE void mcPllI_UserParametersSet( tmcPll_UserParameters_s * const p
  * @param[out]:
  * @return:
  */
-void mcPllI_RotorPositionCalculationInit(tmcPll_ModuleData_s * const module);
+void mcPllI_PosCalInit(tmcPll_ModuleData_s * const module);
 
-/*! \brief Rotor position calculation trigger
- * 
- * Details.
- * Rotor position calculation trigger
- * 
- * @param[in]: 
- * @param[in/out]:
- * @param[out]:
- * @return:
- */
-void mcPllI_RotorPositionCalculationTrigger( tmcPll_ModuleData_s * const module );
 
 /*! \brief Rotor position calculation 
  * 
@@ -216,7 +205,7 @@ void mcPllI_RotorPositionCalculationTrigger( tmcPll_ModuleData_s * const module 
  * @param[out]:
  * @return:
  */
-void mcPllI_RotorPositionCalculationRun( tmcPll_ModuleData_s * const module);
+void mcPllI_PosCalRun( tmcPll_ModuleData_s * const module);
 
 /*! \brief Rotor position calculation reset
  * 
@@ -228,7 +217,7 @@ void mcPllI_RotorPositionCalculationRun( tmcPll_ModuleData_s * const module);
  * @param[out]:
  * @return:
  */
-void mcPllI_RotorPositionCalculationReset(tmcPll_ModuleData_s * const module);
+void mcPllI_PosCalReset(tmcPll_ModuleData_s * const module);
 
 #endif //MCRPO_H_
 

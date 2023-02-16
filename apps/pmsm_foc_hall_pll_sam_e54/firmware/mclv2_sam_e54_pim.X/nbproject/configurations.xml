@@ -99,6 +99,12 @@
               <itemPath>../src/config/mclv2_sam_e54_pim/peripheral/tcc/plib_tcc_common.h</itemPath>
             </logicalFolder>
           </logicalFolder>
+          <logicalFolder name="X2CCode" displayName="X2CCode" projectFiles="true">
+            <logicalFolder name="X2CScope" displayName="X2CScope" projectFiles="true">
+              <itemPath>../src/config/mclv2_sam_e54_pim/X2CCode/X2CScope/inc/X2CScope.h</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/X2CCode/X2CScope/inc/X2CScopeCommunication.h</itemPath>
+            </logicalFolder>
+          </logicalFolder>
           <itemPath>../src/config/mclv2_sam_e54_pim/device_cache.h</itemPath>
           <itemPath>../src/config/mclv2_sam_e54_pim/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/mclv2_sam_e54_pim/definitions.h</itemPath>
@@ -252,16 +258,6 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="Application" displayName="Application" projectFiles="true">
-          <logicalFolder name="DMC" displayName="DMC" projectFiles="true">
-            <logicalFolder name="inc" displayName="inc" projectFiles="true">
-            </logicalFolder>
-            <logicalFolder name="lib" displayName="lib" projectFiles="true">
-            </logicalFolder>
-            <logicalFolder name="src" displayName="src" projectFiles="true">
-              <itemPath>../src/Application/DMC/src/X2CScope.c</itemPath>
-              <itemPath>../src/Application/DMC/src/X2CScopeCommunication.c</itemPath>
-            </logicalFolder>
-          </logicalFolder>
           <logicalFolder name="HAL" displayName="HAL" projectFiles="true">
             <logicalFolder name="inc" displayName="inc" projectFiles="true">
             </logicalFolder>
@@ -341,6 +337,12 @@
           <logicalFolder name="f2" displayName="stdio" projectFiles="true">
             <itemPath>../src/config/mclv2_sam_e54_pim/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
+          <logicalFolder name="X2CCode" displayName="X2CCode" projectFiles="true">
+            <logicalFolder name="X2CScope" displayName="X2CScope" projectFiles="true">
+              <itemPath>../src/config/mclv2_sam_e54_pim/X2CCode/X2CScope/src/X2CScopeCommunication.c</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/X2CCode/X2CScope/src/X2CScope.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
           <itemPath>../src/config/mclv2_sam_e54_pim/initialization.c</itemPath>
           <itemPath>../src/config/mclv2_sam_e54_pim/interrupts.c</itemPath>
           <itemPath>../src/config/mclv2_sam_e54_pim/exceptions.c</itemPath>
@@ -404,7 +406,7 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
-            <linkerLibFileItem>../src/Application/DMC/lib/X2CScopeLib_SAME54_XC32.a</linkerLibFileItem>
+            <linkerLibFileItem>../src/config/mclv2_sam_e54_pim/X2CCode/X2CScope/lib/libCORTEXM4_X2CScope.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
@@ -466,15 +468,13 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe"
-                  value="-Wformat=2 -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-format-attribute -Wno-deprecated-declarations -Wredundant-decls -Wnested-externs -Winline -Wlong-long -Wunreachable-code -Wmissing-noreturn"/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/Application;../src/Application/DMC/inc;../src/Application/HAL/inc;../src/Application/MOC/inc;../src/config/mclv2_sam_e54_pim;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+                  value="../src;../src/Application;../src/Application/DMC/inc;../src/Application/HAL/inc;../src/Application/MOC/inc;../src/config/mclv2_sam_e54_pim;../src/config/mclv2_sam_e54_pim/X2CCode;../src/config/mclv2_sam_e54_pim/X2CCode/X2CScope/inc;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -525,7 +525,6 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -565,7 +564,6 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -594,7 +592,6 @@
         <property key="use-indirect-calls" value="false"/>
       </C32CPP>
       <C32Global>
-        <property key="appendMe" value=""/>
         <property key="common-include-directories" value=""/>
         <property key="gp-relative-option" value=""/>
         <property key="legacy-libc" value="false"/>
@@ -636,8 +633,6 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-fffff"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="D:/Release/mc_apps_sam_d5x_e5x/apps/pmsm_foc_hall_pll_sam_e54/firmware/mclv2_sam_e54_pim.X/debug/mclv2_sam_e54_pim/mclv2_sam_e54_pim_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.ledbrightness" value="5"/>

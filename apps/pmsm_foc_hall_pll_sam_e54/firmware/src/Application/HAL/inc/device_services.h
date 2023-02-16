@@ -80,7 +80,6 @@
  * @return:
  */
 uint32_t TC2_Timer32bitCounterGet( void );
-void mcDseI_PeripheralsInit( void );
 
 #endif //MCBSE_H_
 

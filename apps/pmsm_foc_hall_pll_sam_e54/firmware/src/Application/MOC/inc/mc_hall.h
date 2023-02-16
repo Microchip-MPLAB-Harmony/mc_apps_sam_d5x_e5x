@@ -56,18 +56,18 @@
  Constants 
  ******************************************************************************/
 /* HALL constants */
-#define CONSTANT_1PiBy6 (float)(1.0 / 6.0 * M_PI)
-#define CONSTANT_PiBy2 (float)(0.5 * M_PI)
-#define CONSTANT_5PiBy6 (float)(5.0 / 6.0 * M_PI)
-#define CONSTANT_7PiBy6 (float)(7.0 / 6.0 * M_PI)
-#define CONSTANT_3PiBy2 (float)(1.5 * M_PI)
-#define CONSTANT_11PiBy6 (float)(11.0 / 6.0 * M_PI)
-#define CONSTANT_1PiBy3 (float)(1.0 / 3.0 * M_PI)
-#define CONSTANT_2PiBy3 (float)(2.0 / 3.0 * M_PI)
+#define CONSTANT_1PiBy6 (float)(1.0f / 6.0f * (float)M_PI)
+#define CONSTANT_PiBy2 (float)(0.5f * (float)M_PI)
+#define CONSTANT_5PiBy6 (float)(5.0f / 6.0f * (float)M_PI)
+#define CONSTANT_7PiBy6 (float)(7.0f / 6.0f * (float)M_PI)
+#define CONSTANT_3PiBy2 (float)(1.5f * (float)M_PI)
+#define CONSTANT_11PiBy6 (float)(11.0f / 6.0f * (float)M_PI)
+#define CONSTANT_1PiBy3 (float)(1.0f / 3.0f * (float)M_PI)
+#define CONSTANT_2PiBy3 (float)(2.0 / 3.0f * (float)M_PI)
 #define CONSTANT_Pi (float)(M_PI)
-#define CONSTANT_4PiBy3 (float)(4.0 / 3.0 * M_PI)
-#define CONSTANT_5PiBy3 (float)(5.0 / 3.0 * M_PI)
-#define CONSTANT_2Pi (float)(2.0 * M_PI)
+#define CONSTANT_4PiBy3 (float)(4.0f / 3.0f * (float)M_PI)
+#define CONSTANT_5PiBy3 (float)(5.0f / 3.0f * (float)M_PI)
+#define CONSTANT_2Pi (float)(2.0f * (float)M_PI)
 #define CONSTANT_Dummy  (0.0f)
 
 /*******************************************************************************
@@ -77,12 +77,12 @@
 /*******************************************************************************
  Interface variables 
  *******************************************************************************/
-typedef struct _tmcHall_InputPorts_s
+typedef struct
 {
     uint32_t * tcHallToHallIsr;
 }tmcHall_InputPorts_s;
 
-typedef struct _tmcHall_OutBuffer_s
+typedef struct
 {
     float baseAngle;
     float boundAngle;
@@ -91,17 +91,17 @@ typedef struct _tmcHall_OutBuffer_s
     float elecSpeed;    
 }tmcHall_OutputBuffer_s;
 
-typedef struct _tmcHall_OutputPorts_s
+typedef struct
 {
     
 }tmcHall_OutputPorts_s;
 
-typedef struct _tmcHall_UserParameters_s
+typedef struct 
 {
 
 }tmcHall_UserParameters_s;
 
-typedef struct _tmcHall_ModuleData_s
+typedef struct
 {
     uint8_t index;
     tmcHall_InputPorts_s           dInput;
@@ -168,6 +168,7 @@ void mcHallI_HallSignalProcessRun( tmcHall_ModuleData_s * const pModule);
 void mcHall_HallDataInit(void );
 
 uint8_t mcHallI_HallPatternGet( void );
+
 
 #endif //MCHALL_H_
 

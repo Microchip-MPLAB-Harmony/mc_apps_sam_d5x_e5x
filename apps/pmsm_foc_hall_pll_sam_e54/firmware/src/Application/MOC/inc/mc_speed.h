@@ -60,14 +60,14 @@
 /*******************************************************************************
  User defined data-types
  *******************************************************************************/
-typedef struct _tmcSpe_InputPorts_s
+typedef struct
 {
     uint8_t * runCommand;
     int16_t * speAdcInput;
     float * directionFlag;
 }tmcSpe_InputPorts_s;
 
-typedef struct _tmcSpe_UserParameters_s
+typedef struct
 {
     float speFiltParam;
     float adcUnitsToSpeed;
@@ -75,14 +75,14 @@ typedef struct _tmcSpe_UserParameters_s
     float maxSpeedinRpm;
 }tmcSpe_UserParameters_s;
 
-typedef struct _tmcSpe_OutputPorts_s
+typedef struct
 {
     float * cmdSpeed;
     float * cmdSpeedFilt;
     uint8_t * runStatus;
 }tmcSpe_OutputPorts_s;
 
-typedef struct _tmcSpe_ModuleData_s
+typedef struct
 {
     uint8_t                                     index;
     tmcSpe_InputPorts_s             dInputPorts;
@@ -144,10 +144,10 @@ __STATIC_INLINE void mcSpeI_OutputPortsSet( tmcSpe_OutputPorts_s * const pPorts 
  */
 __STATIC_INLINE void mcSpeI_UserParametersSet( tmcSpe_UserParameters_s * const pPorts )
 {
-    pPorts->speFiltParam = 0.05;
+    pPorts->speFiltParam = 0.05f;
     pPorts->adcUnitsToSpeed = POT_ADC_COUNT_FW_SPEED_RATIO;
-    pPorts->minSpeedinRpm = 10;
-    pPorts->maxSpeedinRpm = 3000;
+    pPorts->minSpeedinRpm = 10.0f;
+    pPorts->maxSpeedinRpm = 3000.0f;
 }
 
 

@@ -104,7 +104,7 @@ void mcPwmI_SpaceVectorModulationRun(tmcMocI_AB_s *alphabetaParam, tmcMocI_SVPWM
  */
 void mcPwmI_SpaceVectorModulationReset( tmcMocI_SVPWM_s * const svParam);
 
-
+void mcPwm_CalcTimes(tmcMocI_SVPWM_s *svParam);
 #endif //MCBSE_H_
 
 /**

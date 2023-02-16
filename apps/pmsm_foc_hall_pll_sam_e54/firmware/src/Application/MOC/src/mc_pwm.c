@@ -74,7 +74,7 @@ void mcPwm_CalcTimes(tmcMocI_SVPWM_s *svParam)
 {
     svParam->T1 = svParam->ts * svParam->T1;
     svParam->T2 = svParam->ts * svParam->T2;
-    svParam->Tc = (svParam->ts- svParam->T1 - svParam->T2)/2;
+    svParam->Tc = (svParam->ts- svParam->T1 - svParam->T2)/2.0f;
     svParam->Tb = svParam->Tc + svParam->T2;
     svParam->Ta = svParam->Tb + svParam->T1;    
 }  
@@ -85,9 +85,9 @@ void mcPwmI_SpaceVectorModulationInit( tmcMocI_SVPWM_s * const svParam)
 {
     /* Initialize space vector modulator */
     svParam->ts = (float)MAX_DUTY;
-    svParam->dPWM_A = PWM_HALF_PERIOD_COUNT;
-    svParam->dPWM_B = PWM_HALF_PERIOD_COUNT;
-    svParam->dPWM_C = PWM_HALF_PERIOD_COUNT;
+    svParam->dPWM_A = (float)((uint32_t)PWM_HALF_PERIOD_COUNT);
+    svParam->dPWM_B = (float)((uint32_t)PWM_HALF_PERIOD_COUNT);
+    svParam->dPWM_C = (float)((uint32_t)PWM_HALF_PERIOD_COUNT);
 }
 
 void mcPwmI_SpaceVectorModulationRun(tmcMocI_AB_s *alphabetaParam, tmcMocI_SVPWM_s *svParam)
@@ -96,13 +96,13 @@ void mcPwmI_SpaceVectorModulationRun(tmcMocI_AB_s *alphabetaParam, tmcMocI_SVPWM
     //Modified inverse clarke transform which allows using instantaneous phase 
     // value to be used directly to calculate vector times.
     svParam->ua = alphabetaParam->beta;
-    svParam->ub = (-alphabetaParam->beta/2 + SQRT3_BY2 * alphabetaParam->alpha);
-    svParam->uc = (-alphabetaParam->beta/2 - SQRT3_BY2 * alphabetaParam->alpha);     
+    svParam->ub = (-alphabetaParam->beta/2.0f + SQRT3_BY2 * alphabetaParam->alpha);
+    svParam->uc = (-alphabetaParam->beta/2.0f - SQRT3_BY2 * alphabetaParam->alpha);     
     
-    if( svParam->ua >= 0 )
+    if( svParam->ua >= 0.0f )
     {       
 		// (xx1)
-        if( svParam->ub >= 0 )
+        if( svParam->ub >= 0.0f )
         {
             // (x11)
             // Must be Sector 3 since Sector 7 not allowed
@@ -117,7 +117,7 @@ void mcPwmI_SpaceVectorModulationRun(tmcMocI_AB_s *alphabetaParam, tmcMocI_SVPWM
         else
         {            
             // (x01)
-            if( svParam->uc >= 0 )
+            if( svParam->uc >= 0.0f )
             {
                 // Sector 5: (1,0,1)  120-180 degrees
                svParam->T1 = svParam->ua;
@@ -142,10 +142,10 @@ void mcPwmI_SpaceVectorModulationRun(tmcMocI_AB_s *alphabetaParam, tmcMocI_SVPWM
     else
     {
         // (xx0)
-        if( svParam->ub >= 0 )
+        if( svParam->ub >= 0.0f )
         {
 			// (x10)
-            if( svParam->uc >= 0 )
+            if( svParam->uc >= 0.0f )
             {
                 // Sector 6: (1,1,0)  240-300 degrees
                 svParam->T1 = svParam->uc;
@@ -186,7 +186,7 @@ void mcPwmI_SpaceVectorModulationReset( tmcMocI_SVPWM_s * const svParam)
 {
     /* Initialize space vector modulator */
     svParam->ts = (float)MAX_DUTY;
-    svParam->dPWM_A = PWM_HALF_PERIOD_COUNT;
-    svParam->dPWM_B = PWM_HALF_PERIOD_COUNT;
-    svParam->dPWM_C = PWM_HALF_PERIOD_COUNT;
+    svParam->dPWM_A = (float)((uint32_t)PWM_HALF_PERIOD_COUNT);
+    svParam->dPWM_B = (float)((uint32_t)PWM_HALF_PERIOD_COUNT);
+    svParam->dPWM_C = (float)((uint32_t)PWM_HALF_PERIOD_COUNT);
 }

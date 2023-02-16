@@ -56,9 +56,9 @@
 /*******************************************************************************
  User defined data-types
  *******************************************************************************/
-typedef enum _tStd_ReturnType_e
+typedef enum 
 {
-    returnType_Running = 0x0,
+    returnType_Running = 0x0u,
     returnType_Passed = 0x1u ,
     returnType_Failed = 0x2u,
     returnType_Aborted = 0x4u,

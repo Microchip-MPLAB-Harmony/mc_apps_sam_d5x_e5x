@@ -62,24 +62,24 @@
 /*******************************************************************************
  User defined data-types
  *******************************************************************************/
-typedef struct _tmcRpo_InputPorts_s
+typedef struct
 {
     uint32_t * tcHallToAdcIsr;
 }tmcRpo_InputPorts_s;
 
-typedef struct _tmcRpo_OutputPorts_s
+typedef struct
 {
     float * elecAngle;
     float * elecSpeed;
 }tmcRpo_OutputPorts_s;
 
-typedef struct _tmcRpo_UserParameters_s
+typedef struct
 {
     float * elecAngle;
     float * elecSpeed;
 }tmcRpo_UserParameters_s;
 
-typedef struct _tmcRpo_ModuleData_s
+typedef struct
 {
     uint8_t index;
     tmcRpo_InputPorts_s           dInput;
@@ -119,7 +119,7 @@ __STATIC_INLINE void mcRpoI_OutputPortsSet( tmcRpo_OutputPorts_s * const pOutput
  * @param[out]:
  * @return:
  */
-void mcRpoI_RotorPositionCalculationInit(tmcRpo_ModuleData_s * const module);
+void mcRpoI_PosCalInit(tmcRpo_ModuleData_s * const module);
 
 /*! \brief Rotor position calculation trigger
  * 
@@ -131,7 +131,7 @@ void mcRpoI_RotorPositionCalculationInit(tmcRpo_ModuleData_s * const module);
  * @param[out]:
  * @return:
  */
-void mcRpoI_RotorPositionCalculationTrigger( tmcRpo_ModuleData_s * const module );
+void mcRpoI_PosCalTrigger( tmcRpo_ModuleData_s * const module );
 
 /*! \brief Rotor position calculation 
  * 
@@ -143,7 +143,7 @@ void mcRpoI_RotorPositionCalculationTrigger( tmcRpo_ModuleData_s * const module 
  * @param[out]:
  * @return:
  */
-void mcRpoI_RotorPositionCalculationRun( tmcRpo_ModuleData_s * const module);
+void mcRpoI_PosCalRun( tmcRpo_ModuleData_s * const module);
 
 /*! \brief Rotor position calculation reset
  * 
@@ -155,7 +155,19 @@ void mcRpoI_RotorPositionCalculationRun( tmcRpo_ModuleData_s * const module);
  * @param[out]:
  * @return:
  */
-void mcRpoI_RotorPositionCalculationReset(tmcRpo_ModuleData_s * const module);
+void mcRpoI_PosCalReset(tmcRpo_ModuleData_s * const module);
+
+/*! \brief Rotor position smoothing
+ * 
+ * Details.
+ * Rotor position smoothing
+ * 
+ * @param[in]: 
+ * @param[in/out]:
+ * @param[out]:
+ * @return:
+ */
+void mcRpo_RotorPositionSmoothing( tmcRpo_ModuleData_s * const module );
 
 #endif //MCRPO_H_
 

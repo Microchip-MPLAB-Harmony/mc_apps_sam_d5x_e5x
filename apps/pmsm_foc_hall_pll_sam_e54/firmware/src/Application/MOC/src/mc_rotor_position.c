@@ -55,7 +55,7 @@ Headers inclusions
 /*******************************************************************************
  Private data-types 
  *******************************************************************************/
-typedef struct tmcRpo_StateVariables_s
+typedef struct
 {
     float sine;
     float cosine;
@@ -63,7 +63,7 @@ typedef struct tmcRpo_StateVariables_s
 }tmcRpo_StateVariables_s;
 
 
-typedef struct _tmcRpo_Parameters_s
+typedef struct
 {
     float filterDrift;
     float filterParam;
@@ -97,7 +97,7 @@ tmcRpo_ModuleData_s mcRpoI_ModuleData_gds;
  * @param[out]:
  * @return:
  */
-void mcRpoI_RotorPositionCalculationInit(tmcRpo_ModuleData_s * const module)
+void mcRpoI_PosCalInit(tmcRpo_ModuleData_s * const module)
 {
     /* Set input ports */
     mcRpoI_InputPortsSet( &module->dInput);
@@ -120,7 +120,7 @@ void mcRpoI_RotorPositionCalculationInit(tmcRpo_ModuleData_s * const module)
  * @param[out]:
  * @return:
  */
-void mcRpoI_RotorPositionCalculationTrigger( tmcRpo_ModuleData_s * const module )
+void mcRpoI_PosCalTrigger( tmcRpo_ModuleData_s * const module )
 {
     /* Re-initialize hall data */
      mcHall_HallDataInit();
@@ -160,7 +160,11 @@ void mcRpo_RotorPositionSmoothing( tmcRpo_ModuleData_s * const module )
     else if( pState->angle < 0.0f )
     {
          pState->angle += CONSTANT_2Pi;
-    }    
+    }
+    else
+    {
+        /* Dummy branch for MISRAC compliance*/
+    }
    
    /* Update rotor position angle */
     *module->dOutput.elecAngle = pState->angle;
@@ -177,14 +181,14 @@ void mcRpo_RotorPositionSmoothing( tmcRpo_ModuleData_s * const module )
  * @return:
  */
 
-void mcRpoI_RotorPositionCalculationRun(tmcRpo_ModuleData_s * const module)
+void mcRpoI_PosCalRun(tmcRpo_ModuleData_s * const module)
 {
     float temp;
     tmcHall_OutputBuffer_s  outBuffer;
         
     mcHallI_HallProcessBufferRead(&outBuffer);
     
-    if ( outBuffer.elecSpeed < 100 )
+    if ( outBuffer.elecSpeed < 100.0f )
     {
         *module->dOutput.elecAngle = outBuffer.meanAngle;
     }
@@ -200,13 +204,17 @@ void mcRpoI_RotorPositionCalculationRun(tmcRpo_ModuleData_s * const module)
         *module->dOutput.elecAngle = outBuffer.baseAngle + outBuffer.directionFlag * temp;
     }
     
-      if(  *module->dOutput.elecAngle > CONSTANT_2Pi )
+    if(  *module->dOutput.elecAngle > CONSTANT_2Pi )
     {
          *module->dOutput.elecAngle -= CONSTANT_2Pi;
     }
     else if(  *module->dOutput.elecAngle < 0.0f )
     {
           *module->dOutput.elecAngle += CONSTANT_2Pi;
+    }
+    else
+    {
+        /* Dummy branch for MISRAC compliance*/
     }
     
     /* Low pass filter */
@@ -229,7 +237,7 @@ void mcRpoI_RotorPositionCalculationRun(tmcRpo_ModuleData_s * const module)
  * @param[out]:
  * @return:
  */
-void mcRpoI_RotorPositionCalculationReset(tmcRpo_ModuleData_s * const module)
+void mcRpoI_PosCalReset(tmcRpo_ModuleData_s * const module)
 {
     
 }

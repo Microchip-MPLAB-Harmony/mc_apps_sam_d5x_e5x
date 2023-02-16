@@ -84,7 +84,7 @@ extern void mcLib_WrapAngleTo2Pi( float * const angle );
 /*******************************************************************************
  Private data-types 
  *******************************************************************************/
-typedef struct tmcPll_StateVariables_s
+typedef struct
 {
     float  ealpha;
     float  ebeta;
@@ -99,7 +99,7 @@ typedef struct tmcPll_StateVariables_s
     float  accel;
 }tmcPll_StateVariables_s;
 
-typedef struct _tmcPll_Parameters_s
+typedef struct
 {
     float   dLsByDt;
     float   Rs;
@@ -160,7 +160,7 @@ void mcLib_WrapAngleTo2Pi( float * const angle )
  * @param[out]:
  * @return:
  */
-void mcPllI_RotorPositionCalculationInit(tmcPll_ModuleData_s * const module)
+void mcPllI_PosCalInit(tmcPll_ModuleData_s * const module)
 {
     float Ke;
     
@@ -189,20 +189,6 @@ void mcPllI_RotorPositionCalculationInit(tmcPll_ModuleData_s * const module)
     pParam->WrFilterParam = module->userParam.WrFilterBandwidth;
 }
 
-/*! \brief Rotor position calculation trigger
- * 
- * Details.
- * Rotor position calculation trigger
- * 
- * @param[in]: 
- * @param[in/out]:
- * @param[out]:
- * @return:
- */
-void mcPllI_RotorPositionCalculationTrigger( tmcPll_ModuleData_s * const module )
-{
- 
-}
 
 /*! \brief Rotor position calculation 
  * 
@@ -214,10 +200,9 @@ void mcPllI_RotorPositionCalculationTrigger( tmcPll_ModuleData_s * const module 
  * @param[out]:
  * @return:
  */
-     tmcMocI_PHASOR_s phasor;
-    float ealpha, ebeta;
-    float Wre, Ed, Eq;
-void mcPllI_RotorPositionCalculationRun(tmcPll_ModuleData_s * const module)
+     static tmcMocI_PHASOR_s phasor;
+
+void mcPllI_PosCalRun(tmcPll_ModuleData_s * const module)
 {
 
 
@@ -230,55 +215,59 @@ void mcPllI_RotorPositionCalculationRun(tmcPll_ModuleData_s * const module)
     pOutput = &module->outPort;
     pParam = &mcPll_Parameters_mds;
     pState = &mcPll_StateVariables_mds;
-    
+    float ealpha_temp, ebeta_temp;
+    float Wre_temp, Ed_temp, Eq_temp;
 //#if (ENABLE == FIELD_WEAKENING )
     float esSquare;
 //#endif
     
     /* Calculate back EMF along alpha and beta axis */
-    ealpha  =   pState->ialpha - (*pInput->ialpha );
-    ealpha *=  pParam->dLsByDt;
-    ealpha -= (*pInput->ialpha * pParam->Rs );
-    ealpha += pState->ualpha; 
-    mcPll_EulerFilter( ealpha, &pState->ealpha, 1.0f );
+    ealpha_temp  =   pState->ialpha - (*pInput->ialpha );
+    ealpha_temp *=  pParam->dLsByDt;
+    ealpha_temp -= (*pInput->ialpha * pParam->Rs );
+    ealpha_temp += pState->ualpha; 
+    mcPll_EulerFilter( ealpha_temp, &pState->ealpha, 1.0f );
     
-    ebeta  =   pState->ibeta - (*pInput->ibeta );
-    ebeta *=  pParam->dLsByDt;
-    ebeta -= (*pInput->ibeta * pParam->Rs );
-    ebeta +=  pState->ubeta; 
-    mcPll_EulerFilter( ebeta, &pState->ebeta, 1.0f );
+    ebeta_temp  =   pState->ibeta - (*pInput->ibeta );
+    ebeta_temp *=  pParam->dLsByDt;
+    ebeta_temp -= (*pInput->ibeta * pParam->Rs );
+    ebeta_temp +=  pState->ubeta; 
+    mcPll_EulerFilter( ebeta_temp, &pState->ebeta, 1.0f );
 
 //#if (ENABLE == FIELD_WEAKENING )
     /* Calculate BEMF for field weakening*/
     esSquare =  ( pState->ebeta * pState->ebeta ) +  ( pState->ealpha * pState->ealpha );
-
-    *pOutput->backEMF = sqrt(esSquare);
+    if (esSquare>=0.0f){
+      *pOutput->backEMF = (float)sqrt(esSquare);
+    }else{
+      *pOutput->backEMF = (float)sqrt(-esSquare);  
+    }
 //#endif
     
     /* Determine back EMF along direct and quadrature axis using estimated angle */
     phasor.angle =  pState->theta;
     mcLib_SinCosGen(&phasor );
     
-    Ed  =     pState->ealpha * phasor.Cos;
-    Ed +=  ( pState->ebeta * phasor.Sin );
-    mcPll_EulerFilter( Ed, &pState->Ed, pParam->EdqFilterParam);
+    Ed_temp  =     pState->ealpha * phasor.Cos;
+    Ed_temp +=  ( pState->ebeta * phasor.Sin );
+    mcPll_EulerFilter( Ed_temp, &pState->Ed, pParam->EdqFilterParam);
     
-    Eq  =    -pState->ealpha * phasor.Sin;
-    Eq +=  ( pState->ebeta * phasor.Cos );
-    mcPll_EulerFilter( Eq, &pState->Eq, pParam->EdqFilterParam);
+    Eq_temp  =    -pState->ealpha * phasor.Sin;
+    Eq_temp +=  ( pState->ebeta * phasor.Cos );
+    mcPll_EulerFilter( Eq_temp, &pState->Eq, pParam->EdqFilterParam);
      
      /* Determine speed  */
     if( pState->Eq  > 0.0f )
     {
-         Wre  = pState->Eq -  pState->Ed;
+         Wre_temp  = pState->Eq -  pState->Ed;
     }
     else
     {
-         Wre  = pState->Eq + pState->Ed;
+         Wre_temp  = pState->Eq + pState->Ed;
     }
     
-    Wre *= pParam->oneByKe;
-    mcPll_EulerFilter( Wre, &pState->Wre, pParam->WrFilterParam);
+    Wre_temp *= pParam->oneByKe;
+    mcPll_EulerFilter( Wre_temp, &pState->Wre, pParam->WrFilterParam);
                
     /*Determine phase angle */
     pState->theta += ( pParam->Ts * pState->Wre );
@@ -306,7 +295,7 @@ void mcPllI_RotorPositionCalculationRun(tmcPll_ModuleData_s * const module)
  * @param[out]:
  * @return:
  */
-void mcPllI_RotorPositionCalculationReset(tmcPll_ModuleData_s * const module)
+void mcPllI_PosCalReset(tmcPll_ModuleData_s * const module)
 {
     tmcPll_StateVariables_s * pState;
     pState = &mcPll_StateVariables_mds;

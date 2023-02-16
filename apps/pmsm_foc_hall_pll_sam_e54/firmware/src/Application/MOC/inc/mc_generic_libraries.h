@@ -39,12 +39,14 @@ CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT OF
 SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
 *******************************************************************************/
+#ifndef MCLIB_H
+#define MCLIB_H
+
 #include <stdint.h>
 #include "math.h"
 #include "mc_userparams.h"
 
-#ifndef _MCLIB_H
-#define _MCLIB_H
+
 // DOM-IGNORE-END
 
 // DOM-IGNORE-BEGIN
@@ -61,10 +63,10 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #define 	SQRT3_BY2     			(float)0.866025403788
 #define 	ONE_BY_SQRT3     		(float)0.5773502691
 
-#define 	ANGLE_2PI              	(2*M_PI) 
-#define 	TABLE_SIZE      		256 
+#define 	ANGLE_2PI              	(2.0f*(float)M_PI) 
+#define 	TABLE_SIZE      		256U 
 #define 	ANGLE_STEP      		(float)((float)ANGLE_2PI/(float)TABLE_SIZE) 
-#define     ONE_BY_ANGLE_STEP       (float)(1/ANGLE_STEP)
+#define     ONE_BY_ANGLE_STEP       (float)(1.0f/ANGLE_STEP)
         
 #define     TC_HALL_FIFO_LEN        6u       
         
@@ -72,7 +74,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 /*******************************************************************************
  User defined data-types 
  *******************************************************************************/
-typedef enum _tmcMoc_ControlStates_s
+typedef enum
 {
     ControlState_Idle,  
     ControlState_HallTune,
@@ -152,14 +154,14 @@ typedef struct
     float   dPWM_C;
 } tmcMocI_SVPWM_s;
 
-typedef struct _tmcMoc_ControlFlags_s
+typedef struct
 {
     uint8_t start;
     uint8_t openLoop;
     float direction;
 }tmcMoc_ControlFlags_s;
 
-typedef struct _mcMoc_MotorControl_s
+typedef struct
 {
     uint8_t runStatus;
     uint8_t runCommand;
@@ -220,18 +222,6 @@ void mcLib_ParkTransform(tmcMocI_AB_s *alphabetaParam , tmcMocI_PHASOR_s *scPara
  * @return:
  */
 void mcLib_InvParkTransform(tmcMocI_DQ_s *dqParam, tmcMocI_PHASOR_s *scParam,tmcMocI_AB_s *alphabetaParam);
-
-/*! \brief Control parameters initialization
- * 
- * Details.
- * Control parameters initialization
- * 
- * @param[in]: 
- * @param[in/out]:
- * @param[out]:
- * @return:
- */
-void mcApp_InitControlParameters(void);
 
 /*! \brief PI controller initialization
  * 

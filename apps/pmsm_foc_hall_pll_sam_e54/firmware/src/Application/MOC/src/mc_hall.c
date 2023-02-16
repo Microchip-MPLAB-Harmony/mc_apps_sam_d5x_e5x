@@ -52,7 +52,7 @@ Headers inclusions
 #ifdef LONG_HURST
 #define CONSTANT_HallOffsetInDegree (float)(-30.0f )
 #define CONSTANT_HallOffsetInRad  (float)( CONSTANT_Pi * CONSTANT_HallOffsetInDegree/ 180.0f )
-const float TABLE_HallJumpAngle[8u] = 
+static const float TABLE_HallJumpAngle[8u] = 
 {
     /* Invalid: 000  */  CONSTANT_Dummy,
     /* Sector III: 001 */   CONSTANT_2PiBy3,
@@ -69,7 +69,7 @@ const float TABLE_HallJumpAngle[8u] =
  Private data-types 
  *******************************************************************************/
 
-typedef struct _mcHall_StateVariable_s
+typedef struct
 {
     uint8_t pattern;
     float angle;
@@ -99,7 +99,7 @@ tmcHall_ModuleData_s mcHallI_ModuleData_gds;
  Private Functions 
  *******************************************************************************/
 
-void mcHallI_WrapFromMinusPiToPi( float * const angle )
+static void mcHallI_WrapFromMinusPiToPi( float * const angle )
 {
     if( *angle > CONSTANT_Pi )
     {
@@ -115,7 +115,7 @@ void mcHallI_WrapFromMinusPiToPi( float * const angle )
     }
 }
 
-void mcHall_ElectricalSpeedCalculate( mcHall_StateVariable_s * const pState )
+static void mcHall_ElectricalSpeedCalculate( mcHall_StateVariable_s * const pState )
 {
     uint16_t * cnt = &(pState->cntTCfifo);
     
@@ -142,7 +142,7 @@ void mcHall_ElectricalSpeedCalculate( mcHall_StateVariable_s * const pState )
     }
     
     /* Calculate filtered speed of the motor */
-    pState->electricalSpeedFilt = pState->electricalSpeedFilt + 0.005 * ( pState->electricalSpeed - pState->electricalSpeedFilt);
+    pState->electricalSpeedFilt = pState->electricalSpeedFilt + 0.005f * ( pState->electricalSpeed - pState->electricalSpeedFilt);
 }
 
 /*******************************************************************************
@@ -157,7 +157,7 @@ void mcHallI_HallSignalProcessInit( tmcHall_ModuleData_s * const pModule )
     mcHallI_OutputPortsSet(&pModule->dOutput);
 }
 
-float Offset = 0;
+static float Offset = 0.0f;
 void mcHallI_HallSignalProcessRun( tmcHall_ModuleData_s * const pModule )
 {
     float delta;
@@ -183,6 +183,10 @@ void mcHallI_HallSignalProcessRun( tmcHall_ModuleData_s * const pModule )
     else if( pState->jumpAngle < 0.0f )
     {
          pState->jumpAngle += CONSTANT_2Pi;
+    }
+    else
+    {
+        /* Dummy branch for MISRAC compliance*/
     }
     
     /* Determine HALL direction */
@@ -211,22 +215,22 @@ void mcHallI_HallProcessBufferRead( tmcHall_OutputBuffer_s * const pOutput )
     
      /* Update output buffer */
     pOutput->baseAngle = pState->jumpAngle;
-    pOutput->directionFlag = pState->jumpDirection ;
-    pOutput->meanAngle = pState->jumpAngle + pState->jumpDirection * CONSTANT_1PiBy6;
-    pOutput->boundAngle = pState->jumpAngle + pState->jumpDirection * CONSTANT_1PiBy3;
+    pOutput->directionFlag = (float)pState->jumpDirection ;
+    pOutput->meanAngle = pState->jumpAngle + (float)pState->jumpDirection * CONSTANT_1PiBy6;
+    pOutput->boundAngle = pState->jumpAngle + (float)pState->jumpDirection * CONSTANT_1PiBy3;
     pOutput->elecSpeed = pState->electricalSpeed;
 }
 
 
-void mcHall_HallPatternRead( mcHall_StateVariable_s * const pState )
+static void mcHall_HallPatternRead( mcHall_StateVariable_s * const pState )
 {
     uint8_t A, B, C;
+    bool port_status;
+    A = (uint8_t)(port_status = PORT_PinRead(PORT_PIN_PC16));
+    B = (uint8_t)(port_status = PORT_PinRead(PORT_PIN_PC17));  
+    C = (uint8_t)(port_status = PORT_PinRead(PORT_PIN_PC18));   
     
-    A= PORT_PinRead(PORT_PIN_PC16);
-    B = PORT_PinRead(PORT_PIN_PC17);  
-    C = PORT_PinRead(PORT_PIN_PC18);   
-    
-    pState->pattern = ( ( C << 2) | (B << 1) | A ) & 0x7u;
+    pState->pattern = ( ( C << 2U) | (B << 1U) | A ) & 0x7u;
 }
 
 void mcHall_HallDataInit(void )
@@ -241,16 +245,16 @@ void mcHall_HallDataInit(void )
     
     for(zCount = 0u; zCount<TC_HALL_FIFO_LEN; zCount++)
     {
-        pState->tcFIFO[zCount] = 0ul;
+        pState->tcFIFO[zCount] = 0U;
     }
     pState->cntTCfifo = 0u;
     pState->tcSum = 0u;
     mcHall_HallPatternRead(pState);
     pState->jumpAngle = TABLE_HallJumpAngle[pState->pattern];
     pState->angle = pState->jumpAngle;
-    pState->jumpDirection = 0u;    
+    pState->jumpDirection = 0;    
     pState->noOfJumps = 0u;
-    pState->tcHallToHallIsr = 0lu;
+    pState->tcHallToHallIsr = 0u;
     pState->electricalSpeed = 0.0f;
     pState->electricalSpeedFilt = 0.0f;
       
@@ -263,7 +267,3 @@ uint8_t mcHallI_HallPatternGet( void )
     return mcHall_StateVariables_mds.pattern;
 }
 
-void mcHallI_HallSignalProcessReset( tmcHall_ModuleData_s * const pModule )
-{
-    mcHall_HallDataInit();
-}

@@ -56,21 +56,20 @@
 /*******************************************************************************
  User defined data-types
  *******************************************************************************/
-typedef enum _tmcHal_ButtonState_e
+typedef enum
 {
     buttonState_Pressed,
     buttonState_Released           
 }tmcBse_ButtonState_e;
 
-typedef struct _tmcHal_ButtonState_s
-{
+typedef struct{
     tmcBse_ButtonState_e buttonState;
     uint32_t inputValue;
     uint32_t debounceCount;
 }tmcBse_ButtonState_s;
 
 
-typedef struct _tmcBse_DelayGeneration_s
+typedef struct
 {
     uint16_t count;
     uint16_t period;
@@ -273,7 +272,7 @@ void mcBseI_TriggerAdcConversion( void );
  * @param[out]:
  * @return:
  */
-void mcBseI_WaitAdcConversion( void );
+void mcBseI_WaitAdcConversion(void);
 
 
 

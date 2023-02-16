@@ -74,65 +74,7 @@ Headers inclusions
  Interface Functions 
  *******************************************************************************/
 
-/*! \brief Timer callback function 
- * 
- * Details.
- * Timer callback function
- * 
- * @param[in]: 
- * @param[in/out]:
- * @param[out]:
- * @return:
- */
-void mcHalI_HallCallbackFunction(void)
-{
-    
-}
 
-/*! \brief ADC callback function 
- * 
- * Details.
- * ADC callback function
- * 
- * @param[in]: 
- * @param[in/out]:
- * @param[out]:
- * @return:
- */
-void mcHalI_AdcCallbackFunction(void)
-{
-    
-}
-
-/*! \brief External interrupt callback function 
- * 
- * Details.
- * External interrupt callback function
- * 
- * @param[in]: 
- * @param[in/out]:
- * @param[out]:
- * @return:
- */
-void mcHalI_EicCallbackFunction(void)
-{
-    
-}
-
-/*! \brief Get hall pattern 
- * 
- * Details.
- * Get hall pattern 
- * 
- * @param[in]: 
- * @param[in/out]:
- * @param[out]:
- * @return:
- */
-void mcHalI_HallPatternGet(void)
-{
-    
-}
 
 
 /* Get the current timer counter value */
@@ -146,7 +88,7 @@ uint32_t TC2_Timer32bitCounterGet( void )
         /* Wait for Write Synchronization */
     }
 
-    while((TC2_REGS->COUNT32.TC_CTRLBSET & TC_CTRLBSET_CMD_Msk) != 0)
+    while((TC2_REGS->COUNT32.TC_CTRLBSET & TC_CTRLBSET_CMD_Msk) != 0U)
     {
         /* Wait for CMD to become zero */
     }
@@ -156,12 +98,4 @@ uint32_t TC2_Timer32bitCounterGet( void )
 
 }
 
-void mcDseI_PeripheralsInit( void )
-{
-   
-}
 
-void mcDseI_AdcSoftwareTrigger( void )
-{
-    
-}

@@ -55,12 +55,12 @@ Headers inclusions
 /*******************************************************************************
  Private data-types 
  *******************************************************************************/
-typedef struct _tmcSpe_StateVariables_s
+typedef struct
 {
     float absSpeFilt;
  }tmcSpe_StateVariables_s;
 
-typedef struct _tmcSpe_Parameters_s
+typedef struct
 {
     float speFiltParam;
     float adcUnitsToSpeed;
@@ -159,7 +159,7 @@ void mcSpeI_SpeedMeasurementRun(tmcSpe_ModuleData_s * const module)
         *module->dOutputPorts.runStatus  = 1u;
                 
         /* Calculate command speed */
-        absCmdSpeed =(*pInput->speAdcInput) * pParam->adcUnitsToSpeed;
+        absCmdSpeed =(float)(*pInput->speAdcInput) * pParam->adcUnitsToSpeed;
       
         /* Ramp control of reference speed  */
         mcSpe_SpeedRampControl(&pState->absSpeFilt, 10.0f,  absCmdSpeed );

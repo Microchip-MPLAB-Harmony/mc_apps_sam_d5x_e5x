@@ -53,12 +53,12 @@ Headers inclusions
 /*******************************************************************************
  Private data-types 
  *******************************************************************************/
-typedef struct _tmcVol_StateVariables_s
+typedef struct
 {
     float udcFilt;
 }tmcVol_StateVariables_s;
 
-typedef struct _tmcVol_Parameters_s
+typedef struct
 {
     float udcFiltParam;
     float adcUnitsToVolts;
@@ -132,7 +132,7 @@ void mcVolI_VoltageMeasurementRun(tmcVol_ModuleData_s * const module)
     pParam = &mcVol_Parameters_mds;
     
     /* Calculate DC bus voltage */ 
-    udc = (float)(*pInput->udcAdcInput * module->dUserParam.adcUnitsToVolts );
+    udc = (float)((float)(*pInput->udcAdcInput )* module->dUserParam.adcUnitsToVolts );
     *module->dOutputPorts.udc = udc;
     
     /* Filter DC bus voltage */

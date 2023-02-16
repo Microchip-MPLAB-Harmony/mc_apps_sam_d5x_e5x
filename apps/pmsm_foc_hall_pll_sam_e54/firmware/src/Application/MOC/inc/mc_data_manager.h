@@ -15,8 +15,8 @@
  */
 /* ************************************************************************** */
 
-#ifndef _DAM_H    /* Guard against multiple inclusion */
-#define _DAM_H
+#ifndef DAM_H    /* Guard against multiple inclusion */
+#define DAM_H
 
 
 /* ************************************************************************** */
