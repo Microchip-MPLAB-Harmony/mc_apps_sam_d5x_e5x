@@ -30,11 +30,37 @@
 /*
  * This file is part of X2C. http://www.mechatronic-simulation.org/
  */
-#include "X2CScopeCommunication.h"
-#include "X2CScope.h"
 
-void X2CScope_Init(void)
+#include "stdbool.h"
+#include "definitions.h"
+
+void sendSerial(uint8_t data)
 {
-    X2CScope_HookUARTFunctions(sendSerial, receiveSerial, isReceiveDataAvailable, isSendReady);
-    X2CScope_Initialise();
+    SERCOM2_USART_Write(&data,1);
+}
+
+uint8_t receiveSerial(void)
+{
+    uint8_t data;
+    bool status = false;
+    status = SERCOM2_USART_Read(&data, 1);
+    if(status == true)
+    {
+      return data;  
+    }
+    else
+    {
+      return (uint8_t)(0);
+    }
+}
+
+uint8_t isReceiveDataAvailable(void)
+{
+    return (SERCOM2_USART_ReceiverIsReady());
+
+}
+
+uint8_t isSendReady(void)
+{
+    return (SERCOM2_USART_TransmitterIsReady());
 }

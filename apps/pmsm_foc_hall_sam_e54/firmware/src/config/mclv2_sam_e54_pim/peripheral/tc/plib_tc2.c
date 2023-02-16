@@ -125,7 +125,7 @@ void TC2_CaptureCommandSet(TC_COMMAND command)
     while((TC2_REGS->COUNT32.TC_SYNCBUSY) != 0U)
     {
         /* Wait for Write Synchronization */
-    }    
+    }
 }
 
 
@@ -143,7 +143,7 @@ uint32_t TC2_Capture32bitChannel1Get( void )
 TC_CAPTURE_STATUS TC2_CaptureStatusGet(void)
 {
     TC_CAPTURE_STATUS capture_status;
-    capture_status = (TC_CAPTURE_STATUS) ((TC2_REGS->COUNT32.TC_INTFLAG) & TC_CAPTURE_STATUS_MSK);
+    capture_status =  ((TC_CAPTURE_STATUS)(TC2_REGS->COUNT32.TC_INTFLAG) & (TC_CAPTURE_STATUS)TC_CAPTURE_STATUS_MSK);
     TC2_REGS->COUNT32.TC_INTFLAG = (uint8_t)capture_status;
     return capture_status;
 }

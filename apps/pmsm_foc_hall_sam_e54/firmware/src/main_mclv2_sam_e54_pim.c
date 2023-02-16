@@ -32,9 +32,9 @@
 #include "userparams.h"
 #include "mc_Lib.h"
 
-button_response_t    button_S2_data;
-button_response_t    button_S3_data;
-
+static button_response_t    button_S2_data;
+static button_response_t    button_S3_data;
+static uintptr_t dummyforMisra;
 
 void buttonRespond(button_response_t * buttonResData, void (* buttonJob)(void));
  
@@ -52,10 +52,10 @@ int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
-    delay_10ms.period = DELAY_10MS_COUNT;
-    ADC0_CallbackRegister((ADC_CALLBACK) ADC_CALIB_ISR, (uintptr_t)NULL);
-    EIC_CallbackRegister ((EIC_PIN)EIC_PIN_2, (EIC_CALLBACK) OC_FAULT_ISR,(uintptr_t)NULL);
-    PDEC_HALLCallbackRegister((PDEC_HALL_CALLBACK)HALL_jump_ISR, (uintptr_t)NULL);
+    delay_10ms.period = (uint16_t)DELAY_10MS_COUNT;
+    ADC0_CallbackRegister((ADC_CALLBACK) ADC_CALIB_ISR, (uintptr_t)dummyforMisra);
+    EIC_CallbackRegister ((EIC_PIN)EIC_PIN_2, (EIC_CALLBACK) OC_FAULT_ISR,(uintptr_t)dummyforMisra);
+    PDEC_HALLCallbackRegister((PDEC_HALL_CALLBACK)HALL_jump_ISR, (uintptr_t)dummyforMisra);
     
     PDEC_HALLStart();  /* Start PDEC in HALL or QDEC mode. */
     TCC0_PWMStart(); 
@@ -104,12 +104,13 @@ void buttonRespond(button_response_t * buttonResData, void (* buttonJob)(void))
             break;
         case 1u:  /* Stay idle for 500ms, and then return to detect. */
             buttonResData->cnt++;
-            if(buttonResData->cnt >= SW_DEBOUNCE_DLY_500MS){
+            if(buttonResData->cnt >=(uint32_t) SW_DEBOUNCE_DLY_500MS){
                 buttonResData->cnt = 0u;
                 buttonResData->state = 0u;
             }
             break;
         default:
+            /* MISCRAC Compliance*/
             break;
     }
 }

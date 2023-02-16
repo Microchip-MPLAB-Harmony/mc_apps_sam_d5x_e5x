@@ -39,8 +39,8 @@
  *******************************************************************************/
 //DOM-IGNORE-END
 
-#ifndef _MC_APP_H    /* Guard against multiple inclusion */
-#define _MC_APP_H
+#ifndef MC_APP_H    /* Guard against multiple inclusion */
+#define MC_APP_H
 #include "definitions.h"
 #include "X2CScope.h"
 #include "X2CScopeCommunication.h"
@@ -50,8 +50,8 @@
 
 /*MC State Machine States*/
 
-#define CLOSEDLOOP_FOC              1
-
+#define CLOSEDLOOP_FOC              1U
+#define OPENLOOP                    0U
 typedef struct {
     uint32_t inputVal; /* read value of button input pin */
     uint16_t state;
@@ -81,12 +81,12 @@ extern mcParam_SVPWM        mcApp_SVGenParam;
 extern void mcApp_motorStartToggle(void);
 extern void mcApp_motorDirectionToggle(void);
 
-extern void ADC_ISR (ADC_STATUS status, uintptr_t context);
+//extern void ADC_ISR (ADC_STATUS status, uintptr_t context);
 extern void OC_FAULT_ISR (uintptr_t context);
 
 extern void mcApp_SpeedRamp(void);
 extern void mcApp_InitControlParameters(void);
-extern void mcApp_InitEstimParm(void);
+//extern void mcApp_InitEstimParm(void);
 extern void HALL_jump_ISR (PDEC_HALL_STATUS status, uintptr_t context);
 extern void mcApp_ADCISRTasks(ADC_STATUS status, uintptr_t context);
 extern void ADC_CALIB_ISR(ADC_STATUS status, uintptr_t context);

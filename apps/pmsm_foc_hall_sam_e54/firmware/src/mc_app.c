@@ -52,7 +52,7 @@
 #define STT_HALL_ISR_SIX_JUMP 4u
 
 #ifdef LONG_HURST
-float tblHALLangle[8u] = {
+static float tblHALLangle[8u] = {
     RL_DUMM,  /* 0: dummy */
     RL_TWO_OVER_THREE_PI,  /* 1: 120 degree */
     RL_FOUR_OVER_THREE_PI,  /* 2: 240 degree */
@@ -64,48 +64,49 @@ float tblHALLangle[8u] = {
 };
 #endif
 
-tagHALLdata                         HALLdata;
-mcParam_PIController     			mcApp_Q_PIParam;      // Parameters for Q axis Current PI Controller 
-mcParam_PIController     			mcApp_D_PIParam;      // Parameters for D axis Current PI Controller 
-mcParam_PIController     			mcApp_Speed_PIParam;  // Parameters for Speed PI Controller 
-mcParam_FOC							mcApp_focParam;       // Parameters related to Field Oriented Control
+static tagHALLdata                  HALLdata;
+static mcParam_PIController     	mcApp_Q_PIParam;      // Parameters for Q axis Current PI Controller 
+static mcParam_PIController     	mcApp_D_PIParam;      // Parameters for D axis Current PI Controller 
+static mcParam_PIController     	mcApp_Speed_PIParam;  // Parameters for Speed PI Controller 
+static mcParam_FOC					mcApp_focParam;       // Parameters related to Field Oriented Control
 mcParam_SinCos					    mcApp_SincosParam;    // Parameters related to Sine/Cosine calculator
 mcParam_SVPWM 						mcApp_SVGenParam;     // Parameters related to Space Vector PWM
 mcParam_ControlRef 					mcApp_ControlParam;   // Parameters related to Current and Speed references
 
-mcParam_AlphaBeta                   mcApp_I_AlphaBetaParam; // Alpha and Beta (2 Phase Stationary Frame) axis Current values
-mcParam_AlphaBeta                   mcApp_IRef_AlphaBetaParam; // Alpha and Beta (2 Phase Stationary Frame) axis Current Reference values
-mcParam_DQ                          mcApp_I_DQParam;// D and Q axis (2 Phase Rotating Frame) current values
-mcParam_DQ                          mcApp_IRef_DQParam; // D and Q axis (2 Phase Rotating Frame) Current Reference Values
-mcParam_ABC                         mcApp_I_ABCParam; // A,B,C axis (3 Phase Stationary Frame) current values
-mcParam_AlphaBeta                   mcApp_V_AlphaBetaParam; // Alpha and Beta (2 Phase Stationary Frame) axis voltage values
-mcParam_DQ                          mcApp_V_DQParam;// D and Q axis (2 Phase Rotating Frame) voltage values
+static mcParam_AlphaBeta            mcApp_I_AlphaBetaParam; // Alpha and Beta (2 Phase Stationary Frame) axis Current values
+//static mcParam_AlphaBeta            mcApp_IRef_AlphaBetaParam; // Alpha and Beta (2 Phase Stationary Frame) axis Current Reference values
+static mcParam_DQ                   mcApp_I_DQParam;// D and Q axis (2 Phase Rotating Frame) current values
+static mcParam_DQ                   mcApp_IRef_DQParam; // D and Q axis (2 Phase Rotating Frame) Current Reference Values
+static mcParam_ABC                  mcApp_I_ABCParam; // A,B,C axis (3 Phase Stationary Frame) current values
+static mcParam_AlphaBeta            mcApp_V_AlphaBetaParam; // Alpha and Beta (2 Phase Stationary Frame) axis voltage values
+static mcParam_DQ                   mcApp_V_DQParam;// D and Q axis (2 Phase Rotating Frame) voltage values
 motor_status_t                      mcApp_motorState;
 delay_gen_t                         delay_10ms;
 
-short        						potReading;
-int16_t                             phaseCurrentA;
-int16_t                             phaseCurrentB;
-float								DoControl_Temp1, DoControl_Temp2;
+static short        				potReading;
+static int16_t                      phaseCurrentA;
+static int16_t                      phaseCurrentB;
+static float						DoControl_Temp1, DoControl_Temp2;
 
-float                               d_intermediate;
-mcParam_DQ                          I_dq_old,I_dq_new;
-float                               ol_angle,cl_angle;
-uint16_t calibration_sample_count = 0x0000U;
-uint16_t adc_0_offset = 0;
-uint16_t adc_1_offset = 0;
-uint32_t adc_0_sum = 0;
-uint32_t adc_1_sum = 0;
-uint32_t curpi_counter = 0;
-char    state_count = 0;
-uint32_t capture_val;
-uint32_t capture_val_last;
-uint32_t tcMCisrVal;
+//static float                               d_intermediate;
+//static mcParam_DQ                          I_dq_old,I_dq_new;
+//static float                               ol_angle,cl_angle;
+static uint16_t calibration_sample_count = 0x0000U;
+static uint16_t adc_0_offset = 0;
+static uint16_t adc_1_offset = 0;
+static uint32_t adc_0_sum = 0;
+static uint32_t adc_1_sum = 0;
+//static uint32_t curpi_counter = 0;
+//char    state_count = 0;
+static uint32_t capture_val;
+static uint32_t capture_val_last;
+static uint32_t tcMCisrVal;
 
+static uintptr_t dummyforMisra;
 
-void mcApp_SpeedRamp()
+void mcApp_SpeedRamp(void)
 {
-        if(mcApp_motorState.motorDirection ==0)
+        if(mcApp_motorState.motorDirection ==0U)
         {
             mcApp_ControlParam.VelInput = (float)((float)potReading * POT_ADC_COUNT_FW_SPEED_RATIO);
         }
@@ -130,11 +131,11 @@ void mcApp_SpeedRamp()
              mcApp_ControlParam.VelRef = mcApp_ControlParam.VelInput;
         }
         
-         if(mcApp_motorState.motorDirection ==0)
+         if(mcApp_motorState.motorDirection ==0U)
         {
-            if(mcApp_ControlParam.VelRef < OPENLOOP_END_SPEED_RADS_PER_SEC_ELEC)
+            if(mcApp_ControlParam.VelRef < OPNLP_END_SPEED_RDPS_ELEC)
             {
-                mcApp_ControlParam.VelRef = OPENLOOP_END_SPEED_RADS_PER_SEC_ELEC;
+                mcApp_ControlParam.VelRef = OPNLP_END_SPEED_RDPS_ELEC;
             }
             else
             {
@@ -143,9 +144,9 @@ void mcApp_SpeedRamp()
         }
         else
         {
-            if(mcApp_ControlParam.VelRef > -OPENLOOP_END_SPEED_RADS_PER_SEC_ELEC)
+            if(mcApp_ControlParam.VelRef > -OPNLP_END_SPEED_RDPS_ELEC)
             {
-                mcApp_ControlParam.VelRef = -OPENLOOP_END_SPEED_RADS_PER_SEC_ELEC;
+                mcApp_ControlParam.VelRef = -OPNLP_END_SPEED_RDPS_ELEC;
             } 
             else
             {
@@ -155,25 +156,36 @@ void mcApp_SpeedRamp()
         
 }
 
-void PWM_Output_Disable()
+void PWM_Output_Disable(void)
 {
-    TCC0_PWM24bitDutySet(TCC0_CHANNEL0,(uint32_t)PWM_PERIOD_COUNT>>1);
-    TCC0_PWM24bitDutySet(TCC0_CHANNEL1,(uint32_t)PWM_PERIOD_COUNT>>1);
-    TCC0_PWM24bitDutySet(TCC0_CHANNEL2,(uint32_t)PWM_PERIOD_COUNT>>1);
+    uint8_t status;
+    bool pwm_flag;
+    status = (uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL0,(uint32_t)PWM_PERIOD_COUNT>>1U));
+    status |= (uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL1,(uint32_t)PWM_PERIOD_COUNT>>1U));
+    status |= (uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL2,(uint32_t)PWM_PERIOD_COUNT>>1U));
     
     /*Override all PWM outputs to low*/
-    TCC0_PWMPatternSet((TCC_PATT_PGE0_Msk|TCC_PATT_PGE1_Msk|TCC_PATT_PGE2_Msk
+    status = (uint8_t)(pwm_flag = TCC0_PWMPatternSet((TCC_PATT_PGE0_Msk|TCC_PATT_PGE1_Msk|TCC_PATT_PGE2_Msk
             |TCC_PATT_PGE4_Msk|TCC_PATT_PGE5_Msk|TCC_PATT_PGE6_Msk),
             (TCC_PATT_PGE0(0)|TCC_PATT_PGE1(0)|TCC_PATT_PGE2(0)|TCC_PATT_PGE4(0)
-            |TCC_PATT_PGE5(0)|TCC_PATT_PGE6(0)));
+            |TCC_PATT_PGE5(0)|TCC_PATT_PGE6(0))));
+    if (status!=1U){
+        /* Error log*/
+    }
 }
 
-void PWM_Output_Enable()
-{
-    TCC0_PWMPatternSet(0x00,0x00);/*Disable PWM override*/
+void PWM_Output_Enable(void)
+{   
+    uint8_t status;
+    bool pwm_flag;
+    status = (uint8_t)(pwm_flag = TCC0_PWMPatternSet(0x00,0x00));/*Disable PWM override*/
+    if (status!=1U){
+        /* Error log*/
+    }
 }
 
-inline void dirHALLget(tagHALLdata * ptData)
+
+static inline void dirHALLget(tagHALLdata * ptData)
 {
     uint16_t tmp1;
     
@@ -196,11 +208,12 @@ inline void dirHALLget(tagHALLdata * ptData)
             ptData->dir = -1;  /* Rotor angle is decreasing. */        
             break;
         default:
+             /* Undefined state: Should never come here */
             break;
     }
 }
 
-inline void nextAngleHALLcal(tagHALLdata * ptData)
+static inline void nextAngleHALLcal(tagHALLdata * ptData)
 {
     float tmp;
     
@@ -215,7 +228,7 @@ inline void nextAngleHALLcal(tagHALLdata * ptData)
     }
 }
 
-inline float angleHALLjumpGet(tagHALLdata * ptData)
+static inline float angleHALLjumpGet(tagHALLdata * ptData)
 {
     uint16_t tmp1;
     float tmp2 = 0.0f;
@@ -264,7 +277,7 @@ inline float angleHALLjumpGet(tagHALLdata * ptData)
     return tmp2;
 }
 
-inline void velocityCalOneJump(tagHALLdata * ptData)
+static inline void velocityCalOneJump(tagHALLdata * ptData)
 {
     if(0u == ptData->tcHALLisr){
         return;
@@ -273,7 +286,7 @@ inline void velocityCalOneJump(tagHALLdata * ptData)
     ptData->eleVelocity = ptData->dAngleHALLjump / (float)ptData->tcHALLisr * RL_TC0_FREQ;
 }
 
-inline void velocityCalSixJump(tagHALLdata * ptData)
+static inline void velocityCalSixJump(tagHALLdata * ptData)
 {
     if(0u == ptData->tcSum){
         return;
@@ -282,7 +295,7 @@ inline void velocityCalSixJump(tagHALLdata * ptData)
     ptData->eleVelocity = (float)(ptData->dir) * RL_2PI_TC0_FREQ / (float)ptData->tcSum;  
 }
 
-inline void velocityManipulate(tagHALLdata * ptData)
+static inline void velocityManipulate(tagHALLdata * ptData)
 {
     /* Calculate absolute value. */
     if(0.0f > ptData->eleVelocity){
@@ -292,15 +305,16 @@ inline void velocityManipulate(tagHALLdata * ptData)
     }   
 }
 
-void PORT_HALLcodeGet(tagHALLdata * ptData)
+static inline void PORT_HALLcodeGet(tagHALLdata * ptData)
 {
-    ptData->HALLa = PORT_PinRead(PORT_PIN_PC16);
-    ptData->HALLb = PORT_PinRead(PORT_PIN_PC17);  
-    ptData->HALLc = PORT_PinRead(PORT_PIN_PC18);   
-    ptData->HALLvalue = ((ptData->HALLc << 2) | (ptData->HALLb << 1) | ptData->HALLa) & 0x7u;
+    bool port_read;
+    ptData->HALLa = (uint8_t)(port_read=PORT_PinRead(PORT_PIN_PC16));
+    ptData->HALLb = (uint8_t)(port_read=PORT_PinRead(PORT_PIN_PC17));  
+    ptData->HALLc = (uint8_t)(port_read=PORT_PinRead(PORT_PIN_PC18));   
+    ptData->HALLvalue = (uint16_t)((uint8_t)(((ptData->HALLc << 2U) | (ptData->HALLb << 1U) | ptData->HALLa) & 0x7u));
 }
 
-void resetHALLdata(tagHALLdata * ptData)
+static inline void resetHALLdata(tagHALLdata * ptData)
 {
     uint16_t cnt;
     tagState * ptStt = &(ptData->sttData);    
@@ -308,16 +322,16 @@ void resetHALLdata(tagHALLdata * ptData)
     NVIC_DisableIRQ(PDEC_OTHER_IRQn);
     
     for(cnt = 0u; cnt<TC_HALL_FIFO_LEN; cnt++){
-        ptData->tcFIFO[cnt] = 0ul;
+        ptData->tcFIFO[cnt] = 0UL;
     }
     ptData->cntTCfifo = 0u;
     ptData->tcSum = 0u;
     PORT_HALLcodeGet(&HALLdata);
     ptData->angleHALL = tblHALLangle[ptData->HALLvalue];
     ptData->estimatedRotorAngle = ptData->angleHALL;
-    ptData->dir = 0u;    
+    ptData->dir = 0;    
     ptData->numEffectiveHALLjump = 0u;
-    ptData->tcHALLisr = 0lu;
+    ptData->tcHALLisr = 0UL;
     ptData->eleVelocity = 0.0f;
     ptData->offsetAngleBound = 0.0f;
     ptData->offsetAngle = 0.0f;
@@ -333,7 +347,7 @@ void resetHALLdata(tagHALLdata * ptData)
     NVIC_EnableIRQ(PDEC_OTHER_IRQn);
 }
 
-inline void tcFIFOmaintain(tagHALLdata * ptData)
+static inline void tcFIFOmaintain(tagHALLdata * ptData)
 {
     uint16_t * cnt = &(ptData->cntTCfifo);
     
@@ -353,7 +367,7 @@ void HALL_jump_ISR (PDEC_HALL_STATUS status, uintptr_t context)
     
     capture_val_last = capture_val;
     capture_val = TC2_Capture32bitChannel0Get();
-    if(0xFFFFFFFFlu == capture_val){
+    if(0xFFFFFFFFLU == capture_val){
         capture_val = TC2_Capture32bitChannel0Get();
     }
     HALLdata.tcHALLisr = capture_val - capture_val_last;
@@ -365,8 +379,8 @@ void HALL_jump_ISR (PDEC_HALL_STATUS status, uintptr_t context)
 #else
     PORT_HALLcodeGet(&HALLdata);
 #endif
-    if (HALLdata.HALLvalue != 0 || HALLdata.HALLvalue != 7)
-    {
+  //  if (HALLdata.HALLvalue != 0 || HALLdata.HALLvalue != 7)
+  //  {
     HALLdata.combHALLvalue = (HALLdata.lastHALLvalue << 8) + (HALLdata.HALLvalue);        
     tmp1 = angleHALLjumpGet(&HALLdata);
     
@@ -417,6 +431,8 @@ void HALL_jump_ISR (PDEC_HALL_STATUS status, uintptr_t context)
                 ptStt->state = STT_HALL_ISR_SIX_JUMP;
             } else if(CTC_ELE_VEL_1_LOW_BOUND > HALLdata.absEleVel){
                 ptStt->state = STT_HALL_ISR_ONE_JUMP_LOW_SPEED;
+            }else{
+                /* Undefined Condition: Should never come here */
             }
             break;            
         case STT_HALL_ISR_SIX_JUMP:
@@ -427,9 +443,10 @@ void HALL_jump_ISR (PDEC_HALL_STATUS status, uintptr_t context)
             }
             break;
         default:
+             /* Undefined state: Should never come here */
             break;
     }
-    }   
+ //   }   
     HALLdata.test32_1++;
     
 }
@@ -439,23 +456,23 @@ void ADC_CALIB_ISR (ADC_STATUS status, uintptr_t context)
 {
     X2CScope_Update();
     calibration_sample_count++;
-    if(calibration_sample_count <= 4096)
+    if(calibration_sample_count <= 4096U)
     {
         adc_0_sum += ADC0_ConversionResultGet();    
         adc_1_sum += ADC1_ConversionResultGet();
     }
     else
     {
-        adc_0_offset = adc_0_sum>>12;
-        adc_1_offset = adc_1_sum>>12;
+        adc_0_offset = (uint16_t)(adc_0_sum>>12U);
+        adc_1_offset = (uint16_t)(adc_1_sum>>12U);
         ADC0_Disable();
-        ADC0_CallbackRegister((ADC_CALLBACK) mcApp_ADCISRTasks, (uintptr_t)NULL);
+        ADC0_CallbackRegister((ADC_CALLBACK) mcApp_ADCISRTasks, (uintptr_t)dummyforMisra);
         ADC0_Enable();
     }
  
 }
 
-inline void latchHALLdata(tagHALLdata * ptData)
+static inline void latchHALLdata(tagHALLdata * ptData)
 {
     ptData->angleHALLjumpLth = ptData->angleHALLjump;
     ptData->eleVelocityLth = ptData->eleVelocity;
@@ -463,7 +480,7 @@ inline void latchHALLdata(tagHALLdata * ptData)
     ptData->stateLth = ptData->sttData.state;
 }
 
-inline void lowSpeedCorrect(tagHALLdata * ptData)
+static inline void lowSpeedCorrect(tagHALLdata * ptData)
 {
     float vel, tcMCisr, tcHALLisr;
     
@@ -480,7 +497,7 @@ inline void lowSpeedCorrect(tagHALLdata * ptData)
     }    
 }
 
-inline void angleCal(tagHALLdata * ptData)
+static inline void angleCal(tagHALLdata * ptData)
 {
     float tmp;
     
@@ -504,7 +521,8 @@ inline void angleCal(tagHALLdata * ptData)
         case 0:
             ptData->offsetAngle = 0.0f;
             break;
-        default:           
+        default:
+             /* Undefined state: Should never come here */
             break;
     }
        
@@ -519,7 +537,7 @@ inline void angleCal(tagHALLdata * ptData)
     } 
 }
 
-inline void rotorAngleEstimate(tagHALLdata * ptData)
+static inline void rotorAngleEstimate(tagHALLdata * ptData)
 {
     switch(ptData->stateLth){
         case STT_HALL_ISR_INI: 
@@ -533,13 +551,14 @@ inline void rotorAngleEstimate(tagHALLdata * ptData)
             angleCal(ptData);
             break;
         default:
+             /* Undefined state: Should never come here */
             break;
     }
 }
 
 
 /* Get the current timer counter value */
-uint32_t TC2_Timer32bitCounterGet( void )
+static inline uint32_t TC2_Timer32bitCounterGet( void )
 {
     /* Write command to force COUNT register read synchronization */
     TC2_REGS->COUNT32.TC_CTRLBSET |= TC_CTRLBSET_CMD_READSYNC;
@@ -549,7 +568,7 @@ uint32_t TC2_Timer32bitCounterGet( void )
         /* Wait for Write Synchronization */
     }
 
-    while((TC2_REGS->COUNT32.TC_CTRLBSET & TC_CTRLBSET_CMD_Msk) != 0)
+    while((TC2_REGS->COUNT32.TC_CTRLBSET & TC_CTRLBSET_CMD_Msk) != 0U)
     {
         /* Wait for CMD to become zero */
     }
@@ -567,6 +586,8 @@ uint32_t TC2_Timer32bitCounterGet( void )
 // *****************************************************************************
 void mcApp_ADCISRTasks(ADC_STATUS status, uintptr_t context)
 {
+   	uint8_t pwm_status=1U;
+    bool pwm_flag;
     NVIC_DisableIRQ(PDEC_OTHER_IRQn);
     /* TC2 works in capture mode. 
      * Note that with TC2 in capture mode, TC2's counter is updated by hardware.
@@ -604,10 +625,10 @@ void mcApp_ADCISRTasks(ADC_STATUS status, uintptr_t context)
     
    
     
-    if(mcApp_motorState.focStart)
+    if(mcApp_motorState.focStart == 1U)
     {
-        mcApp_I_ABCParam.a = (float)phaseCurrentA*ADC_CURRENT_SCALE * (-1); 
-        mcApp_I_ABCParam.b = (float)phaseCurrentB*ADC_CURRENT_SCALE * (-1);
+        mcApp_I_ABCParam.a = (float)phaseCurrentA*ADC_CURRENT_SCALE * (-1.0f); 
+        mcApp_I_ABCParam.b = (float)phaseCurrentB*ADC_CURRENT_SCALE * (-1.0f);
 
         mcLib_ClarkeTransform(&mcApp_I_ABCParam, &mcApp_I_AlphaBetaParam);
 
@@ -620,7 +641,7 @@ void mcApp_ADCISRTasks(ADC_STATUS status, uintptr_t context)
         {
             case CLOSEDLOOP_FOC:
             {
-                 mcApp_ControlParam.AssertActiveVector = 1;
+                 mcApp_ControlParam.AssertActiveVector = 1U;
                 /* Use the rotor angle */          
                 mcApp_SincosParam.Angle = HALLdata.estimatedRotorAngle;
 
@@ -654,7 +675,7 @@ void mcApp_ADCISRTasks(ADC_STATUS status, uintptr_t context)
                          //Calculating Flux Weakening value of Id, Id_flux_Weakening = (Vqref- Rs*Iq - BEMF)/omega*Ls
 
                         mcApp_ControlParam.Id_FW_Raw = (mcApp_focParam.VqRefVoltage - (MOTOR_PER_PHASE_RESISTANCE * mcApp_IRef_DQParam.q) 
-                                                -(mcApp_ControlParam.VelRef  * MOTOR_BACK_EMF_CONSTANT_Vpeak_PHASE_RAD_PER_SEC_ELEC))/(mcApp_ControlParam.VelRef  * MOTOR_PER_PHASE_INDUCTANCE);
+                                                -(mcApp_ControlParam.VelRef  * BEMF_CNST_Vpk_PH_RAD_PER_SEC_ELEC))/(mcApp_ControlParam.VelRef  * MOTOR_PER_PHASE_INDUCTANCE);
 
                         mcApp_ControlParam.Id_FW_Filtered = mcApp_ControlParam.Id_FW_Filtered +
                                           ((mcApp_ControlParam.Id_FW_Raw - mcApp_ControlParam.Id_FW_Filtered) * mcApp_ControlParam.qKfilterIdRef) ;	
@@ -695,7 +716,7 @@ void mcApp_ADCISRTasks(ADC_STATUS status, uintptr_t context)
                          //Calculating Flux Weakening value of Id, Id_flux_Weakening = (Vqref- Rs*Iq - BEMF)/omega*Ls
 
                         mcApp_ControlParam.Id_FW_Raw = (mcApp_focParam.VqRefVoltage - (MOTOR_PER_PHASE_RESISTANCE * mcApp_IRef_DQParam.q) 
-                                                -(mcApp_ControlParam.VelRef  * MOTOR_BACK_EMF_CONSTANT_Vpeak_PHASE_RAD_PER_SEC_ELEC))/(mcApp_ControlParam.VelRef  * MOTOR_PER_PHASE_INDUCTANCE);
+                                                -(mcApp_ControlParam.VelRef  * BEMF_CNST_Vpk_PH_RAD_PER_SEC_ELEC))/(mcApp_ControlParam.VelRef  * MOTOR_PER_PHASE_INDUCTANCE);
 
                         mcApp_ControlParam.Id_FW_Filtered = mcApp_ControlParam.Id_FW_Filtered +
                                           ((mcApp_ControlParam.Id_FW_Raw - mcApp_ControlParam.Id_FW_Filtered) * mcApp_ControlParam.qKfilterIdRef) ;										
@@ -739,6 +760,13 @@ void mcApp_ADCISRTasks(ADC_STATUS status, uintptr_t context)
 
             break;
             }
+        case OPENLOOP:
+            /* Not Implemented*/
+            break;
+        default:
+            /* Undefined state: Should never come here */
+               break;
+                
          }
 
 
@@ -754,10 +782,14 @@ void mcApp_ADCISRTasks(ADC_STATUS status, uintptr_t context)
             // limit vq maximum to the one resulting from the calculation above
             DoControl_Temp2 = mcApp_D_PIParam.qOut * mcApp_D_PIParam.qOut;
             DoControl_Temp1 = MAX_NORM_SQ - DoControl_Temp2;
-            mcApp_Q_PIParam.qOutMax = sqrtf(DoControl_Temp1);
+            if(DoControl_Temp1>=0.0f){
+              mcApp_Q_PIParam.qOutMax = sqrtf(DoControl_Temp1);  
+            }else{
+            mcApp_Q_PIParam.qOutMax = sqrtf(-DoControl_Temp1);
+            }
             mcApp_Q_PIParam.qOutMin = -mcApp_Q_PIParam.qOutMax;        
 
-            if(mcApp_motorState.motorDirection == 0)
+            if(mcApp_motorState.motorDirection == 0U)
             {
                 //Limit Q axis current
                 if(mcApp_IRef_DQParam.q>mcApp_ControlParam.Iqmax)
@@ -766,7 +798,7 @@ void mcApp_ADCISRTasks(ADC_STATUS status, uintptr_t context)
                 }
                 else
                 {
-
+                  /* Do Nothing*/
                 }
             }
             else
@@ -778,7 +810,7 @@ void mcApp_ADCISRTasks(ADC_STATUS status, uintptr_t context)
                 }   
                 else
                 {
-
+                 /* Do Nothing*/
                 }
                 }
             // PI control for Q
@@ -792,32 +824,35 @@ void mcApp_ADCISRTasks(ADC_STATUS status, uintptr_t context)
             mcLib_InvParkTransform(&mcApp_V_DQParam,&mcApp_SincosParam, &mcApp_V_AlphaBetaParam);
 
             mcLib_SVPWMGen(&mcApp_V_AlphaBetaParam , &mcApp_SVGenParam);
-            if(mcApp_ControlParam.AssertActiveVector == 1)
+            if(mcApp_ControlParam.AssertActiveVector == 1U)
             {
-                TCC0_PWM24bitDutySet(TCC0_CHANNEL0,(uint32_t) mcApp_SVGenParam.dPWM_A );
-                TCC0_PWM24bitDutySet(TCC0_CHANNEL1,(uint32_t) mcApp_SVGenParam.dPWM_B );
-                TCC0_PWM24bitDutySet(TCC0_CHANNEL2,(uint32_t) mcApp_SVGenParam.dPWM_C );
+                pwm_status |= (uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL0,(uint32_t) mcApp_SVGenParam.dPWM_A ));
+                pwm_status |= (uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL1,(uint32_t) mcApp_SVGenParam.dPWM_B ));
+                pwm_status |= (uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL2,(uint32_t) mcApp_SVGenParam.dPWM_C ));
             }
             else
             {
-                TCC0_PWM24bitDutySet(TCC0_CHANNEL0,(uint32_t) PWM_HALF_PERIOD_COUNT );
-                TCC0_PWM24bitDutySet(TCC0_CHANNEL1,(uint32_t) PWM_HALF_PERIOD_COUNT );
-                TCC0_PWM24bitDutySet(TCC0_CHANNEL2,(uint32_t) PWM_HALF_PERIOD_COUNT );
+                pwm_status |= (uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL0,(uint32_t) PWM_HALF_PERIOD_COUNT ));
+                pwm_status |= (uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL1,(uint32_t) PWM_HALF_PERIOD_COUNT ));
+                pwm_status |= (uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL2,(uint32_t) PWM_HALF_PERIOD_COUNT ));
             }
 
         }
         else
         {
-            TCC0_PWM24bitDutySet(TCC0_CHANNEL0,(uint32_t) PWM_HALF_PERIOD_COUNT );
-            TCC0_PWM24bitDutySet(TCC0_CHANNEL1,(uint32_t) PWM_HALF_PERIOD_COUNT );
-            TCC0_PWM24bitDutySet(TCC0_CHANNEL2,(uint32_t) PWM_HALF_PERIOD_COUNT );
+            pwm_status |= (uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL0,(uint32_t) PWM_HALF_PERIOD_COUNT ));
+            pwm_status |= (uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL1,(uint32_t) PWM_HALF_PERIOD_COUNT ));
+            pwm_status |= (uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL2,(uint32_t) PWM_HALF_PERIOD_COUNT ));
 
         }
-        while(ADC0_REGS->ADC_INTFLAG != ADC_INTFLAG_RESRDY_Msk);
+        while(ADC0_REGS->ADC_INTFLAG != ADC_INTFLAG_RESRDY_Msk)
+        {
+            /* Wait till ADC Interrupt flag set*/
+        }
                        
         /* Read the ADC result value */
-        mcApp_focParam.DCBusVoltage = (float)(ADC1_ConversionResultGet()* VOLTAGE_ADC_TO_PHY_RATIO); // Reads and translates to actual bus voltage
-		potReading = ADC0_ConversionResultGet();
+        mcApp_focParam.DCBusVoltage = (float)((uint32_t)ADC1_ConversionResultGet())* VOLTAGE_ADC_TO_PHY_RATIO; // Reads and translates to actual bus voltage
+		potReading =(int16_t) ADC0_ConversionResultGet();
   
         /* select the next ADC channel for conversion */
         ADC0_ChannelSelect(ADC_POSINPUT_AIN0,ADC_NEGINPUT_GND); // Phase U to ADC0
@@ -828,6 +863,9 @@ void mcApp_ADCISRTasks(ADC_STATUS status, uintptr_t context)
       
         mcApp_focParam.MaxPhaseVoltage = (float)(mcApp_focParam.DCBusVoltage*ONE_BY_SQRT3);     
         delay_10ms.count++; 
+    if (pwm_status!=1U){
+        /* Error log*/
+    }
 }
 
 
@@ -843,7 +881,7 @@ void mcApp_InitControlParameters(void)
     mcApp_D_PIParam.qKp = D_CURRCNTR_PTERM;       
     mcApp_D_PIParam.qKi = D_CURRCNTR_ITERM;              
     mcApp_D_PIParam.qKc = D_CURRCNTR_CTERM;
-    mcApp_D_PIParam.qdSum = 0;
+    mcApp_D_PIParam.qdSum = 0.0f;
     mcApp_D_PIParam.qOutMax = D_CURRCNTR_OUTMAX;
     mcApp_D_PIParam.qOutMin = -mcApp_D_PIParam.qOutMax;
 
@@ -853,10 +891,10 @@ void mcApp_InitControlParameters(void)
     mcApp_Q_PIParam.qKp = Q_CURRCNTR_PTERM;    
     mcApp_Q_PIParam.qKi = Q_CURRCNTR_ITERM;
     mcApp_Q_PIParam.qKc = Q_CURRCNTR_CTERM;
-    mcApp_Q_PIParam.qdSum = 0;
+    mcApp_Q_PIParam.qdSum = 0.0f;
     mcApp_Q_PIParam.qOutMax = Q_CURRCNTR_OUTMAX;
     mcApp_Q_PIParam.qOutMin = -mcApp_Q_PIParam.qOutMax;
-    if(mcApp_motorState.motorDirection == 0)
+    if(mcApp_motorState.motorDirection == 0U)
     {
         mcApp_ControlParam.Iqmax = MAX_MOTOR_CURRENT;
     }
@@ -870,7 +908,7 @@ void mcApp_InitControlParameters(void)
     mcApp_Speed_PIParam.qKp = SPEEDCNTR_PTERM;       
     mcApp_Speed_PIParam.qKi = SPEEDCNTR_ITERM;       
     mcApp_Speed_PIParam.qKc = SPEEDCNTR_CTERM;  
-    mcApp_Speed_PIParam.qdSum = 0;
+    mcApp_Speed_PIParam.qdSum = 0.0f;
     mcApp_Speed_PIParam.qOutMax = SPEEDCNTR_OUTMAX;   
     mcApp_Speed_PIParam.qOutMin = -mcApp_Speed_PIParam.qOutMax;
 
@@ -884,42 +922,47 @@ void mcApp_InitControlParameters(void)
 
 void mcApp_motorStart(void)
 {
+    uint8_t status =1U;
+    bool pwm_flag;
     mcApp_InitControlParameters();
 
     resetHALLdata(&HALLdata);  /* Initialize HALL data. */
-    mcApp_IRef_DQParam.d= 0;
-    mcApp_IRef_DQParam.q= 0;
-    mcApp_ControlParam.Id_FW_Filtered = 0;
-    mcApp_ControlParam.VelInput = 0;
-    mcApp_ControlParam.VelRef = 0;
+    mcApp_IRef_DQParam.d= 0.0f;
+    mcApp_IRef_DQParam.q= 0.0f;
+    mcApp_ControlParam.Id_FW_Filtered = 0.0f;
+    mcApp_ControlParam.VelInput = 0.0f;
+    mcApp_ControlParam.VelRef = 0.0f;
     mcApp_motorState.focStateMachine = CLOSEDLOOP_FOC;
 
-    mcApp_SincosParam.Angle = 0;
+    mcApp_SincosParam.Angle = 0.0f;
 	mcApp_SVGenParam.PWMPeriod = (float)MAX_DUTY;
     mcApp_motorState.focStart = 1;
     TC2_CaptureStart();
-    TCC0_PWM24bitDutySet(TCC0_CHANNEL0,(uint32_t) PWM_HALF_PERIOD_COUNT );
-    TCC0_PWM24bitDutySet(TCC0_CHANNEL1,(uint32_t) PWM_HALF_PERIOD_COUNT );
-    TCC0_PWM24bitDutySet(TCC0_CHANNEL2,(uint32_t) PWM_HALF_PERIOD_COUNT );
-    PWM_Output_Enable();   
+    status |= (uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL0,(uint32_t) PWM_HALF_PERIOD_COUNT ));
+    status |= (uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL1,(uint32_t) PWM_HALF_PERIOD_COUNT ));
+    status |= (uint8_t)(pwm_flag = TCC0_PWM24bitDutySet(TCC0_CHANNEL2,(uint32_t) PWM_HALF_PERIOD_COUNT ));
+    PWM_Output_Enable();  
+    if (status!=1U){
+        /* Error log*/
+    }
 }
 
 void mcApp_motorStop(void)
 {
-    mcApp_motorState.focStart = 0;
-    mcApp_IRef_DQParam.d= 0;
-    mcApp_IRef_DQParam.q= 0;
-    mcApp_I_DQParam.d = 0;
-    mcApp_I_DQParam.q = 0;
-    state_count = 0;
+    mcApp_motorState.focStart = 0U;
+    mcApp_IRef_DQParam.d= 0.0f;
+    mcApp_IRef_DQParam.q= 0.0f;
+    mcApp_I_DQParam.d = 0.0f;
+    mcApp_I_DQParam.q = 0.0f;
+    //state_count = 0;
     PWM_Output_Disable(); 
     TC2_CaptureStop();
 }
 
 void mcApp_motorStartToggle(void)
 {
-    mcApp_motorState.motorStart = !mcApp_motorState.motorStart;
-    if(mcApp_motorState.motorStart == 1)
+    mcApp_motorState.motorStart = (uint8_t)(!(bool)mcApp_motorState.motorStart);
+    if(mcApp_motorState.motorStart == 1U)
     {
         mcApp_motorStart();
     }
@@ -931,15 +974,15 @@ void mcApp_motorStartToggle(void)
 
 void mcApp_motorDirectionToggle(void)
 {
-    if(mcApp_motorState.motorStart == 0)
+    if(mcApp_motorState.motorStart == 0U)
     {
         /*Change Motor Direction Only when Motor is Stationary*/
-        mcApp_motorState.motorDirection = !mcApp_motorState.motorDirection;
+        mcApp_motorState.motorDirection = (uint8_t)(!(bool)mcApp_motorState.motorDirection);
         LED2_Direction_Toggle();
     }
     else
     {
-        mcApp_motorState.motorDirection = mcApp_motorState.motorDirection;
+        //mcApp_motorState.motorDirection = mcApp_motorState.motorDirection;
     }
 }
 
@@ -951,7 +994,7 @@ void __NO_RETURN OC_FAULT_ISR(uintptr_t context)
     mcApp_motorState.motorStart = 0;
     mcApp_motorState.focStart = 0;
     LED1_OC_FAULT_Set();
-    while(1)
+    while(true)
     {
         X2CScope_Communicate();
         X2CScope_Update();

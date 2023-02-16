@@ -39,9 +39,11 @@ CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT OF
 SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
 *******************************************************************************/
+#ifndef MCLIB_H
+#define MCLIB_H
+
 #include <stdint.h>
-#ifndef _MCLIB_H
-#define _MCLIB_H
+
 // DOM-IGNORE-END
 
 // DOM-IGNORE-BEGIN
@@ -63,10 +65,10 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #define 	SQRT3_BY2     			(float)0.866025403788  // Defines value for sqrt(3)/2
 #define 	ONE_BY_SQRT3     		(float)0.5773502691    // Defines value for 1/sqrt(3)
 
-#define 	ANGLE_2PI              	(2*M_PI)               // Defines value for 2*PI
-#define 	TABLE_SIZE      		256                    // Defines the size of sine/cosine look up table
-#define 	ANGLE_STEP      		(float)((float)ANGLE_2PI/(float)TABLE_SIZE) //Defines the angle resolution in the sine/cosine look up table
-#define     ONE_BY_ANGLE_STEP       (float)(1/ANGLE_STEP)
+#define 	ANGLE_2PI              	(float)(2.0f*M_PI)               // Defines value for 2*PI
+#define 	TABLE_SIZE      		256U                    // Defines the size of sine/cosine look up table
+#define 	ANGLE_STEP      		(float)(ANGLE_2PI/(float)TABLE_SIZE) //Defines the angle resolution in the sine/cosine look up table
+#define     ONE_BY_ANGLE_STEP       (float)(1.0f/ANGLE_STEP)
         
 #define     TC_HALL_FIFO_LEN        6u        
         
@@ -149,7 +151,7 @@ typedef struct
  	float   Diff;		// Difference between Speed Input and Speed Reference
 	float 	Iqmax;	// Maximum Q axis current
     char ol_cl_complete;
-    char    AssertActiveVector;
+    uint8_t    AssertActiveVector;
 } mcParam_ControlRef;
 
 //Structure containing variables used in Field Oriented Control
@@ -325,20 +327,20 @@ typedef struct
     mcParam_SinCos mcApp_SincosParam; 
     mcParam_DQ mcApp_I_DQParam; 
  
-    // Angle input = 1.571 radians (90 degree)
+    Angle input = 1.571 radians (90 degree)
 	mcApp_SincosParam.Angle = (float) 1.571;
     
-    //Calculate Sine and Cosine using mcLib_SinCosGen
+    Calculate Sine and Cosine using mcLib_SinCosGen
     mcLib_SinCosGen(&mcApp_SincosParam);
   
       
-    // Update Alpha and Beta axis currents
+    Update Alpha and Beta axis currents
     mcApp_I_AlphaBeta.alpha = 1.2;
     mcApp_I_AlphaBeta.beta = 0.8;  
     
 
-    // Calculate Park transform using mcLib_ParkTransform. The result
-    // of the transform is in mcApp_I_DQParam.d and mcApp_I_DQParam.q
+     Calculate Park transform using mcLib_ParkTransform. The result
+     of the transform is in mcApp_I_DQParam.d and mcApp_I_DQParam.q
      mcLib_ParkTransform(&mcApp_I_AlphaBetaParam,  &mcApp_SincosParam, &mcApp_I_DQParam);
     </code>
 
@@ -346,9 +348,11 @@ typedef struct
     None.
 */
 
-void mcLib_ParkTransform(mcParam_AlphaBeta *alphabetaParam ,mcParam_SinCos *scParam,  mcParam_DQ *dqParam);
-
-
+static inline void mcLib_ParkTransform(mcParam_AlphaBeta *alphabetaParam , mcParam_SinCos *scParam, mcParam_DQ *dqParam)
+{
+    dqParam->d =  alphabetaParam->alpha*scParam->Cos + alphabetaParam->beta*scParam->Sin;
+    dqParam->q = -alphabetaParam->alpha*scParam->Sin + alphabetaParam->beta*scParam->Cos;
+}
 
 
 
@@ -390,22 +394,22 @@ void mcLib_ParkTransform(mcParam_AlphaBeta *alphabetaParam ,mcParam_SinCos *scPa
     mcParam_AlphaBeta                   mcApp_V_AlphaBetaParam;
   
  
-    // Angle input = 1.571 radians (90 degree))
+    Angle input = 1.571 radians (90 degree))
 	mcApp_SincosParam.Angle = (float) 1.571;
     
-    //Calculate Sine and Cosine using mcLib_SinCosGen
+    Calculate Sine and Cosine using mcLib_SinCosGen
     mcLib_SinCosGen(&mcApp_SincosParam);
   
  
     
-    // Update normalized D axis and Q axis values.
+    Update normalized D axis and Q axis values.
     mcApp_V_DQParam.d = 0;
     mcApp_V_DQParam.q = 0.8;  
     
 
-    // Calculate inverse Park transform using mcLib_InvParkTransform. The result
-    // of the transform is in mcApp_V_AlphaBetaParam.alpha and
-    // mcApp_V_AlphaBetaParam.beta
+    Calculate inverse Park transform using mcLib_InvParkTransform. The result
+    of the transform is in mcApp_V_AlphaBetaParam.alpha and
+    mcApp_V_AlphaBetaParam.beta
     mcLib_InvParkTransform(&mcApp_V_DQParam,&mcApp_SincosParam,
                            &mcApp_V_AlphaBetaParam);
     </code>
@@ -413,8 +417,12 @@ void mcLib_ParkTransform(mcParam_AlphaBeta *alphabetaParam ,mcParam_SinCos *scPa
   Remarks: 
     None.
 */
-void mcLib_InvParkTransform(mcParam_DQ *dqParam, mcParam_SinCos *scParam,
-                            mcParam_AlphaBeta *alphabetaParam);
+
+static inline void mcLib_InvParkTransform(mcParam_DQ *dqParam, mcParam_SinCos *scParam,mcParam_AlphaBeta *alphabetaParam)
+{
+    alphabetaParam->alpha =  dqParam->d*scParam->Cos - dqParam->q*scParam->Sin;
+    alphabetaParam->beta  =  dqParam->d*scParam->Sin + dqParam->q*scParam->Cos;       
+}
 
 // *****************************************************************************
 /* Function:
@@ -446,21 +454,25 @@ void mcLib_InvParkTransform(mcParam_DQ *dqParam, mcParam_SinCos *scParam,
     mcParam_ABC mcApp_I_ABCParam;
     mcParam_AlphaBeta mcApp_I_AlphaBetaParam;
     
-    //Update Ia and Ib current values 
-    mcApp_I_ABCParam.a = 1.2; // Phase A current in Amperes
-    mcApp_I_ABCParam.b = 0.8; // Phase B current in Amperes
+    Update Ia and Ib current values 
+    mcApp_I_ABCParam.a = 1.2;  Phase A current in Amperes
+    mcApp_I_ABCParam.b = 0.8;  Phase B current in Amperes
     
 
-    // Calculate Clarke transform using mcLib_ClarkeTransform. The result
-    // of the transform is in mcApp_I_AlphaBetaParam.alpha and mcApp_I_AlphaBetaParam.beta
+    Calculate Clarke transform using mcLib_ClarkeTransform. The result
+    of the transform is in mcApp_I_AlphaBetaParam.alpha and mcApp_I_AlphaBetaParam.beta
    mcLib_ClarkeTransform(&mcApp_I_ABCParam, &mcApp_I_AlphaBetaParam);
     </code>
 
   Remarks: 
     None.
 */
-void mcLib_ClarkeTransform(mcParam_ABC *abcParam, mcParam_AlphaBeta *alphabetaParam);
 
+ static inline void mcLib_ClarkeTransform(mcParam_ABC *abcParam, mcParam_AlphaBeta *alphabetaParam)
+{
+    alphabetaParam->alpha = abcParam->a;
+    alphabetaParam->beta = (abcParam->a * ONE_BY_SQRT3) + (abcParam->b * 2.0f * ONE_BY_SQRT3);
+}
 
 
 
@@ -496,17 +508,18 @@ void mcLib_ClarkeTransform(mcParam_ABC *abcParam, mcParam_AlphaBeta *alphabetaPa
     mcParam_SVPWM 						mcApp_SVGenParam;
    
     
-    //Update normalized Valpha and Vbeta values 
-    mcApp_V_AlphaBetaParam.alpha = 0.1; // Normalized Alpha axis voltage
-    mcApp_V_AlphaBetaParam.beta = 0.8; // Normalized Beta axis voltage
+    Update normalized Valpha and Vbeta values 
+    mcApp_V_AlphaBetaParam.alpha = 0.1; Normalized Alpha axis voltage
+    mcApp_V_AlphaBetaParam.beta = 0.8; Normalized Beta axis voltage
     
-    //Set PWM Period in PWM Timer counts
-    mcApp_SVGenParam.PWMPeriod = 3000; // PWM Period in PWM Timer Counts
+    Set PWM Period in PWM Timer counts
+    mcApp_SVGenParam.PWMPeriod = 3000;
+    PWM Period in PWM Timer Counts
     
 
-    // Calculate duty cycles for SVPWM using mcLib_SVPWMGen. The result
-    // of the transform is in mcApp_SVGenParam.dPWM_A, mcApp_SVGenParam.dPWM_B
-    // and mcApp_SVGenParam.dPWM_C
+    Calculate duty cycles for SVPWM using mcLib_SVPWMGen. The result
+    of the transform is in mcApp_SVGenParam.dPWM_A, mcApp_SVGenParam.dPWM_B
+    and mcApp_SVGenParam.dPWM_C
      mcLib_SVPWMGen(&mcApp_focParam, &mcApp_SVGenParam);
     </code>
 
@@ -531,22 +544,22 @@ void mcLib_SVPWMGen( mcParam_AlphaBeta *alphabetaParam, mcParam_SVPWM *svParam )
  
 
   Parameters:
-    *svParam            - Structure pointer pointing to the mcParam_SVPWM type 
+    svParam            - Structure pointer pointing to the mcParam_SVPWM type 
                           structure containing SVPWM parameters
 
       Input: 
-     *Following members of the mcParam_SVPWM type structure are input to this 
-     * function
-        float   PWMPeriod;        // PWM Period in PWM Timer Counts
-        float   T1;               // Normalized Duration of T1 vector 
-        float   T2;               // Normalized Duration of T2 vector 
+     Following members of the mcParam_SVPWM type structure are input to this 
+        function
+        float   PWMPeriod;         PWM Period in PWM Timer Counts
+        float   T1;                Normalized Duration of T1 vector 
+        float   T2;                Normalized Duration of T2 vector 
    
       Output:
-     * Following members of the mcParam_SVPWM type structure contain the output 
-     * of this function
-        float   Ta;         // Ta = To/2 + T1 + T2
-        float   Tb;         // Tb = To/2 + T2
-        float   Tc;         // Tc = To/2
+      Following members of the mcParam_SVPWM type structure contain the output 
+      of this function
+        float   Ta;          Ta = To/2 + T1 + T2
+        float   Tb;          Tb = To/2 + T2
+        float   Tc;          Tc = To/2
                                                                                 
   Returns:
     None.
@@ -557,16 +570,16 @@ void mcLib_SVPWMGen( mcParam_AlphaBeta *alphabetaParam, mcParam_SVPWM *svParam )
     mcParam_SVPWM 						mcApp_SVGenParam;
     
         
-    //Set PWM Period in PWM Timer counts
-    mcApp_SVGenParam.PWMPeriod = 3000; // PWM Period in PWM Timer Counts
+    Set PWM Period in PWM Timer counts
+    mcApp_SVGenParam.PWMPeriod = 3000; PWM Period in PWM Timer Counts
     
-    //Set the normalized lengths of Vector T1 and T2
-    mcApp_SVGenParam.T1 = 0.8; // Normalized length of vector T1
-    mcApp_SVGenParam.T2 = 0.2; // Normalized length of vector T2
+    Set the normalized lengths of Vector T1 and T2
+    mcApp_SVGenParam.T1 = 0.8;  Normalized length of vector T1
+    mcApp_SVGenParam.T2 = 0.2;  Normalized length of vector T2
 
-    // Calculate normalized duty cycles for SVPWM using mcLib_CalcTimes. The 
-    // result of the transform is in mcApp_SVGenParam.Ta, mcApp_SVGenParam.Tb
-    // and mcApp_SVGenParam.Tc
+    Calculate normalized duty cycles for SVPWM using mcLib_CalcTimes. The 
+    result of the transform is in mcApp_SVGenParam.Ta, mcApp_SVGenParam.Tb
+    and mcApp_SVGenParam.Tc
      mcLib_CalcTimes(&mcApp_SVGenParam);
     </code>
 
@@ -601,7 +614,7 @@ void mcLib_CalcTimes( mcParam_SVPWM *svParam );
     mcParam_PIController mcApp_PIParam;
     
         
-    // Initialize PI Compensator output using mcLib_InitPI. 
+    Initialize PI Compensator output using mcLib_InitPI. 
      mcLib_InitPI(&mcApp_PIParam);
     </code>
 
@@ -636,22 +649,22 @@ void mcLib_InitPI( mcParam_PIController *pParam);
     mcParam_PIController mcApp_PIParam;
     
         
-    //Set the PI Compensator Coefficients
-    mcApp_PIParam.qKp = 0.5;  // Proportional Coefficient of the PI Compensator      
-    mcApp_PIParam.qKi = 0.2;  // Integral Coefficient of the PI Compensator            
-    mcApp_PIParam.qKc = 0.3;  // Anti-windup Coefficient of the PI Compensator     
+    Set the PI Compensator Coefficients
+    mcApp_PIParam.qKp = 0.5;   Proportional Coefficient of the PI Compensator      
+    mcApp_PIParam.qKi = 0.2;   Integral Coefficient of the PI Compensator            
+    mcApp_PIParam.qKc = 0.3;   Anti-windup Coefficient of the PI Compensator     
     
-    // Set the PI Compensator Saturation Limits
-    mcApp_PIParam.qOutMax = 1;// Max output limit of the PI Compensator
-    mcApp_PIParam.qOutMin = -1;// Min output limit of the PI Compensator
+    Set the PI Compensator Saturation Limits
+    mcApp_PIParam.qOutMax = 1; Max output limit of the PI Compensator
+    mcApp_PIParam.qOutMin = -1; Min output limit of the PI Compensator
     
-    // Update the reference and feedback value inputs to PI Compensator 
+    Update the reference and feedback value inputs to PI Compensator 
     mcApp_PIParam.qInRef = <Reference Value>;
     mcApp_PIParam.qInMeas = <Feedback Value>;
         
 
-    // Calculate PI Compensator output using mcLib_CalcPI. The output of the 
-    // PI Compensator is in mcApp_PIParam.qOut
+     Calculate PI Compensator output using mcLib_CalcPI. The output of the 
+     PI Compensator is in mcApp_PIParam.qOut
      mcLib_CalcPI(&mcApp_PIParam);
     </code>
 
@@ -688,11 +701,11 @@ void mcLib_CalcPI( mcParam_PIController *pParam);
     
      mcParam_SinCos mcApp_SincosParam;
  
-    // Angle input = 1.571 radians (90 degree)
+    Angle input = 1.571 radians (90 degree)
 	mcApp_SincosParam.Angle = (float) 1.571;
     
-    //Calculate Sine and Cosine using mcLib_SinCosGen. The calculated Sine and Cosine 
-    // values are in mcApp_SincosParam.Sin and mcApp_SincosParam.Cos respectively.
+    Calculate Sine and Cosine using mcLib_SinCosGen. The calculated Sine and Cosine 
+    values are in mcApp_SincosParam.Sin and mcApp_SincosParam.Cos respectively.
     mcLib_SinCosGen(&mcApp_SincosParam);
         
     </code>
@@ -741,7 +754,7 @@ void mcLib_SinCosGen(mcParam_SinCos *scParam);
      mcParam_SinCos mcApp_SincosParam;
      mcParam_PLLEstimator mcApp_EstimParam;
  
-    //Initialize Motor parameter values required for PLL Estimator 
+    Initialize Motor parameter values required for PLL Estimator 
  	mcApp_EstimParam.qLsDt = <Motor Phase Inductance/PWM Period>;
 	mcApp_EstimParam.qRs = <Motor Phase Resistance>;
 	mcApp_EstimParam.qKFi = <BACK EMF Constant in V-sec/rad>;
@@ -753,21 +766,21 @@ void mcLib_SinCosGen(mcParam_SinCos *scParam);
     mcApp_EstimParam.RhoOffset = <OFFSET in Radians>;
     
     
-    // Angle input = 1.571 radians (90 degree)
+    Angle input = 1.571 radians (90 degree)
 	mcApp_SincosParam.Angle = (float) 1.571;
     
-    // Read Phase A and Phase B current values
+    Read Phase A and Phase B current values
     mcApp_focParam.Ia = <Phase A Current>; 
     mcApp_focParam.Ib = <Phase B Current>;
     
-    // Calculate Clarke Transform
+    Calculate Clarke Transform
     mcLib_ClarkeTransform(&mcApp_focParam);
    
-    // Calculate Park Transform
+    Calculate Park Transform
     mcLib_ParkTransform(&mcApp_focParam);
     
-    // Estimate rotor position using mcLib_PLLEstimator. Estimated rotor angle and velocity are in
-    // mcApp_ControlParam.qRho and mcApp_ControlParam.qVelEstim respectively 
+    Estimate rotor position using mcLib_PLLEstimator. Estimated rotor angle and velocity are in
+    mcApp_ControlParam.qRho and mcApp_ControlParam.qVelEstim respectively 
     mcLib_PLLEstimator(&mcApp_EstimParam, &mcApp_SincosParam, &mcApp_focParam, &mcApp_ControlParam);
     
    
