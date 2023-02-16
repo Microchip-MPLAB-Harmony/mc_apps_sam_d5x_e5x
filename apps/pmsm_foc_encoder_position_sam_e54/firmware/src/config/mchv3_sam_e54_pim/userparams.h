@@ -85,21 +85,21 @@
 //---------------Motor Specifications : High Voltage Leadshine Motor : EL5-M0400-1-24// 
 #define     MOTOR_PER_PHASE_RESISTANCE                          ((float)1.39)			// Per Phase Resistance in Ohms
 #define     MOTOR_PER_PHASE_INDUCTANCE                          ((float)0.00253)		// Per Phase Inductance in Henrys
-#define     MOTOR_BACK_EMF_CONSTANT_Vpeak_Line_Line_KRPM_MECH   (float)44.38			// Back EMF Constant in Vpeak(L-L)/KRPM 
+#define     BEMF_CNST_Vpk_PH_Line_Line_KRPM_MECH   (float)44.38			// Back EMF Constant in Vpeak(L-L)/KRPM 
 #define     NOPOLESPAIRS                                        (float)5                       // Number of Pole Pairs of the PMSM Motor      
 #define     STAR_CONNECTED_MOTOR                                1                       // 1 - Motor is Star Connected, 0 - Motor is Delta Connected
 #define     NOMINAL_SPEED_RPM                                   (float)3000             // Nominal Rated Speed of the Motor - Value in RPM
 #define     FW_SPEED_RPM                                        (float)5000             // Maximum Speed of the Motor in Flux Weakening Mode - Value in RPM
 #define     ENCODER_PULSES_PER_REV                              ((float)10000)          // Motor Startup Behavior Configuration
-#define     RPM_TO_ELEC_RAD_PER_SEC                             (float)((2*M_PI*NOPOLESPAIRS)/(60))
+#define     RPM_TO_ELEC_RDPS                             (float)((2.0f*M_PI*NOPOLESPAIRS)/(60.0f))
 //--------------Motor Startup Behavior Configuration----------//
 #define     ALIGN_TIME_IN_SEC                                   2                       // Duration of Motor Alignment in seconds
 #define     OPENLOOP_RAMP_TIME_IN_SEC                           3                       // Ramp time to reach from 0 to Open Loop Speed in seconds
 #define     OPENLOOP_END_SPEED_RPM                              500                     // Speed at which the motor switches from open loop to closed loop in RPM
 #define     CLOSEDLOOP_RAMP_RATE_RPM_SEC                        200                     // Closed Loop Speed Ramp rate in Rev/min/Sec
-#define     ALIGN_Q_CURRENT_REF                                 0.4                     // Maximum Torque Reference during Motor Alignment in A
-#define     OPENLOOP_Q_CURRENT_REF                              0.4                     // Maximum Torque Reference during Open Loop Mode in A
-#define     TORQUE_MODE_MAX_CUR                                 0.4                     // Maximum Torque Mode Current Reference in A
+#define     ALIGN_Q_CURRENT_REF                                 0.4f                     // Maximum Torque Reference during Motor Alignment in A
+#define     OPENLOOP_Q_CURRENT_REF                              0.4f                     // Maximum Torque Reference during Open Loop Mode in A
+#define     TORQUE_MODE_MAX_CUR                                 0.4f                     // Maximum Torque Mode Current Reference in A
 #define     MAX_MOTOR_CURRENT                                   (float)(4.4)            // Maximum Motor Current in A
 
 /* PI controllers tuning values - */
@@ -125,7 +125,7 @@
 #define     POSCNTR_PTERM                                      (float)(0.1)
 #define     POSCNTR_ITERM                                      (float)(0.000000)
 #define     POSCNTR_CTERM                                      (float)(0.0)
-#define     POSCNTR_OUTMAX                                     (1000*RPM_TO_ELEC_RAD_PER_SEC)
+#define     POSCNTR_OUTMAX                                     (float)(1000.0f*RPM_TO_ELEC_RDPS)
 
 #endif 
 
@@ -146,39 +146,39 @@
 #define     VOLTAGE_ADC_TO_PHY_RATIO                            (float)(MAX_ADC_INPUT_VOLTAGE/(MAX_ADC_COUNT * DCBUS_SENSE_RATIO))
 #define     SINGLE_ELEC_ROT_RADS_PER_SEC                        (float)(2*M_PI)
 #define     MAX_DUTY                                            (PWM_PERIOD_COUNT)
-#define     LOOPTIME_SEC                                        (float)(1/((float)PWM_FREQ))           // PWM Period - 50 uSec, 20Khz PWM
-#define     COUNT_FOR_ALIGN_TIME                                (unsigned int)((float)ALIGN_TIME_IN_SEC/(float)LOOPTIME_SEC)
-#define     ALIGN_CURRENT_STEP                                  (float)(2*ALIGN_Q_CURRENT_REF/COUNT_FOR_ALIGN_TIME) // Current reference during aligning is ramped up for 50% of align time.#define     OPENLOOP_END_SPEED_RPS                              ((float)OPENLOOP_END_SPEED_RPM/60)
-#define     OPENLOOP_END_SPEED_RPS                              ((float)OPENLOOP_END_SPEED_RPM/60)
-#define     OPENLOOP_END_SPEED_RADS_PER_SEC_MECH                (float)(OPENLOOP_END_SPEED_RPS * SINGLE_ELEC_ROT_RADS_PER_SEC)
-#define     OPENLOOP_END_SPEED_RADS_PER_SEC_ELEC                (float)(OPENLOOP_END_SPEED_RADS_PER_SEC_MECH * NOPOLESPAIRS)
-#define     OPENLOOP_END_SPEED_RADS_PER_SEC_ELEC_IN_LOOPTIME    (float)(OPENLOOP_END_SPEED_RADS_PER_SEC_ELEC * LOOPTIME_SEC)
-#define     OPENLOOP_RAMPSPEED_INCREASERATE                     (float)(OPENLOOP_END_SPEED_RADS_PER_SEC_ELEC_IN_LOOPTIME/(OPENLOOP_RAMP_TIME_IN_SEC/LOOPTIME_SEC))
-#define     CLOSEDLOOP_RAMP_RATE_RPS_SEC                        ((float)CLOSEDLOOP_RAMP_RATE_RPM_SEC/60) // CLosed Loop  Speed Ramp rate in Rev/sec^2 
-#define     CLOSEDLOOP_RAMP_RATE_RADS_PER_SEC2_MECH             (float)(CLOSEDLOOP_RAMP_RATE_RPS_SEC*2*M_PI) // CLosed Loop  Speed Ramp Rate in Mechanical Radians/Sec^2
-#define     CLOSEDLOOP_RAMP_RATE_RADS_PER_SEC2_ELEC             (float)(CLOSEDLOOP_RAMP_RATE_RADS_PER_SEC2_MECH*NOPOLESPAIRS) // CLosed Loop  Speed Ramp rate in Electrical Radians/Sec^2
-#define     CLOSEDLOOP_SPEED_RAMP_RATE_DELTA                    (float)(CLOSEDLOOP_RAMP_RATE_RADS_PER_SEC2_ELEC*DELAY_MS*0.001) // CLosed Loop  Speed Ramp Rate in Electrical Radians/sec^2 in each control loop time
+#define     LOOPTIME_SEC                                        (float)(1.0f/((float)PWM_FREQ))           // PWM Period - 50 uSec, 20Khz PWM
+#define     COUNT_FOR_ALIGN_TIME                                (float)((float)ALIGN_TIME_IN_SEC/(float)LOOPTIME_SEC)
+#define     ALIGN_CURRENT_STEP                                  (float)(2.0f*ALIGN_Q_CURRENT_REF/COUNT_FOR_ALIGN_TIME) // Current reference during aligning is ramped up for 50% of align time.#define     OPENLOOP_END_SPEED_RPS                              ((float)OPENLOOP_END_SPEED_RPM/60)
+#define     OPENLOOP_END_SPEED_RPS                              ((float)OPENLOOP_END_SPEED_RPM/60.0f)
+#define     OPNLP_END_SPEED_RDPS_MECH                (float)(OPENLOOP_END_SPEED_RPS * SINGLE_ELEC_ROT_RADS_PER_SEC)
+#define     OPNLP_END_SPEED_RDPS_ELEC                (float)(OPNLP_END_SPEED_RDPS_MECH * NOPOLESPAIRS)
+#define     OPNLP_END_SPEED_RDPS_ELEC_IN_LOOPTIME    (float)(OPNLP_END_SPEED_RDPS_ELEC * LOOPTIME_SEC)
+#define     OPENLOOP_RAMPSPEED_INCREASERATE                     (float)(OPNLP_END_SPEED_RDPS_ELEC_IN_LOOPTIME/(OPENLOOP_RAMP_TIME_IN_SEC/LOOPTIME_SEC))
+#define     CLOSEDLOOP_RAMP_RATE_RPS_SEC                        ((float)CLOSEDLOOP_RAMP_RATE_RPM_SEC/60.0f) // CLosed Loop  Speed Ramp rate in Rev/sec^2 
+#define     CLLP_RMP_RT_RDPS2_MECH             (float)(CLOSEDLOOP_RAMP_RATE_RPS_SEC*2.0f*M_PIf) // CLosed Loop  Speed Ramp Rate in Mechanical Radians/Sec^2
+#define     CLLP_RMP_RT_RDPS2_ELEC             (float)(CLLP_RMP_RT_RDPS2_MECH*NOPOLESPAIRS) // CLosed Loop  Speed Ramp rate in Electrical Radians/Sec^2
+#define     CLOSEDLOOP_SPEED_RAMP_RATE_DELTA                    (float)(CLLP_RMP_RT_RDPS2_ELEC*DELAY_MS*0.001f) // CLosed Loop  Speed Ramp Rate in Electrical Radians/sec^2 in each control loop time
 #define     CLOSEDLOOP_SPEED_HYSTERESIS                         (float)(5*CLOSEDLOOP_SPEED_RAMP_RATE_DELTA)
-#define     NOMINAL_SPEED_RAD_PER_SEC_ELEC                      (float)(((NOMINAL_SPEED_RPM/60)*2*M_PI)*NOPOLESPAIRS)   // Value in Electrical Radians/Sec
+#define     NOMINAL_SPEED_RDPS_ELEC                      (float)(((NOMINAL_SPEED_RPM/60.0f)*2.0f*M_PI)*NOPOLESPAIRS)   // Value in Electrical Radians/Sec
 
 #if(STAR_CONNECTED_MOTOR==1)
-    #define     MOTOR_BACK_EMF_CONSTANT_Vpeak_PHASE_RPM_MECH    (float)((MOTOR_BACK_EMF_CONSTANT_Vpeak_Line_Line_KRPM_MECH/1.732)/1000)
+    #define     BEMF_CNST_Vpk_PH_RPM_MECH    (float)((BEMF_CNST_Vpk_PH_Line_Line_KRPM_MECH/1.732f)/1000.0f)
 #else
-    #define     MOTOR_BACK_EMF_CONSTANT_Vpeak_PHASE_RPM_MECH    (float)((MOTOR_BACK_EMF_CONSTANT_Vpeak_Line_Line_KRPM_MECH)/1000)
+    #define     BEMF_CNST_Vpk_PH_RPM_MECH    (float)((BEMF_CNST_Vpk_PH_Line_Line_KRPM_MECH)/1000)
 #endif 
-#define     MOTOR_BACK_EMF_CONSTANT_Vpeak_PHASE_RPS_MECH        (float)(MOTOR_BACK_EMF_CONSTANT_Vpeak_PHASE_RPM_MECH * 60)
-#define     MOTOR_BACK_EMF_CONSTANT_Vpeak_PHASE_RAD_PER_SEC_MECH (float)(MOTOR_BACK_EMF_CONSTANT_Vpeak_PHASE_RPS_MECH/(2*M_PI))
-#define     MOTOR_BACK_EMF_CONSTANT_Vpeak_PHASE_RAD_PER_SEC_ELEC (float)(MOTOR_BACK_EMF_CONSTANT_Vpeak_PHASE_RAD_PER_SEC_MECH/NOPOLESPAIRS)
-#define     INVKFi_BELOW_BASE_SPEED                              (float)(1/MOTOR_BACK_EMF_CONSTANT_Vpeak_PHASE_RAD_PER_SEC_ELEC)
-#define     DELAY_10MS_COUNT                                     (float)(PWM_FREQ*DELAY_MS*(float)0.001)
+#define     BEMF_CNST_Vpk_PH_RPS_MECH        (float)(BEMF_CNST_Vpk_PH_RPM_MECH * 60.0f)
+#define     BEMF_CNST_Vpk_PH_RDPS_MECH (float)(BEMF_CNST_Vpk_PH_RPS_MECH/(2.0f*M_PI))
+#define     BEMF_CNST_Vpk_PH_RDPS_ELEC (float)(BEMF_CNST_Vpk_PH_RDPS_MECH/NOPOLESPAIRS)
+#define     INVKFi_BELOW_BASE_SPEED                              (float)(1/BEMF_CNST_Vpk_PH_RDPS_ELEC)
+#define     DELAY_10MS_COUNT                                     (float)((float)PWM_FREQ*DELAY_MS*(float)0.001)
 #define     SW_DEBOUNCE_DLY_500MS                                (uint32_t)(SW_DEBOUNCE_DLY_MS/DELAY_MS)  // Switch debounce duration in multiple of 10mS
-#define     FW_SPEED_RAD_PER_SEC_ELEC                           (float)(((FW_SPEED_RPM/60)*2*M_PI)*NOPOLESPAIRS)
+#define     FW_SPEED_RDPS_ELEC                           (float)(((FW_SPEED_RPM/60.0f)*2.0f*M_PI)*NOPOLESPAIRS)
 #define     MAX_NORM                                            (float) 0.95
 #define     MAX_NORM_SQ                                         (float) (MAX_NORM*MAX_NORM)
 #define     TORQUE_MODE_POT_ADC_RATIO                           (float) (TORQUE_MODE_MAX_CUR/MAX_ADC_COUNT)
 
 
-#define     POT_ADC_COUNT_FW_SPEED_RATIO                       (float)(NOMINAL_SPEED_RAD_PER_SEC_ELEC/MAX_ADC_COUNT)
+#define     POT_ADC_COUNT_FW_SPEED_RATIO                       (float)(NOMINAL_SPEED_RDPS_ELEC/MAX_ADC_COUNT)
 
 
 #define 	DECIMATE_NOMINAL_SPEED                              ((NOMINAL_SPEED_RPM *(M_PI/30))*NOPOLESPAIRS/10)
@@ -187,15 +187,15 @@
 
 
 //--------------PDEC Configuration----------//
-#define ENCODER_PULSES_PER_EREV                      (uint16_t)(ENCODER_PULSES_PER_REV/NOPOLESPAIRS)
+#define ENCODER_PULSES_PER_EREV                      (uint16_t)((uint16_t)ENCODER_PULSES_PER_REV/(uint16_t)NOPOLESPAIRS)
 #define QDEC_RC                                       65536u
 #define QDEC_UPPER_THRESHOLD                          49151u   
 #define QDEC_LOWER_THRESHOLD                          16384u  
 #define QDEC_OVERFLOW                                (uint16_t)(QDEC_RC % ENCODER_PULSES_PER_EREV) 
 #define QDEC_UNDERFLOW                               (uint16_t)(ENCODER_PULSES_PER_EREV - QDEC_OVERFLOW)
-#define FAST_LOOP_TIME_SEC                           (float)(1/(float)PWM_FREQ)        /* Always runs in sync with PWM    */
-#define SLOW_LOOP_FACTOR                             (float)(10)  
-#define SLOW_LOOP_TIME_SEC                           (float)(FAST_LOOP_TIME_SEC * SLOW_LOOP_FACTOR) /* 100 times slower than Fast Loop */
+#define FAST_LOOP_TIME_SEC                           (float)(1.0f/(float)PWM_FREQ)        /* Always runs in sync with PWM    */
+#define SLOW_LOOP_FACTOR                             10U  
+#define SLOW_LOOP_TIME_SEC                           (float)(FAST_LOOP_TIME_SEC * (float)SLOW_LOOP_FACTOR) /* 100 times slower than Fast Loop */
 #define KFILTER_POT                    (float)((float)50/(float)32767) 
 #endif
 // </editor-fold>

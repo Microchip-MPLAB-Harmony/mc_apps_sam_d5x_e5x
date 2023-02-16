@@ -32,8 +32,8 @@
 #include "userparams.h"
 #include "mc_Lib.h"
 
-button_response_t    button_S2_data;
-
+static button_response_t    button_S2_data;
+static uintptr_t dummyforMisra;
 void buttonRespond(button_response_t * buttonResData, void (* buttonJob)(void));
  
 
@@ -48,10 +48,10 @@ int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
-    delay_10ms.period = DELAY_10MS_COUNT;
-    ADC0_CallbackRegister((ADC_CALLBACK) ADC_CALIB_ISR, (uintptr_t)NULL);
+    delay_10ms.period = (uint16_t)DELAY_10MS_COUNT;
+    ADC0_CallbackRegister((ADC_CALLBACK) ADC_CALIB_ISR, (uintptr_t)dummyforMisra);
     TCC0_PWMStart(); 
-    EIC_CallbackRegister ((EIC_PIN)EIC_PIN_2, (EIC_CALLBACK) OC_FAULT_ISR,(uintptr_t)NULL);
+    EIC_CallbackRegister ((EIC_PIN)EIC_PIN_2, (EIC_CALLBACK) OC_FAULT_ISR,(uintptr_t)dummyforMisra);
     PWM_Output_Disable();
     ADC0_Enable();
     X2CScope_Init();
@@ -99,6 +99,7 @@ void buttonRespond(button_response_t * buttonResData, void (* buttonJob)(void))
             }
             break;
         default:
+            /* Undefined state: Should never come here */
             break;
     }
 }
