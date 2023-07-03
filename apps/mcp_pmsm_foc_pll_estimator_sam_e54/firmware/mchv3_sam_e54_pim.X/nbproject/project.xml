@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>mcp_pmsm_foc_pll_estimator_sam_e54</name>
+            <name>pmsm_foc_pll_estimator_sam_e54</name>
             <creation-uuid>80cd3f4c-49b1-4218-a8f5-93ebb80aed56</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>

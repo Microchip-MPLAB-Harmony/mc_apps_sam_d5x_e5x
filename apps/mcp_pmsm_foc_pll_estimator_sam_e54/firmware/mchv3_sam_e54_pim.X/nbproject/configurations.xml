@@ -11,30 +11,6 @@
           <logicalFolder name="bsp" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/mchv3_sam_e54_pim/bsp/bsp.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="motor_control"
-                         displayName="motor_control"
-                         projectFiles="true">
-            <logicalFolder name="pmsm_foc" displayName="pmsm_foc" projectFiles="true">
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_pwm.h</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_pmsm_foc.h</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_userparams.h</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_generic_library.h</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_motor_control.h</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_ramp_profiler.h</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_function_coordinator.h</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_flying_start.h</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_flux_control.h</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_speed_control.h</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_hardware_abstraction.h</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_start_up.h</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_current_control.h</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_current_calculation.h</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_interface_handling.h</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_voltage_measurement.h</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_error_handler.h</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_rotor_position.h</itemPath>
-            </logicalFolder>
-          </logicalFolder>
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="adc" displayName="adc" projectFiles="true">
               <itemPath>../src/config/mchv3_sam_e54_pim/peripheral/adc/plib_adc1.h</itemPath>
@@ -69,6 +45,45 @@
               <itemPath>../src/config/mchv3_sam_e54_pim/peripheral/tcc/plib_tcc_common.h</itemPath>
               <itemPath>../src/config/mchv3_sam_e54_pim/peripheral/tcc/plib_tcc0.h</itemPath>
             </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="QSpin" displayName="QSpin" projectFiles="true">
+            <logicalFolder name="Current_Calculation"
+                           displayName="Current_Calculation"
+                           projectFiles="true">
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Current_Calculation/mc_current_calculation.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Field_Oriented_Control"
+                           displayName="Field_Oriented_Control"
+                           projectFiles="true">
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_reference_control.h</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_torque_control.h</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_field_oriented_control.h</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_open_loop_startup.h</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_flying_start.h</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_initial_position_detection.h</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_pwm.h</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_speed_control.h</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_flux_control.h</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_rotor_position_calculation.h</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_pi_control.h</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_motor.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Hardware_Abstraction"
+                           displayName="Hardware_Abstraction"
+                           projectFiles="true">
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Hardware_Abstraction/mc_hardware_abstraction.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Utilities" displayName="Utilities" projectFiles="true">
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Utilities/mc_utilities.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Voltage_Calculation"
+                           displayName="Voltage_Calculation"
+                           projectFiles="true">
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Voltage_Calculation/mc_voltage_measurement.h</itemPath>
+            </logicalFolder>
+            <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/mc_application.h</itemPath>
+            <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/mc_types.h</itemPath>
+            <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/mc_key_manager.h</itemPath>
           </logicalFolder>
           <logicalFolder name="X2CCode" displayName="X2CCode" projectFiles="true">
             <logicalFolder name="X2CScope" displayName="X2CScope" projectFiles="true">
@@ -238,29 +253,6 @@
           <logicalFolder name="bsp" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/mchv3_sam_e54_pim/bsp/bsp.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="motor_control"
-                         displayName="motor_control"
-                         projectFiles="true">
-            <logicalFolder name="pmsm_foc" displayName="pmsm_foc" projectFiles="true">
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_pwm.c</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_motor_control.c</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_pmsm_foc.c</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_generic_library.c</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_ramp_profiler.c</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_function_coordinator.c</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_flying_start.c</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_hardware_abstraction.c</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_error_handler.c</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_flux_control.c</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_speed_control.c</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_current_control.c</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_start_up.c</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_current_calculation.c</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_interface_handling.c</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_rotor_position.c</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/motor_control/pmsm_foc/mc_voltage_measurement.c</itemPath>
-            </logicalFolder>
-          </logicalFolder>
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="adc" displayName="adc" projectFiles="true">
               <itemPath>../src/config/mchv3_sam_e54_pim/peripheral/adc/plib_adc1.c</itemPath>
@@ -292,6 +284,43 @@
             <logicalFolder name="tcc" displayName="tcc" projectFiles="true">
               <itemPath>../src/config/mchv3_sam_e54_pim/peripheral/tcc/plib_tcc0.c</itemPath>
             </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="QSpin" displayName="QSpin" projectFiles="true">
+            <logicalFolder name="Current_Calculation"
+                           displayName="Current_Calculation"
+                           projectFiles="true">
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Current_Calculation/mc_current_calculation.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Field_Oriented_Control"
+                           displayName="Field_Oriented_Control"
+                           projectFiles="true">
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_torque_control.c</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_reference_control.c</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_field_oriented_control.c</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_open_loop_startup.c</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_flying_start.c</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_pwm.c</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_speed_control.c</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_flux_control.c</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_rotor_position_calculation.c</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_pi_control.c</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_motor.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Hardware_Abstraction"
+                           displayName="Hardware_Abstraction"
+                           projectFiles="true">
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Hardware_Abstraction/mc_hardware_abstraction.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Utilities" displayName="Utilities" projectFiles="true">
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Utilities/mc_utilities.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Voltage_Calculation"
+                           displayName="Voltage_Calculation"
+                           projectFiles="true">
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Voltage_Calculation/mc_voltage_measurement.c</itemPath>
+            </logicalFolder>
+            <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/mc_application.c</itemPath>
+            <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/mc_key_manager.c</itemPath>
           </logicalFolder>
           <logicalFolder name="stdio" displayName="stdio" projectFiles="true">
             <itemPath>../src/config/mchv3_sam_e54_pim/stdio/xc32_monitor.c</itemPath>
@@ -327,7 +356,7 @@
         <targetDevice>ATSAME54P20A</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.00</languageToolchainVersion>
         <platform>3</platform>
@@ -367,13 +396,14 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/mchv3_sam_e54_pim;../src/config/mchv3_sam_e54_pim/X2CCode;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+                  value="../src;../src/config/mchv3_sam_e54_pim;../src/config/mchv3_sam_e54_pim/QSpin;../src/config/mchv3_sam_e54_pim/QSpin/Current_Calculation/;../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/;../src/config/mchv3_sam_e54_pim/QSpin/Hardware_Abstraction/;../src/config/mchv3_sam_e54_pim/QSpin/Utilities/;../src/config/mchv3_sam_e54_pim/QSpin/Voltage_Calculation/;../src/config/mchv3_sam_e54_pim/X2CCode;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -423,6 +453,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -462,6 +493,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -490,6 +522,7 @@
         <property key="use-indirect-calls" value="false"/>
       </C32CPP>
       <C32Global>
+        <property key="appendMe" value=""/>
         <property key="common-include-directories" value=""/>
         <property key="gp-relative-option" value=""/>
         <property key="legacy-libc" value="false"/>

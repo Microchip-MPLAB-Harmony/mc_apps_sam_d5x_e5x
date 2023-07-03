@@ -1,5 +1,21 @@
-<config configName="mchv3_sam_e54_pim" projectName="mchv3_sam_e54_pim" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.11">
-   <usedPackages class="java.util.ArrayList"/>
+<config configName="mchv3_sam_e54_pim" projectName="mchv3_sam_e54_pim" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
+   <usedPackages class="java.util.ArrayList">
+      <package packageName="bsp" version="3.15.0" contentType="HARMONY">
+         <modules class="java.util.ArrayList"/>
+      </package>
+      <package packageName="csp" version="3.15.0" contentType="HARMONY">
+         <modules class="java.util.ArrayList"/>
+      </package>
+      <package packageName="dev_packs" version="3.15.1" contentType="HARMONY">
+         <modules class="java.util.ArrayList"/>
+      </package>
+      <package packageName="motor_control" version="" contentType="HARMONY">
+         <modules class="java.util.ArrayList"/>
+      </package>
+      <package packageName="x2c" version="" contentType="HARMONY">
+         <modules class="java.util.ArrayList"/>
+      </package>
+   </usedPackages>
    <usedClasses class="java.util.TreeMap">
       <entry>
          <string>BSP_SAM_E54_PIM_MC_Board</string>
@@ -3139,6 +3155,17 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="COVERITY_SUPPRESS_DEVIATION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;COVERITY_SUPPRESS_DEVIATION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="CoreMainFile"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CoreMainFile&quot;&gt;
@@ -4146,10 +4173,23 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_47_DIR"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_47_DIR&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_47_FUNCTION_NAME"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_47_FUNCTION_NAME&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;BUTTON_01&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
 </value>
@@ -4158,7 +4198,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_47_FUNCTION_TYPE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_47_FUNCTION_TYPE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;GPIO&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
 </value>
@@ -4167,7 +4209,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_47_INEN"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_47_INEN&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;True&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
 </value>
@@ -4195,10 +4239,23 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_47_PULLEN"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_47_PULLEN&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_48_FUNCTION_NAME"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_48_FUNCTION_NAME&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
 </value>
@@ -4207,7 +4264,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_48_FUNCTION_TYPE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_48_FUNCTION_TYPE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
 </value>
@@ -4222,10 +4281,34 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_48_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_48_MODE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_48_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_48_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_49_FUNCTION_NAME"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_49_FUNCTION_NAME&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
 </value>
@@ -4234,7 +4317,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_49_FUNCTION_TYPE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_49_FUNCTION_TYPE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
 </value>
@@ -4244,6 +4329,28 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_49_INEN&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_49_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_49_MODE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_49_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_49_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
 </value>
@@ -5196,6 +5303,28 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_GROUP_3_DIR"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_GROUP_3_DIR&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_GROUP_3_OUT"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_GROUP_3_OUT&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_GROUP_3_PAD_0"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_GROUP_3_PAD_0&quot;&gt;
@@ -5207,11 +5336,33 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_GROUP_3_PAD_10"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_GROUP_3_PAD_10&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;PD10&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_GROUP_3_PAD_8"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_GROUP_3_PAD_8&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;PD08&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_GROUP_3_PAD_9"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_GROUP_3_PAD_9&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;PD09&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5233,7 +5384,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_GROUP_3_PINCFG10&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x2&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5255,7 +5406,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_GROUP_3_PINCFG9&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x2&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5320,6 +5471,17 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_GROUP_3_PMUX4"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_GROUP_3_PMUX4&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PORT_GROUP_3_PMUX5"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PORT_GROUP_3_PMUX5&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;0x0&quot;/&gt;
     &lt;/Values&gt;
@@ -6764,15 +6926,6 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_ALIGN_OR_DETECT_ALGORITHM"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_ALIGN_OR_DETECT_ALGORITHM&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_ALIGN_OR_DETECT_AXIS"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
   &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_ALIGN_OR_DETECT_AXIS&quot;&gt;
@@ -7643,6 +7796,7 @@
   &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_ID_PID_KI&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;10.0&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;100.0&quot;/&gt;
     &lt;/Values&gt;
   &lt;/pmsm_foc&gt;
 &lt;/pmsm_foc&gt;
@@ -7654,6 +7808,7 @@
   &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_ID_PID_KP&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0.2&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;0.02&quot;/&gt;
     &lt;/Values&gt;
   &lt;/pmsm_foc&gt;
 &lt;/pmsm_foc&gt;
@@ -7714,6 +7869,7 @@
   &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_IQ_PID_KI&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;10.0&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;100.0&quot;/&gt;
     &lt;/Values&gt;
   &lt;/pmsm_foc&gt;
 &lt;/pmsm_foc&gt;
@@ -7725,6 +7881,7 @@
   &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_IQ_PID_KP&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0.2&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;0.02&quot;/&gt;
     &lt;/Values&gt;
   &lt;/pmsm_foc&gt;
 &lt;/pmsm_foc&gt;
@@ -8779,19 +8936,12 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_RAMP_PROFILER_RAMP_TIME"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
-  &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_RAMP_PROFILER_RAMP_TIME&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/pmsm_foc&gt;
-&lt;/pmsm_foc&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="pmsm_foc" name="MCPMSMFOC_RAMP_PROFILES"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;pmsm_foc&gt;
   &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_RAMP_PROFILES&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;Linear&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/pmsm_foc&gt;
 &lt;/pmsm_foc&gt;
 </value>
@@ -8851,6 +9001,7 @@
   &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_SPEED_PID_KI&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;0.015&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;1.0E-4&quot;/&gt;
     &lt;/Values&gt;
   &lt;/pmsm_foc&gt;
 &lt;/pmsm_foc&gt;
@@ -8862,6 +9013,7 @@
   &lt;pmsm_foc dnOrder=&quot;0&quot; id=&quot;MCPMSMFOC_SPEED_PID_KP&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;pmsm_foc&quot; value=&quot;6.0E-4&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;0.001&quot;/&gt;
     &lt;/Values&gt;
   &lt;/pmsm_foc&gt;
 &lt;/pmsm_foc&gt;
@@ -12274,139 +12426,63 @@
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\gmac.h</file>
-         <hash>94efa3650d2abab35c8ebdde28dd10c2e6d91662dad092dbe3ffda0de08aa11b</hash>
+         <hash>d739d16f7a414cf41a74d96baf93618e503b5b2d9b47d94564232a3ab8125451</hash>
       </entry>
       <entry>
-         <file>..\src\packs\CMSIS\CMSIS\Core\Include\cachel1_armv7.h</file>
-         <hash>6cdb5b324f2fd1bb5b2f47298ba6e6777e735d7cad3bb8d942cd36e2c6e65328</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\peripheral\adc\plib_adc0.h</file>
-         <hash>69cc8e1ef2e75c4d9e09ddba8420d23e3cfa0384077f90727b01cc01233721a7</hash>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_motor.h</file>
+         <hash>fd993b59c16fcbd7cfc969e052d3526145129294a65f1b2ec444646c61608273</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_gcc.h</file>
          <hash>3d4e265d0aa42f888385ccf073666e6ebb5ec9f834760b9da27c474e177f708d</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_error_handler.c</file>
-         <hash>be4f6891cab5c6b57a9fe83a65efc63e4cae6af6ba7417c0b0de1f2d7e920e23</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\wdt.h</file>
-         <hash>fef17ee4febd3b280a68fe0a0517370fbc82e6b9b0d2342507f109098beef24e</hash>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_motor.c</file>
+         <hash>4ae8246b4d91b30b322e569418573cd674805c832c53f38f25a8614a099a51b7</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc3.h</file>
-         <hash>7a4406dfa7eb718eee60217e7836e2a70d929d7ee4bac6f4495149b9f20ee2c8</hash>
+         <hash>7dc6fd53595091e97f24ddd191e3a0119d12759ba2533043995b7dba9b2379b7</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pdec.h</file>
-         <hash>acbe65ae334a0fc7f7ff94042e6ec87b296cbd0e48aa2e11a2e008ecf317efb5</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\icm.h</file>
-         <hash>eb1224fe0df6acd2ffca2c29d88e7b635ac0e01c5e68035921c94c3112739b6d</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\usb.h</file>
-         <hash>b4f09538ae20e0e58e8c2a1ce2462322c648e5211b0dc8afeb85849536a1d5ca</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\peripheral\nvmctrl\plib_nvmctrl.h</file>
-         <hash>fd7749dc74a885efd7c593394454abc74afc7cf184123f0315425a3600c26ac5</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\peripheral\adc\plib_adc_common.h</file>
-         <hash>b6100059702feb5d6031f6c694dc636b0871d6d256ca47a73f991cb418209500</hash>
+         <hash>b3e347d069968af0a4610ec0dfc5145049de5cf089ceccde17d940c4db40f514</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pac.h</file>
-         <hash>5d6641d83f661de2ef7b4170b8fbfb313c17dbb7ce10a995a24021ead24839bd</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_error_handler.h</file>
-         <hash>8d0421aec72925bd2b77b80ef24b798b483874aa3cd99865c75ee6cf30f6984c</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\peripheral\nvmctrl\plib_nvmctrl.c</file>
-         <hash>47d11de9cd641091a877f388429489353c47b8fe1c8be23b45a90db5ba2fcbfa</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_speed_control.h</file>
-         <hash>f0c3d5200e1ef34b970c7209da0d3ee5d39d0ec07e7c6608ae441d537b0c22c9</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\bsp\bsp.c</file>
-         <hash>c67b6294cff9844db10dc4cc9424374c1b21be88bcaef1fd4318c02e08946c17</hash>
+         <hash>bdc347e8fd53726a85c3b9fcebb2de7ad6444bc3882627e9a8b51708bc1d29f9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pukcc.h</file>
-         <hash>df2df1cb0faf292fb7aafcc25ac062bdef941eaddd10e9cf1a0e70250b262c46</hash>
+         <hash>df43121a4bcf106bac3351eac480d07530d1ecfedc4efaae43479902b9386c90</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\can1.h</file>
-         <hash>56667e55cd303da255ce88cc14f04bca72ea2f1dd2c440cd4bfc74d335d6f52d</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\gclk.h</file>
-         <hash>4ee5b14477d2d3b386c883c28440fb6383f68c6da3dd32d3e852f78f500c9fba</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\trng.h</file>
-         <hash>0677211e0f140cce9806eb3611122a91a3c8c9e9954ac7f2e40b6d75478f72c4</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\cmcc.h</file>
-         <hash>2195f531dd5af8ea3bb5b496205abae4b862644e6616cc5f4bd3f32c3942bb05</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_speed_control.c</file>
-         <hash>bcbaa08e469592a25d23510b8ca03e636fe3cee2c1a8b16f6025c027d1b8634a</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\fuses.h</file>
-         <hash>c2067e1d6147f250854ab29d5de09ec7b74b3f6cc3c5aac0ccedaa5c946763b8</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\peripheral\adc\plib_adc0.c</file>
-         <hash>df76d9f0065c314ae737a003d1a3a62e1640fa0bd32bddb07c2fef9401dfea1d</hash>
+         <hash>fcad53aa3be2bab946218aa90ccfce4a2378fd31c47d1f30cf1347e362ef919e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc0.h</file>
-         <hash>b791f87f272e2b821b62776957439be96511ec4644da1e1e111b4b044b044831</hash>
+         <hash>bcb972750f202694f0c44979bf5e586805e1c5a30c1350bfe4c6152c1cb9a613</hash>
       </entry>
       <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\eic.h</file>
-         <hash>e7f0427325d472a6dec3e6085a674e268e1ebc1b226ef83c4dd432f8c122a415</hash>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Current_Calculation\mc_current_calculation.c</file>
+         <hash>48145df4181085368179ac0b64b900fc8316977bd595a69277e3133fd186caa2</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\definitions.h</file>
-         <hash>2c3ec2e9361151369a247005ba5dd4ff368a7c2d2c5dfaacffdb582347e6efd1</hash>
+         <hash>97d51292d72729f804e7decb7ea54ecaffb344b79f3a8dd76f5f9b06fed15e2a</hash>
       </entry>
       <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\tc4.h</file>
-         <hash>4b2f8226672f6d53b5d76bba759758640206835fd0a159e5350dd25f6f070d62</hash>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\mc_types.h</file>
+         <hash>f78cdac4a1abddb318fcbd62dd850eb4a589fd02dfc9386ed8c333270cedba00</hash>
       </entry>
       <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom5.h</file>
-         <hash>00da252e1cdbd227ca47252e0c82e0476082fd6decddf2b029da7f4a1f422419</hash>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Current_Calculation\mc_current_calculation.h</file>
+         <hash>8b5a20c682a3c6c03f723941eff0d74f9480e4afe463124de9054506a6cfdcbb</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\rtc.h</file>
-         <hash>1e2e3e0282040e074fe932b7a6835c025377050ead505b432b5ccc31f8248552</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\peripheral\evsys\plib_evsys.h</file>
-         <hash>f13b5b105e66ed783e6eac327265ac338b19acd379df4bd2ea7b92608576d588</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\sdhc1.h</file>
-         <hash>b2c4cf6e0edd8ee9a24c5c5ab2c799ed7d02c33e4d9b7d6cb90b3cd17f78d3ab</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\ramecc.h</file>
-         <hash>76772b012a260102a2ad28d3c93028e8dcd71d9efe22fbc52d1923a1b92e0884</hash>
+         <hash>e7dc15de2d24b4ce61f323a03de918f60ca489cf5916ecbc5712a2417e0a4a0b</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\peripheral\nvic\plib_nvic.h</file>
@@ -12414,79 +12490,59 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\usb.h</file>
-         <hash>3bc3730edcc123e89557c8e54bd3b2f84bc57567d6b7fc54e1df27cbc0738e99</hash>
+         <hash>923cc6055ae5099b68c4f3dc8cfd2cfc9bd199b970a8fdab393e490c61ee5367</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\osc32kctrl.h</file>
-         <hash>624324adc97b0c810648375fe8621a64d255a6231fe42c24d2bb2b01653e4c70</hash>
+         <hash>a27141d58908838156678ba3dc44bf2e31f6c126898db4c0aef4b35f46cfd0af</hash>
       </entry>
       <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\osc32kctrl.h</file>
-         <hash>8d0d13d6027df1f1e2299933b3b56fdddb98f2721ff282a0df4745bb4af402e5</hash>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_pwm.c</file>
+         <hash>983fe3c3d104c02e934e3cebf33ddeef58884bcd00bccc74c765acf17a845cd1</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\sercom.h</file>
-         <hash>7962b585227a8dccadbf1827cf3acb709c7551dd50bb0caa7989ae5bdfa256d9</hash>
+         <hash>a5648285ff6f8345876dbde62f9fae77bd237e2d5b5134d9597c15ef72a24a36</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\X2CCode\X2CScope\src\X2CScopeCommunication.c</file>
-         <hash>32d8ced265e50bb1ea868aea30db8669d61acbea3b9f88f5b9f669ec934b64a7</hash>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_speed_control.c</file>
+         <hash>1e0740e1ad330188de42a64956eb16b4771b6b2f6778114af087631201c0fbfb</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_rotor_position_calculation.c</file>
+         <hash>cdad51bed83b82a22ce5c6cb42442130fdf0df3584070c115bd753003d3ee676</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\qspi.h</file>
-         <hash>e7402c5ce991b3594b699915d53ea2b43fb862171c32ce71948cf80cc41239f6</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\pin_configurations.csv</file>
-         <hash>bed4f693297af7b3ffaf36faf66875c0026395fcccd657851fc75eeb0dedc776</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_pwm.c</file>
-         <hash>07858886de55b593e62012b7fed723108ed1d4db627eef27ef47f0d3c83ac777</hash>
+         <hash>49791aac2c3d92d177244ebc020803085f4c3dd7d568af29bfbcf8fb868f584b</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\peripheral\nvic\plib_nvic.c</file>
-         <hash>896d59b85311fb7f6b8655a2fd4d889b97441cde950791dcc6b0cf81487f6918</hash>
+         <hash>ff159fbf03d40c262304b1be9838f22bbc6744e099a5164da8ad426b9a781bd1</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom1.h</file>
-         <hash>aa2bdc8321bd2bbc2b22c2f128dfeb347df622da1f3c8a7e3999f289deb5811d</hash>
+         <hash>6ee141ad7485164f47de8dd0e539c8e9ed09a6693e1105893acac792b0735016</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_pwm.h</file>
-         <hash>3240c6e77e1748d85b54c1cdf48f25132d51266969ea48059c59f84a48ed3b03</hash>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_pwm.h</file>
+         <hash>93e2f206ee39d3b5f529f971397daa097ebc7e1ad075939eef878b3fe9c9ae56</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\peripheral\evsys\plib_evsys.c</file>
-         <hash>90659e46d26dfe1a0b8e9c8c8258703155e8dc56cc97c509d1ea6f0cb6f893dd</hash>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_speed_control.h</file>
+         <hash>14a4bcd5916d15302d634f8550c1933abe6dea84492e4327a652d744ed632898</hash>
       </entry>
       <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\rtc.h</file>
-         <hash>cd984dc4e6d77d9d6d6c9dc9280a3920439f0c13cbb092950b2e07c697a57ec8</hash>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_rotor_position_calculation.h</file>
+         <hash>74beabe66340fc97cf21021f3791f5345afd30d012721bcd92c7e7e73995a91f</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\initialization.c</file>
-         <hash>b551899c72405de4e22105a3b9d355ef7cff0912c273a83a8c09c87fd85a7b85</hash>
+         <hash>01f9f26cc62754c4fd55f4ae45f70ba38dd1f0fcb177d30dfaf9c4a0f7e39ac0</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\fuses.h</file>
-         <hash>ac7d722ecfe4276c9d237ccf9895a03769cdbc34c5daf5cab07371be63bd2fda</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\peripheral\adc\plib_adc1.h</file>
-         <hash>c0a843a7ac6464f0f1231134ea9afd9f4d03e294e0462c57dab2f4dfb1ca0bcb</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_function_coordinator.h</file>
-         <hash>56dc667ae11ee4f968566b9c127b2ce87bb658d7ca6bcde3eeb73291ddda868b</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_flying_start.c</file>
-         <hash>9056b1d3d166ff2091ba681f88976ebf5b0d307f8d29b532353213b88796f488</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\port.h</file>
-         <hash>b10e90934dac26e4be23ceedd6aab8ee2eb889c6cdfce5ccf68fbbbf41608d09</hash>
+         <hash>a302e4dd512c7456d1977d03f6fb7828902a9d77f35f74f116fa811dbe295823</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\mpu_armv7.h</file>
@@ -12494,19 +12550,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc4.h</file>
-         <hash>9af9725307faef9d111bbae1690210fead4a87688d2958d4a06e045c49c8ad32</hash>
+         <hash>81ad524faca494b9b4df0e9e0f51d6e2c6acde34d92cc67aaebd287dec9d1928</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armcc.h</file>
          <hash>d074534d7106cec83474b3b0a897bd2553e1a8895ecbd54f4f4fb25928066eee</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_flying_start.h</file>
-         <hash>2ded0edbde6ed556f7bc24fd95ced7410b9a42dbe319380a5b2eaeef6e97f143</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc0.h</file>
-         <hash>e715c19eeed340888ffae621420306c68c0b5d3f7a2e4201c2a157cfde210c2a</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\device.h</file>
@@ -12514,19 +12562,11 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pm.h</file>
-         <hash>924ef846b3e6bc3dadd2559f7271f497069737e5be34d3effc7ec7538c464e03</hash>
+         <hash>33c94f2dac44d36c08ed4b14bf51ed7f5afb7cedc61ab602db794c43c60dfe51</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc1.h</file>
-         <hash>eec97cfa4892f7e854bd005faf8764283fc231a0d89015bb43a7f59e6cfc6920</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\peripheral\adc\plib_adc1.c</file>
-         <hash>143335441d80504a67a54ece26ca187a53cb9b7d76a548a73ad4ecae8df694a7</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\dsu.h</file>
-         <hash>fbebab10b4f28e6ee432568942b26cdd34abf7f419cdeeb73713c2c51fe1c4ea</hash>
+         <hash>4a03fe556f6628f9db6b84779cd40ca79f84e845f69b282eb7184a79229dda36</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang.h</file>
@@ -12534,151 +12574,71 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\dsu.h</file>
-         <hash>487382470657aa7cfadf6233d6a14d97decfa8cf91a4e343a39c685e4fa2def0</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\tc5.h</file>
-         <hash>89aafad0edc1599ec9e28352f5660ea7e956d37ab3f1e6fee402406ad934732c</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\same54p20a.h</file>
-         <hash>545f399235831d509f116ce7f09777842a926ef0bc4b8c59dd95306ae01c7c25</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_rotor_position.c</file>
-         <hash>319323238744dccc17e9a0a41439bb96fb6e1fb96234c57e8e8876964c5597ee</hash>
+         <hash>4d467fa0a2ee972905f44d15ce7af0bedb6fb4a5b0715afde27b61c2532959cb</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\tc.h</file>
-         <hash>28d5f9bee9d48ec44365e09c31de981901bfff7644a1311b597de6ad25b61fe8</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom4.h</file>
-         <hash>ca75e8b4411a88f70c75e19383a87bfff923253ba7d61cb2207a6e9d664f2634</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_compiler.h</file>
-         <hash>869640702d811c4c63abb52206715c891a93fd03be954df5ad40d378355af3d6</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\oscctrl.h</file>
-         <hash>45106e859c0345f1b1ff2e2e0b685f065cfbae5cd52bb3555b1f8339f30965a7</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\freqm.h</file>
-         <hash>70ca09126aef424be83d6521acbd4ae1a38017f1a70b6238f1113bdd84dfca66</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\sdhc0.h</file>
-         <hash>306fbaf8bc442ae7e35de841d05b64c1fd8596028ecf0088b560946493ab73c2</hash>
+         <hash>026a28df76d0dee8704e7ee2d401314275e9c92013c8d6f8f743b92b28ac7f23</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\supc.h</file>
-         <hash>4f24cfd1a56abae06b37a33b380d1fcf0289defd42ef4158efa35718ce549ae7</hash>
+         <hash>6730e3f89988d74ace77c20b695069638d3e39fe996044191c914c3d45dde5e8</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\cmcc.h</file>
-         <hash>dcafc77117791e50e2e8cfcb4ec261d26221bea154c06640fb6ba048ece602d5</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\peripheral\clock\plib_clock.h</file>
-         <hash>59322a99314cb17c6b595d51d18769582e61189140188aa053acfdc671487f21</hash>
+         <hash>2427366d03e77696d6990f9c017a0c4a9b70386d186fc3a2a570ba86b11dc5a9</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\icm.h</file>
-         <hash>56756a50078cee562852e453d9644fe7b02e37ce29ca29032bedb5a6c686e46c</hash>
+         <hash>f33aa0926b61d44400e61e5c7c90bd3dd6118ee2339ac1f7f62d8d5b336c7c75</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\ac.h</file>
-         <hash>ed90a2587bd19ba867bf619be0172cdd8a79b283954e1c16f9406d3da4a9ec88</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\ac.h</file>
-         <hash>7e142048188375d903cdd54914149058479c6a6c688bbd9968fde9cbe441fc80</hash>
+         <hash>d96711dc1ca8858e49f47f382dc9e0f3b85e493ebc860f632540f161f0675559</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\sdhc.h</file>
-         <hash>dc193677fada7c80e6668978c9d7b0e02858dd55a848ea627850e14726a66f9d</hash>
+         <hash>fd25d7d2616dd93ff624b8b29bfff75454d60834b0ff6e802d0fa6e52f5786f3</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\mclk.h</file>
-         <hash>59a795ce0072896839b864efc833f6ecb71cf9034c2dc7a09ef2c67a6565bf26</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_rotor_position.h</file>
-         <hash>a4214cd60af4d118a5935ed5bb758296cebe1369a312a6efe518d8d7006634e0</hash>
+         <hash>b97ce00702eb3d98218cb257b0432730ef213f0ebfce19e07b09151883e21bf9</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\X2CCode\X2CScope\inc\X2CScope.h</file>
-         <hash>c4c1e8964b703295e7b65ce331295da2a5b143aa63b8960f48c1e62c59fa9d07</hash>
+         <hash>d9ee6e53198dda1c1cf2982d9769cfd8f011538aa7c38304a324110cc32f8f04</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\peripheral\port\plib_port.c</file>
          <hash>fab7379429c81ebeca3738b2e0b8d6e5313e968d6d29f6303249dfbee6165ff3</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_generic_library.c</file>
-         <hash>57a81c07ad967ba42fd0bd180e5abb3bb0f31291e9c69f1a90c9f33c660277f3</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\device_vectors.h</file>
-         <hash>2ca6c5e4f11c88f714464908b2a390e9ca48457311f7e72f6f6679dea2b43b86</hash>
-      </entry>
-      <entry>
          <file>..\src\config\mchv3_sam_e54_pim\peripheral\port\plib_port.h</file>
          <hash>67eacbf771c977ce11bef5fd4744111e883403d20ca1856b204cccf2d02fdf93</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\peripheral\clock\plib_clock.c</file>
-         <hash>fdee903e14845e508fd2fc5ac29417844095bfe487e702bcb13021635d4918d6</hash>
-      </entry>
-      <entry>
          <file>..\src\config\mchv3_sam_e54_pim\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
-         <hash>3feca67a173d19d45961676a16f6153a6d849ecac98e906b62a343258c8bf43b</hash>
+         <hash>f19dafabe0928d60dd83d7e19f35889f200e3fbadff09e2f42523d320acf780a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\oscctrl.h</file>
-         <hash>4a8cd26588085dd798c86a20597c7a063c1182a3c6021c45150263b623fb4681</hash>
+         <hash>2732b3edc7b584761a0fbc992479a6ba1d58b570b7e920b3cc6fda5b6d54603e</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\X2CCode\X2CScope\src\X2CScope.c</file>
-         <hash>8dcc8745b5a12a4c35c2893d601be3df1cfb4d522d7cb0d37627a2c3b629e7e0</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\evsys.h</file>
-         <hash>53d452b1a0ecf684cb32b78fbff42d4dc3fda75303d2f32a7a868371b89393b4</hash>
+         <hash>bb60724b6946a3d5e51f5f7f227a304cabcecba3851d7e6d40a1a04306a45a2e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\rstc.h</file>
-         <hash>bec7acd432ab4742f4b19035e1013197954665683011881ceb181b6304d5e6ee</hash>
-      </entry>
-      <entry>
-         <file>..\src\main.c</file>
-         <hash>c89d360ba6675b837cf10f83433b31396f3fb50f779047a6e3a61e2dce72190e</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_generic_library.h</file>
-         <hash>b4c2f25d8d0869178c19e7441c7a56eee3f1530e8e21998dffe77e767d8d6d54</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_function_coordinator.c</file>
-         <hash>dde087ebf7a5efc16759ac4ab5d66eac71947c8f710d6a056d61ace2e2c95a82</hash>
+         <hash>4fd3866a085d4c8175ca2ac114541fef189773edcaedd66792f381b9a2309abc</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom0.h</file>
-         <hash>ea7ac34c84bbe5a09fcb23a6592b006e78740b4608c9f8376630f83a864d410b</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\dmac.h</file>
-         <hash>bb8092e89fc62bb3768112e46505e3aa17016ecc9a374d4ac5b9fa9766f2a5cd</hash>
+         <hash>7adee6d7c5fac823509df0a32f63becc6dcb1a53f50b8f0edbc3f97b8cc31097</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\ccl.h</file>
-         <hash>a9aa5e1eef743d9b44cedab5ef673265dd76edd1ea52991b67d71e4bd4eac7ce</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm4.h</file>
-         <hash>d59a9e3ed4cf43a3c74a2e48f344d41be2b6363ef9394ea2c551052fe553a6af</hash>
+         <hash>3192e0db675e1602b9a620862df2b1a7412e152ace23039c528f40e514da1a58</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\peripheral\tcc\plib_tcc_common.h</file>
@@ -12690,139 +12650,79 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\tcc.h</file>
-         <hash>1a67838d862982f07d3f57b1053319a230c7e0db3fd12760afdc98f11a389a99</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\adc1.h</file>
-         <hash>ea4d8d72628305086bef3d9e37ed0891f9dc551434a2b7f962aa79456ed97c07</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\X2CCode\X2CScope\inc\X2CScopeCommunication.h</file>
-         <hash>363b149004ecc8edb607ce172f49e7c3dc7c40fc4cec7369dd596c26519604ef</hash>
+         <hash>658f11db618e279d12881ca08d9b3848a3ea144062c8521d6f35256a66ca79c0</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\interrupts.c</file>
-         <hash>1496227fc0afb5ffb1995244f5a5908bea5bdbdf00a53b598156b453b98618aa</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\libc_syscalls.c</file>
-         <hash>88bb2e34c939601b5b7ad076556e3ee0fcedf388436b8cddb6d6fd3e9d07472f</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_userparams.h</file>
-         <hash>cc5f82929ae2fa271ab4c510db1eb7d59c5856b9e321d3268476255b25abf22f</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\i2s.h</file>
-         <hash>fb8e53631fceb08cf85d98c4944af862c0c575a596da8dabd822808e85f8a31a</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc1.h</file>
-         <hash>c25acf8c27fb5165542be44216b91804c586b481a652ef3c6897110f01ca1a2d</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\pcc.h</file>
-         <hash>1c2fd58711fc401db09965e8a48cb09884f90d0775493eec529d02731c641799</hash>
+         <hash>b8069a8ac2a90bef501f624b63a8d90e3c2e975f0620acee1dd5e51a8654ab07</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\startup_xc32.c</file>
-         <hash>5fa956deadc84b3c95c31673a48d5567320f5a2e5e789e6a98efea5673645c51</hash>
+         <hash>d23d84097e3570ba4f2e766b851983f443592bc25540d896b715602602b85a2c</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\device_cache.h</file>
          <hash>e2914501b361bbc93a56d6915b1bf4fac00277e61f31fdee87a587bc15dea5b6</hash>
       </entry>
       <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\dac.h</file>
-         <hash>de20eef37aba02dcbb9030914fff4b6d97fa8e5ef28a5e805bab7c754ff82c60</hash>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_torque_control.c</file>
+         <hash>7a857b67a0a80055eb74eb916ce1019abbe577f3206fa97fa060dab1ca49248f</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\dac.h</file>
-         <hash>3362476e395241fb0105f18359c57ee3f5798752ac708fd42ec1fb308d3bdb40</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\X2CCode\X2CScope\lib\libCORTEXM4_X2CScope.a</file>
-         <hash>7d03aaade52f5bc675582f2556ffaff8e041afbde6923f87ddd3a850c1bd1276</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\tc2.h</file>
-         <hash>005f104724a67df67777f098ab413eaa54a3c8c2b017a234972c79d124cdb651</hash>
+         <hash>c8b2c7b5505731f23250050887cd6a04a547606aa375b62732ad89d5b65f93ce</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
          <hash>2de01ae2556a38eb82c389de23c701805ec63308cfbcf3f84cb12141589b0858</hash>
       </entry>
       <entry>
-         <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_iccarm.h</file>
-         <hash>f28119adbc81fb0e3c957c9aebe8fb423ad93634e76ead3caa2b0818d2e123ae</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_flux_control.c</file>
-         <hash>7a06809ae0cb3a233d5dcb05f4df0a719860faa0e30f57c53a0ea43ab9f58d26</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc6.h</file>
-         <hash>454812f8e2a149ef8c5a1ea5533bece468e4b8db938ed9a42de06d8348df21cc</hash>
+         <hash>5137ab8599f1becf3094082d99942c572c1265ab86505ed59819d5e11e979d7b</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_torque_control.h</file>
+         <hash>ca432c6efa958df42ce305f0887de0585671b51d23ae44ea80b9c6b3d2d14c5a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\aes.h</file>
-         <hash>bf7b8eca815a4408576711759191a5c5d3492849fc5a7d3bc0ff06b7c66d67a8</hash>
+         <hash>e00c458cd4f1224d6d2d602babfe2c9942fb1d4e24046bb4cef01b4a53c49645</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\i2s.h</file>
-         <hash>0957768f19000713bf75692cc4d440fac6cc1d71f20c21273a2b73adb366d51f</hash>
+         <hash>1b50ea7dd9c8fdd6fe2c903bcce274947619575d25422720610df1f4d9227719</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_flux_control.h</file>
-         <hash>80f3eaed28d9522baec8c6e9f69fe8fac47f35d4eba66065bbb16c7fa2b4ec80</hash>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_field_oriented_control.h</file>
+         <hash>db599b4e691386ece20c86f29e699a7435c7b437800ccc69ba0eb132d7ef8db5</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom3.h</file>
-         <hash>37c6aa3f45977919a3e32df82a77be4e6a9db0e3f88eda524401fcb8e2aa5cfa</hash>
+         <hash>dd340b9c1ec668df6917d2670f1a72d92cfb83402d78d7128e9cdc412d300f94</hash>
       </entry>
       <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom7.h</file>
-         <hash>cde51d90ee89ca0c59572a5c24f1c157ace1c156a0f0a2db51cb94fe6a657843</hash>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_field_oriented_control.c</file>
+         <hash>f6fa73c84636ee9dd3f494c0d5f2eb908d016c15c40ce9491ce0b7da7b6e908b</hash>
       </entry>
       <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_pmsm_foc.h</file>
-         <hash>45a85252e96d6050042b8faabc7b14998ef1e9e1c5b08fe66a848e28977c6dee</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\pio\same54p20a.h</file>
-         <hash>621937ef00579bc65a507ae3f380751399ec465963415917a7ce4e0dbddc3eb4</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_pmsm_foc.c</file>
-         <hash>336bec0ec2b538a124d30eeb5c236d0fde1693dc9d10283f31254b399deef6fd</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\ccl.h</file>
-         <hash>913da7b52f88394117572bf85629149862e719a21dd20f219940637ea0c26441</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\hmatrixb.h</file>
-         <hash>516f5f33d5606616e64dba3940d754ff251c670e2c065d68f89284c4cb40b897</hash>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Hardware_Abstraction\mc_hardware_abstraction.c</file>
+         <hash>27c3d66b047bb0661ae0fcd29c8038262416d29800b28e2a1518a3455d4c5e60</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\pcc.h</file>
-         <hash>8080608194a68281c5401da728d47c346cb41c5e210182c1d47a2e89b0add62f</hash>
+         <hash>275d9c781f584385e948deb563cbb9e368c3969f3ff40671d57308928addbd1a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Hardware_Abstraction\mc_hardware_abstraction.h</file>
+         <hash>e3f3cef6903ebcb1c4b3e0f33422aaebc4f9f00bf570ecc9f2118122e7b016ef</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\interrupts.h</file>
          <hash>ecc249dd13fe5c9025ad8ec7466c5852c1287e8f81fc1952ba327b65b2353db5</hash>
       </entry>
       <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\adc.h</file>
-         <hash>5a241246876ccce46808a9069ff2ac8091c2d02180f37606775028821e0b3573</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\pm.h</file>
-         <hash>0770c6947000ab1ed87796051eda463dab42dd3d91490df1b91c1a54d57d0e90</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\port.h</file>
-         <hash>f7d57f3fec22d69b2bfd372d6921a340f6684974503c1fae9d485960443fa527</hash>
+         <hash>5c6a59ed8d86bfa473c5e3899aec3d4cf93257f29c8f4e5c104d735ce076c1b1</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang_ltm.h</file>
@@ -12830,215 +12730,471 @@
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\trng.h</file>
-         <hash>b9f5b514a803299ecde17fd1846aef899a8e2bb43d1c43df2f346da17eccad60</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\aes.h</file>
-         <hash>cd772b0c69e234690731091c6165f65a183c033cda444982249e1e1214cb9fc7</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\ramecc.h</file>
-         <hash>16961b1a9384916412757215a9921539c7628612858ea805af4bbe9d309d61b5</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\adc0.h</file>
-         <hash>82539a752b7c918fcf2719074477c2388b84f35ca0abff7730c542e90133ff86</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\qspi.h</file>
-         <hash>2ff27da95ed31d43cc72b85564b187c03b222477c1f0d853eac2255b0a122116</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_interface_handling.c</file>
-         <hash>2a1f5e11bb9e56c8a606926bcfaae8039e806dd3bbedeaab827389ed8fd8c393</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc2.h</file>
-         <hash>fc181665af5fdd3ea4a4d3647c7e355de483bf3c761c4f73a7a02a99fa58c9dd</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_interface_handling.h</file>
-         <hash>5ecbb169f27192edee189ccd5f47c50bfbb4b517c511139e776805a3b43df22d</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\peripheral\tcc\plib_tcc0.h</file>
-         <hash>635d6d2fb8bf142469c9cd92d6e9b6e3bdf90b1e1095f0b4856e50ca4daa553b</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\can0.h</file>
-         <hash>5e54c238136765f6f7b588e00eee3d377b4df1dfee50641ca762df33b5e4191d</hash>
+         <hash>6da83baf77684a3f44ba9993b81c2ca3a61869d85807e9399c02568d0c7eb02d</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\pac.h</file>
-         <hash>28020fb497d05bb49280f1c04f5f8b6c86e534bd53a0492bbfd57d82c9714793</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\peripheral\tcc\plib_tcc0.c</file>
-         <hash>cdef0f9b9d21380365f3cf7d0b93f21842eddcf37997ecb1f17f48244e43f7c5</hash>
+         <hash>4d6e1b144b95ce93732effca425158f82dc53a5780f7d5a934dc63438a6c437d</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\ATSAME54P20A.ld</file>
-         <hash>5376ca76ffc77cfc847cf381be187aee4ec4bbc9bf8269ee8c54019750744638</hash>
+         <hash>d16806801e07c979cea29ee524ed4c3d3e526c5cb77c7d8adf4128ba06157a04</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\eic.h</file>
-         <hash>b0e3f093b3b682edd3e89d425dae3830e46689c35eb8c0f995992c0f4c4d1758</hash>
+         <hash>cca60fbc2c6c540fced54f2af8ec5f453625eb6d332f2e37afc2322e8eda0b82</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\pdec.h</file>
+         <hash>7ed9d8dc6742a05ebc85002485e833fcd10fc585842ac97e1ffaf8891558a79d</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\tc7.h</file>
+         <hash>b212aa1eb1be0df28c273dad0e1373c745692be947a27dbfdaed874c3b2642c0</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\wdt.h</file>
+         <hash>4d498f261b4ccfb1754453f578c62930b106bce7f3cdb05bf2d27110588d0b87</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom2.h</file>
+         <hash>31d1a71d2a32d6a623dca497ac53c9b352d6c1c8398e7d6173a3cc7313dd0241</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\gclk.h</file>
+         <hash>8b00c66c338634aebe6c31371ba8eb3488b624bbdb6b724b012279fc3e1ed256</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\nvmctrl.h</file>
+         <hash>fc24dae4f61bf8c140df2d906ac18c172b83a5a78527c53e91ed7990ea8162ed</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\can.h</file>
+         <hash>bd9e3048d74fcdcd9a124244f35845daffb820666846cc74a5f1b02a9cd1a16b</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\rstc.h</file>
+         <hash>a46b6caf030ff5a3a9a55db2b6ce671d60e26a7149615d8260d8a361a56c46ee</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\bsp\bsp.h</file>
+         <hash>6b7f3bf5ef6e063187482ff9e30a8dc6cfa001849bdf696c7262652693d0e347</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\gmac.h</file>
+         <hash>5d12b002d6d4b9bea16d7b4b4914fbc6926f607275540a9a2fd560d2d4b48fa6</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Utilities\mc_utilities.c</file>
+         <hash>689e345a37018f07ec4a0d386b67221bb4ee7b6604e496b7af2e299e2a492237</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\supc.h</file>
+         <hash>b3c7e1ab67bd90e0892a372cf32ec9ed4c6862d3fe125ef6e25b881c95500846</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\toolchain_specifics.h</file>
+         <hash>6fc0551b0fa3362678b3d7a227386fafa343140d31e4da3ad4af972e61cd0acb</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Utilities\mc_utilities.h</file>
+         <hash>4d62a2e8646b093c674ba4dcec77098066a6b77a765f7cc3c0768c19a88ac139</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\mclk.h</file>
+         <hash>27ac56d218a982848746411066a6f9d28bd214b8d59054b1d1614097d07aa5a0</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\freqm.h</file>
+         <hash>12796b66d85827bf38f665bda65378018e17f09579f4cd0bbc0bb0ad229a4f6b</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core\Include\cachel1_armv7.h</file>
+         <hash>6cdb5b324f2fd1bb5b2f47298ba6e6777e735d7cad3bb8d942cd36e2c6e65328</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\peripheral\adc\plib_adc0.h</file>
+         <hash>69cc8e1ef2e75c4d9e09ddba8420d23e3cfa0384077f90727b01cc01233721a7</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\wdt.h</file>
+         <hash>5f245039ebba766281919a305d1805265c1dc0cfc1a98d130ab281961c0a574b</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\icm.h</file>
+         <hash>0162b8764b75e7421df67ece221203e1bf8108a86547e0aa839d1e99cf4a7c26</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\usb.h</file>
+         <hash>df936cde5d21ae8df84ce0364029aba9569e3f75c6fb1c0468a5e1106b44ec3f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\peripheral\nvmctrl\plib_nvmctrl.h</file>
+         <hash>fd7749dc74a885efd7c593394454abc74afc7cf184123f0315425a3600c26ac5</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\peripheral\adc\plib_adc_common.h</file>
+         <hash>b6100059702feb5d6031f6c694dc636b0871d6d256ca47a73f991cb418209500</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\peripheral\nvmctrl\plib_nvmctrl.c</file>
+         <hash>1a6bdac00590cbec796a13351597c695bc1d962a95641bdb573d1bf0dc38b2d8</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\bsp\bsp.c</file>
+         <hash>c67b6294cff9844db10dc4cc9424374c1b21be88bcaef1fd4318c02e08946c17</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\gclk.h</file>
+         <hash>7e065fa4e226d84947473f6dc7e777fad062fa65bd35df86bcfb3f13654069c0</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\trng.h</file>
+         <hash>d933925b170daed80149b4c837d33c359d66029100ddf9cd58a06a508326d88e</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\cmcc.h</file>
+         <hash>406bc870d6a529236ca7114f98bce000c6887a50fe16ebb1e10a44a318f53ea6</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\fuses.h</file>
+         <hash>7b0223a5254e90320e7dd13def00f1a98047fa9ce1f3e127b6de47b8c9515ba0</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\mc_key_manager.c</file>
+         <hash>050befc9f3628cc7fd4d08e6771b1569bc7b571e400a76b84573c7c33b0327ac</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\peripheral\adc\plib_adc0.c</file>
+         <hash>b2b0a5c91452de09fefa5bc7f8e4fa3d2122c23a9534c62b6cf67aba865efc39</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\mc_application.c</file>
+         <hash>ed5dde805c389344c8a3fbb4aa511a824ab5823ba56e7a7ea8bb8ef26db67299</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\eic.h</file>
+         <hash>994bdae1d089d80c5ed3364a543af00c96bbd58fce4b1cc7001de977f76b8678</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\tc4.h</file>
+         <hash>74b7e9b8984523942548f73c7620f853418421e478a7bbbe2b5e633ef90639a2</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom5.h</file>
+         <hash>b525d545961df41cb16fae3224c8aa6bb4abe160fc1815104560c96d5fd30ac8</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\peripheral\evsys\plib_evsys.h</file>
+         <hash>f13b5b105e66ed783e6eac327265ac338b19acd379df4bd2ea7b92608576d588</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\sdhc1.h</file>
+         <hash>dab30df6250b2ccb6c07cd0723145de76a83b4327354512d37cb2bf7e9e2497d</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\mc_key_manager.h</file>
+         <hash>4987bf61478d889590e7fb2e4a9e16231e0746b68c549d9813651514c263531f</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\ramecc.h</file>
+         <hash>ed5823e829ce914cad23313e46cc3172057ae598e139bd30e511426cf0ca6c93</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\mc_application.h</file>
+         <hash>059cbf659cd39b2d98e34ffe94dcc476d9e759e3654a63695308d6247af1df8a</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\osc32kctrl.h</file>
+         <hash>33af6d9036ce1a7f73b36fb2ea2ce6ab04772c736eb11a983255b9a3f7e0a1e6</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\X2CCode\X2CScope\src\X2CScopeCommunication.c</file>
+         <hash>78dc9be9c3c94938fd9abea00bcc2cf07826ce16fdf24ecc121b1caac56cdd10</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_open_loop_startup.c</file>
+         <hash>941aaf946ec8c4a849a093f4fc9b299f0c35b8f85eda1f62999f97afb0e5f494</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\pin_configurations.csv</file>
+         <hash>808264f34368b31417214a8c1b0dd582fa86316729bd5da64f4109055ea053d7</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_open_loop_startup.h</file>
+         <hash>6ff8422f0b2c673c2888fe8f33c2f58200d65862f6f6d3d09ef5fcd992ea78b1</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\peripheral\evsys\plib_evsys.c</file>
+         <hash>90659e46d26dfe1a0b8e9c8c8258703155e8dc56cc97c509d1ea6f0cb6f893dd</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_flying_start.c</file>
+         <hash>d9073ee84ad5ae669606d6aa6fec465230cadf013becdcc6c5ad66ca42136789</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\rtc.h</file>
+         <hash>99762d9258fba211e2707f8204c298469ec6afe777136beede4333363cb1cfb8</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\peripheral\adc\plib_adc1.h</file>
+         <hash>c0a843a7ac6464f0f1231134ea9afd9f4d03e294e0462c57dab2f4dfb1ca0bcb</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\port.h</file>
+         <hash>25304e398b3ae71d4a7ebb4ed2ec9032ccfa7cc8d5b89e5ab0688b351262de93</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc0.h</file>
+         <hash>3c4adac8995c63cc07c4c6e488f9a9ac876d0554c2c75700d684366c3c58a871</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\peripheral\adc\plib_adc1.c</file>
+         <hash>143335441d80504a67a54ece26ca187a53cb9b7d76a548a73ad4ecae8df694a7</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\dsu.h</file>
+         <hash>df53a4c777aac557859b363ed8d11086d8e1e24edee30a9677038dde3bd31f82</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\tc5.h</file>
+         <hash>62637ea95ac7aa6e8618b75ec6758d338fb69f49da153dcf3050e01cfe6fd795</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\same54p20a.h</file>
+         <hash>b10e6b12e0059c1bd293737ebbc088bddb92d7b6d957a1c7d9ad0ff2c6bc6be5</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom4.h</file>
+         <hash>81cabd9d9fe6366abfc759ce198d12e36c525dd3185cb5a180cc3d4fc3cc8801</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_compiler.h</file>
+         <hash>869640702d811c4c63abb52206715c891a93fd03be954df5ad40d378355af3d6</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\oscctrl.h</file>
+         <hash>97b84e4e3281fd623c5ddcfdb3d3b906f387dc1668488a2e9d3ac5d97a366285</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\freqm.h</file>
+         <hash>c5ea1c07af5e9e5b7491c9b8b270f3a881c08d03e9586891118e32cd6f72f0be</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\sdhc0.h</file>
+         <hash>c8bcfcc090bbd04358d9a6deb4718d8b687aad99fa8073e8e249a9b647d417c0</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\peripheral\clock\plib_clock.h</file>
+         <hash>59322a99314cb17c6b595d51d18769582e61189140188aa053acfdc671487f21</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\ac.h</file>
+         <hash>9e5aea0e3b2e23ff0835b19d2c749b9a00c95375a4488dc42c4d713eb17acf68</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\device_vectors.h</file>
+         <hash>2ca6c5e4f11c88f714464908b2a390e9ca48457311f7e72f6f6679dea2b43b86</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\peripheral\clock\plib_clock.c</file>
+         <hash>c9e28747a3dd878da0dc10e486ec5938b704cd85dd3727037565a234bba4a972</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\evsys.h</file>
+         <hash>d159803d7aa52259b3353e963f90a8cf54e1fef57bc65acb48af188d1fbaaaa0</hash>
+      </entry>
+      <entry>
+         <file>..\src\main.c</file>
+         <hash>33c126fe83707919bb087f63637bf0203956703d3f63cbb0b8610c83dd3345be</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_flying_start.h</file>
+         <hash>1deb30dd62fdf7354ca0150d95a5a640764349133dee9955953f44e4aa2a53c9</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\dmac.h</file>
+         <hash>cb3a2cb3bda796110c7e5dd2cb63c7cb5c504eb541ab43361a458ec8dfcc0539</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm4.h</file>
+         <hash>d59a9e3ed4cf43a3c74a2e48f344d41be2b6363ef9394ea2c551052fe553a6af</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\adc1.h</file>
+         <hash>5d77304ff8807b26e8881771e42c98d55eebed9329b655a176bb5726d5bca03b</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\X2CCode\X2CScope\inc\X2CScopeCommunication.h</file>
+         <hash>fd5facc76afd74c7321055a89ed98ce225e492356a6f31fb95b5f2d332de3d4a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\libc_syscalls.c</file>
+         <hash>df1be7627b968b650c3389237792bf3bf4f4318a64a06a4bfe7b76730551c252</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\i2s.h</file>
+         <hash>f92e88867446453394bc2d5183cf33153567ad2a060138b84e21ca81a3c9565c</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc1.h</file>
+         <hash>4534eab1291a0cf53306f9a5f9df21ed5a85b2944b452802510bb33f8ace4af7</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\pcc.h</file>
+         <hash>e9c9940383547b8e2f7ff0278daccfe29d12ffb46ebe31dbe6e7f719ee7188a6</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Voltage_Calculation\mc_voltage_measurement.h</file>
+         <hash>7542cc19781441530296a8160061518a2deb94d04388d5611dbc81ffa6dbd8fc</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\dac.h</file>
+         <hash>ec987a1e9a8dd4ae95f69b14887002ef174583915e33d1eff050600fcc7e5c1c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_flux_control.c</file>
+         <hash>c57e4ccd362360ca92c1ede1c16e394be5719cfcf9454ca8c26eabf56332e2ac</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_flux_control.h</file>
+         <hash>9e873e6c08c942cc133f6a6a85f886c909f3ca02f47c8d0bbb023fae7ccd4de3</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\X2CCode\X2CScope\lib\libCORTEXM4_X2CScope.a</file>
+         <hash>7d03aaade52f5bc675582f2556ffaff8e041afbde6923f87ddd3a850c1bd1276</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\tc2.h</file>
+         <hash>6b42295db2b1a2bde1a462d402554dc056103d8bdc8e2140d3f2dc639ae7a30f</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_iccarm.h</file>
+         <hash>f28119adbc81fb0e3c957c9aebe8fb423ad93634e76ead3caa2b0818d2e123ae</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom7.h</file>
+         <hash>df25ef4bc7a320c460584818c67c247c5cbd9579ff69e86f66d68eed937d7f41</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_pi_control.c</file>
+         <hash>d64c9c7099c2336b0dfb62cd58fa1cd9cdde9e2bed432aa1a24b025685094307</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\pio\same54p20a.h</file>
+         <hash>744ad0ee6b14a0b88a93ca1b7663c41bd150e48bc1a567a1046cf267f0d512aa</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_pi_control.h</file>
+         <hash>08eac04c7f6b077dab17e7fbd4726c2815a49fa83c11441a8491aaa7b984ba82</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_initial_position_detection.h</file>
+         <hash>2c233dfd8b7c88f1052e330986cc84d9459cabbb2e8a573640f27984dfb84580</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\ccl.h</file>
+         <hash>a104fa7e27e69ef01af2f984de4aa8c434e56204b44d42e195b32a602b8253cc</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\hmatrixb.h</file>
+         <hash>c0645f7dd8da46c6bd7043fa7013cf50cabdd0019417df9897f1f2156c840d35</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Voltage_Calculation\mc_voltage_measurement.c</file>
+         <hash>bc5378b5aa674f8c9e0a50f299b645fb985a047c86721757430fcdacc2f9c872</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\adc.h</file>
+         <hash>6f54c703b348a1bbf701bc081cc14e6222de49beef4784cdbd6312af2b8c2737</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\pm.h</file>
+         <hash>bd415c931f8cbae8536cdc591093007f9c08de6e13e8bdfbd18c2098a9e29ae5</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\aes.h</file>
+         <hash>375d97ea3a789d5756c3b9b0d6a98a98ad9094503bbbf32feb934518c7971993</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\ramecc.h</file>
+         <hash>618b8d24318107373ef2e53e394fb73a175cd24e183918e34bd8b2136003558f</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\adc0.h</file>
+         <hash>be2251a425bad16bee6b4e9faa5cb6365dbb26e3363d00c03c9476ddb7e1f2ed</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\component\qspi.h</file>
+         <hash>a90169dd81ac1fa626f803b62bcba582aaaec46734e8e643501b14f50d99108e</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_reference_control.c</file>
+         <hash>522b4961b7669b47e22568a78baa43b8cc5a8f5f89c4d81f4bdd449925a54a9d</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\tcc2.h</file>
+         <hash>3c74abde6deed6e1265e505c18ca6c819887e49b54eb7bde5e16ad5432c731ff</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\QSpin\Field_Oriented_Control\mc_reference_control.h</file>
+         <hash>85b7dc87370555ba5108b0a673cd5824a4c09880f18002fd456df0fdbf0d834f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\peripheral\tcc\plib_tcc0.h</file>
+         <hash>bdd4f3147e8df10e498a14360b1de7290bd19a42daac391954c6b43817806eaf</hash>
+      </entry>
+      <entry>
+         <file>..\src\packs\ATSAME54P20A_DFP\instance\can0.h</file>
+         <hash>f5aa2e35d802f24e0f5e16b5175ca88060c34b9313f9fdf0ddabc3c70aaa968a</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\mchv3_sam_e54_pim\peripheral\tcc\plib_tcc0.c</file>
+         <hash>98db4b152d0da03681f7fc1cf93f46c9f897fa30a0729e57faa1261b8ade88e2</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\tc3.h</file>
-         <hash>8efdc1c1596804c975c2bb3498327623c25644a8225f17c979808ff953e2adc2</hash>
+         <hash>b29b6aaf1adfcb0f6896946aee07179854117f4225315eae82e8e221d3b17efd</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\peripheral\cmcc\plib_cmcc.h</file>
          <hash>89b940242bfa0ecdba3ac53666c5996e25fab712227d37d2d6881c8a86b5f497</hash>
       </entry>
       <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\pdec.h</file>
-         <hash>a4858778c5bac2a29dbbe3347c94e4cc8171f602436361b82e5789f41ee62c0e</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\tc7.h</file>
-         <hash>e9309c807bb8e0187278345ea5e0e4219a04608ed6cf4b1826eb69e8fc3baa0c</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_current_calculation.h</file>
-         <hash>a6fca6c3e458a3832672b008225c68cf25b1d04daf9065d0ccf1d4ae50754162</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_voltage_measurement.c</file>
-         <hash>0b18e49ab643d1d587d6ce12cf013626efd6e9dfbf92ce1c1a8d7cb10c3f1807</hash>
-      </entry>
-      <entry>
          <file>..\src\config\mchv3_sam_e54_pim\peripheral\cmcc\plib_cmcc.c</file>
          <hash>3b03e762c5515130718e7694736be6c25984ff8078c84d21a3fb9eba54f68e5d</hash>
       </entry>
       <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\wdt.h</file>
-         <hash>baee082baff1f74e66735b0245582338d5aaabf72a21a2c870a72f45397014f3</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_ramp_profiler.c</file>
-         <hash>7c0b364454ca29820d6b886136d91ee3ed443ca19543d268c993f1a639cb87ed</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom2.h</file>
-         <hash>c3b5c376a04f2b0779f2dbb0208dfa1451805c65c292e59cbb1b92ac2b3dd592</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\gclk.h</file>
-         <hash>9cfbdbf41c3db7df4e704494b98ea35c5fd8d1f824053729c97d30876471e55f</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_hardware_abstraction.h</file>
-         <hash>47f97581f3be35ed4bf8ac8531ecf73f75133952ebcb433d2b0f62039daddd84</hash>
-      </entry>
-      <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\hmatrix.h</file>
-         <hash>362eb1e9cabbc4e4cb1e0c2788c83f8a491a1814015ae8085396117b9448fcd6</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_motor_control.h</file>
-         <hash>abbe6d24e8d354062cf7eae35c17ff8c57d4fba5f626e01fc3f9de0bb8fb22f5</hash>
+         <hash>7c1bbd8c9e60cae12250cfa7e436564167b0243e2136de96e545900830dbfc55</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\sercom6.h</file>
-         <hash>e87daf37c648191e0bfeeb38c46fe98f812184ceba157fe3203389decacb6234</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_ramp_profiler.h</file>
-         <hash>c7afbb4a9658f1dfc4f7b0c4667c31e956914e54e0a3832b2912fb700174004b</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\nvmctrl.h</file>
-         <hash>ffe3448c20db8bb1a15e03c025e8ab10356c6ab7c2c9760cf17e7d566697a1cd</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\can.h</file>
-         <hash>f24296dc3f77e540e7822722e5150ced89f8778257cc49bf0c64ca6f6bb71dc2</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\rstc.h</file>
-         <hash>c3820c23846c758a727a9c31cf08f875cf15698f27b434ccf2bfe81c4daffe1f</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_current_calculation.c</file>
-         <hash>c7a5e84aa3251374e7a28a2445348bbddb2d2656b791d36c4a580364d3cbff02</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_current_control.c</file>
-         <hash>77f3333a6e1a2cb7d68c8366abe4d08b5693ffbac72d4fb920323a37b2118b4a</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_hardware_abstraction.c</file>
-         <hash>165e1857d8121af80f102eada0d40534adceeb903c5f771ae42a3c8118667aaf</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_start_up.h</file>
-         <hash>eaf7e6fcec6016e6432f5c1cd6e88e385347ce192209d9f3d6bdd6269bb6caf9</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_motor_control.c</file>
-         <hash>0b1b0134e91cabef1ec9abda58f5e3e86b786202bdeeb03d56ae068fe967ea12</hash>
+         <hash>e15d2db5ec8c4364bf6bfe529e1ae9550c8d08438551a51ff443131f39f9a6b0</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\peripheral\sercom\usart\plib_sercom2_usart.c</file>
-         <hash>3271ae741a4ed04ae18ff88d49258abcab24f8cb216154219d349bd97366ca9f</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\bsp\bsp.h</file>
-         <hash>352423633877f10bf22035c2fb763a26ce2eb71348aab52dfe5483ce0882ab3e</hash>
+         <hash>98382dca32f1da893708723152016eb869ec092aa045e879dce9cd2110e069d3</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\component\dmac.h</file>
-         <hash>75d483c942661a7c27425bbcf069bbe4d51fc5cd414d2e6773827f560d40a3f5</hash>
+         <hash>9c4bfa47388a52bff2b04e537c8d3f2a11cd4576947c27b4c7fdda11e77ef4a9</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\exceptions.c</file>
-         <hash>887ebb647a339393c5f6e5adf42edc62038fe31f8401b9c077a8808f6a101aa6</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_current_control.h</file>
-         <hash>a9d78065c0caa886a3b60860e63526f23eda42b6ef892765b6a3bace86ee7875</hash>
+         <hash>1fd383302c4cdf1cc6a804aa03b8abe8c1e5e5e9ea3450438c34dcea441e6b34</hash>
       </entry>
       <entry>
          <file>..\src\config\mchv3_sam_e54_pim\peripheral\sercom\usart\plib_sercom2_usart.h</file>
-         <hash>e5b4f7f47f88ad5c5cc6de7c9a57b2c7c8b9cde5172daf9531e48c05e2883562</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\gmac.h</file>
-         <hash>c4e83282e98bd9fa139fc5112ec6b14829fb3903c897ed70e65e71306cd598e1</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_start_up.c</file>
-         <hash>55e2c3c54a12f7aa90c7cd4828c521336f31d26ea277560e55fd52b8823268ab</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\supc.h</file>
-         <hash>83e4cd9043a8bb90c15f6a20aeacee430a033fe128242bf2fe724d44cf90cd8e</hash>
+         <hash>4e0e1339420a75adc35ac4582feb99d1b8dd8e4cb8dadb6600199ad4df71049b</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\nvmctrl.h</file>
-         <hash>e1a95a83ba3b00e6057a6f85d6d30b23348dab47bda67b3f0ca6cd8d6ad43f55</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\toolchain_specifics.h</file>
-         <hash>fb1c58b7fb94545ef6247f18ea3001b719e06ec29bf39bfd68fe3927f709eaa3</hash>
+         <hash>32ff04cfb16a0b161d4c2a433c8014af3daf86aebe2fbecea47c68e4410a572e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME54P20A_DFP\instance\evsys.h</file>
-         <hash>66e57717318f12ccee0365559bbc9dd9048a44640468849567acd947c896a3dc</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\instance\mclk.h</file>
-         <hash>fc16c918b9563ed2fd62b5df9f7d13124380141cf232d055e61d77f1a0dc517f</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\mchv3_sam_e54_pim\motor_control\pmsm_foc\mc_voltage_measurement.h</file>
-         <hash>2bb5809fae1e6fe700bdec8dbdf78da4973d3860cc0b789956fff2ae5960afc6</hash>
-      </entry>
-      <entry>
-         <file>..\src\packs\ATSAME54P20A_DFP\component\freqm.h</file>
-         <hash>0533078470a6d558a021051a793e7a6c5dd307bb45a5d56ecac03d73359981a1</hash>
+         <hash>b2c0042d0dc5be8e4202f620beffaab60501b6595b76702f6905eaddd09b2275</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>
