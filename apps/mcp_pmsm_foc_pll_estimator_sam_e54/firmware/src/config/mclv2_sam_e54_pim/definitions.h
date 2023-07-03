@@ -49,19 +49,17 @@
 #include <stddef.h>
 #include <stdbool.h>
 #include "X2CCode/X2CScope/inc/X2CScope.h"
-#include "peripheral/sercom/usart/plib_sercom2_usart.h"
 #include "peripheral/nvmctrl/plib_nvmctrl.h"
+#include "peripheral/sercom/usart/plib_sercom2_usart.h"
 #include "bsp/bsp.h"
-#include "peripheral/evsys/plib_evsys.h"
 #include "peripheral/tcc/plib_tcc0.h"
+#include "peripheral/evsys/plib_evsys.h"
 #include "peripheral/adc/plib_adc0.h"
 #include "peripheral/port/plib_port.h"
 #include "peripheral/clock/plib_clock.h"
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/cmcc/plib_cmcc.h"
 #include "peripheral/adc/plib_adc1.h"
-#include "motor_control/pmsm_foc/mc_userparams.h"
-#include "motor_control/pmsm_foc/mc_pmsm_foc.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -70,6 +68,12 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* Device Information */
+#define DEVICE_NAME			 "ATSAME54P20A"
+#define DEVICE_ARCH			 "CORTEX-M4"
+#define DEVICE_FAMILY		 "SAME"
+#define DEVICE_SERIES		 "SAME54"
 
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 120000000

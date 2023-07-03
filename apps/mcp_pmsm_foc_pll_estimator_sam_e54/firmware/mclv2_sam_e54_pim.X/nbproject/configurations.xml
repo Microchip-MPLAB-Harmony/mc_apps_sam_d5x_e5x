@@ -9,28 +9,6 @@
           <logicalFolder name="f3" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/mclv2_sam_e54_pim/bsp/bsp.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f4" displayName="motor_control" projectFiles="true">
-            <logicalFolder name="f1" displayName="pmsm_foc" projectFiles="true">
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_rotor_position.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_current_calculation.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_current_control.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_error_handler.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_flux_control.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_flying_start.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_function_coordinator.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_generic_library.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_hardware_abstraction.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_interface_handling.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_motor_control.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_pmsm_foc.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_pwm.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_ramp_profiler.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_speed_control.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_start_up.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_userparams.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_voltage_measurement.h</itemPath>
-            </logicalFolder>
-          </logicalFolder>
           <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f5" displayName="adc" projectFiles="true">
               <itemPath>../src/config/mclv2_sam_e54_pim/peripheral/adc/plib_adc_common.h</itemPath>
@@ -65,6 +43,45 @@
               <itemPath>../src/config/mclv2_sam_e54_pim/peripheral/tcc/plib_tcc0.h</itemPath>
               <itemPath>../src/config/mclv2_sam_e54_pim/peripheral/tcc/plib_tcc_common.h</itemPath>
             </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="QSpin" displayName="QSpin" projectFiles="true">
+            <logicalFolder name="Current_Calculation"
+                           displayName="Current_Calculation"
+                           projectFiles="true">
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Current_Calculation/mc_current_calculation.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Field_Oriented_Control"
+                           displayName="Field_Oriented_Control"
+                           projectFiles="true">
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_open_loop_startup.h</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_pi_control.h</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_flying_start.h</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_torque_control.h</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_initial_position_detection.h</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_speed_control.h</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_field_oriented_control.h</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_reference_control.h</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_flux_control.h</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_pwm.h</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_rotor_position_calculation.h</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_motor.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Hardware_Abstraction"
+                           displayName="Hardware_Abstraction"
+                           projectFiles="true">
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Hardware_Abstraction/mc_hardware_abstraction.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Utilities" displayName="Utilities" projectFiles="true">
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Utilities/mc_utilities.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Voltage_Calculation"
+                           displayName="Voltage_Calculation"
+                           projectFiles="true">
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Voltage_Calculation/mc_voltage_measurement.h</itemPath>
+            </logicalFolder>
+            <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/mc_key_manager.h</itemPath>
+            <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/mc_types.h</itemPath>
+            <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/mc_application.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f1" displayName="X2CCode" projectFiles="true">
             <logicalFolder name="f1" displayName="X2CScope" projectFiles="true">
@@ -228,27 +245,6 @@
           <logicalFolder name="f3" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/mclv2_sam_e54_pim/bsp/bsp.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="f5" displayName="motor_control" projectFiles="true">
-            <logicalFolder name="f1" displayName="pmsm_foc" projectFiles="true">
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_rotor_position.c</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_current_calculation.c</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_current_control.c</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_error_handler.c</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_flux_control.c</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_flying_start.c</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_function_coordinator.c</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_generic_library.c</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_hardware_abstraction.c</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_interface_handling.c</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_motor_control.c</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_pmsm_foc.c</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_pwm.c</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_ramp_profiler.c</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_speed_control.c</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_start_up.c</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/motor_control/pmsm_foc/mc_voltage_measurement.c</itemPath>
-            </logicalFolder>
-          </logicalFolder>
           <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f5" displayName="adc" projectFiles="true">
               <itemPath>../src/config/mclv2_sam_e54_pim/peripheral/adc/plib_adc0.c</itemPath>
@@ -280,6 +276,43 @@
             <logicalFolder name="f4" displayName="tcc" projectFiles="true">
               <itemPath>../src/config/mclv2_sam_e54_pim/peripheral/tcc/plib_tcc0.c</itemPath>
             </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="QSpin" displayName="QSpin" projectFiles="true">
+            <logicalFolder name="Current_Calculation"
+                           displayName="Current_Calculation"
+                           projectFiles="true">
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Current_Calculation/mc_current_calculation.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Field_Oriented_Control"
+                           displayName="Field_Oriented_Control"
+                           projectFiles="true">
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_open_loop_startup.c</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_pi_control.c</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_flying_start.c</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_torque_control.c</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_speed_control.c</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_field_oriented_control.c</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_reference_control.c</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_rotor_position_calculation.c</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_pwm.c</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_flux_control.c</itemPath>
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/mc_motor.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Hardware_Abstraction"
+                           displayName="Hardware_Abstraction"
+                           projectFiles="true">
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Hardware_Abstraction/mc_hardware_abstraction.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Utilities" displayName="Utilities" projectFiles="true">
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Utilities/mc_utilities.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Voltage_Calculation"
+                           displayName="Voltage_Calculation"
+                           projectFiles="true">
+              <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/Voltage_Calculation/mc_voltage_measurement.c</itemPath>
+            </logicalFolder>
+            <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/mc_key_manager.c</itemPath>
+            <itemPath>../src/config/mclv2_sam_e54_pim/QSpin/mc_application.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f4" displayName="stdio" projectFiles="true">
             <itemPath>../src/config/mclv2_sam_e54_pim/stdio/xc32_monitor.c</itemPath>
@@ -385,7 +418,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/mclv2_sam_e54_pim;../src/config/mclv2_sam_e54_pim/X2CCode;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+                  value="../src;../src/config/mclv2_sam_e54_pim;../src/config/mclv2_sam_e54_pim/QSpin;../src/config/mclv2_sam_e54_pim/QSpin/Current_Calculation/;../src/config/mclv2_sam_e54_pim/QSpin/Field_Oriented_Control/;../src/config/mclv2_sam_e54_pim/QSpin/Hardware_Abstraction/;../src/config/mclv2_sam_e54_pim/QSpin/Utilities/;../src/config/mclv2_sam_e54_pim/QSpin/Voltage_Calculation/;../src/config/mclv2_sam_e54_pim/X2CCode;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -517,49 +550,6 @@
         <property key="stack-smashing" value=""/>
         <property key="wpo-lto" value="false"/>
       </C32Global>
-      <PICkit3PlatformTool>
-        <property key="AutoSelectMemRanges" value="auto"/>
-        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
-        <property key="ToolFirmwareFilePath"
-                  value="Press to browse for a specific firmware version"/>
-        <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
-        <property key="debugoptions.debug-startup" value="Use system settings"/>
-        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
-        <property key="debugoptions.useswbreakpoints" value="false"/>
-        <property key="hwtoolclock.frcindebug" value="false"/>
-        <property key="memories.aux" value="false"/>
-        <property key="memories.bootflash" value="true"/>
-        <property key="memories.configurationmemory" value="true"/>
-        <property key="memories.configurationmemory2" value="true"/>
-        <property key="memories.dataflash" value="true"/>
-        <property key="memories.eeprom" value="true"/>
-        <property key="memories.flashdata" value="true"/>
-        <property key="memories.id" value="true"/>
-        <property key="memories.instruction.ram" value="true"/>
-        <property key="memories.instruction.ram.ranges"
-                  value="${memories.instruction.ram.ranges}"/>
-        <property key="memories.programmemory" value="true"/>
-        <property key="memories.programmemory.ranges" value="1d000000-1d003fff"/>
-        <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmertogo.imagename" value=""/>
-        <property key="programoptions.donoteraseauxmem" value="false"/>
-        <property key="programoptions.eraseb4program" value="true"/>
-        <property key="programoptions.pgmspeed" value="2"/>
-        <property key="programoptions.preservedataflash" value="false"/>
-        <property key="programoptions.preservedataflash.ranges"
-                  value="${programoptions.preservedataflash.ranges}"/>
-        <property key="programoptions.preserveeeprom" value="false"/>
-        <property key="programoptions.preserveeeprom.ranges" value=""/>
-        <property key="programoptions.preserveprogram.ranges" value=""/>
-        <property key="programoptions.preserveprogramrange" value="false"/>
-        <property key="programoptions.preserveuserid" value="false"/>
-        <property key="programoptions.programcalmem" value="false"/>
-        <property key="programoptions.programuserotp" value="false"/>
-        <property key="programoptions.testmodeentrymethod" value="VPPFirst"/>
-        <property key="programoptions.usehighvoltageonmclr" value="false"/>
-        <property key="programoptions.uselvpprogramming" value="false"/>
-        <property key="voltagevalue" value="3.25"/>
-      </PICkit3PlatformTool>
       <Tool>
         <property key="ADC 1" value="true"/>
         <property key="AutoSelectMemRanges" value="auto"/>
