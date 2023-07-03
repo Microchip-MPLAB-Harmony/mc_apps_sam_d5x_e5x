@@ -64,14 +64,9 @@ typedef struct
      bool enable;
      bool initDone;
      tmcFoc_FocState_e FocState;
-     tmcTypes_AlphaBeta_s iAlphaBeta;
-     tmcTypes_AlphaBeta_s uAlphaBeta;
-     tmcTypes_DQ_s iDQ;
      tmcTypes_DQ_s uDQ;
      float32_t openLoopAngle;
      float32_t openLoopSpeed;
-     float32_t closeLoopAngle;
-     float32_t closeLoopSpeed;
      float32_t iQref;
      float32_t iDref;
      float32_t nRef;
@@ -106,10 +101,14 @@ tmcFocI_ModuleData_s mcFocI_ModuleData_gds;
 Macro Functions
 *******************************************************************************/
 /**
+ * Constant value of 2/PI
+ */
+#define TWO_BY_PI (float32_t)(0.6366198)
+
+/**
  *  Open loop angle to close loop angle transition rate. 
  */
 #define ROTOR_ANGLE_RAMP_RATE     (float32_t)( 1.0e-6 )
-
 
 /*******************************************************************************
 Private Functions
@@ -368,16 +367,20 @@ void mcFocI_FieldOrientedControlFast( tmcFocI_ModuleData_s * const pModule )
     tmcFoc_State_s * pState;
     pState = (tmcFoc_State_s *)pModule->pStatePointer;
 
+    /** Get the output structure pointer */
+    tmcFoc_Output_s * pOutput;
+    pOutput = &pModule->dOutput;
+
     /** Read FOC inputs  */
     mcFocI_InputsRead( pModule );
 
     /** Clarke transformation */
-    mcFoc_ClarkeTransformation( &pModule->dInput.iABC, &pState->iAlphaBeta);
+    mcFoc_ClarkeTransformation( &pModule->dInput.iABC, &pOutput->iAlphaBeta);
 
     /** Rotor position estimation */
     tmcTypes_AlphaBeta_s eAlphaBeta;
-    mcRpeI_RotorPositionEstim(&pState->bPositionEstimation, pState->nRef, &pState->iAlphaBeta, &pState->uAlphaBeta,
-                                            &eAlphaBeta, &pState->closeLoopAngle, &pState->closeLoopSpeed );
+    mcRpeI_RotorPositionEstim(&pState->bPositionEstimation, pState->nRef, &pOutput->iAlphaBeta, &pOutput->uAlphaBeta,
+                                            &eAlphaBeta, &pOutput->elecAngle, &pOutput->elecSpeed );
 
     switch(pState->FocState )
     {
@@ -387,16 +390,16 @@ void mcFocI_FieldOrientedControlFast( tmcFocI_ModuleData_s * const pModule )
             tmcTypes_StdReturn_e startupStatus;
             startupStatus = mcSupI_OpenLoopStartup( &pState->bOpenLoopStartup, pState->commandDirection, &pState->iQref,
                                                                             &pState->iDref, &pState->openLoopAngle, &pState->openLoopSpeed );
-            
-            pState->nRef = pState->openLoopSpeed; 
-            
+
+            pState->nRef = pState->openLoopSpeed;
+
             if( StdReturn_Complete == startupStatus )
             {
                 /** Set speed controller state */
                 mcSpeI_SpeedControlManual( &pState->bSpeedController, pState->iQref );
 
                 /** Calculate angle difference */
-                pState->angleDifference = UTIL_AngleDifferenceCalc( pState->openLoopAngle, pState->closeLoopAngle );
+                pState->angleDifference = UTIL_AngleDifferenceCalc( pState->openLoopAngle, pOutput->elecAngle );
        
                 /** Set FOC state machine to ClosingLoop */
                 pState->FocState = FocState_ClosingLoop;
@@ -409,7 +412,7 @@ void mcFocI_FieldOrientedControlFast( tmcFocI_ModuleData_s * const pModule )
             }
 	        case FocState_ClosingLoop:
             {
-                float32_t angle = pState->closeLoopAngle + pState->angleDifference;
+                float32_t angle = pOutput->elecAngle + pState->angleDifference;
                 mcUtils_TruncateAngle0To2Pi(&angle);
                 
                 /** Ramp-down angle difference */
@@ -428,7 +431,7 @@ void mcFocI_FieldOrientedControlFast( tmcFocI_ModuleData_s * const pModule )
 
                 /** Execute speed controller */
                 pState->nRef *=  pState->commandDirection;
-                mcSpeI_SpeedControlAuto( &pState->bSpeedController, pState->nRef, pState->closeLoopSpeed, 
+                mcSpeI_SpeedControlAuto( &pState->bSpeedController, pState->nRef, pOutput->elecSpeed, 
                                                            &pState->iQref );
 
                 break;
@@ -437,19 +440,20 @@ void mcFocI_FieldOrientedControlFast( tmcFocI_ModuleData_s * const pModule )
             case FocState_CloseLoop:
             {
                 /** Sine-cosine calculation */
-                mcUtils_SineCosineCalculation( pState->closeLoopAngle, &sine, &cosine );
+                mcUtils_SineCosineCalculation( pOutput->elecAngle, &sine, &cosine );
 
                 /** Reference Control */
                 mcRefI_ReferenceControl( &mcFoc_State_mds.bReferenceController, pModule->dInput.reference, &pState->nRef );
                
                /** Execute flux weakening  */
-               float32_t idrefFW, idrefMTPA;
+               float32_t idrefFW = 0.0f;
+               float32_t idrefMTPA = 0.0f;
                
                 /** Execute flux weakening  */
                 mcFlxI_FluxWeakening(  &pState->bFluxController,  &pState->uDQ,  &eAlphaBeta,
-                                         pModule->dInput.uBus, pState->closeLoopSpeed, &pState->iDQ, &idrefFW );
+                                         pModule->dInput.uBus, pOutput->elecSpeed, &pOutput->iDQ, &idrefFW );
 
-               mcFlxI_MTPA(  &pState->bFluxController, &pState->iDQ, &idrefMTPA );
+               mcFlxI_MTPA(  &pState->bFluxController, &pOutput->iDQ, &idrefMTPA );
 
                /** */
                if( idrefMTPA < idrefFW ) {
@@ -462,7 +466,7 @@ void mcFocI_FieldOrientedControlFast( tmcFocI_ModuleData_s * const pModule )
 
                 /** Execute speed controller */
                 pState->nRef *=  pState->commandDirection;
-                mcSpeI_SpeedControlAuto(&pState->bSpeedController,  pState->nRef, pState->closeLoopSpeed, 
+                mcSpeI_SpeedControlAuto(&pState->bSpeedController,  pState->nRef, pOutput->elecSpeed, 
                                                           &pState->iQref );
 
                 break;
@@ -476,26 +480,26 @@ void mcFocI_FieldOrientedControlFast( tmcFocI_ModuleData_s * const pModule )
     }
 
     /** Park Transformation */
-    mcFoc_ParkTransformation( &pState->iAlphaBeta, sine, cosine, &pState->iDQ );
+    mcFoc_ParkTransformation( &pOutput->iAlphaBeta, sine, cosine, &pOutput->iDQ );
 
     /** Compute Q-axis controller output limit */
-    float32_t ydLimit = pModule->dInput.uBus * ONE_BY_SQRT3;
+    float32_t ydLimit = pModule->dInput.uBus * TWO_BY_PI;
 
     /** Execute flux control */
-    mcFlxI_FluxControlAuto( &pState->bFluxController, pState->iDref, pState->iDQ.d, ydLimit, &pState->uDQ.d );
+    mcFlxI_FluxControlAuto( &pState->bFluxController, pState->iDref, pOutput->iDQ.d, ydLimit, &pState->uDQ.d );
 
     /** Apply circle limit for Q-axis reference current clamping  */
     float32_t yqLimit = UTIL_SquareRootFloat( UTIL_SquareFloat( ydLimit )  - UTIL_SquareFloat( pState->uDQ.d ));
 
 
     /** Execute torque control */
-    mcTorI_TorqueControlAuto( &pState->bTorqueController, pState->iQref, pState->iDQ.q, yqLimit, &pState->uDQ.q );
+    mcTorI_TorqueControlAuto( &pState->bTorqueController, pState->iQref, pOutput->iDQ.q, yqLimit, &pState->uDQ.q );
 
     /** Inverse Park transformation */
-    mcFoc_InverseParkTransformation( &pState->uDQ, sine, cosine, &pState->uAlphaBeta );
+    mcFoc_InverseParkTransformation( &pState->uDQ, sine, cosine, &pOutput->uAlphaBeta );
 
      /** Space vector modulation */
-    mcPwmI_PulseWidthModulation(&pState->bPwmModulator, pModule->dInput.uBus, &pState->uAlphaBeta, mcPwmI_Duty_gau16 );
+    mcPwmI_PulseWidthModulation(&pState->bPwmModulator, pModule->dInput.uBus, &pOutput->uAlphaBeta, mcPwmI_Duty_gau16 );
 }
 
 

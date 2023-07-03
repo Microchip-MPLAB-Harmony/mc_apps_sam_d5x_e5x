@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, Linz Center of Mechatronics GmbH (LCM)
+ * Copyright (c) 2013, Linz Center of Mechatronics GmbH (LCM) http://www.lcm.at/
  * All rights reserved.
  */
 /*
@@ -28,8 +28,9 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 /*
- * This file is part of X2C.
+ * This file is part of X2C. http://www.mechatronic-simulation.org/
  */
+
 #include "../inc/X2CScope.h"
 #include "../inc/X2CScopeCommunication.h"
 

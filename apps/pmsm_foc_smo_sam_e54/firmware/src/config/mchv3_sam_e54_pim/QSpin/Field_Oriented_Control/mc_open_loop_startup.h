@@ -82,8 +82,8 @@ __STATIC_INLINE void mcSupI_ParametersSet( tmcSup_Parameters_s * const pParamete
     pParameters->pMotorParameters = &mcMotI_PMSM_gds;
     pParameters->dt = (float32_t)(0.00005);
     pParameters->alignmentTime = (float32_t)(2);
-    pParameters->alignmentCurrent = (float32_t)(0.2);
-    pParameters->openLoopCurrent = (float32_t)(0.2);
+    pParameters->alignmentCurrent = (float32_t)(0.4);
+    pParameters->openLoopCurrent = (float32_t)(0.4);
     pParameters->openLoopRampTime = (float32_t)(5);
     pParameters->openLoopStabTime = (float32_t)(2);
     pParameters->openLoopTransSpeed = (float32_t)(500);

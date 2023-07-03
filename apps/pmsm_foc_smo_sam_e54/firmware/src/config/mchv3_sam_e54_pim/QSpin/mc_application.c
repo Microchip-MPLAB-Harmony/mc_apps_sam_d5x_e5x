@@ -57,7 +57,7 @@ Headers inclusions
 /*******************************************************************************
  Private variables 
  *******************************************************************************/
-static button_response_t  mcAppI_StartStopButton_gds;
+ static button_response_t  mcAppI_StartStopButton_gds;
 static uint32_t mcAppI_1msSyncCounter_gdu32;
 static uintptr_t dummyForMisra;
 static uint8_t runStatus = 0u;
@@ -146,7 +146,8 @@ __STATIC_INLINE void mcAppI_1msTasksHandler( void )
     /** Start-stop button scan  */
     mcAppI_StartStopButton_gds.inputVal = mcHalI_StartStopButtonState();
     mcUtils_ButtonResponse(&mcAppI_StartStopButton_gds, &mcAppI_MotorStartStop);
-      
+    
+   
     /** Field Oriented control - Slow Tasks */
     mcFocI_FieldOrientedControlSlow(&mcFocI_ModuleData_gds);
 

@@ -56,7 +56,7 @@
 
 
 /* Object to hold callback function and context */
-static TCC_CALLBACK_OBJECT TCC0_CallbackObj;
+volatile static TCC_CALLBACK_OBJECT TCC0_CallbackObj;
 
 /* Initialize TCC module */
 void TCC0_PWMInitialize(void)
@@ -170,10 +170,31 @@ bool TCC0_PWMPatternSet(uint8_t pattern_enable, uint8_t pattern_output)
 }
 
 
-/* Set the counter*/
-void TCC0_PWM24bitCounterSet (uint32_t count)
+
+/* Get the current counter value */
+uint32_t TCC0_PWM24bitCounterGet( void )
 {
-    TCC0_REGS->TCC_COUNT = count & 0xFFFFFFU;
+    /* Write command to force COUNT register read synchronization */
+    TCC0_REGS->TCC_CTRLBSET |= (uint8_t)TCC_CTRLBSET_CMD_READSYNC;
+
+    while((TCC0_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_CTRLB_Msk) == TCC_SYNCBUSY_CTRLB_Msk)
+    {
+        /* Wait for Write Synchronization */
+    }
+
+    while((TCC0_REGS->TCC_CTRLBSET & TCC_CTRLBSET_CMD_Msk) != 0U)
+    {
+        /* Wait for CMD to become zero */
+    }
+
+    /* Read current count value */
+    return TCC0_REGS->TCC_COUNT;
+}
+
+/* Set the counter*/
+void TCC0_PWM24bitCounterSet (uint32_t countVal)
+{
+    TCC0_REGS->TCC_COUNT = countVal & 0xFFFFFFU;
     while ((TCC0_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_COUNT_Msk) != 0U)
     {
         /* Wait for sync */
@@ -210,16 +231,19 @@ void TCC0_PWMCallbackRegister(TCC_CALLBACK callback, uintptr_t context)
 }
 
 /* Interrupt Handler */
-void TCC0_OTHER_InterruptHandler(void)
+void __attribute__((used)) TCC0_OTHER_InterruptHandler(void)
 {
     uint32_t status;
+    /* Additional local variable to prevent MISRA C violations (Rule 13.x) */
+    uintptr_t context;
+    context = TCC0_CallbackObj.context;            
     status = (TCC0_REGS->TCC_INTFLAG & 0xFFFFU);
     /* Clear interrupt flags */
     TCC0_REGS->TCC_INTFLAG = 0xFFFFU;
     (void)TCC0_REGS->TCC_INTFLAG;
     if (TCC0_CallbackObj.callback_fn != NULL)
     {
-        TCC0_CallbackObj.callback_fn(status, TCC0_CallbackObj.context);
+        TCC0_CallbackObj.callback_fn(status, context);
     }
 
 }

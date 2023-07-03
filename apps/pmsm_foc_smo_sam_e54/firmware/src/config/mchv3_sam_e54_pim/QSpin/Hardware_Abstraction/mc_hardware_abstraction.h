@@ -419,4 +419,7 @@ void mcHalI_PwmCallbackRegister( TCC_CALLBACK callback, uintptr_t context );
 
 bool mcHalI_StartStopButtonState( void );
 
+
+
+
 #endif // MCHAL_H

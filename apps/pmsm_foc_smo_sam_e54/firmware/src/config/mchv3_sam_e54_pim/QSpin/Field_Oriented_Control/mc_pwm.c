@@ -126,7 +126,7 @@ void  mcPwmI_PulseWidthModulationInit( tmcPwm_Parameters_s * const pParameters )
     pState->maxPeriodCount = pState->pwmPeriodCount - pState->minPeriodCount;
     pState->maxModIndex = pParameters->maxModIndex;
 
-    allowedRange = (float32_t)( pState->maxPeriodCount - pState->minPeriodCount);
+    allowedRange = (float32_t)( (float32_t)pState->maxPeriodCount - (float32_t)pState->minPeriodCount);
     pState->uBusFactor = (float32_t)( allowedRange / (float32_t)pState->pwmPeriodCount );
 }
 

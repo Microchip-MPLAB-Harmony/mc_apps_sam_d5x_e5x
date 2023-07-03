@@ -30,7 +30,7 @@
 /*
  * This file is part of X2C.
  */
-
+ 
 #include "../inc/X2CScopeCommunication.h"
 
 void sendSerial(uint8_t data)
@@ -61,11 +61,16 @@ uint8_t receiveSerial(void)
 
 uint8_t isReceiveDataAvailable(void)
 {
-    return (uint8_t)(SERCOM2_USART_ReceiverIsReady());
-
+    bool status;
+    
+    status = SERCOM2_USART_ReceiverIsReady();
+    return (uint8_t)status;
 }
 
 uint8_t isSendReady(void)
 {
-    return (uint8_t)(SERCOM2_USART_TransmitterIsReady());
+    bool status;
+    
+    status = SERCOM2_USART_TransmitterIsReady();
+    return (uint8_t)status;
 }

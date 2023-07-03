@@ -101,11 +101,18 @@ __attribute__((noinline)) char * mcKeyI_ValidationKeyGet( const tmcKey_IPs_s ip)
  */
 void mcKeyI_KeyManagerInit(void)
 {
+     char * result;
+     
      /** Initialize IPD key  */
-     strcpy(mcKeyI_AlgorithmKeys_gds.Keys[(uint8_t)KEY_IPD], IPD_ALGORITHM_KEY );
+     result = strcpy(mcKeyI_AlgorithmKeys_gds.Keys[(uint8_t)KEY_IPD], IPD_ALGORITHM_KEY );
 
      /** Initialize ZSMT key  */
-    strcpy(mcKeyI_AlgorithmKeys_gds.Keys[(uint8_t)KEY_ZSMT], ZSMT_ALGORITHM_KEY );
+    result = strcpy(mcKeyI_AlgorithmKeys_gds.Keys[(uint8_t)KEY_ZSMT], ZSMT_ALGORITHM_KEY );
+    
+    if( NULL != result )
+    {
+        /** ToDO: */
+    }
   
 }
 

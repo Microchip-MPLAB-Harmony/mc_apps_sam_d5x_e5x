@@ -66,13 +66,18 @@ Type Definition
 *******************************************************************************/
 typedef struct
 {
-    tmcTypes_ABC_s  iABC;
+    tmcTypes_ABC_s iABC;
     float32_t uBus;
     float32_t reference;
 }tmcFoc_Input_s;
 
 typedef struct
 {
+    tmcTypes_AlphaBeta_s  iAlphaBeta;
+    tmcTypes_AlphaBeta_s  uAlphaBeta;
+    tmcTypes_DQ_s  iDQ;
+    float32_t elecAngle;
+    float32_t elecSpeed;
     int16_t duty[3u];
 }tmcFoc_Output_s;
 
@@ -111,7 +116,7 @@ extern tmcFocI_ModuleData_s mcFocI_ModuleData_gds;
 __STATIC_INLINE void mcFocI_InputsRead( tmcFocI_ModuleData_s * const pModule )
 {
     tmcFoc_Input_s * pInput = &pModule->dInput;
-     
+
     pInput->iABC.a = (float32_t)mcCurI_ModuleData_gds.dOutput.iABC.a;
     pInput->iABC.b = (float32_t)mcCurI_ModuleData_gds.dOutput.iABC.b;
 
