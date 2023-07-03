@@ -329,10 +329,6 @@
               <itemPath>../src/config/mchv3_sam_e54_pim/X2CCode/X2CScope/src/X2CScopeCommunication.c</itemPath>
               <itemPath>../src/config/mchv3_sam_e54_pim/X2CCode/X2CScope/src/X2CScope.c</itemPath>
             </logicalFolder>
-            <itemPath>../src/config/mchv3_sam_e54_pim/X2CCode/initProject.sce</itemPath>
-            <itemPath>../src/config/mchv3_sam_e54_pim/X2CCode/ModelParameters.sce</itemPath>
-            <itemPath>../src/config/mchv3_sam_e54_pim/X2CCode/BoardParameters.sce</itemPath>
-            <itemPath>../src/config/mchv3_sam_e54_pim/X2CCode/MotorParameters.sce</itemPath>
           </logicalFolder>
           <itemPath>../src/config/mchv3_sam_e54_pim/interrupts.c</itemPath>
           <itemPath>../src/config/mchv3_sam_e54_pim/exceptions.c</itemPath>
@@ -347,15 +343,6 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
-      <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="mchv3_sam_e54_pim"
-                       displayName="mchv3_sam_e54_pim"
-                       projectFiles="true">
-          <logicalFolder name="X2CCode" displayName="X2CCode" projectFiles="true">
-            <itemPath>../src/config/mchv3_sam_e54_pim/X2CCode/startup.bat</itemPath>
-          </logicalFolder>
-        </logicalFolder>
-      </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>mchv3_sam_e54_pim.mc3</itemPath>
     </logicalFolder>
@@ -368,14 +355,14 @@
         <targetDevice>ATSAME54P20A</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pkob4hybrid</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.00</languageToolchainVersion>
+        <languageToolchainVersion>4.21</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAME54_DFP" vendor="Microchip" version="3.7.122"/>
         <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="SAME54_DFP" vendor="Microchip" version="3.8.234"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -383,7 +370,7 @@
         <linkerTool>
           <linkerLibItems>
             <linkerLibFileItem>../src/config/mchv3_sam_e54_pim/X2CCode/X2CScope/lib/libCORTEXM4_X2CScope.a</linkerLibFileItem>
-            <linkerLibFileItem>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/libCortexM4-ATSAM_MCHP_SMO.X.a</linkerLibFileItem>
+            <linkerLibFileItem>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/libCortexM4-ATSAM_MCHP_SMO.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
@@ -548,6 +535,114 @@
         <property key="stack-smashing" value=""/>
         <property key="wpo-lto" value="false"/>
       </C32Global>
+      <Tool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UpdateOptions"
+                  value="ToolFirmwareOption.UseLatest"/>
+        <property key="ToolFirmwareToolPack"
+                  value="Press to select which tool pack to use"/>
+        <property key="communication.interface" value="swd"/>
+        <property key="communication.interface.jtag" value="2wire"/>
+        <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="debugoptions.simultaneous.debug" value="false"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
+        <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="0-fffff"/>
+        <property key="programoptions.donoteraseauxmem" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.pgmentry.voltage" value="low"/>
+        <property key="programoptions.pgmspeed" value="Med"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.program.otpconfig" value="false"/>
+        <property key="programoptions.programcalmem" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
+        <property key="x.erase.clearprot" value="true"/>
+      </Tool>
+      <pkob4hybrid>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UpdateOptions"
+                  value="ToolFirmwareOption.UseLatest"/>
+        <property key="ToolFirmwareToolPack"
+                  value="Press to select which tool pack to use"/>
+        <property key="communication.interface" value="swd"/>
+        <property key="communication.interface.jtag" value="2wire"/>
+        <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="debugoptions.simultaneous.debug" value="false"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
+        <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="0-fffff"/>
+        <property key="programoptions.donoteraseauxmem" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.pgmentry.voltage" value="low"/>
+        <property key="programoptions.pgmspeed" value="Med"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.program.otpconfig" value="false"/>
+        <property key="programoptions.programcalmem" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
+        <property key="x.erase.clearprot" value="true"/>
+      </pkob4hybrid>
     </conf>
   </confs>
 </configurationDescriptor>

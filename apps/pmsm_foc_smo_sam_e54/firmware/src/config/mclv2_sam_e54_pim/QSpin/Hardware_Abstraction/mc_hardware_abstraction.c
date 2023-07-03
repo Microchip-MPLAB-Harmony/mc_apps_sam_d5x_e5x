@@ -219,7 +219,6 @@ bool mcHalI_StartStopButtonState( void )
      return (bool)BUTTON_01_Get();
 }
 
-
 bool mcHalI_DirectionButtonState( void )
 {
      return (bool)BUTTON_02_Get();

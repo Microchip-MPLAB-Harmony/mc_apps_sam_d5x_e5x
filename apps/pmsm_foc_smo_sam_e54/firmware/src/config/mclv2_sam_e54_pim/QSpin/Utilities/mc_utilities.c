@@ -350,9 +350,9 @@ float32_t UTIL_2DPlotRead( tUTIL_2DPlot_s * const p2DPlot,  const float32_t xPoi
              if( pPoint[index].x < xPoint )
              {
                  slope = UTIL_DivisionFloat(( pPoint[index + 1u].y  - pPoint[index].y ),
-                             ( pPoint[index + 1].x  - pPoint[index].x ));
+                             ( pPoint[index + 1u].x  - pPoint[index].x ));
 
-                 /** Interpolate values between index and ( index - 1 )*/
+                 /** Interpolate values between index and ( index - 1u )*/
                  yValue = pPoint[index].y + slope * ( xPoint - pPoint[index].x );
                  break;
              }

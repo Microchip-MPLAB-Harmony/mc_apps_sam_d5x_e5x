@@ -83,10 +83,12 @@ typedef struct
 __STATIC_INLINE void mcPwmI_ParametersSet( tmcPwm_Parameters_s * const pParameters )
 {
      pParameters->pwmPeriodCount = mcHalI_PwmPeriodGet();
-
+     
      /** ToDo: Calculate in QSpin and update the value directly  */
      pParameters->deadTimeCount =38u;
-     pParameters->maxModIndex = 1.15;
+     
+     pParameters->maxModIndex = 1.0f;
+     
 }
 
 /*******************************************************************************

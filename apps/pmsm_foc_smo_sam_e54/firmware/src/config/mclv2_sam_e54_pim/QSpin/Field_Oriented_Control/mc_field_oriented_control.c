@@ -106,10 +106,14 @@ tmcFocI_ModuleData_s mcFocI_ModuleData_gds;
 Macro Functions
 *******************************************************************************/
 /**
+ * Constant value of 2/PI
+ */
+#define TWO_BY_PI (float32_t)(0.6366198)
+
+/**
  *  Open loop angle to close loop angle transition rate. 
  */
 #define ROTOR_ANGLE_RAMP_RATE     (float32_t)( 1.0e-5 )
-
 
 /*******************************************************************************
 Private Functions
@@ -267,13 +271,13 @@ void  mcFocI_FieldOrientedControlEnable( tmcFocI_ModuleData_s * const pParameter
 
     /** Enable flux control module */
     mcFlxI_FluxControlEnable( &mcFoc_State_mds.bFluxController);
-
+    
     /** Enable MTPA module */
     mcFlxI_MTPAEnable(  &pState->bFluxController );
 
     /** Enable flux weakening module */
     mcFlxI_FluxWeakeningEnable(  &pState->bFluxController );
-
+   
     /** Enable rotor position estimation  */
     mcRpeI_RotorPositionEstimEnable( &mcFoc_State_mds.bPositionEstimation);
 
@@ -436,29 +440,30 @@ void mcFocI_FieldOrientedControlFast( tmcFocI_ModuleData_s * const pModule )
 
             case FocState_CloseLoop:
             {
-               /** Sine-cosine calculation */
+                /** Sine-cosine calculation */
                 mcUtils_SineCosineCalculation( pState->closeLoopAngle, &sine, &cosine );
 
                 /** Reference Control */
                 mcRefI_ReferenceControl( &mcFoc_State_mds.bReferenceController, pModule->dInput.reference, &pState->nRef );
-
-                /** Execute flux weakening  */
-                float32_t idrefFW, idrefMTPA;
+               
+               /** Execute flux weakening  */
+               float32_t idrefFW = 0.0f;
+               float32_t idrefMTPA = 0.0f;
                
                 /** Execute flux weakening  */
                 mcFlxI_FluxWeakening(  &pState->bFluxController,  &pState->uDQ,  &eAlphaBeta,
                                          pModule->dInput.uBus, pState->closeLoopSpeed, &pState->iDQ, &idrefFW );
 
-                mcFlxI_MTPA(  &pState->bFluxController, &pState->iDQ, &idrefMTPA );
+               mcFlxI_MTPA(  &pState->bFluxController, &pState->iDQ, &idrefMTPA );
 
-                /** */
-                if( idrefMTPA < idrefFW ) {
+               /** */
+               if( idrefMTPA < idrefFW ) {
                     pState->iDref = idrefMTPA;
-                }
-                else {
+               }
+               else {
                     pState->iDref = idrefFW;
-                }
-
+               }
+    
 
                 /** Execute speed controller */
                 pState->nRef *=  pState->commandDirection;
@@ -479,7 +484,7 @@ void mcFocI_FieldOrientedControlFast( tmcFocI_ModuleData_s * const pModule )
     mcFoc_ParkTransformation( &pState->iAlphaBeta, sine, cosine, &pState->iDQ );
 
     /** Compute Q-axis controller output limit */
-    float32_t ydLimit = pModule->dInput.uBus * ONE_BY_SQRT3;
+    float32_t ydLimit = pModule->dInput.uBus * TWO_BY_PI;
 
     /** Execute flux control */
     mcFlxI_FluxControlAuto( &pState->bFluxController, pState->iDref, pState->iDQ.d, ydLimit, &pState->uDQ.d );

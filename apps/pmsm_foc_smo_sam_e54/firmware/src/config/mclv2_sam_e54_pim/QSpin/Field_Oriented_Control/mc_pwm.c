@@ -111,7 +111,7 @@ __STATIC_INLINE int16_t mcPwm_IntegerScale( const float32_t factor, int16_t inpu
  */
 void  mcPwmI_PulseWidthModulationInit( tmcPwm_Parameters_s * const pParameters )
 {  
-  float32_t allowedRange;
+    float32_t allowedRange;
 
     /** Link state variable structure to the module */
     pParameters->pStatePointer = (void *)&mcPwm_State_mds;
@@ -126,7 +126,7 @@ void  mcPwmI_PulseWidthModulationInit( tmcPwm_Parameters_s * const pParameters )
     pState->maxPeriodCount = pState->pwmPeriodCount - pState->minPeriodCount;
     pState->maxModIndex = pParameters->maxModIndex;
 
-    allowedRange = (float32_t)( pState->maxPeriodCount - pState->minPeriodCount);
+    allowedRange = (float32_t)( (float32_t)pState->maxPeriodCount - (float32_t)pState->minPeriodCount);
     pState->uBusFactor = (float32_t)( allowedRange / (float32_t)pState->pwmPeriodCount );
 }
 

@@ -64,6 +64,7 @@ typedef struct
     float32_t boundaryI;
     float32_t m;
     float32_t lambda;
+    float32_t f0InHertz;
     float32_t minRPM;
     float32_t dt;
 
@@ -93,11 +94,12 @@ __STATIC_INLINE void mcRpeI_ParametersSet( tmcRpe_Parameters_s * const pParamete
     pParameters->pMotorParameters = &mcMotI_PMSM_gds;
 
     /** BEMF observer parameters */
-    pParameters->dt = (float32_t)(0.00005);
+    pParameters->dt = (float32_t)0.00005;
     pParameters->boundaryI = (float32_t)0.5;
-    pParameters->m = ((float32_t)8000.0);
-    pParameters->lambda = ((float32_t)-1000.0);
-    pParameters->minRPM = ((float32_t)500.0);
+    pParameters->m = (float32_t)8000;
+    pParameters->lambda = (float32_t)0;
+    pParameters->f0InHertz = (float32_t)10;
+    pParameters->minRPM = (float32_t)(500);
 }
 
 /*******************************************************************************
