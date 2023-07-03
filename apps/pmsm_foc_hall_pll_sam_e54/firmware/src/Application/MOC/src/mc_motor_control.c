@@ -458,7 +458,6 @@ static void mcMocI_FieldOrientedControl( tmcMocI_MotorControl_s * const pState )
     
      /* Run speed controller */    
      nQPI  = &pState->nQPI;
-     nQPI->feedback = pState->sensedSpeed;
      mcLib_PiControlRun(nQPI);
   
     /* D-axis controller */

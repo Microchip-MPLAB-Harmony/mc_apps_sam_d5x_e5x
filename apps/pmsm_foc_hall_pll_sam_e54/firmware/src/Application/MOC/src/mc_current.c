@@ -128,7 +128,7 @@ tStd_ReturnType_e mcCurI_OffsetCalibarationRun( void)
     else
     {
         mcCur_StateVariables_mds.iaAdcOffset = (uint16_t)(mcCur_StateVariables_mds.iaAdcSum >>12U);
-        mcCur_StateVariables_mds.ibAdcOffset = (uint16_t)(mcCur_StateVariables_mds.iaAdcSum >>12U);     
+        mcCur_StateVariables_mds.ibAdcOffset = (uint16_t)(mcCur_StateVariables_mds.ibAdcSum >>12U);     
         status = returnType_Passed; 
     }
     return status;
