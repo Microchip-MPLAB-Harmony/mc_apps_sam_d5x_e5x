@@ -56,8 +56,6 @@
 #include "peripheral/clock/plib_clock.h"
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/cmcc/plib_cmcc.h"
-#include "motor_control/pmsm_foc/mc_userparams.h"
-#include "motor_control/pmsm_foc/mc_pmsm_foc.h"
 #include "peripheral/pdec/plib_pdec.h"
 #include "bsp/bsp.h"
 #include "peripheral/tcc/plib_tcc0.h"
@@ -71,6 +69,12 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* Device Information */
+#define DEVICE_NAME			 "ATSAME54P20A"
+#define DEVICE_ARCH			 "CORTEX-M4"
+#define DEVICE_FAMILY		 "SAME"
+#define DEVICE_SERIES		 "SAME54"
 
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 120000000
