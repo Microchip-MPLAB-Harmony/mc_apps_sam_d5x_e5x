@@ -26,7 +26,7 @@ Key features enabled in this project are:
 - Field Weakening
 
 
-## MHC Project Configurations
+## MCC Project Configurations
 
 ![MHC Project Graph](images/hall_foc_same54_project_graph.jpg)
 
@@ -136,7 +136,7 @@ To build the application, refer to the following table and open the project usin
 | Project Name      | Description                                    | Demo User Guide |
 | ----------------- | ---------------------------------------------- | --------------- |
 | mclv2_sam_e54_pim.X | MPLABX project for MCLV2 board with ATSAME54 PIM | [Hardware Setup and Running The Application on MCLV2 with ATSAME54 PIM](../docs/mclv2_atsame54_pim_hall.md) |
-||||
+
 
 
 

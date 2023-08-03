@@ -26,7 +26,7 @@ Key features enabled in this project are:
 - Field Weakening
 
 
-## MHC Project Configurations
+## MCC Project Configurations
 
 ![MHC Project Graph](images/hall_foc_same54_project_graph.jpg)
 

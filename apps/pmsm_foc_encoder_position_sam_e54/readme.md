@@ -25,7 +25,7 @@ Key features enabled in this project are:
 - Position control loop
 
 
-## MHC Project Configurations
+## MCC Project Configurations
 
 ![MHC Project Graph](images/encoder_pos_control_same54_project_graph.jpg)
 

@@ -23,7 +23,7 @@ Key features enabled in this project are:
 - Field weakening
 
 
-## MHC Project Configurations
+## MCC Project Configurations
 
 ![MHC Project Graph](images/project_graph.jpg)
 
@@ -69,7 +69,7 @@ Key features enabled in this project are:
     The UART is used for X2CScope communication to observe graphs and variable values in run time 
 
 ## Project Details
-For details refer [Harmony QSpin](https://microchip-mplab-harmony.github.io/motor_control/index.html)
+This project has been created using Harmony QSpin Tool. For details refer [Harmony QSpin](https://microchip-mplab-harmony.github.io/motor_control/index.html)
 
 
 ## Development Kits
