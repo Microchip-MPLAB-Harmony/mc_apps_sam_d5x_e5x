@@ -41,11 +41,7 @@ The following applications are provided to demonstrate the usage of Harmony QSpi
 |:-----|:-----------|:------------|:-------------|
 | [PMSM FOC using PLL Estimator](apps/mcp_pmsm_foc_pll_estimator_sam_e54/readme.md) | Sensorless Field Oriented Control of PMSM using PLL Estimator | [ATSAME54 Motor Control Plugin Module](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/MA320207) | [dsPICDEM™ MCLV-2 Support](https://www.microchip.com/DevelopmentTools/ProductDetails/DM330021-2) <br  />[dsPICDEM™ MCHV-3 Support](https://www.microchip.com/developmenttools/ProductDetails/dm330023-3) |
 | [PMSM FOC using Quadrature Encoder](apps/mcp_pmsm_foc_encoder_sam_e54/readme.md) | Sensored Field Oriented Control of PMSM using Quadrature Encoder | [ATSAME54 Motor Control Plugin Module](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/MA320207) | [dsPICDEM™ MCLV-2 Support](https://www.microchip.com/DevelopmentTools/ProductDetails/DM330021-2) <br  />[dsPICDEM™ MCHV-3 Support](https://www.microchip.com/developmenttools/ProductDetails/dm330023-3) |
-<<<<<<< HEAD
-|[PMSM FOC using ZS/MT Hybrid Estimator](apps/pmsm_foc_zsmt_hybrid_sam_e54/readme.md) | Sensorless Field Oriented Control of PMSM using ZS/MT Hybrid Estimator | [ATSAME54 Motor Control Plugin Module](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/MA320207) | [dsPICDEM™ MCLV-2 Support](https://www.microchip.com/DevelopmentTools/ProductDetails/DM330021-2) |
-=======
->>>>>>> 4749825 ([Docs] Document update for the application project including new documents for SMO and ZS/MT project)
-
+| [PMSM FOC using ZS/MT Hybrid Estimator](apps/pmsm_foc_zsmt_hybrid_sam_e54/readme.md) | Sensorless Field Oriented Control of PMSM using ZS/MT Hybrid Estimator | [ATSAME54 Motor Control Plugin Module](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/MA320207) | [dsPICDEM™ MCLV-2 Support](https://www.microchip.com/DevelopmentTools/ProductDetails/DM330021-2) |
 
 ## Static Motor Control Examples
 
@@ -56,10 +52,6 @@ These applications contain static algorithm code and peripherals are configured 
 |:-----|:-----------|:------------|:-------------|
 | [PMSM FOC Position Control using Quadrature Encoder](apps/pmsm_foc_encoder_position_sam_e54/readme.md) | Sensored Position Control PMSM using Quadrature Encoder |[ATSAME54 Motor Control Plugin Module](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/MA320207) | [dsPICDEM™ MCLV-2 Support](https://www.microchip.com/DevelopmentTools/ProductDetails/DM330021-2) <br  />[dsPICDEM™ MCHV-3 Support](https://www.microchip.com/developmenttools/ProductDetails/dm330023-3) |
 | [PMSM FOC Control using Hall Sensor](apps/pmsm_foc_hall_sam_e54/readme.md) | Sensored field oriented control of PMSM using Hall Sensor |[ATSAME54 Motor Control Plugin Module](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/MA320207) | [dsPICDEM™ MCLV-2 Support](https://www.microchip.com/DevelopmentTools/ProductDetails/DM330021-2) |
-<<<<<<< HEAD
-
-=======
->>>>>>> 4749825 ([Docs] Document update for the application project including new documents for SMO and ZS/MT project)
 
 
 [![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/mc/blob/master/mplab_harmony_license.md)
