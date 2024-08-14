@@ -20,7 +20,7 @@ Key features enabled in this project are:
 - Speed control loop
 - Hybrid ZS/MT
 
-This demonstration project contains dummy libraries for IPD and ZS/MT hybrid and IPD algorithms. Kindly contact [Microchip Local Sales](https://www.microchip.com/mcu32ZSMT) to get access to actual libraries. You can still use ```firmware.hex``` file to evaluate the project.
+Kindly contact [Microchip Local Sales](https://www.microchip.com/mcu32ZSMT) for more details. 
 
 ## MCC Project Configurations
 
@@ -84,5 +84,5 @@ To build the application, refer to the following table and open the project usin
 
 | Project Name      | Description                                    | Demo User Guide |
 | ----------------- | ---------------------------------------------- | -------------- |
-| mclv2_sam_e54_pim.X | MPLABX project for MCLV2 board with ATSAME54 PIM | [Hardware Setup and Running The Application on MCLV2 with ATSAME54 PIM](../docs/mclv2_tc1_atsame54_pim_sensorless.md) |
+| qspin_zsmt_hybrid.X | MPLABX project for MCLV-48V-300W board with ATSAME54 DIM | [Hardware Setup and Running The Application on MCLV-48V-300W with ATSAME54 DIM](../docs/mclv_atsame54_dim_sensorless.md) |
 
