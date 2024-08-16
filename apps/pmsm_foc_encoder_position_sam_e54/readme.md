@@ -1,10 +1,3 @@
----
-parent: Microchip MPLAB® Harmony 3 Motor Control Application Examples for SAM D5x/E5x family
-title: FOC Based Position Control of PMSM using Quadrature Encoder
-has_children: false
-has_toc: false
----
-
 [![MCHP](https://www.microchip.com/ResourcePackages/Microchip/assets/dist/images/logo.png)](https://www.microchip.com)
 
 # FOC Based Position Control of PMSM Using Quadrature Encoder
@@ -63,86 +56,21 @@ Key features enabled in this project are:
 
     This USART channel is used by the X2CScope plugin to plot or watch global variables in run-time. Refer to X2C Scope Plugin section for more details on how to install and use the X2CScope
 
-## Control Algorithm
 
-This section briefly explains the FOC control algorithm, software design and implementation. 
+## Project Details
+This project has been created using Harmony QSpin Tool. For details refer [Harmony QSpin](https://microchip-mplab-harmony.github.io/motor_control/index.html)
 
-Field Oriented Control is the technique used to achieve the decoupled control of torque and flux. This is done by transforming the stator current quantities (phase currents) from stationary reference frame to torque and flux producing currents components in rotating reference frame using mathematical transformations. The Field Oriented Control is done as follows: 
 
-1. Measure the motor phase currents. 
-2. Transform them into the two phase system (a, b) using the Clarke transformation. 
-3. Calculate the rotor position angle. 
-4. Transform stator currents into the d,q-coordinate system using the Park transformation. 
-5. Position and speed are controlled by position and speed PI controllers respectively.
-6. The stator current torque (iq) and flux (id) producing components are controlled separately by the corresponding PI controllers. 
-7. The output stator voltage space vector is transformed back from the d,q-coordinate system into the two phase system fixed with the stator by the Inverse Park transformation. 
-8. Using the space vector modulation, the three-phase output voltage is generated. 
-
-**Quadrature Encoder based Position and Speed Measurement** :
-
-Rotor position and speed are determined using quadrature encoder sensor. PDEC counts
-the decoded quadrature pulses which is the position of the rotor. In this example, counter is a free running counter and software logic is implemented to get the exact angular position from the count. Speed is calculated by measuring the number of quadrature pulses in a fixed time interval. 
-
-Rotor is first aligned to a known position by exiciting either d-axis or q-axis. Motor's position is controlled in a closed loop there after. 
-
-The following block diagram shows the software realization of the FOC algorithm.
-
-![block_diagram](images/encoder_pos_control_same54_block_diagram.jpg)
-
-## Software Design
-
-The following figure shows the various state machines of the the motor control software. 
-
-![state_machine](images/encoder_pos_control_same54_motor_control_flow.jpg)
-
-In the software, the PMSM position control task is realized by a state machine as shown in the previous figure. The following sections briefly describe the various states in the PMSM position control:
-
-### INITIALIZE
-In this state, following tasks are performed:
-1. Initialization and configuration of motor control peripherals for generation of periodic ADC triggers and ADC conversion interrupt
-2. Current Offset measurement and calibration
-3. Initialize PI controller parameters for speed and current control loops
-
-### START
-In this state, the motor control state variables are reset and the periodic ADC conversion interrupt is enabled. Control waits for the switch press.
-
-### Run
-In this state, the motor starts spinning. The below flow chart and the timing diagram shows the tasks performed in run state:
-![timing_diagram](images/encoder_pos_control_same54_timing_diagram.jpg)
-
-The position control is carried out in the ADC interrupt task
-
-## Development Kits
-
-### MCLV2 with ATSAME54 PIM
-#### Downloading and building the application
+## Downloading and building the application
 
 To clone or download this application from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/mc_apps_sam_d5x_e5x) and then click **Clone** button to clone this repository or download as zip file.
 This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
 
-Path of the application within the repository is **apps/pmsm_foc_encoder_position_sam_e54** .
+Path of the application within the repository is **apps/pmsm_foc_zsmt_hybrid_sam_e54** .
+
 
 To build the application, refer to the following table and open the project using its IDE.
 
 | Project Name      | Description                                    | Demo User Guide |
-| ----------------- | ---------------------------------------------- | --------------- |
-| mclv2_sam_e54_pim.X | MPLABX project for MCLV2 board with ATSAME54 PIM | [Hardware Setup and Running The Application on MCLV2 with ATSAME54 PIM](../docs/mclv2_atsame54_pim_position.md) |
-||||
-
-
-### MCHV3 with ATSAME54 PIM
-#### Downloading and building the application
-
-To clone or download this application from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/mc_apps_sam_d5x_e5x) and then click **Clone** button to clone this repository or download as zip file.
-This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
-
-Path of the application within the repository is **apps/pmsm_foc_encoder_position_sam_e54** .
-
-To build the application, refer to the following table and open the project using its IDE.
-
-| Project Name      | Description                                    | Demo User Guide |
-| ----------------- | ---------------------------------------------- | ------------------- |
-| mchv3_sam_e54_pim.X | MPLABX project for MCHV3 board with ATSAME54 PIM | [Hardware Setup and Running The Application on MCHV3 with ATSAME54 PIM](../docs/mchv3_atsame54_pim_position.md)|
-||||
-
-
+| ----------------- | ---------------------------------------------- | -------------- |
+| qspin_position_control.X | MPLABX project for MCLV-48V-300W board with ATSAME54 DIM | [Hardware Setup and Running The Application on MCLV-48V-300W with ATSAME54 DIM](../docs/mclv_atsame54_dim_position_encoder.md) |
