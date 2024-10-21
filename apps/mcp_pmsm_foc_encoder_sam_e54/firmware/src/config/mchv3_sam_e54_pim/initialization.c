@@ -155,9 +155,10 @@ void SYS_Initialize ( void* data )
 
     EVSYS_Initialize();
 
+    EIC_Initialize();
+
     PDEC_QDECInitialize();
 
-	BSP_Initialize();
     TCC0_PWMInitialize();
 
     ADC0_Initialize();
@@ -174,7 +175,7 @@ void SYS_Initialize ( void* data )
 
 
 
-    X2CScope_Init();
+    X2Cscope_Init();
 
     #pragma coverity compliance end_block "MISRA C-2012 Rule 11.3"
     #pragma coverity compliance end_block "MISRA C-2012 Rule 11.8"

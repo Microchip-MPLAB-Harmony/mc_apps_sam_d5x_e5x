@@ -97,14 +97,14 @@ void ADC1_Initialize( void )
     ADC1_REGS->ADC_CTRLA = ADC_CTRLA_SLAVEEN_Msk;
 
     /* Sampling length */
-    ADC1_REGS->ADC_SAMPCTRL = ADC_SAMPCTRL_SAMPLEN(3U);
+    ADC1_REGS->ADC_SAMPCTRL = ADC_SAMPCTRL_SAMPLEN(11U);
 
     /* reference */
     ADC1_REGS->ADC_REFCTRL = ADC_REFCTRL_REFSEL_INTVCC1;
 
 
     /* positive and negative input pins */
-    ADC1_REGS->ADC_INPUTCTRL = (uint16_t) ADC_POSINPUT_AIN0 | (uint16_t) ADC_NEGINPUT_GND ;
+    ADC1_REGS->ADC_INPUTCTRL = (uint16_t) ADC_POSINPUT_AIN14 | (uint16_t) ADC_NEGINPUT_GND ;
 
     /* Resolution & Operation Mode */
     ADC1_REGS->ADC_CTRLB = ADC_CTRLB_RESSEL_12BIT | ADC_CTRLB_WINMODE(0U) ;
