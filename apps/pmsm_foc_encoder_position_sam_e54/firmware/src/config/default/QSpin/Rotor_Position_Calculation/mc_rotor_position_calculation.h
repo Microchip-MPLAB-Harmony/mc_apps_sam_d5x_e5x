@@ -141,7 +141,7 @@ __STATIC_INLINE void mcRpcI_ParametersSet( tmcRpc_Parameters_s * const pParamete
     pParameters->dt = (float32_t)(0.00005);
 
     /** Mechanical Gear Ratio */
-    pParameters->gearRatio = (uint8_t)2;
+    pParameters->gearRatio = (uint8_t)1;
 
     /** Encoder parameters */
     pParameters->encPulsesPerElecRev = (uint16_t)200;

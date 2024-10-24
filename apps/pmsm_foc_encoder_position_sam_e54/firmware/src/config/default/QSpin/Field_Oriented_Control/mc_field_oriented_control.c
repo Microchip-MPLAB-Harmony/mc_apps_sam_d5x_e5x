@@ -94,6 +94,7 @@ static tmcFoc_State_s mcFoc_State_mds;
 /*******************************************************************************
 Interface  variables
 *******************************************************************************/
+
 tmcFocI_ModuleData_s mcFocI_ModuleData_gds;
 
 /*******************************************************************************
@@ -362,6 +363,7 @@ void mcFocI_FieldOrientedControlFast( tmcFocI_ModuleData_s * const pModule )
     /** Clarke transformation */
     mcFoc_ClarkeTransformation( &pInput->iABC, &pOutput->iAlphaBeta);
 
+
     switch(pState->FocState )
     {
 
@@ -387,7 +389,6 @@ void mcFocI_FieldOrientedControlFast( tmcFocI_ModuleData_s * const pModule )
 
             case FocState_CloseLoop:
             {
-
 
                 /** Sine-cosine calculation */
                 mcUtils_SineCosineCalculation( pInput->elecAngle, &sine, &cosine );
@@ -432,6 +433,7 @@ void mcFocI_FieldOrientedControlFast( tmcFocI_ModuleData_s * const pModule )
 
      /** Space vector modulation */
     mcPwmI_PulseWidthModulation(&pState->bPwmModulator, pModule->dInput.uBus, &pOutput->uAlphaBeta, mcPwmI_Duty_gau16 );
+
 }
 
 
