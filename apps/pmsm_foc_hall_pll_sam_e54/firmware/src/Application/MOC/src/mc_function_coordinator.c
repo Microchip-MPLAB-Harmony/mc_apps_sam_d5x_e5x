@@ -223,7 +223,7 @@ void mcFcoI_AdcInterruptTasks(ADC_STATUS status, uintptr_t context)
     mcBseI_ClearAdcInterruptFlag();
     mcBseI_EnableAdcInterrupt();
              
-    X2CScope_Update();
+    X2Cscope_Update();
     mcBse_DelayState_mds.count++; 
 }
 

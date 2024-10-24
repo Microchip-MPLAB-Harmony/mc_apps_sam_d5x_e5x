@@ -5,16 +5,6 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="Application" displayName="Application" projectFiles="true">
-        <logicalFolder name="DMC" displayName="DMC" projectFiles="true">
-          <logicalFolder name="inc" displayName="inc" projectFiles="true">
-            <itemPath>../src/Application/DMC/inc/X2CScope.h</itemPath>
-            <itemPath>../src/Application/DMC/inc/X2CScopeCommunication.h</itemPath>
-          </logicalFolder>
-          <logicalFolder name="lib" displayName="lib" projectFiles="true">
-          </logicalFolder>
-          <logicalFolder name="src" displayName="src" projectFiles="true">
-          </logicalFolder>
-        </logicalFolder>
         <logicalFolder name="HAL" displayName="HAL" projectFiles="true">
           <logicalFolder name="inc" displayName="inc" projectFiles="true">
             <itemPath>../src/Application/HAL/inc/board_services.h</itemPath>
@@ -99,11 +89,9 @@
               <itemPath>../src/config/mclv2_sam_e54_pim/peripheral/tcc/plib_tcc_common.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="X2CCode" displayName="X2CCode" projectFiles="true">
-            <logicalFolder name="X2CScope" displayName="X2CScope" projectFiles="true">
-              <itemPath>../src/config/mclv2_sam_e54_pim/X2CCode/X2CScope/inc/X2CScope.h</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/X2CCode/X2CScope/inc/X2CScopeCommunication.h</itemPath>
-            </logicalFolder>
+          <logicalFolder name="X2Cscope" displayName="X2Cscope" projectFiles="true">
+            <itemPath>../src/config/mclv2_sam_e54_pim/X2Cscope/X2Cscope.h</itemPath>
+            <itemPath>../src/config/mclv2_sam_e54_pim/X2Cscope/X2CscopeComm.h</itemPath>
           </logicalFolder>
           <itemPath>../src/config/mclv2_sam_e54_pim/device_cache.h</itemPath>
           <itemPath>../src/config/mclv2_sam_e54_pim/toolchain_specifics.h</itemPath>
@@ -244,6 +232,33 @@
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <logicalFolder name="f1"
+                     displayName="mclv2_sam_e54_pim.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/adc0.yml</itemPath>
+        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/adc1.yml</itemPath>
+        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/core.yml</itemPath>
+        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/eic.yml</itemPath>
+        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/evsys.yml</itemPath>
+        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/nvmctrl.yml</itemPath>
+        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/pdec.yml</itemPath>
+        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/project.yml</itemPath>
+        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/sercom2.yml</itemPath>
+        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/tc2.yml</itemPath>
+        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/tc3.yml</itemPath>
+        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/tcc0.yml</itemPath>
+      </logicalFolder>
+      <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/mclv2_sam_e54_pim/harmony-manifest-success.yml</itemPath>
+      <itemPath>pmsm_foc_hall_sam_e54_mclv2.mc3</itemPath>
+    </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
@@ -337,11 +352,9 @@
           <logicalFolder name="f2" displayName="stdio" projectFiles="true">
             <itemPath>../src/config/mclv2_sam_e54_pim/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="X2CCode" displayName="X2CCode" projectFiles="true">
-            <logicalFolder name="X2CScope" displayName="X2CScope" projectFiles="true">
-              <itemPath>../src/config/mclv2_sam_e54_pim/X2CCode/X2CScope/src/X2CScopeCommunication.c</itemPath>
-              <itemPath>../src/config/mclv2_sam_e54_pim/X2CCode/X2CScope/src/X2CScope.c</itemPath>
-            </logicalFolder>
+          <logicalFolder name="X2Cscope" displayName="X2Cscope" projectFiles="true">
+            <itemPath>../src/config/mclv2_sam_e54_pim/X2Cscope/X2Cscope.c</itemPath>
+            <itemPath>../src/config/mclv2_sam_e54_pim/X2Cscope/X2CscopeComm.c</itemPath>
           </logicalFolder>
           <itemPath>../src/config/mclv2_sam_e54_pim/initialization.c</itemPath>
           <itemPath>../src/config/mclv2_sam_e54_pim/interrupts.c</itemPath>
@@ -352,33 +365,6 @@
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/config/mclv2_sam_e54_pim/pin_configurations.csv</itemPath>
-    </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <logicalFolder name="f1"
-                     displayName="mclv2_sam_e54_pim.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/adc0.yml</itemPath>
-        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/adc1.yml</itemPath>
-        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/core.yml</itemPath>
-        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/eic.yml</itemPath>
-        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/evsys.yml</itemPath>
-        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/nvmctrl.yml</itemPath>
-        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/pdec.yml</itemPath>
-        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/project.yml</itemPath>
-        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/sercom2.yml</itemPath>
-        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/tc2.yml</itemPath>
-        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/tc3.yml</itemPath>
-        <itemPath>../src/config/mclv2_sam_e54_pim/mclv2_sam_e54_pim.mhc/tcc0.yml</itemPath>
-      </logicalFolder>
-      <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/mclv2_sam_e54_pim/harmony-manifest-success.yml</itemPath>
-      <itemPath>pmsm_foc_hall_sam_e54_mclv2.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -394,7 +380,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.30</languageToolchainVersion>
+        <languageToolchainVersion>4.45</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -406,7 +392,7 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
-            <linkerLibFileItem>../src/config/mclv2_sam_e54_pim/X2CCode/X2CScope/lib/libCORTEXM4_X2CScope.a</linkerLibFileItem>
+            <linkerLibFileItem>../src/config/mclv2_sam_e54_pim/X2Cscope/libx2cscope2-cm4-elf.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
@@ -476,7 +462,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/Application;../src/Application/DMC/inc;../src/Application/HAL/inc;../src/Application/MOC/inc;../src/config/mclv2_sam_e54_pim;../src/config/mclv2_sam_e54_pim/X2CCode;../src/config/mclv2_sam_e54_pim/X2CCode/X2CScope/inc;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+                  value="../src;../src/Application;../src/Application/DMC/inc;../src/Application/HAL/inc;../src/Application/MOC/inc;../src/config/mclv2_sam_e54_pim;../src/config/mclv2_sam_e54_pim/X2CCode;../src/config/mclv2_sam_e54_pim/X2CCode/X2CScope/inc;../src/config/mclv2_sam_e54_pim/X2Cscope;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>

@@ -51,8 +51,8 @@
 #include <stdbool.h>                    // Defines true
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "definitions.h"                // SYS function prototypes
-#include "X2CScope.h"
-#include "X2CScopeCommunication.h"
+#include "X2Cscope.h"
+#include "X2CscopeComm.h"
 #include "mc_motor_control.h"
 #include "mc_userparams.h"
 #include "mc_generic_libraries.h"
@@ -84,7 +84,7 @@ int main ( void )
     PDEC_HALLStart();  /* Start PDEC in HALL or QDEC mode. */
     TCC0_PWMStart(); 
     ADC0_Enable();
-    X2CScope_Init();
+
     mcBseI_InverterDisable();
     
     mcFcoI_SoftwareModuleInit();
@@ -98,7 +98,7 @@ int main ( void )
         mcBseI_ButtonScan();
         
         /* X2C Communication */
-        X2CScope_Communicate();
+        X2Cscope_Communicate();
         
     }
 
