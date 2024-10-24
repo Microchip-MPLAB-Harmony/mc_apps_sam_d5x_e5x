@@ -5,7 +5,7 @@ Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,D
 4,PC01,,Available,,,,,,NORMAL
 7,PC02,,Available,,,,,,NORMAL
 8,PC03,,Available,,,,,,NORMAL
-9,PA02,IA,ADC0_AIN0,Analog,High Impedance,n/a,,,NORMAL
+9,PA02,IA,ADC0_AIN0,Digital,High Impedance,n/a,No,No,NORMAL
 10,PA03,,Available,,,,,,NORMAL
 11,PB04,,Available,,,,,,NORMAL
 12,PB05,,Available,,,,,,NORMAL
@@ -13,7 +13,7 @@ Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,D
 16,PD01,,Available,,,,,,NORMAL
 17,PB06,,Available,,,,,,NORMAL
 18,PB07,,Available,,,,,,NORMAL
-19,PB08,IB,ADC1_AIN0,Analog,High Impedance,n/a,,,NORMAL
+19,PB08,IB,ADC1_AIN0,Digital,High Impedance,n/a,No,No,NORMAL
 20,PB09,,Available,,,,,,NORMAL
 21,PA04,,Available,,,,,,NORMAL
 22,PA05,,Available,,,,,,NORMAL
@@ -23,7 +23,7 @@ Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,D
 28,PC05,,Available,,,,,,NORMAL
 29,PC06,,Available,,,,,,NORMAL
 30,PC07,,Available,,,,,,NORMAL
-33,PA08,VDC,ADC1_AIN2,Analog,High Impedance,n/a,,,NORMAL
+33,PA08,VDC,ADC1_AIN2,Digital,High Impedance,n/a,No,No,NORMAL
 34,PA09,,Available,,,,,,NORMAL
 35,PA10,,Available,,,,,,NORMAL
 36,PA11,,Available,,,,,,NORMAL
@@ -94,7 +94,7 @@ Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,D
 122,PB31,,Available,,,,,,NORMAL
 123,PC30,FAULT,EIC_EXTINT14,Digital,High Impedance,n/a,No,No,NORMAL
 124,PC31,,Available,,,,,,NORMAL
-125,PB00,VPOT,ADC0_AIN12/X30/Y30,Analog,High Impedance,n/a,,,NORMAL
+125,PB00,VPOT,ADC0_AIN12/X30/Y30,Digital,High Impedance,n/a,No,No,NORMAL
 126,PB01,,Available,,,,,,NORMAL
 127,PB02,,Available,,,,,,NORMAL
 128,PB03,,Available,,,,,,NORMAL

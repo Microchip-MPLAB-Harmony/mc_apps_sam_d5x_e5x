@@ -98,8 +98,8 @@ void mcRpeI_ParametersSet(tmcRpe_Parameters_s * const pParameters )
     pParameters->ipcParameters.pulseDuration = (float32_t)0.005;
 
     /** HFI Tracking loop parameters */
-    pParameters->hfiTrackingLoop.foInHertz = (float32_t)20;
-    pParameters->hfiTrackingLoop.Keps = (float32_t)1.2;
+    pParameters->hfiTrackingLoop.foInHertz = (float32_t)40;
+    pParameters->hfiTrackingLoop.Keps = (float32_t)2.45098;
 
     /** BEMF Tracking loop parameters */
     pParameters->bemfTrackingLoop.foInHertz = (float32_t)20;

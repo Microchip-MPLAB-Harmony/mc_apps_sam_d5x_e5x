@@ -83,6 +83,9 @@ Macro Functions
 Private Functions
 *******************************************************************************/
 
+
+
+
 /*******************************************************************************
  * Interface Functions
 *******************************************************************************/
@@ -104,6 +107,8 @@ void  mcFlxI_FluxControlInit( tmcFlx_Parameters_s * const pParameters )
 
     /** Set PI controller parameters */
     mcUtils_PiControlInit( pParameters->Kp, pParameters->Ki, pParameters->dt, &mcFlx_State_mds.bPIController );
+
+
 
     /** Set initialization flag as true */
     mcFlx_State_mds.initDone = true;
@@ -207,7 +212,7 @@ void mcFlxI_FluxControlManual(  const tmcFlx_Parameters_s * const pParameters,
  * @return None
  */
 void mcFlxI_FluxControlAuto(  const tmcFlx_Parameters_s * const pParameters,
-                                              const float32_t iDref, const float32_t iDact, const float32_t yLimit, float32_t * const pOut )
+                                              const float32_t iDref, const float32_t iDact, const float32_t iDmax, float32_t * const pOut )
 {
     /** Get the linked state variable */
     tmcFlx_State_s * pState;
@@ -221,7 +226,7 @@ void mcFlxI_FluxControlAuto(  const tmcFlx_Parameters_s * const pParameters,
 
         /** ToDO: Calculate Ymax and Ymin based on the motor control states. Remove the magic numbers  */
         /** Limit update for PI controller */
-        mcUtils_PiLimitUpdate( -yLimit, yLimit, &pState->bPIController );
+        mcUtils_PiLimitUpdate( -iDmax, iDmax, &pState->bPIController );
 
         /** Excecute PI controller */
         mcUtils_PiControl( error, &pState->bPIController );
@@ -251,6 +256,7 @@ void mcFlxI_FluxControlReset( const tmcFlx_Parameters_s * const pParameters )
 
     /** Reset PI Controller */
     mcUtils_PiControlReset( 0.0f, &pState->bPIController );
-}
 
+
+}
 

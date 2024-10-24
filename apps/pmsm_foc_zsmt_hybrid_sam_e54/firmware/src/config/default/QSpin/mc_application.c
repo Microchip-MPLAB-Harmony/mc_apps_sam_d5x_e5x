@@ -285,7 +285,7 @@ void mcAppI_AdcCalibrationIsr(ADC_STATUS status, uintptr_t context)
     }
 
     /** Calibration and monitoring update */
-    X2CScope_Update();
+    X2Cscope_Update();
 
      /** ADC end of conversion interrupt generation for FOC control */
     mcHalI_AdcInterruptClear();
@@ -347,7 +347,7 @@ void mcAppI_AdcFinishedIsr(ADC_STATUS status, uintptr_t context )
     mcHalI_AdcHardwareTriggerRenable();
 
     /** Calibration and monitoring update */
-    X2CScope_Update();
+    X2Cscope_Update();
 
     /** Increment interrupt counter */
     mcAppI_1msSyncCounter_gdu32++;

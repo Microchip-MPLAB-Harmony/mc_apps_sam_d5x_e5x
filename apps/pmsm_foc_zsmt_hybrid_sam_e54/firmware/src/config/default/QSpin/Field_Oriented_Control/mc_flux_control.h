@@ -57,10 +57,11 @@ Type Definition
 *******************************************************************************/
 typedef struct
 {
-     float32_t Kp;                                            /**< Proportional gain for PI controller */
-     float32_t Ki;                                             /**< Integral gain for PI controller */
-     float32_t dt;                                             /**< Sampling time */
-     void * pStatePointer;                                /**< Pointer to the state structure */
+    float32_t Kp;     /**< Proportional gain for PI controller */
+    float32_t Ki;     /**< Integral gain for PI controller */
+    float32_t dt;      /**< Sampling time */
+
+    void * pStatePointer;     /**< Pointer to the state structure */
 }tmcFlx_Parameters_s;
 
 /*******************************************************************************
@@ -80,9 +81,10 @@ typedef struct
  */
 __STATIC_INLINE void mcFlxI_ParametersSet( tmcFlx_Parameters_s * const pParameters )
 {
-   pParameters->Kp = (float32_t)0;
-   pParameters->Ki =  (float32_t)0;
-   pParameters->dt = (float32_t)(0.00005);
+    pParameters->Kp = (float32_t)0.00469;
+    pParameters->Ki =  (float32_t)9.25744;
+    pParameters->dt = (float32_t)(0.00005);
+
 
 }
 
@@ -143,7 +145,7 @@ void mcFlxI_FluxControlManual(  const tmcFlx_Parameters_s * const pParameters,
  * @return None
  */
 void mcFlxI_FluxControlAuto(  const tmcFlx_Parameters_s * const pParameters,
-                                              const float32_t iDref, const  float32_t iDact, const float32_t yLimit, float32_t * const pOut );
+                                              const float32_t iDref, const  float32_t iDact, const float32_t iDmax, float32_t * const pOut );
 
 /*! 
  * @brief Reset flux control
@@ -154,7 +156,5 @@ void mcFlxI_FluxControlAuto(  const tmcFlx_Parameters_s * const pParameters,
  * @return None
  */
 void mcFlxI_FluxControlReset( const tmcFlx_Parameters_s * const pParameters );
-
-
 
 #endif // MCFLX_H

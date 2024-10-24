@@ -56,7 +56,7 @@
 #include "mc_torque_control.h"
 #include "mc_speed_control.h"
 #include "mc_reference_control.h"
-#include "mc_rotor_position_calculation.h"
+#include "mc_rotor_position_estimation.h"
 #include "mc_utilities.h"
 #include "mc_hardware_abstraction.h"
 #include "mc_current_calculation.h"
@@ -110,6 +110,7 @@ typedef struct
  * Interface variables
 *******************************************************************************/
 extern tmcFocI_ModuleData_s mcFocI_ModuleData_gds;
+
 
 /*******************************************************************************
  Static Interface Functions

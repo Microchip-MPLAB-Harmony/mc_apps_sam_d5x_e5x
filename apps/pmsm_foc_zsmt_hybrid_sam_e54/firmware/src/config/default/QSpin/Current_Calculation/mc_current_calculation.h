@@ -91,10 +91,6 @@ typedef struct
 typedef struct
 {
     float32_t adcToCurrentFactor;   /**< adcToCurrentFactor */
-    #if MCPMSMFOC_OFFSET_OOR == true
-    int16_t minOffset;  /**< Minimum offset value */
-    int16_t maxOffset;  /**< Maximum offset value */
-    #endif
 } tmcCur_Parameters_s;
 
 /**
