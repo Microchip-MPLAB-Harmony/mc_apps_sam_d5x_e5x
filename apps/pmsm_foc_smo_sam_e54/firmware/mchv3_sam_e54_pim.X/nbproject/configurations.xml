@@ -8,9 +8,6 @@
         <logicalFolder name="mchv3_sam_e54_pim"
                        displayName="mchv3_sam_e54_pim"
                        projectFiles="true">
-          <logicalFolder name="bsp" displayName="bsp" projectFiles="true">
-            <itemPath>../src/config/mchv3_sam_e54_pim/bsp/bsp.h</itemPath>
-          </logicalFolder>
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="adc" displayName="adc" projectFiles="true">
               <itemPath>../src/config/mchv3_sam_e54_pim/peripheral/adc/plib_adc1.h</itemPath>
@@ -22,6 +19,9 @@
             </logicalFolder>
             <logicalFolder name="cmcc" displayName="cmcc" projectFiles="true">
               <itemPath>../src/config/mchv3_sam_e54_pim/peripheral/cmcc/plib_cmcc.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="eic" displayName="eic" projectFiles="true">
+              <itemPath>../src/config/mchv3_sam_e54_pim/peripheral/eic/plib_eic.h</itemPath>
             </logicalFolder>
             <logicalFolder name="evsys" displayName="evsys" projectFiles="true">
               <itemPath>../src/config/mchv3_sam_e54_pim/peripheral/evsys/plib_evsys.h</itemPath>
@@ -67,6 +67,7 @@
               <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_open_loop_startup.h</itemPath>
               <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_field_oriented_control.h</itemPath>
               <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_flux_control.h</itemPath>
+              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_rotor_position_estimation.h</itemPath>
             </logicalFolder>
             <logicalFolder name="Hardware_Abstraction"
                            displayName="Hardware_Abstraction"
@@ -90,6 +91,10 @@
               <itemPath>../src/config/mchv3_sam_e54_pim/X2CCode/X2CScope/inc/X2CScope.h</itemPath>
               <itemPath>../src/config/mchv3_sam_e54_pim/X2CCode/X2CScope/inc/X2CScopeCommunication.h</itemPath>
             </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="X2Cscope" displayName="X2Cscope" projectFiles="true">
+            <itemPath>../src/config/mchv3_sam_e54_pim/X2Cscope/X2Cscope.h</itemPath>
+            <itemPath>../src/config/mchv3_sam_e54_pim/X2Cscope/X2CscopeComm.h</itemPath>
           </logicalFolder>
           <itemPath>../src/config/mchv3_sam_e54_pim/interrupts.h</itemPath>
           <itemPath>../src/config/mchv3_sam_e54_pim/device_cache.h</itemPath>
@@ -232,6 +237,12 @@
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <itemPath>Makefile</itemPath>
+      <itemPath>pmsm_foc_smo_sam_e54.mc3</itemPath>
+    </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
@@ -250,9 +261,6 @@
         <logicalFolder name="mchv3_sam_e54_pim"
                        displayName="mchv3_sam_e54_pim"
                        projectFiles="true">
-          <logicalFolder name="bsp" displayName="bsp" projectFiles="true">
-            <itemPath>../src/config/mchv3_sam_e54_pim/bsp/bsp.c</itemPath>
-          </logicalFolder>
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="adc" displayName="adc" projectFiles="true">
               <itemPath>../src/config/mchv3_sam_e54_pim/peripheral/adc/plib_adc1.c</itemPath>
@@ -263,6 +271,9 @@
             </logicalFolder>
             <logicalFolder name="cmcc" displayName="cmcc" projectFiles="true">
               <itemPath>../src/config/mchv3_sam_e54_pim/peripheral/cmcc/plib_cmcc.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="eic" displayName="eic" projectFiles="true">
+              <itemPath>../src/config/mchv3_sam_e54_pim/peripheral/eic/plib_eic.c</itemPath>
             </logicalFolder>
             <logicalFolder name="evsys" displayName="evsys" projectFiles="true">
               <itemPath>../src/config/mchv3_sam_e54_pim/peripheral/evsys/plib_evsys.c</itemPath>
@@ -297,7 +308,6 @@
               <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_torque_control.c</itemPath>
               <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_motor.c</itemPath>
               <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_reference_control.c</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_flying_start.c</itemPath>
               <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_pi_control.c</itemPath>
               <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_speed_control.c</itemPath>
               <itemPath>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/mc_pwm.c</itemPath>
@@ -324,11 +334,9 @@
           <logicalFolder name="stdio" displayName="stdio" projectFiles="true">
             <itemPath>../src/config/mchv3_sam_e54_pim/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="X2CCode" displayName="X2CCode" projectFiles="true">
-            <logicalFolder name="X2CScope" displayName="X2CScope" projectFiles="true">
-              <itemPath>../src/config/mchv3_sam_e54_pim/X2CCode/X2CScope/src/X2CScopeCommunication.c</itemPath>
-              <itemPath>../src/config/mchv3_sam_e54_pim/X2CCode/X2CScope/src/X2CScope.c</itemPath>
-            </logicalFolder>
+          <logicalFolder name="X2Cscope" displayName="X2Cscope" projectFiles="true">
+            <itemPath>../src/config/mchv3_sam_e54_pim/X2Cscope/X2Cscope.c</itemPath>
+            <itemPath>../src/config/mchv3_sam_e54_pim/X2Cscope/X2CscopeComm.c</itemPath>
           </logicalFolder>
           <itemPath>../src/config/mchv3_sam_e54_pim/interrupts.c</itemPath>
           <itemPath>../src/config/mchv3_sam_e54_pim/exceptions.c</itemPath>
@@ -339,12 +347,6 @@
       </logicalFolder>
       <itemPath>../src/config/mchv3_sam_e54_pim/pin_configurations.csv</itemPath>
       <itemPath>../src/main.c</itemPath>
-    </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <itemPath>Makefile</itemPath>
-      <itemPath>mchv3_sam_e54_pim.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
@@ -357,20 +359,20 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.30</languageToolchainVersion>
+        <languageToolchainVersion>4.45</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="SAME54_DFP" vendor="Microchip" version="3.8.234"/>
+        <pack name="CMSIS" vendor="ARM" version="6.1.0"/>
+        <pack name="SAME54_DFP" vendor="Microchip" version="3.9.244"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
       <compileType>
         <linkerTool>
           <linkerLibItems>
-            <linkerLibFileItem>../src/config/mchv3_sam_e54_pim/X2CCode/X2CScope/lib/libCORTEXM4_X2CScope.a</linkerLibFileItem>
             <linkerLibFileItem>../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/libCortexM4-ATSAM_MCHP_SMO.a</linkerLibFileItem>
+            <linkerLibFileItem>../src/config/mchv3_sam_e54_pim/X2Cscope/libx2cscope2-cm4-elf.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
@@ -403,7 +405,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/mchv3_sam_e54_pim;../src/config/mchv3_sam_e54_pim/QSpin;../src/config/mchv3_sam_e54_pim/QSpin/Current_Calculation/;../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/;../src/config/mchv3_sam_e54_pim/QSpin/Hardware_Abstraction/;../src/config/mchv3_sam_e54_pim/QSpin/Utilities/;../src/config/mchv3_sam_e54_pim/QSpin/Voltage_Calculation/;../src/config/mchv3_sam_e54_pim/X2CCode;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
+                  value="../src;../src/config/mchv3_sam_e54_pim;../src/config/mchv3_sam_e54_pim/QSpin;../src/config/mchv3_sam_e54_pim/QSpin/Current_Calculation/;../src/config/mchv3_sam_e54_pim/QSpin/Field_Oriented_Control/;../src/config/mchv3_sam_e54_pim/QSpin/Hardware_Abstraction/;../src/config/mchv3_sam_e54_pim/QSpin/Parameters/;../src/config/mchv3_sam_e54_pim/QSpin/Rotor_Position_Calculation/;../src/config/mchv3_sam_e54_pim/QSpin/Utilities/;../src/config/mchv3_sam_e54_pim/QSpin/Voltage_Calculation/;../src/config/mchv3_sam_e54_pim/X2CCode;../src/config/mchv3_sam_e54_pim/X2Cscope;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
