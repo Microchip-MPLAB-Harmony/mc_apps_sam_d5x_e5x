@@ -454,7 +454,7 @@ void HALL_jump_ISR (PDEC_HALL_STATUS status, uintptr_t context)
 /* This ISR calibrates zero crossing point for Phase U and Phase V currents*/
 void ADC_CALIB_ISR (ADC_STATUS status, uintptr_t context)
 {
-    X2CScope_Update();
+    X2Cscope_Update();
     calibration_sample_count++;
     if(calibration_sample_count <= 4096U)
     {
@@ -608,7 +608,7 @@ void mcApp_ADCISRTasks(ADC_STATUS status, uintptr_t context)
     /* LPF */
     HALLdata.eleVelocityFil = (RL_LPF_COEFF_1 * HALLdata.eleVelocityFil) + (RL_LPF_COEFF_2 * HALLdata.eleVelocityLth);    
     
-	X2CScope_Update();
+	X2Cscope_Update();
 
     phaseCurrentA = (int16_t)ADC0_ConversionResultGet() - (int16_t)adc_0_offset;// Phase Current A measured using ADC0
     phaseCurrentB = (int16_t)ADC1_ConversionResultGet() - (int16_t)adc_1_offset;// Phase Current B measured using ADC4
@@ -996,8 +996,8 @@ void __NO_RETURN OC_FAULT_ISR(uintptr_t context)
     LED1_OC_FAULT_Set();
     while(true)
     {
-        X2CScope_Communicate();
-        X2CScope_Update();
+        X2Cscope_Communicate();
+        X2Cscope_Update();
     }
     
 }

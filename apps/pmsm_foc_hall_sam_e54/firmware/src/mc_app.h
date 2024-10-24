@@ -42,8 +42,8 @@
 #ifndef MC_APP_H    /* Guard against multiple inclusion */
 #define MC_APP_H
 #include "definitions.h"
-#include "X2CScope.h"
-#include "X2CScopeCommunication.h"
+#include "X2Cscope.h"
+#include "X2CscopeComm.h"
 #include "mc_Lib.h"
 
 /* MC Core Variables */

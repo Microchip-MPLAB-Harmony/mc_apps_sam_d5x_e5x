@@ -26,8 +26,8 @@
 #include <stdbool.h>                    // Defines true
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "definitions.h"                // SYS function prototypes
-#include "X2CScope.h"
-#include "X2CScopeCommunication.h"
+#include "X2Cscope.h"
+#include "X2CscopeComm.h"
 #include "mc_app.h"
 #include "userparams.h"
 #include "mc_Lib.h"
@@ -60,14 +60,14 @@ int main ( void )
     PDEC_HALLStart();  /* Start PDEC in HALL or QDEC mode. */
     TCC0_PWMStart(); 
     ADC0_Enable();
-    X2CScope_Init();
+
     PWM_Output_Disable();
 
     while ( true )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
-        X2CScope_Communicate();
+        X2Cscope_Communicate();
         if(delay_10ms.count>delay_10ms.period)
         {
 #ifdef MCLV2
