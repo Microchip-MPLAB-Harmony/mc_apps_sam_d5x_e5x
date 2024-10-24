@@ -158,6 +158,13 @@ void CLOCK_Initialize (void)
     #pragma GCC diagnostic pop
     /* MISRAC 2012 deviation block end */
 
+    /* Selection of the Generator and write Lock for EIC */
+    GCLK_REGS->GCLK_PCHCTRL[4] = GCLK_PCHCTRL_GEN(0x1U)  | GCLK_PCHCTRL_CHEN_Msk;
+
+    while ((GCLK_REGS->GCLK_PCHCTRL[4] & GCLK_PCHCTRL_CHEN_Msk) != GCLK_PCHCTRL_CHEN_Msk)
+    {
+        /* Wait for synchronization */
+    }
     /* Selection of the Generator and write Lock for EVSYS_0 */
     GCLK_REGS->GCLK_PCHCTRL[11] = GCLK_PCHCTRL_GEN(0x1U)  | GCLK_PCHCTRL_CHEN_Msk;
 

@@ -63,12 +63,12 @@ typedef struct
 }tmcKey_Keys_s;
 
 /*******************************************************************************
- * Interface variables 
+ * Interface variables
  *******************************************************************************/
 extern tmcKey_Keys_s mcKeyI_AlgorithmKeys_gds;
 
 /*******************************************************************************
- Interface Functions 
+ Interface Functions
  *******************************************************************************/
 /*! \brief Get algorithms key
  *

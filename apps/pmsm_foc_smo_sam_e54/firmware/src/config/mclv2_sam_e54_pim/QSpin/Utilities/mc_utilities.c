@@ -142,17 +142,17 @@ const static float cosineTable[CONSTANT_SineTableSize] =
 };
 // </editor-fold>
 
-	
+
 /*******************************************************************************
- *  Functions 
+ *  Functions
  *******************************************************************************/
 
 /*! \brief Calculate sine and cosine value
- * 
+ *
  * Details
- * Calculate sine value 
- * 
- * @param[in]: 
+ * Calculate sine value
+ *
+ * @param[in]:
  * @param[in/out]:
  * @param[out]:
  * @return:
@@ -195,11 +195,11 @@ void mcUtils_SineCosineCalculation(const float32_t angle,
 }
 
 /*! \brief Linear ramp
- * 
+ *
  * Details
  * Linear ramp
- * 
- * @param[in]: 
+ *
+ * @param[in]:
  * @param[in/out]:
  * @param[out]:
  * @return:
@@ -221,11 +221,11 @@ void mcUtils_LinearRamp(int32_t * const input, const int32_t stepSize, const int
 }
 
 /*! \brief Button response Function
- * 
+ *
  * Details
- * Button response function 
- * 
- * @param[in]: 
+ * Button response function
+ *
+ * @param[in]:
  * @param[in/out]:
  * @param[out]:
  * @return:

@@ -5,27 +5,27 @@ Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,D
 4,PC01,,Available,,,,,,NORMAL
 7,PC02,,Available,,,,,,NORMAL
 8,PC03,,Available,,,,,,NORMAL
-9,PA02,IA,ADC0_AIN0,Analog,High Impedance,n/a,,,NORMAL
+9,PA02,IA,ADC0_AIN0,Digital,High Impedance,n/a,No,No,NORMAL
 10,PA03,,Available,,,,,,NORMAL
 11,PB04,,Available,,,,,,NORMAL
 12,PB05,,Available,,,,,,NORMAL
-13,PD00,VDC,ADC1_AIN14,Analog,High Impedance,n/a,,,NORMAL
+13,PD00,VDC,ADC1_AIN14,Digital,High Impedance,n/a,No,No,NORMAL
 16,PD01,,Available,,,,,,NORMAL
 17,PB06,,Available,,,,,,NORMAL
 18,PB07,,Available,,,,,,NORMAL
-19,PB08,IB,ADC1_AIN0,Analog,High Impedance,n/a,,,NORMAL
+19,PB08,IB,ADC1_AIN0,Digital,High Impedance,n/a,No,No,NORMAL
 20,PB09,,Available,,,,,,NORMAL
 21,PA04,,Available,,,,,,NORMAL
 22,PA05,,Available,,,,,,NORMAL
-23,PA06,VPOT,ADC0_AIN6/X4/Y4/VREFC,Analog,High Impedance,n/a,,,NORMAL
+23,PA06,VPOT,ADC0_AIN6/X4/Y4/VREFC,Digital,High Impedance,n/a,No,No,NORMAL
 24,PA07,,Available,,,,,,NORMAL
 27,PC04,,Available,,,,,,NORMAL
 28,PC05,,Available,,,,,,NORMAL
 29,PC06,,Available,,,,,,NORMAL
 30,PC07,,Available,,,,,,NORMAL
-33,PA08,PWM_AH,TCC0_WO0,Digital,High Impedance,n/a,No,No,NORMAL
-34,PA09,PWM_BH,TCC0_WO1,Digital,High Impedance,n/a,No,No,NORMAL
-35,PA10,PWM_CH,TCC0_WO2,Digital,High Impedance,n/a,No,No,NORMAL
+33,PA08,PHASE_A_PWMH,TCC0_WO0,Digital,High Impedance,n/a,No,No,NORMAL
+34,PA09,PHASE_B_PWMH,TCC0_WO1,Digital,High Impedance,n/a,No,No,NORMAL
+35,PA10,PHASE_C_PWMH,TCC0_WO2,Digital,High Impedance,n/a,No,No,NORMAL
 36,PA11,,Available,,,,,,NORMAL
 39,PB10,,Available,,,,,,NORMAL
 40,PB11,,Available,,,,,,NORMAL
@@ -48,12 +48,12 @@ Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,D
 61,PA13,RECEIVE,SERCOM2_PAD1,Digital,High Impedance,n/a,No,No,NORMAL
 62,PA14,,Available,,,,,,NORMAL
 63,PA15,,Available,,,,,,NORMAL
-66,PA16,PWM_AL,TCC0_WO4,Digital,High Impedance,n/a,No,No,NORMAL
-67,PA17,PWM_BL,TCC0_WO5,Digital,High Impedance,n/a,No,No,NORMAL
-68,PA18,PWM_CL,TCC0_WO6,Digital,High Impedance,n/a,No,No,NORMAL
+66,PA16,PHASE_A_PWML,TCC0_WO4,Digital,High Impedance,n/a,No,No,NORMAL
+67,PA17,PHASE_B_PWML,TCC0_WO5,Digital,High Impedance,n/a,No,No,NORMAL
+68,PA18,PHASE_C_PWML,TCC0_WO6,Digital,High Impedance,n/a,No,No,NORMAL
 69,PA19,,Available,,,,,,NORMAL
-70,PC16,QEA,PDEC_QDI0,Digital,High Impedance,n/a,No,No,NORMAL
-71,PC17,QEB,PDEC_QDI1,Digital,High Impedance,n/a,No,No,NORMAL
+70,PC16,ENCODER_QEA,PDEC_QDI0,Digital,High Impedance,n/a,No,No,NORMAL
+71,PC17,ENCODER_QEB,PDEC_QDI1,Digital,High Impedance,n/a,No,No,NORMAL
 72,PC18,,Available,,,,,,NORMAL
 73,PC19,,Available,,,,,,NORMAL
 74,PC20,,Available,,,,,,NORMAL
@@ -78,8 +78,8 @@ Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,D
 99,PB23,,Available,,,,,,NORMAL
 100,PB24,,Available,,,,,,NORMAL
 101,PB25,,Available,,,,,,NORMAL
-102,PB26,LED_02,GPIO,Digital,Out,Low,,,NORMAL
-103,PB27,LED_01,GPIO,Digital,Out,Low,,,NORMAL
+102,PB26,LED_01,GPIO,Digital,Out,Low,,,NORMAL
+103,PB27,LED_02,GPIO,Digital,Out,Low,,,NORMAL
 104,PB28,,Available,,,,,,NORMAL
 105,PB29,,Available,,,,,,NORMAL
 108,PC24,,Available,,,,,,NORMAL
@@ -96,5 +96,5 @@ Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,D
 124,PC31,,Available,,,,,,NORMAL
 125,PB00,,Available,,,,,,NORMAL
 126,PB01,,Available,,,,,,NORMAL
-127,PB02,,Available,,,,,,NORMAL
+127,PB02,FAULT,EIC_EXTINT2,Digital,High Impedance,n/a,No,No,NORMAL
 128,PB03,,Available,,,,,,NORMAL

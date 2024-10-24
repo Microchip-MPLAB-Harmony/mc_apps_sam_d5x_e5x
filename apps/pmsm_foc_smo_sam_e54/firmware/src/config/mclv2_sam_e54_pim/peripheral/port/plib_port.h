@@ -81,17 +81,17 @@
 #define VPOT_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 6U)) & 0x01U)
 #define VPOT_PIN                  PORT_PIN_PA06
 
-/*** Macros for PWM_AH pin ***/
-#define PWM_AH_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 8U)) & 0x01U)
-#define PWM_AH_PIN                  PORT_PIN_PA08
+/*** Macros for PHASE_A_PWMH pin ***/
+#define PHASE_A_PWMH_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 8U)) & 0x01U)
+#define PHASE_A_PWMH_PIN                  PORT_PIN_PA08
 
-/*** Macros for PWM_BH pin ***/
-#define PWM_BH_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 9U)) & 0x01U)
-#define PWM_BH_PIN                  PORT_PIN_PA09
+/*** Macros for PHASE_B_PWMH pin ***/
+#define PHASE_B_PWMH_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 9U)) & 0x01U)
+#define PHASE_B_PWMH_PIN                  PORT_PIN_PA09
 
-/*** Macros for PWM_CH pin ***/
-#define PWM_CH_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 10U)) & 0x01U)
-#define PWM_CH_PIN                  PORT_PIN_PA10
+/*** Macros for PHASE_C_PWMH pin ***/
+#define PHASE_C_PWMH_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 10U)) & 0x01U)
+#define PHASE_C_PWMH_PIN                  PORT_PIN_PA10
 
 /*** Macros for BUTTON_01 pin ***/
 #define BUTTON_01_Set()               (PORT_REGS->GROUP[3].PORT_OUTSET = ((uint32_t)1U << 9U))
@@ -119,43 +119,47 @@
 #define RECEIVE_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 13U)) & 0x01U)
 #define RECEIVE_PIN                  PORT_PIN_PA13
 
-/*** Macros for PWM_AL pin ***/
-#define PWM_AL_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 16U)) & 0x01U)
-#define PWM_AL_PIN                  PORT_PIN_PA16
+/*** Macros for PHASE_A_PWML pin ***/
+#define PHASE_A_PWML_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 16U)) & 0x01U)
+#define PHASE_A_PWML_PIN                  PORT_PIN_PA16
 
-/*** Macros for PWM_BL pin ***/
-#define PWM_BL_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 17U)) & 0x01U)
-#define PWM_BL_PIN                  PORT_PIN_PA17
+/*** Macros for PHASE_B_PWML pin ***/
+#define PHASE_B_PWML_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 17U)) & 0x01U)
+#define PHASE_B_PWML_PIN                  PORT_PIN_PA17
 
-/*** Macros for PWM_CL pin ***/
-#define PWM_CL_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 18U)) & 0x01U)
-#define PWM_CL_PIN                  PORT_PIN_PA18
+/*** Macros for PHASE_C_PWML pin ***/
+#define PHASE_C_PWML_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 18U)) & 0x01U)
+#define PHASE_C_PWML_PIN                  PORT_PIN_PA18
 
-/*** Macros for QEA pin ***/
-#define QEA_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 16U)) & 0x01U)
-#define QEA_PIN                  PORT_PIN_PC16
+/*** Macros for ENCODER_QEA pin ***/
+#define ENCODER_QEA_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 16U)) & 0x01U)
+#define ENCODER_QEA_PIN                  PORT_PIN_PC16
 
-/*** Macros for QEB pin ***/
-#define QEB_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 17U)) & 0x01U)
-#define QEB_PIN                  PORT_PIN_PC17
-
-/*** Macros for LED_02 pin ***/
-#define LED_02_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 26U))
-#define LED_02_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = ((uint32_t)1U << 26U))
-#define LED_02_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = ((uint32_t)1U << 26U))
-#define LED_02_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = ((uint32_t)1U << 26U))
-#define LED_02_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = ((uint32_t)1U << 26U))
-#define LED_02_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 26U)) & 0x01U)
-#define LED_02_PIN                  PORT_PIN_PB26
+/*** Macros for ENCODER_QEB pin ***/
+#define ENCODER_QEB_Get()               (((PORT_REGS->GROUP[2].PORT_IN >> 17U)) & 0x01U)
+#define ENCODER_QEB_PIN                  PORT_PIN_PC17
 
 /*** Macros for LED_01 pin ***/
-#define LED_01_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 27U))
-#define LED_01_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = ((uint32_t)1U << 27U))
-#define LED_01_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = ((uint32_t)1U << 27U))
-#define LED_01_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = ((uint32_t)1U << 27U))
-#define LED_01_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = ((uint32_t)1U << 27U))
-#define LED_01_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 27U)) & 0x01U)
-#define LED_01_PIN                  PORT_PIN_PB27
+#define LED_01_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 26U))
+#define LED_01_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = ((uint32_t)1U << 26U))
+#define LED_01_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = ((uint32_t)1U << 26U))
+#define LED_01_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = ((uint32_t)1U << 26U))
+#define LED_01_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = ((uint32_t)1U << 26U))
+#define LED_01_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 26U)) & 0x01U)
+#define LED_01_PIN                  PORT_PIN_PB26
+
+/*** Macros for LED_02 pin ***/
+#define LED_02_Set()               (PORT_REGS->GROUP[1].PORT_OUTSET = ((uint32_t)1U << 27U))
+#define LED_02_Clear()             (PORT_REGS->GROUP[1].PORT_OUTCLR = ((uint32_t)1U << 27U))
+#define LED_02_Toggle()            (PORT_REGS->GROUP[1].PORT_OUTTGL = ((uint32_t)1U << 27U))
+#define LED_02_OutputEnable()      (PORT_REGS->GROUP[1].PORT_DIRSET = ((uint32_t)1U << 27U))
+#define LED_02_InputEnable()       (PORT_REGS->GROUP[1].PORT_DIRCLR = ((uint32_t)1U << 27U))
+#define LED_02_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 27U)) & 0x01U)
+#define LED_02_PIN                  PORT_PIN_PB27
+
+/*** Macros for FAULT pin ***/
+#define FAULT_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 2U)) & 0x01U)
+#define FAULT_PIN                  PORT_PIN_PB02
 
 // *****************************************************************************
 /* PORT Group
